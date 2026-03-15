@@ -1,0 +1,702 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Smart Blocks — Support</title>
+  <meta name="description" content="Support, Privacy Policy, and Terms of Use for Smart Blocks — the shape puzzle game that sharpens your mind.">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --p950: #1a0a3d;
+      --p900: #2d1b69;
+      --p700: #4c2f9e;
+      --p500: #7c5cbf;
+      --p400: #9b7dd4;
+      --p300: #bfa8e8;
+      --p100: #e8dff7;
+      --p50:  #f5f0fd;
+      --teal: #3b82c4;
+      --teal-light: #93c5e8;
+      --cream: #faf9fc;
+      --white: #FFFFFF;
+      --gray100: #F3F4F6;
+      --gray200: #E5E7EB;
+      --gray400: #9CA3AF;
+      --gray600: #4B5563;
+      --gray800: #1F2937;
+      --text: #1a1330;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", system-ui, sans-serif;
+      color: var(--text);
+      background: var(--white);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: sticky; top: 0; z-index: 100;
+      background: rgba(255,255,255,0.93);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--p100);
+    }
+    .nav-inner {
+      max-width: 860px; margin: 0 auto;
+      display: flex; align-items: center; justify-content: space-between;
+      height: 58px; padding: 0 24px; gap: 16px;
+    }
+    .nav-brand {
+      display: flex; align-items: center; gap: 9px;
+      text-decoration: none; color: var(--p900);
+    }
+    .nav-brand img {
+      width: 30px; height: 30px; border-radius: 7px; object-fit: cover;
+    }
+    .nav-brand-icon {
+      width: 30px; height: 30px; border-radius: 7px;
+      background: linear-gradient(135deg, var(--p900), var(--p500));
+      display: flex; align-items: center; justify-content: center;
+      font-size: 16px;
+    }
+    .nav-brand span { font-size: 15px; font-weight: 700; letter-spacing: -0.2px; }
+    .nav-links { display: flex; gap: 2px; list-style: none; }
+    .nav-links a {
+      display: block; padding: 6px 13px; border-radius: 20px;
+      font-size: 13.5px; font-weight: 500; color: var(--gray600);
+      text-decoration: none; transition: all 0.18s;
+    }
+    .nav-links a:hover { color: var(--p900); background: var(--p50); }
+
+    /* ── HERO ── */
+    .hero {
+      background: linear-gradient(150deg, var(--p950) 0%, var(--p900) 45%, #3d2280 75%, #2a4090 100%);
+      padding: 72px 24px 80px; text-align: center;
+      position: relative; overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute; inset: 0;
+      background:
+        radial-gradient(ellipse at 20% 70%, rgba(124,92,191,0.25) 0%, transparent 55%),
+        radial-gradient(ellipse at 80% 15%, rgba(59,130,196,0.18) 0%, transparent 50%),
+        radial-gradient(ellipse at 55% 90%, rgba(191,168,232,0.1) 0%, transparent 45%);
+      pointer-events: none;
+    }
+    .hero::after {
+      content: '';
+      position: absolute; inset: 0; opacity: 0.04;
+      background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Crect x='5' y='5' width='20' height='20' rx='3' fill='%23ffffff'/%3E%3Crect x='35' y='5' width='20' height='20' rx='3' fill='%23ffffff'/%3E%3Crect x='5' y='35' width='20' height='20' rx='3' fill='%23ffffff'/%3E%3Crect x='35' y='35' width='20' height='20' rx='3' fill='%23ffffff'/%3E%3C/svg%3E");
+      background-size: 60px 60px;
+      pointer-events: none;
+    }
+    .hero-inner { position: relative; z-index: 1; }
+    .app-icon {
+      width: 100px; height: 100px; border-radius: 24px; object-fit: cover;
+      display: block; margin: 0 auto 22px;
+      box-shadow: 0 24px 64px rgba(0,0,0,0.4), 0 0 0 3px rgba(255,255,255,0.14);
+    }
+    .app-icon-placeholder {
+      width: 100px; height: 100px; border-radius: 24px;
+      background: linear-gradient(135deg, var(--p700) 0%, #3d2280 50%, var(--teal) 100%);
+      display: flex; align-items: center; justify-content: center;
+      margin: 0 auto 22px;
+      box-shadow: 0 24px 64px rgba(0,0,0,0.4), 0 0 0 3px rgba(255,255,255,0.14);
+      font-size: 48px;
+    }
+    .hero h1 {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(30px, 5.5vw, 54px);
+      font-weight: 700; color: var(--white);
+      letter-spacing: -1.5px; line-height: 1.1; margin-bottom: 14px;
+    }
+    .hero-sub {
+      font-size: 16px; color: var(--p300); max-width: 460px;
+      margin: 0 auto 28px; line-height: 1.6;
+    }
+    .appstore-badge {
+      display: inline-block;
+      margin-top: 4px;
+    }
+    .appstore-badge img {
+      height: 44px;
+      opacity: 0.92;
+      transition: opacity 0.18s;
+    }
+    .appstore-badge:hover img { opacity: 1; }
+
+    /* ── FEATURE CHIPS ── */
+    .features-strip {
+      background: var(--p50);
+      border-bottom: 1px solid var(--p100);
+      overflow: hidden;
+    }
+    .features-list {
+      max-width: 860px; margin: 0 auto;
+      display: flex; flex-wrap: wrap; gap: 10px;
+      padding: 18px 24px;
+      justify-content: center;
+    }
+    .feature-chip {
+      display: inline-flex; align-items: center; gap: 6px;
+      background: var(--white);
+      border: 1px solid var(--p100);
+      color: var(--p700);
+      padding: 7px 14px; border-radius: 20px;
+      font-size: 13px; font-weight: 500;
+      white-space: nowrap;
+    }
+    .feature-chip svg { color: var(--p500); flex-shrink: 0; }
+
+    /* ── CONTENT SECTIONS ── */
+    .content-wrap { max-width: 860px; margin: 0 auto; padding: 0 24px; }
+    .section { padding: 72px 0; }
+
+    .section-tag {
+      display: inline-block;
+      background: var(--p50); color: var(--p700);
+      border: 1px solid var(--p100);
+      font-size: 11px; font-weight: 700; letter-spacing: 1.4px;
+      text-transform: uppercase; padding: 5px 12px; border-radius: 20px;
+      margin-bottom: 18px;
+    }
+    h2 {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(24px, 4vw, 38px);
+      font-weight: 700; color: var(--text);
+      letter-spacing: -0.8px; line-height: 1.2; margin-bottom: 12px;
+    }
+    .section-lead {
+      font-size: 16px; color: var(--gray600);
+      max-width: 560px; margin-bottom: 40px; line-height: 1.7;
+    }
+
+    /* ── FAQ ── */
+    .faq { display: flex; flex-direction: column; gap: 2px; margin-bottom: 48px; }
+    .faq-item {
+      border: 1px solid var(--gray200); border-radius: 12px;
+      overflow: hidden; background: var(--white);
+      transition: border-color 0.18s;
+    }
+    .faq-item:hover { border-color: var(--p300); }
+    .faq-item.open { border-color: var(--p300); }
+    .faq-btn {
+      width: 100%; display: flex; align-items: center; justify-content: space-between;
+      padding: 18px 22px; gap: 16px;
+      background: none; border: none; cursor: pointer; text-align: left;
+      font-size: 15px; font-weight: 600; color: var(--text);
+      font-family: inherit; line-height: 1.4;
+    }
+    .faq-icon { flex-shrink: 0; color: var(--p500); transition: transform 0.2s; }
+    .faq-item.open .faq-icon { transform: rotate(180deg); }
+    .faq-body {
+      display: none; padding: 0 22px 18px;
+      font-size: 14.5px; color: var(--gray600); line-height: 1.7;
+    }
+    .faq-body p + p { margin-top: 10px; }
+    .faq-item.open .faq-body { display: block; }
+
+    /* ── CONTACT CARD ── */
+    .contact-card {
+      background: linear-gradient(135deg, var(--p900) 0%, #3d2280 50%, #2a4090 100%);
+      border-radius: 20px; overflow: hidden; position: relative;
+    }
+    .contact-card::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: radial-gradient(ellipse at 80% 20%, rgba(124,92,191,0.3) 0%, transparent 55%);
+      pointer-events: none;
+    }
+    .contact-inner {
+      position: relative; z-index: 1;
+      padding: 48px 40px; text-align: center;
+    }
+    .contact-icon {
+      width: 52px; height: 52px; border-radius: 14px;
+      background: rgba(255,255,255,0.12);
+      display: flex; align-items: center; justify-content: center;
+      margin: 0 auto 20px; color: var(--p300);
+    }
+    .contact-inner h3 {
+      font-size: 22px; font-weight: 700; color: var(--white); margin-bottom: 8px;
+    }
+    .contact-inner p { font-size: 14.5px; color: var(--p300); margin-bottom: 24px; }
+    .contact-btn {
+      display: inline-block;
+      background: var(--white); color: var(--p900);
+      font-size: 14px; font-weight: 700; padding: 13px 28px;
+      border-radius: 30px; text-decoration: none;
+      transition: all 0.18s;
+    }
+    .contact-btn:hover { background: var(--p50); transform: translateY(-1px); box-shadow: 0 8px 24px rgba(0,0,0,0.2); }
+
+    /* ── LEGAL ── */
+    .legal-date {
+      display: inline-block; font-size: 12px; font-weight: 500;
+      color: var(--gray400); margin-bottom: 32px;
+      padding: 4px 12px; background: var(--gray100); border-radius: 20px;
+    }
+    .legal-block { display: flex; flex-direction: column; gap: 32px; }
+    .legal-block h3 {
+      font-size: 16px; font-weight: 700; color: var(--text);
+      margin-bottom: 10px; letter-spacing: -0.2px;
+    }
+    .legal-block p { font-size: 14.5px; color: var(--gray600); line-height: 1.75; margin-bottom: 10px; }
+    .legal-block ul, .legal-block ol {
+      padding-left: 20px; display: flex; flex-direction: column; gap: 6px;
+    }
+    .legal-block li { font-size: 14.5px; color: var(--gray600); line-height: 1.7; }
+    .legal-block a { color: var(--p700); text-decoration: underline; }
+    .legal-divider {
+      height: 1px; background: var(--gray200); margin: 8px 0;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--p950);
+      padding: 48px 24px 40px;
+      margin-top: auto;
+    }
+    .footer-inner {
+      max-width: 860px; margin: 0 auto;
+      display: flex; flex-direction: column; align-items: center; gap: 20px;
+      text-align: center;
+    }
+    .footer-brand {
+      display: flex; align-items: center; gap: 8px;
+      color: var(--white); font-size: 15px; font-weight: 700; text-decoration: none;
+    }
+    .footer-brand-icon {
+      width: 26px; height: 26px; border-radius: 6px;
+      background: linear-gradient(135deg, var(--p700), var(--teal));
+      display: flex; align-items: center; justify-content: center;
+      font-size: 14px;
+    }
+    .footer-nav { display: flex; align-items: center; gap: 6px; flex-wrap: wrap; justify-content: center; }
+    .footer-nav a {
+      font-size: 13px; color: rgba(255,255,255,0.45); text-decoration: none;
+      transition: opacity 0.18s; padding: 4px 2px;
+    }
+    .footer-nav a:hover { color: rgba(255,255,255,0.85); }
+    .footer-sep { color: rgba(255,255,255,0.15); font-size: 13px; }
+    .footer-copy { font-size: 12.5px; color: rgba(255,255,255,0.25); }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 640px) {
+      .nav-links { display: none; }
+      .hero { padding: 56px 20px 64px; }
+      .hero h1 { letter-spacing: -0.8px; }
+      .section { padding: 56px 0; }
+      .contact-inner { padding: 36px 24px; }
+      .features-list { flex-wrap: nowrap; justify-content: flex-start; overflow-x: auto; padding-bottom: 6px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <a href="#" class="nav-brand">
+      <div class="nav-brand-icon">🧩</div>
+      <span>Smart Blocks</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#support">Support</a></li>
+      <li><a href="#privacy">Privacy Policy</a></li>
+      <li><a href="#terms">Terms of Use</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- HERO -->
+<header class="hero">
+  <div class="hero-inner">
+    <div class="app-icon-placeholder">🧩</div>
+    <h1>Challenge Your Brain.<br>One Puzzle at a Time.</h1>
+    <p class="hero-sub">The shape-fitting puzzle game that starts simple and gets brutally hard. How far can you go?</p>
+    <a href="https://apps.apple.com/app/id6745087891" class="appstore-badge" target="_blank" rel="noopener">
+      <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="Download on the App Store">
+    </a>
+  </div>
+</header>
+
+<!-- FEATURE CHIPS -->
+<div class="features-strip">
+  <div class="features-list">
+    <span class="feature-chip">
+      <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>
+      Shape Puzzles
+    </span>
+    <span class="feature-chip">
+      <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+      Progressive Difficulty
+    </span>
+    <span class="feature-chip">
+      <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+      Daily Challenge
+    </span>
+    <span class="feature-chip">
+      <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M18 20V10M12 20V4M6 20v-6"/></svg>
+      Score Tracking
+    </span>
+    <span class="feature-chip">
+      <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 1 1 7.072 0l-.548.547A3.374 3.374 0 0 0 14 18.469V19a2 2 0 1 1-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/></svg>
+      Hint System
+    </span>
+    <span class="feature-chip">
+      <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M3 12a9 9 0 1 0 18 0 9 9 0 0 0-18 0"/><path d="M12 8v4l3 3"/></svg>
+      Resume Anytime
+    </span>
+    <span class="feature-chip">
+      <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+      Game Center
+    </span>
+    <span class="feature-chip">
+      <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+      Premium Ad-Free
+    </span>
+  </div>
+</div>
+
+<!-- SUPPORT -->
+<section id="support">
+  <div class="content-wrap">
+    <div class="section">
+      <span class="section-tag">Help &amp; Support</span>
+      <h2>Frequently Asked Questions</h2>
+      <p class="section-lead">Everything you need to know about Smart Blocks.</p>
+
+      <div class="faq">
+
+        <div class="faq-item">
+          <button class="faq-btn" aria-expanded="false">
+            How does the puzzle work?
+            <span class="faq-icon"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></span>
+          </button>
+          <div class="faq-body">
+            <p>Drag the block pieces from the tray at the bottom onto the grid. Your goal is to fill the highlighted target shape exactly — no gaps, no overlaps. Every piece must be used. Once the shape is complete, you advance to the next level.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-btn" aria-expanded="false">
+            How do I use the hint?
+            <span class="faq-icon"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></span>
+          </button>
+          <div class="faq-body">
+            <p>Tap the lightbulb button in the action bar. The hint places one piece for you and uses your free hint for that level. Free users get one hint per level. Premium users get unlimited hints. You can also watch a rewarded ad to unlock a hint if you've used your free one.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-btn" aria-expanded="false">
+            What is the Daily Challenge?
+            <span class="faq-icon"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></span>
+          </button>
+          <div class="faq-body">
+            <p>The Daily Challenge gives you a new timed puzzle every day. All players worldwide get the same puzzle so you can compare scores on the leaderboard. Complete it before midnight to keep your streak alive. Tap the "Daily Challenge" button on the main game screen to start.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-btn" aria-expanded="false">
+            My progress was lost — how do I recover it?
+            <span class="faq-icon"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></span>
+          </button>
+          <div class="faq-body">
+            <p>Smart Blocks syncs your progress via iCloud. Make sure you are signed in to the same Apple ID on your device and that iCloud Drive is enabled. Your highest level, score, and in-progress game are restored automatically when you reinstall or switch devices.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-btn" aria-expanded="false">
+            What does Premium include?
+            <span class="faq-icon"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></span>
+          </button>
+          <div class="faq-body">
+            <p>Premium removes all ads and unlocks unlimited undos and unlimited hints. Available as a monthly subscription, a yearly subscription (best value), or a one-time Lifetime purchase (€15.99 — pay once, own forever). Manage your subscription anytime in the App Store.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-btn" aria-expanded="false">
+            How do I cancel my subscription?
+            <span class="faq-icon"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></span>
+          </button>
+          <div class="faq-body">
+            <p>Subscriptions are managed through Apple. To cancel: open the <strong>Settings</strong> app → tap your name → <strong>Subscriptions</strong> → tap Smart Blocks → <strong>Cancel Subscription</strong>. Cancellation takes effect at the end of the current billing period. Your Premium access continues until then.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-btn" aria-expanded="false">
+            The pieces don't snap to the grid — what's wrong?
+            <span class="faq-icon"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></span>
+          </button>
+          <div class="faq-body">
+            <p>Try dragging the piece slowly over the grid — a ghost preview appears when the piece is near a valid position. Make sure you're dragging from the piece itself in the tray, not the edges of the screen. If the issue persists, force-quit and reopen the app.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-btn" aria-expanded="false">
+            How does the undo button work?
+            <span class="faq-icon"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></span>
+          </button>
+          <div class="faq-body">
+            <p>The undo button removes the last piece you placed and returns it to the tray. Free users get 2 undos per game. Premium users get unlimited undos. You can also watch a rewarded ad to unlock additional undos when you've used your free ones.</p>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="contact-card">
+        <div class="contact-inner">
+          <div class="contact-icon">
+            <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          </div>
+          <h3>Still need help?</h3>
+          <p>Our support team typically responds within 24 hours.</p>
+          <a href="mailto:pals_green.1m@icloud.com?subject=Smart%20Blocks%20Support" class="contact-btn">Email Support</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRIVACY -->
+<section id="privacy" style="background: var(--cream);">
+  <div class="content-wrap">
+    <div class="section">
+      <span class="section-tag">Legal</span>
+      <h2>Privacy Policy</h2>
+      <p class="section-lead">Your privacy matters. Here is exactly what we collect and how we use it.</p>
+      <span class="legal-date">Last updated: March 2025</span>
+
+      <div class="legal-block">
+
+        <div>
+          <h3>1. Information We Collect</h3>
+          <p>When you use Smart Blocks, we may collect the following:</p>
+          <ul>
+            <li><strong>Game progress data:</strong> current level, best score, in-progress game state, daily challenge completion, and streak — stored locally and synced via iCloud.</li>
+            <li><strong>Purchase information:</strong> whether you hold an active Premium subscription or Lifetime purchase, managed entirely through Apple's StoreKit. We never see your payment details.</li>
+            <li><strong>Device and usage data:</strong> device type, iOS version, app version, language, and aggregate crash/error reports collected anonymously.</li>
+            <li><strong>Advertising identifiers:</strong> if you consent to tracking via the App Tracking Transparency prompt, your IDFA (Identifier for Advertisers) may be used to serve personalised ads via Google AdMob. If you decline, you will still see ads but they will not be personalised.</li>
+          </ul>
+        </div>
+
+        <div>
+          <h3>2. How We Use Your Information</h3>
+          <ul>
+            <li>To save and sync your game progress across devices via iCloud.</li>
+            <li>To verify your Premium subscription status via Apple's StoreKit.</li>
+            <li>To display advertisements to free users via Google AdMob.</li>
+            <li>To detect and fix crashes and improve app stability.</li>
+            <li>To submit daily challenge scores to Apple Game Center leaderboards.</li>
+          </ul>
+        </div>
+
+        <div>
+          <h3>3. Third-Party Services</h3>
+          <p>Smart Blocks uses the following third-party services:</p>
+          <ul>
+            <li><strong>Apple iCloud / CloudKit</strong> — game progress sync. Subject to <a href="https://www.apple.com/legal/privacy/" target="_blank">Apple's Privacy Policy</a>.</li>
+            <li><strong>Apple StoreKit / App Store</strong> — subscription and purchase management. Subject to <a href="https://www.apple.com/legal/privacy/" target="_blank">Apple's Privacy Policy</a>.</li>
+            <li><strong>Apple Game Center</strong> — leaderboards and achievements. Subject to <a href="https://www.apple.com/legal/privacy/" target="_blank">Apple's Privacy Policy</a>.</li>
+            <li><strong>Google AdMob</strong> — in-app advertising for free users. Subject to <a href="https://policies.google.com/privacy" target="_blank">Google's Privacy Policy</a>. We use AdMob's App ID <code>ca-app-pub-5836818937934168~5677644417</code>. Google may collect device identifiers and usage data to serve ads.</li>
+          </ul>
+        </div>
+
+        <div>
+          <h3>4. Data Sharing</h3>
+          <p>We do not sell, rent, or trade your personal information to third parties. Data is only shared with the service providers listed above, strictly for the purposes described in this policy.</p>
+        </div>
+
+        <div>
+          <h3>5. Children's Privacy</h3>
+          <p>Smart Blocks is a puzzle game suitable for general audiences. We do not knowingly collect personal data from children under 13. The App Tracking Transparency prompt is shown before any advertising identifier is accessed. If you believe a child under 13 has provided personal information, please contact us and we will delete it promptly.</p>
+        </div>
+
+        <div>
+          <h3>6. Data Retention &amp; Deletion</h3>
+          <p>Game progress data is stored locally on your device and in your personal iCloud account. You can delete all local data by uninstalling the app. To delete your iCloud data, go to <strong>Settings → [Your Name] → iCloud → Manage Storage → Smart Blocks → Delete Data</strong>. We do not retain any data on our own servers.</p>
+        </div>
+
+        <div>
+          <h3>7. Your Rights (GDPR / CCPA)</h3>
+          <p>If you are in the European Economic Area (EEA) or California, you have the right to:</p>
+          <ul>
+            <li>Access the personal data we hold about you.</li>
+            <li>Request correction or deletion of your personal data.</li>
+            <li>Object to or restrict certain processing of your data.</li>
+            <li>Opt out of personalised advertising at any time via <strong>Settings → Privacy &amp; Security → Tracking</strong> on your device.</li>
+            <li>Lodge a complaint with your local data protection authority.</li>
+          </ul>
+          <p>To exercise any of these rights, email us at <a href="mailto:pals_green.1m@icloud.com">pals_green.1m@icloud.com</a>.</p>
+        </div>
+
+        <div>
+          <h3>8. Security</h3>
+          <p>All data transmission uses industry-standard encryption. Game data is stored in Apple's secure iCloud infrastructure. We do not operate our own servers and have no direct access to your iCloud data.</p>
+        </div>
+
+        <div>
+          <h3>9. Changes to This Policy</h3>
+          <p>We may update this Privacy Policy from time to time. The updated version will be posted at this URL with a revised "Last updated" date. We encourage you to review this page periodically.</p>
+        </div>
+
+        <div>
+          <h3>10. Contact</h3>
+          <p>If you have any questions about this Privacy Policy, please contact us at <a href="mailto:pals_green.1m@icloud.com">pals_green.1m@icloud.com</a>.</p>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TERMS -->
+<section id="terms">
+  <div class="content-wrap">
+    <div class="section">
+      <span class="section-tag">Legal</span>
+      <h2>Terms of Use</h2>
+      <p class="section-lead">By downloading or using Smart Blocks, you agree to these terms.</p>
+      <span class="legal-date">Last updated: March 2025</span>
+
+      <div class="legal-block">
+
+        <div>
+          <h3>1. Acceptance of Terms</h3>
+          <p>By downloading, installing, or using Smart Blocks ("the App"), you agree to be bound by these Terms of Use. If you do not agree, please do not use the App.</p>
+        </div>
+
+        <div>
+          <h3>2. License</h3>
+          <p>We grant you a personal, non-exclusive, non-transferable, revocable licence to use the App for your personal, non-commercial purposes, subject to these Terms. You may not copy, modify, distribute, sell, or lease any part of the App, nor reverse engineer or attempt to extract the source code.</p>
+        </div>
+
+        <div>
+          <h3>3. Premium Subscriptions &amp; In-App Purchases</h3>
+          <ul>
+            <li>Premium is available as a <strong>Monthly</strong> or <strong>Yearly</strong> auto-renewing subscription, or as a one-time <strong>Lifetime</strong> purchase.</li>
+            <li>All purchases are processed by Apple through the App Store. Payment is charged to your Apple ID account at confirmation of purchase.</li>
+            <li>Subscriptions automatically renew unless cancelled at least 24 hours before the end of the current period.</li>
+            <li>You may cancel at any time via <strong>Settings → [Your Name] → Subscriptions</strong>. No refunds are provided for the unused portion of a subscription period.</li>
+            <li>Lifetime purchase is a one-time charge that grants perpetual Premium access on the purchasing Apple ID.</li>
+            <li>Prices may vary by region and are subject to change. Current prices are displayed in the App before purchase.</li>
+          </ul>
+        </div>
+
+        <div>
+          <h3>4. Advertising</h3>
+          <p>The free version of Smart Blocks is supported by advertising provided by Google AdMob. Banner ads are shown at the bottom of the game screen. Interstitial ads may appear between levels. Rewarded ads are optional and earn in-game benefits. Upgrading to Premium removes all ads.</p>
+        </div>
+
+        <div>
+          <h3>5. User Conduct</h3>
+          <p>You agree not to:</p>
+          <ul>
+            <li>Use the App for any unlawful purpose.</li>
+            <li>Attempt to manipulate Game Center leaderboards or scores.</li>
+            <li>Use automated tools, bots, or scripts to interact with the App.</li>
+            <li>Interfere with or disrupt the integrity of the App or its connected services.</li>
+          </ul>
+        </div>
+
+        <div>
+          <h3>6. Intellectual Property</h3>
+          <p>All content within Smart Blocks — including but not limited to graphics, puzzle designs, sounds, and code — is owned by or licensed to us. Nothing in these Terms grants you any intellectual property rights in the App.</p>
+        </div>
+
+        <div>
+          <h3>7. Disclaimer of Warranties</h3>
+          <p>Smart Blocks is provided "as is" and "as available" without warranties of any kind, either express or implied, including but not limited to fitness for a particular purpose, merchantability, or non-infringement. We do not warrant that the App will be uninterrupted, error-free, or free of viruses.</p>
+        </div>
+
+        <div>
+          <h3>8. Limitation of Liability</h3>
+          <p>To the maximum extent permitted by applicable law, we shall not be liable for any indirect, incidental, special, consequential, or punitive damages arising out of your use of or inability to use the App, including but not limited to loss of data or game progress.</p>
+        </div>
+
+        <div>
+          <h3>9. Apple's Terms</h3>
+          <p>Smart Blocks is distributed through the Apple App Store. Your use of the App is also subject to <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/" target="_blank">Apple's Standard End User Licence Agreement</a>. Apple is not responsible for the App and has no obligation to furnish any maintenance or support services for it.</p>
+        </div>
+
+        <div>
+          <h3>10. Changes to These Terms</h3>
+          <p>We reserve the right to update these Terms at any time. Continued use of the App after changes constitutes your acceptance of the revised Terms. The latest version will always be available at this URL.</p>
+        </div>
+
+        <div>
+          <h3>11. Governing Law</h3>
+          <p>These Terms are governed by the laws of the jurisdiction in which the developer is based. Any disputes shall be resolved through good-faith negotiation. If unresolved, disputes shall be subject to the exclusive jurisdiction of the competent courts in that jurisdiction.</p>
+        </div>
+
+        <div>
+          <h3>12. Contact</h3>
+          <p>For any questions about these Terms, contact us at <a href="mailto:pals_green.1m@icloud.com">pals_green.1m@icloud.com</a>.</p>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <a href="#" class="footer-brand">
+      <div class="footer-brand-icon">🧩</div>
+      Smart Blocks
+    </a>
+    <nav class="footer-nav">
+      <a href="#support">Support</a>
+      <span class="footer-sep">·</span>
+      <a href="#privacy">Privacy Policy</a>
+      <span class="footer-sep">·</span>
+      <a href="#terms">Terms of Use</a>
+      <span class="footer-sep">·</span>
+      <a href="mailto:pals_green.1m@icloud.com">Contact</a>
+    </nav>
+    <p class="footer-copy">© 2025 Smart Blocks. All rights reserved.</p>
+  </div>
+</footer>
+
+<script>
+  // FAQ accordion
+  document.querySelectorAll('.faq-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const item = btn.closest('.faq-item');
+      const isOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+      if (!isOpen) item.classList.add('open');
+      btn.setAttribute('aria-expanded', !isOpen);
+    });
+  });
+
+  // Active nav link on scroll
+  const sections = document.querySelectorAll('section[id]');
+  const navLinks = document.querySelectorAll('.nav-links a');
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        navLinks.forEach(a => a.classList.remove('active'));
+        const link = document.querySelector(`.nav-links a[href="#${entry.target.id}"]`);
+        if (link) link.classList.add('active');
+      }
+    });
+  }, { rootMargin: '-30% 0px -60% 0px' });
+  sections.forEach(s => observer.observe(s));
+</script>
+</body>
+</html>
