@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>StockPal — Support</title>
+  <meta name="description" content="Support, Privacy Policy, and Terms of Use for StockPal: Smart Inventory — the household inventory tracker.">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --b950: #1A1F4E;
+      --b900: #252B6A;
+      --b700: #3E61FF;
+      --b500: #5B7FFF;
+      --b300: #9BABFF;
+      --b100: #D6DDFF;
+      --b50:  #F0F2FF;
+      --purple: #7B61FF;
+      --white: #FFFFFF;
+      --gray100: #F3F4F6;
+      --gray200: #E5E7EB;
+      --gray400: #9CA3AF;
+      --gray600: #4B5563;
+      --gray800: #1F2937;
+      --text: #1A1F3D;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", system-ui, sans-serif;
+      color: var(--text);
+      background: var(--white);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: sticky; top: 0; z-index: 100;
+      background: rgba(255,255,255,0.93);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--b100);
+    }
+    .nav-inner {
+      max-width: 860px; margin: 0 auto;
+      display: flex; align-items: center; justify-content: space-between;
+      height: 58px; padding: 0 24px; gap: 16px;
+    }
+    .nav-brand {
+      font-weight: 700; font-size: 17px; color: var(--b700);
+      text-decoration: none;
+    }
+    .nav-links { display: flex; gap: 20px; }
+    .nav-links a {
+      font-size: 14px; font-weight: 500; color: var(--gray600);
+      text-decoration: none; transition: color .15s;
+    }
+    .nav-links a:hover { color: var(--b700); }
+
+    /* ── HERO ── */
+    .hero {
+      background: linear-gradient(135deg, var(--b700), var(--purple));
+      color: var(--white);
+      text-align: center;
+      padding: 72px 24px 64px;
+    }
+    .hero-icon {
+      width: 88px; height: 88px; border-radius: 22px;
+      background: rgba(255,255,255,0.18);
+      display: inline-flex; align-items: center; justify-content: center;
+      font-size: 44px; margin-bottom: 20px;
+    }
+    .hero h1 { font-size: 32px; font-weight: 800; margin-bottom: 8px; }
+    .hero p { font-size: 17px; opacity: 0.88; max-width: 480px; margin: 0 auto; }
+
+    /* ── SECTION ── */
+    .section { max-width: 860px; margin: 0 auto; padding: 56px 24px 48px; }
+    .section + .section { border-top: 1px solid var(--gray200); }
+    .section h2 {
+      font-size: 24px; font-weight: 700; margin-bottom: 20px; color: var(--b950);
+    }
+    .section h3 { font-size: 17px; font-weight: 600; margin: 24px 0 8px; color: var(--gray800); }
+    .section p, .section li { font-size: 15px; color: var(--gray600); line-height: 1.7; }
+    .section ul { padding-left: 20px; margin: 8px 0 16px; }
+    .section li { margin-bottom: 6px; }
+    .section a { color: var(--b700); text-decoration: none; }
+    .section a:hover { text-decoration: underline; }
+
+    .contact-btn {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 12px 28px; border-radius: 12px;
+      background: var(--b700); color: var(--white);
+      font-weight: 600; font-size: 15px;
+      text-decoration: none; transition: background .15s;
+      margin-top: 12px;
+    }
+    .contact-btn:hover { background: var(--b900); text-decoration: none; }
+
+    .faq-item { margin-bottom: 16px; }
+    .faq-item strong { color: var(--gray800); font-size: 15px; }
+    .faq-item p { margin-top: 4px; }
+
+    /* ── FOOTER ── */
+    footer {
+      text-align: center; padding: 32px 24px; font-size: 13px;
+      color: var(--gray400); border-top: 1px solid var(--gray200);
+    }
+
+    @media (max-width: 600px) {
+      .hero { padding: 48px 20px 40px; }
+      .hero h1 { font-size: 26px; }
+      .nav-links { gap: 14px; }
+      .nav-links a { font-size: 13px; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="nav-inner">
+      <a href="#" class="nav-brand">StockPal</a>
+      <div class="nav-links">
+        <a href="#support">Support</a>
+        <a href="#privacy">Privacy</a>
+        <a href="#terms">Terms</a>
+      </div>
+    </div>
+  </nav>
+
+  <div class="hero">
+    <div class="hero-icon">📦</div>
+    <h1>StockPal: Smart Inventory</h1>
+    <p>Your smart household inventory tracker. Never run out of essentials or waste expired food again.</p>
+  </div>
+
+  <!-- ── SUPPORT ── -->
+  <div class="section" id="support">
+    <h2>Support</h2>
+    <p>Need help with StockPal? Check the FAQ below or contact us directly.</p>
+
+    <a href="mailto:nemo.qn@gmail.com" class="contact-btn">✉ Contact Support</a>
+
+    <h3>Frequently Asked Questions</h3>
+
+    <div class="faq-item">
+      <strong>How do I add items to my inventory?</strong>
+      <p>Tap the + button on the Inventory tab. You can add items manually, scan a barcode, scan a receipt, or use voice input (premium features).</p>
+    </div>
+
+    <div class="faq-item">
+      <strong>How does the shopping list work?</strong>
+      <p>When items run low (below your set threshold), they appear in the Shopping List tab. Tap "Generate from Low Stock" or pull down to refresh. Check off items when you've bought them — the quantity is automatically added back to your inventory.</p>
+    </div>
+
+    <div class="faq-item">
+      <strong>What's included in the free version?</strong>
+      <p>Free users can track up to 50 items with manual entry. Premium unlocks unlimited items, barcode scanning, receipt OCR, voice input, budget tracking, export, and removes ads.</p>
+    </div>
+
+    <div class="faq-item">
+      <strong>How does household sharing work?</strong>
+      <p>Premium users can create a household and share a unique code with family members. Members join using the code and get access to the shared inventory and premium features. All changes sync in real-time via iCloud.</p>
+    </div>
+
+    <div class="faq-item">
+      <strong>Can I change the app language?</strong>
+      <p>Yes! Go to Settings → Language and choose from 21 supported languages. The app switches instantly without restarting.</p>
+    </div>
+
+    <div class="faq-item">
+      <strong>How do I cancel my subscription?</strong>
+      <p>Go to Settings → Manage Subscription, which opens your Apple ID subscription settings. You can cancel there at any time.</p>
+    </div>
+
+    <div class="faq-item">
+      <strong>How do I delete all my data?</strong>
+      <p>Go to Settings → Delete All My Data. This permanently removes all items, categories, shopping lists, and purchase records from your device.</p>
+    </div>
+  </div>
+
+  <!-- ── PRIVACY POLICY ── -->
+  <div class="section" id="privacy">
+    <h2>Privacy Policy</h2>
+    <p><em>Last updated: March 2026</em></p>
+
+    <h3>1. Information We Collect</h3>
+    <p>StockPal stores your household inventory data (item names, quantities, expiry dates, photos, and categories) locally on your device using Apple's SwiftData framework. When CloudKit sync is enabled, this data is stored in your private iCloud account.</p>
+
+    <h3>2. Advertising</h3>
+    <p>StockPal uses Google AdMob to display ads to free-tier users. AdMob may collect device identifiers and usage data for ad personalization. You can opt out of personalized ads through the App Tracking Transparency prompt shown when you first use the app, or in your device's Settings → Privacy → Tracking.</p>
+
+    <h3>3. Subscriptions</h3>
+    <p>StockPal uses Apple's StoreKit 2 to manage in-app subscriptions. Payment is handled entirely by Apple through your Apple ID. We do not process or store payment information.</p>
+
+    <h3>4. Data Storage</h3>
+    <p>All inventory data is stored locally on your device and optionally synced via your personal iCloud account. We do not operate any servers that store your data. Household sharing uses Apple's CloudKit shared database, which is managed entirely by Apple's infrastructure.</p>
+
+    <h3>5. Third-Party Services</h3>
+    <ul>
+      <li><strong>Google AdMob</strong> — advertising (free tier only)</li>
+      <li><strong>Open Food Facts</strong> — barcode product lookup (public API, no account required)</li>
+      <li><strong>Apple CloudKit</strong> — data sync and household sharing (your iCloud account)</li>
+      <li><strong>Apple Vision / Speech</strong> — on-device receipt OCR and voice recognition (no data sent to servers)</li>
+    </ul>
+
+    <h3>6. Data We Do NOT Collect</h3>
+    <p>We do not collect your name, email, phone number, location, contacts, health data, or browsing history. We do not sell any data to third parties.</p>
+
+    <h3>7. Children's Privacy</h3>
+    <p>StockPal is not directed at children under 13. We do not knowingly collect data from children.</p>
+
+    <h3>8. Your Rights</h3>
+    <p>You can delete all your data at any time from Settings → Delete All My Data. This removes all inventory items, categories, shopping lists, and purchase records from your device. Under GDPR and CCPA, you have the right to access, correct, or delete your personal data.</p>
+
+    <h3>9. Changes to This Policy</h3>
+    <p>We may update this privacy policy from time to time. Continued use of the app after changes constitutes acceptance of the updated policy.</p>
+
+    <h3>10. Contact</h3>
+    <p>For privacy questions, contact us at <a href="mailto:nemo.qn@gmail.com">nemo.qn@gmail.com</a></p>
+  </div>
+
+  <!-- ── TERMS OF USE ── -->
+  <div class="section" id="terms">
+    <h2>Terms of Use</h2>
+    <p><em>Last updated: March 2026</em></p>
+
+    <h3>1. Acceptance of Terms</h3>
+    <p>By downloading and using StockPal, you agree to these Terms of Use. If you do not agree, please do not use the app.</p>
+
+    <h3>2. Description of Service</h3>
+    <p>StockPal is a household inventory tracking application that helps you manage food and household items, track expiry dates, generate shopping lists, and monitor spending. It supports barcode scanning, receipt OCR, voice input, and household sharing via iCloud.</p>
+
+    <h3>3. Free and Premium Tiers</h3>
+    <p>StockPal offers a free tier (up to 50 items, manual entry, with ads) and a premium subscription (unlimited items, all input methods, no ads, household sharing). Premium subscriptions are billed through your Apple ID account.</p>
+
+    <h3>4. Subscription Terms</h3>
+    <ul>
+      <li>Payment is charged to your Apple ID account at confirmation of purchase</li>
+      <li>Subscriptions automatically renew unless canceled at least 24 hours before the end of the current period</li>
+      <li>You can manage or cancel subscriptions in your device's Settings → Apple ID → Subscriptions</li>
+      <li>No refunds for partial subscription periods</li>
+    </ul>
+
+    <h3>5. Household Sharing</h3>
+    <p>Premium users can create households and invite members. Members receive premium access while in the household. Leaving a household revokes premium access. The household owner is responsible for the shared inventory data.</p>
+
+    <h3>6. User Content</h3>
+    <p>You retain ownership of all data you enter into StockPal. We do not claim any rights to your inventory data, photos, or other content.</p>
+
+    <h3>7. Acceptable Use</h3>
+    <p>You agree to use StockPal only for its intended purpose of household inventory management. You may not reverse-engineer, decompile, or attempt to extract the source code of the application.</p>
+
+    <h3>8. Disclaimer of Warranties</h3>
+    <p>StockPal is provided "as is" without warranty of any kind. We do not guarantee that expiry date tracking, barcode scanning, or receipt OCR will be 100% accurate. Always check food safety independently.</p>
+
+    <h3>9. Limitation of Liability</h3>
+    <p>StockPal and its developers shall not be liable for any indirect, incidental, or consequential damages arising from your use of the app, including but not limited to food spoilage, missed expiry dates, or inaccurate inventory counts.</p>
+
+    <h3>10. Changes to Terms</h3>
+    <p>We may update these terms from time to time. Continued use of the app after changes constitutes acceptance of the new terms.</p>
+
+    <h3>11. Contact</h3>
+    <p>For questions about these terms, contact us at <a href="mailto:nemo.qn@gmail.com">nemo.qn@gmail.com</a></p>
+  </div>
+
+  <footer>
+    &copy; 2026 StockPal. All rights reserved.
+  </footer>
+
+</body>
+</html>
