@@ -6,3 +6,4 @@
 | Smart Blocks | smartblocks | com.smartblocks.app | Available |
 | StockPal | stockpal | com.stockpal.app | Available |
 | PicWorld Memory | picworld-memory | com.picworld.memory | Available |
+| RoutinePix | routinepix | com.routinepix.app | TestFlight |
