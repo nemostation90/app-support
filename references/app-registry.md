@@ -7,4 +7,4 @@
 | StockPal | stockpal | com.stockpal.app | Available |
 | PicWorld Memory | picworld-memory | com.picworld.memory | Available |
 | RoutinePix | routinepix | com.routinepix.app | TestFlight |
-| Hair Growth Tracker | hair-growth-tracker | com.hairgrowthtracker.app | TestFlight |
+| GrowLine | hair-growth-tracker | com.hairgrowthtracker.app | TestFlight |
