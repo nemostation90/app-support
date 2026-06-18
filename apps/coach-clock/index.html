@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Coach Clock Support</title>
+  <meta name="description" content="Support, privacy policy, and terms of use for Coach Clock, a premium class interval timer for trainers and coaches.">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --blue: #145CFF;
+      --blueDark: #0B1B4F;
+      --orange: #FF7A1A;
+      --green: #16C784;
+      --ink: #111827;
+      --muted: #667085;
+      --bg: #F7F8FA;
+      --card: #FFFFFF;
+      --line: #E5E7EB;
+      --navy: #0B0D12;
+    }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", system-ui, sans-serif;
+      color: var(--ink);
+      background: var(--bg);
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+    }
+    nav {
+      position: sticky; top: 0; z-index: 10;
+      background: rgba(247,248,250,0.92);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--line);
+    }
+    .nav-inner {
+      max-width: 1040px; margin: 0 auto; padding: 14px 22px;
+      display: flex; justify-content: space-between; gap: 18px; align-items: center;
+    }
+    .brand { display: flex; align-items: center; gap: 10px; color: var(--ink); text-decoration: none; font-weight: 800; }
+    .brand img { width: 34px; height: 34px; border-radius: 9px; box-shadow: 0 6px 18px rgba(20,92,255,0.22); }
+    .links { display: flex; gap: 14px; flex-wrap: wrap; }
+    .links a { color: var(--muted); text-decoration: none; font-size: 13px; font-weight: 700; }
+    header {
+      color: white;
+      background:
+        radial-gradient(circle at 18% 20%, rgba(255,122,26,0.38), transparent 28%),
+        radial-gradient(circle at 88% 18%, rgba(22,199,132,0.24), transparent 30%),
+        linear-gradient(140deg, var(--blue), var(--navy));
+      padding: 82px 22px 72px;
+    }
+    .hero { max-width: 1040px; margin: 0 auto; display: grid; grid-template-columns: 0.9fr 1.1fr; gap: 42px; align-items: center; }
+    .icon { width: 128px; height: 128px; border-radius: 30px; box-shadow: 0 24px 60px rgba(0,0,0,0.28); margin-bottom: 24px; }
+    .eyebrow { color: #BFD4FF; font-size: 12px; letter-spacing: 2.6px; text-transform: uppercase; font-weight: 800; margin-bottom: 12px; }
+    h1 { font-size: clamp(42px, 7vw, 76px); line-height: 0.95; letter-spacing: -2.8px; margin-bottom: 18px; }
+    .tagline { max-width: 640px; color: #DDE8FF; font-size: 19px; }
+    .hero-card {
+      background: rgba(255,255,255,0.12);
+      border: 1px solid rgba(255,255,255,0.18);
+      border-radius: 32px;
+      padding: 28px;
+      box-shadow: 0 24px 70px rgba(0,0,0,0.22);
+    }
+    .timer-preview {
+      background: #080B12;
+      border-radius: 24px;
+      padding: 30px;
+      text-align: center;
+      border: 1px solid rgba(255,255,255,0.12);
+    }
+    .timer-preview .phase { color: var(--orange); font-weight: 800; letter-spacing: 2px; text-transform: uppercase; font-size: 12px; }
+    .timer-preview .time { font-size: clamp(56px, 10vw, 100px); line-height: 1; font-weight: 900; letter-spacing: -4px; margin: 14px 0; font-variant-numeric: tabular-nums; }
+    .timer-preview .next { color: #A6ADBB; font-weight: 700; }
+    main { max-width: 1040px; margin: 0 auto; padding: 58px 22px 78px; }
+    section {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 28px;
+      padding: 34px;
+      margin-bottom: 22px;
+      box-shadow: 0 16px 50px rgba(17,24,39,0.06);
+    }
+    h2 { font-size: 28px; letter-spacing: -0.7px; margin-bottom: 12px; }
+    h3 { font-size: 18px; margin-top: 24px; margin-bottom: 8px; }
+    p, li { color: var(--muted); }
+    ul { padding-left: 22px; margin: 12px 0; }
+    .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 22px; }
+    .mini {
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      padding: 18px;
+      background: #FBFCFE;
+    }
+    .mini strong { display: block; margin-bottom: 6px; color: var(--ink); }
+    .button {
+      display: inline-flex; align-items: center; justify-content: center;
+      min-height: 46px; padding: 0 18px; margin-top: 18px;
+      background: var(--blue); color: white; text-decoration: none;
+      border-radius: 14px; font-weight: 800;
+    }
+    footer { padding: 34px 22px; text-align: center; color: var(--muted); font-size: 13px; }
+    @media (max-width: 780px) {
+      .hero { grid-template-columns: 1fr; }
+      .grid { grid-template-columns: 1fr; }
+      .links { display: none; }
+      section { padding: 24px; }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="nav-inner">
+      <a class="brand" href="../../">
+        <img src="icon.png" alt="Coach Clock icon">
+        <span>Coach Clock</span>
+      </a>
+      <div class="links">
+        <a href="#support">Support</a>
+        <a href="#privacy">Privacy</a>
+        <a href="#terms">Terms</a>
+      </div>
+    </div>
+  </nav>
+
+  <header>
+    <div class="hero">
+      <div>
+        <img class="icon" src="icon.png" alt="Coach Clock icon">
+        <p class="eyebrow">Class Interval Timer</p>
+        <h1>Coach every interval with confidence.</h1>
+        <p class="tagline">Coach Clock is a premium interval timer for trainers, coaches, and athletes who need reusable class templates, big readable displays, and reliable workout cues.</p>
+      </div>
+      <div class="hero-card" aria-hidden="true">
+        <div class="timer-preview">
+          <div class="phase">Work · Round 4/10</div>
+          <div class="time">00:38</div>
+          <div class="next">Next: Recover · 15s</div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section id="support">
+      <h2>Support</h2>
+      <p>Need help with Coach Clock? Email <a href="mailto:pals_green.1m@icloud.com">pals_green.1m@icloud.com</a> and include your device model, iOS version, and a short description of the issue.</p>
+      <div class="grid">
+        <div class="mini">
+          <strong>Templates</strong>
+          <p>Create, duplicate, favorite, share, and import reusable class timers.</p>
+        </div>
+        <div class="mini">
+          <strong>Class Display</strong>
+          <p>Use the big timer view for HIIT, Tabata, EMOM, AMRAP, boxing, run/walk, stretch, and gym rest formats.</p>
+        </div>
+        <div class="mini">
+          <strong>Coach Clock Pro</strong>
+          <p>Unlock unlimited saved templates, sharing, premium themes, advanced cues, and full local history with one lifetime purchase.</p>
+        </div>
+      </div>
+      <h3>Important fitness note</h3>
+      <p>Coach Clock provides timing tools only. It does not provide medical, fitness, safety, or coaching advice. You choose the exercises, intensity, and suitability of every session.</p>
+    </section>
+
+    <section id="privacy">
+      <h2>Privacy Policy</h2>
+      <p>Last updated: June 18, 2026</p>
+      <h3>Data We Collect</h3>
+      <p>Coach Clock is local-first. We do not require an account, do not show ads, do not use tracking, and do not collect analytics. Timer templates, settings, and session history are stored on your device unless you choose to share or export them.</p>
+      <h3>Purchases</h3>
+      <p>Coach Clock Pro purchases are processed by Apple through the App Store. Apple may provide purchase status information needed to unlock Pro features. We do not receive or store your payment card details.</p>
+      <h3>Shared Templates</h3>
+      <p>If you export or share a Coach Clock template, the exported file may contain the template name, interval names, durations, colors, rounds, and cue settings. Only share templates you are comfortable sending to others.</p>
+      <h3>Third Parties</h3>
+      <p>Coach Clock does not use third-party advertising SDKs, tracking SDKs, or external analytics services.</p>
+      <h3>Retention and Deletion</h3>
+      <p>Templates and history remain on your device until you edit, delete, reset, or uninstall the app. You can remove templates from inside the app at any time.</p>
+      <h3>Contact</h3>
+      <p>For privacy questions, email <a href="mailto:pals_green.1m@icloud.com">pals_green.1m@icloud.com</a>.</p>
+    </section>
+
+    <section id="terms">
+      <h2>Terms of Use</h2>
+      <p>By using Coach Clock, you agree to these terms.</p>
+      <h3>Timing Tool Only</h3>
+      <p>Coach Clock provides customizable timers for workouts, drills, intervals, rounds, rest periods, and routines. It does not provide medical advice, fitness advice, safety advice, diagnosis, treatment, or personalized training plans.</p>
+      <h3>User Responsibility</h3>
+      <p>You are responsible for choosing appropriate exercises, intensity, rest, supervision, and safety equipment. Stop exercising if you feel pain, dizziness, shortness of breath, or discomfort. Consult a qualified professional before starting or changing an exercise routine, especially if you have a medical condition, injury, are pregnant, or are new to exercise.</p>
+      <h3>Purchases</h3>
+      <p>Coach Clock Pro is sold through Apple In-App Purchase as a lifetime unlock when available. Purchases, refunds, and family sharing are handled by Apple and subject to Apple's Media Services Terms and Conditions.</p>
+      <h3>No Warranty</h3>
+      <p>The app is provided "as is" without warranties of any kind. We are not responsible for injury, loss, missed cues, device issues, or workout outcomes related to use of the app.</p>
+      <h3>Contact</h3>
+      <p>For terms questions, email <a href="mailto:pals_green.1m@icloud.com">pals_green.1m@icloud.com</a>.</p>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2026 Coach Clock · All rights reserved.</p>
+  </footer>
+</body>
+</html>
