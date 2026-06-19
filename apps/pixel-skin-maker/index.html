@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pixel Skin Maker Support</title>
+  <meta name="description" content="Support, privacy policy, and terms of use for Pixel Skin Maker for Minecraft, a fair pixel skin editor. Not affiliated with Mojang or Microsoft.">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --violet: #7B4FE6;
+      --teal: #2EBDC7;
+      --coral: #FA736B;
+      --ink: #14121A;
+      --muted: #6B6577;
+      --bg: #F7F6FA;
+      --card: #FFFFFF;
+      --line: #E7E4EE;
+      --navy: #1A1330;
+    }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", system-ui, sans-serif;
+      color: var(--ink);
+      background: var(--bg);
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+    }
+    nav {
+      position: sticky; top: 0; z-index: 10;
+      background: rgba(247,246,250,0.92);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--line);
+    }
+    .nav-inner {
+      max-width: 1040px; margin: 0 auto; padding: 14px 22px;
+      display: flex; justify-content: space-between; gap: 18px; align-items: center;
+    }
+    .brand { display: flex; align-items: center; gap: 10px; color: var(--ink); text-decoration: none; font-weight: 800; }
+    .brand img { width: 34px; height: 34px; border-radius: 9px; box-shadow: 0 6px 18px rgba(123,79,230,0.26); }
+    .links { display: flex; gap: 14px; flex-wrap: wrap; }
+    .links a { color: var(--muted); text-decoration: none; font-size: 13px; font-weight: 700; }
+    header {
+      color: white;
+      background:
+        radial-gradient(circle at 18% 20%, rgba(250,115,107,0.34), transparent 28%),
+        radial-gradient(circle at 88% 18%, rgba(46,189,199,0.30), transparent 30%),
+        linear-gradient(140deg, var(--violet), var(--navy));
+      padding: 82px 22px 72px;
+    }
+    .hero { max-width: 1040px; margin: 0 auto; display: grid; grid-template-columns: 0.9fr 1.1fr; gap: 42px; align-items: center; }
+    .icon { width: 128px; height: 128px; border-radius: 30px; box-shadow: 0 24px 60px rgba(0,0,0,0.28); margin-bottom: 24px; }
+    .eyebrow { color: #E3D6FF; font-size: 12px; letter-spacing: 2.6px; text-transform: uppercase; font-weight: 800; margin-bottom: 12px; }
+    h1 { font-size: clamp(40px, 6.6vw, 68px); line-height: 0.98; letter-spacing: -2.4px; margin-bottom: 18px; }
+    .tagline { max-width: 640px; color: #EADFFF; font-size: 19px; }
+    .hero-card {
+      background: rgba(255,255,255,0.12);
+      border: 1px solid rgba(255,255,255,0.18);
+      border-radius: 32px;
+      padding: 28px;
+      box-shadow: 0 24px 70px rgba(0,0,0,0.22);
+    }
+    .canvas-preview {
+      background: #0E0A18;
+      border-radius: 24px;
+      padding: 26px;
+      text-align: center;
+      border: 1px solid rgba(255,255,255,0.12);
+    }
+    .swatches { display: grid; grid-template-columns: repeat(8, 1fr); gap: 6px; margin-top: 6px; }
+    .swatches span { aspect-ratio: 1; border-radius: 5px; }
+    .canvas-preview .label { color: #C9BEE6; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; font-size: 12px; margin-bottom: 12px; }
+    main { max-width: 1040px; margin: 0 auto; padding: 58px 22px 78px; }
+    section {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 28px;
+      padding: 34px;
+      margin-bottom: 22px;
+      box-shadow: 0 16px 50px rgba(20,18,26,0.06);
+    }
+    h2 { font-size: 28px; letter-spacing: -0.7px; margin-bottom: 12px; }
+    h3 { font-size: 18px; margin-top: 24px; margin-bottom: 8px; }
+    p, li { color: var(--muted); }
+    ul { padding-left: 22px; margin: 12px 0; }
+    .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 22px; }
+    .mini {
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      padding: 18px;
+      background: #FBFAFE;
+    }
+    .mini strong { display: block; margin-bottom: 6px; color: var(--ink); }
+    .disclaimer {
+      margin-top: 22px; padding: 16px 18px;
+      border: 1px solid var(--line); border-radius: 16px;
+      background: #FBFAFE; color: var(--muted); font-size: 14px;
+    }
+    footer { padding: 34px 22px; text-align: center; color: var(--muted); font-size: 13px; }
+    @media (max-width: 780px) {
+      .hero { grid-template-columns: 1fr; }
+      .grid { grid-template-columns: 1fr; }
+      .links { display: none; }
+      section { padding: 24px; }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="nav-inner">
+      <a class="brand" href="../../">
+        <img src="icon.png" alt="Pixel Skin Maker icon">
+        <span>Pixel Skin Maker</span>
+      </a>
+      <div class="links">
+        <a href="#support">Support</a>
+        <a href="#privacy">Privacy</a>
+        <a href="#terms">Terms</a>
+      </div>
+    </div>
+  </nav>
+
+  <header>
+    <div class="hero">
+      <div>
+        <img class="icon" src="icon.png" alt="Pixel Skin Maker icon">
+        <p class="eyebrow">Pixel Skin Editor</p>
+        <h1>Make your own skin, pixel by pixel.</h1>
+        <p class="tagline">Pixel Skin Maker is a fair, fast skin editor for Minecraft. Paint a 64&times;64 character, then export the PNG straight into the game. No ad walls, no subscription, no account.</p>
+      </div>
+      <div class="hero-card" aria-hidden="true">
+        <div class="canvas-preview">
+          <div class="label">Your palette</div>
+          <div class="swatches">
+            <span style="background:#C0392B"></span><span style="background:#E67E22"></span>
+            <span style="background:#F1C40F"></span><span style="background:#2ECC71"></span>
+            <span style="background:#1ABC9C"></span><span style="background:#3498DB"></span>
+            <span style="background:#7B4FE6"></span><span style="background:#E84393"></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section id="support">
+      <h2>Support</h2>
+      <p>Need help with Pixel Skin Maker? Email <a href="mailto:pals_green.1m@icloud.com">pals_green.1m@icloud.com</a> and include your device model, iOS version, and a short description of the issue.</p>
+      <p>Prefer to call? Reach us at <a href="tel:+491728455339">+49 172 8455339</a>.</p>
+      <div class="grid">
+        <div class="mini">
+          <strong>The editor</strong>
+          <p>A real 64&times;64 pixel canvas with body and overlay layers, pencil, fill, eraser, and an eyedropper.</p>
+        </div>
+        <div class="mini">
+          <strong>Color tools</strong>
+          <p>Color wheel, a starter palette, and a recent-color history &mdash; free, with no ad walls on export.</p>
+        </div>
+        <div class="mini">
+          <strong>Pro</strong>
+          <p>One small one-time purchase unlocks unlimited saves, the Slim model, all bonus palettes, and removes ads.</p>
+        </div>
+      </div>
+      <h3>How to use your skin in Minecraft</h3>
+      <p>Export the PNG to Photos or Files, open Minecraft, go to the Dressing Room, edit your character, open Classic Skins, choose Import, pick your PNG, and select Classic or Slim to match. Custom (non-Marketplace) skins may only be visible to other players if "Only Allow Trusted Skins" is turned off &mdash; that is a Minecraft setting, not ours.</p>
+      <div class="disclaimer">
+        Pixel Skin Maker is an unofficial creation tool. It is <strong>not affiliated with, endorsed by, or associated with Mojang or Microsoft</strong>. It contains no Minecraft game files, textures, or characters &mdash; everything you make is your own original art. Minecraft is a trademark of Mojang Synergies AB / Microsoft.
+      </div>
+    </section>
+
+    <section id="privacy">
+      <h2>Privacy Policy</h2>
+      <p>Last updated: June 19, 2026</p>
+      <h3>Data We Collect</h3>
+      <p>Pixel Skin Maker is local-first. We do not require an account and do not run analytics. The skins you make are stored on your device unless you choose to export or share them.</p>
+      <h3>Advertising</h3>
+      <p>The free version may show optional, opt-in "watch a video" rewarded ads &mdash; only when you tap to unlock a cosmetic bonus. There are no banners, no pop-up ads, and your export is never blocked by an ad. Ads are provided by Google AdMob. Because this app is enjoyed by younger players, AdMob is configured for <strong>child-directed treatment</strong>, which means ads are <strong>non-personalized</strong> and we do not use advertising tracking (no IDFA tracking prompt). Buying Pro removes ads entirely.</p>
+      <h3>Purchases</h3>
+      <p>Pro purchases are processed by Apple through the App Store. Apple may provide purchase status needed to unlock Pro features. We do not receive or store your payment card details.</p>
+      <h3>Exported Skins</h3>
+      <p>If you export or share a skin, the exported PNG contains only the pixel art you created. Only share skins you are comfortable sending to others.</p>
+      <h3>Children</h3>
+      <p>We do not knowingly collect personal information from children. Ads are served in non-personalized, child-directed mode in line with COPPA and GDPR-K. For any concern, contact us and we will respond promptly.</p>
+      <h3>Retention and Deletion</h3>
+      <p>Your skins remain on your device until you delete them or uninstall the app. You can delete any skin from inside the app at any time.</p>
+      <h3>Contact</h3>
+      <p>For privacy questions, email <a href="mailto:pals_green.1m@icloud.com">pals_green.1m@icloud.com</a>.</p>
+    </section>
+
+    <section id="terms">
+      <h2>Terms of Use</h2>
+      <p>By using Pixel Skin Maker, you agree to these terms.</p>
+      <h3>A Creation Tool Only</h3>
+      <p>Pixel Skin Maker lets you draw your own original character skins and export them as PNG images. It is an unofficial tool and is not affiliated with, endorsed by, or associated with Mojang or Microsoft. It includes no Minecraft game content, textures, or characters.</p>
+      <h3>Your Content</h3>
+      <p>You own the skins you create. You are responsible for what you draw and for only sharing artwork you have the right to share. Do not use the app to create infringing, offensive, or unlawful content.</p>
+      <h3>Purchases</h3>
+      <p>Pro is sold through Apple In-App Purchase as a one-time unlock. Purchases, refunds, and family sharing are handled by Apple and subject to Apple's Media Services Terms and Conditions.</p>
+      <h3>No Warranty</h3>
+      <p>The app is provided "as is" without warranties of any kind. We are not responsible for how exported skins appear in any third-party game, or for changes to third-party import features.</p>
+      <h3>Contact</h3>
+      <p>For terms questions, email <a href="mailto:pals_green.1m@icloud.com">pals_green.1m@icloud.com</a>.</p>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 Pixel Skin Maker &middot; Not affiliated with Mojang or Microsoft &middot; All rights reserved.</p>
+  </footer>
+</body>
+</html>
