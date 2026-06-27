@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GarageLog Support</title>
+  <meta name="description" content="Support, privacy policy, and terms of use for GarageLog — the smart, private logbook for fuel, service, and expenses for every vehicle.">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --amber: #F2A93B;
+      --amber-deep: #C9781A;
+      --ink: #15191E;
+      --ink-2: #1E252D;
+      --canvas: #F6F7F9;
+      --white: #FFFFFF;
+      --text: #161A1F;
+      --muted: #5C6570;
+      --border: #E3E7EC;
+    }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", system-ui, sans-serif;
+      color: var(--text);
+      background: var(--canvas);
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+    nav {
+      position: sticky; top: 0; z-index: 10;
+      background: rgba(246,247,249,0.92);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-inner {
+      max-width: 1040px; margin: 0 auto; padding: 14px 22px;
+      display: flex; align-items: center; justify-content: space-between; gap: 16px;
+    }
+    .brand { color: var(--ink); text-decoration: none; font-weight: 800; letter-spacing: -0.3px; }
+    .nav-links { display: flex; gap: 14px; flex-wrap: wrap; }
+    .nav-links a { color: var(--muted); text-decoration: none; font-size: 14px; font-weight: 700; }
+    header {
+      background: linear-gradient(140deg, var(--ink), var(--ink-2));
+      color: var(--white);
+      padding: 92px 22px 86px;
+      overflow: hidden;
+      position: relative;
+    }
+    header::after {
+      content: "";
+      position: absolute; width: 380px; height: 380px; border-radius: 50%;
+      background: radial-gradient(circle, rgba(242,169,59,0.30), transparent 70%);
+      right: -130px; top: -150px;
+    }
+    .hero { max-width: 1040px; margin: 0 auto; position: relative; z-index: 1; }
+    .app-icon {
+      width: 96px; height: 96px; border-radius: 24px;
+      box-shadow: 0 22px 60px rgba(0,0,0,0.35);
+      margin-bottom: 24px; display: block;
+    }
+    .eyebrow {
+      display: inline-flex; padding: 6px 12px; border-radius: 999px;
+      background: rgba(242,169,59,0.16); color: var(--amber);
+      font-size: 12px; font-weight: 800; letter-spacing: 1.8px; text-transform: uppercase;
+      margin-bottom: 18px;
+    }
+    h1 {
+      font-size: clamp(40px, 7vw, 66px);
+      line-height: 1.04; letter-spacing: -1.6px; margin-bottom: 18px; font-weight: 800;
+    }
+    .hero p { color: rgba(255,255,255,0.82); font-size: 18px; max-width: 640px; }
+    main { max-width: 1040px; margin: -42px auto 0; padding: 0 22px 80px; position: relative; z-index: 2; }
+    section {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 28px;
+      padding: 34px;
+      margin-bottom: 22px;
+      box-shadow: 0 18px 50px rgba(21,25,30,0.06);
+    }
+    h2 { font-size: 30px; line-height: 1.16; color: var(--ink); margin-bottom: 16px; letter-spacing: -0.6px; }
+    h3 { font-size: 18px; color: var(--text); margin: 22px 0 8px; }
+    p, li { color: var(--muted); font-size: 15px; }
+    ul { padding-left: 22px; margin: 10px 0; }
+    a { color: var(--amber-deep); font-weight: 800; }
+    .cards {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 14px; margin-top: 18px;
+    }
+    .card { background: var(--canvas); border: 1px solid var(--border); border-radius: 20px; padding: 18px; }
+    .card strong { display: block; color: var(--text); margin-bottom: 4px; }
+    .notice {
+      background: rgba(242,169,59,0.12);
+      border: 1px solid rgba(242,169,59,0.32);
+      border-radius: 18px; padding: 16px; margin-top: 16px;
+    }
+    footer {
+      background: var(--ink); color: rgba(255,255,255,0.6);
+      text-align: center; padding: 34px 22px; font-size: 13px;
+    }
+    @media (max-width: 700px) {
+      .nav-inner { align-items: flex-start; flex-direction: column; }
+      header { padding: 64px 20px 72px; }
+      section { padding: 24px; border-radius: 24px; }
+      main { padding-left: 16px; padding-right: 16px; }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="nav-inner">
+      <a class="brand" href="../../">App Support</a>
+      <div class="nav-links">
+        <a href="#support">Support</a>
+        <a href="#privacy">Privacy</a>
+        <a href="#terms">Terms</a>
+      </div>
+    </div>
+  </nav>
+
+  <header>
+    <div class="hero">
+      <img class="app-icon" src="icon.png" alt="GarageLog app icon" width="96" height="96">
+      <div class="eyebrow">GarageLog</div>
+      <h1>Your whole garage, logged.</h1>
+      <p>GarageLog is the smart, private logbook for your car, motorcycle, truck, or EV. Track fuel, service, and expenses in seconds — with real fuel-economy math, smart reminders, and a health score for every vehicle. Local-first and yours to keep.</p>
+    </div>
+  </header>
+
+  <main>
+    <section id="support">
+      <h2>Support</h2>
+      <p>Need help with GarageLog? Contact support and include your device model, iOS version, and a short description of the issue. We usually reply within 1–2 business days.</p>
+      <div class="cards">
+        <div class="card">
+          <strong>Email</strong>
+          <a href="mailto:pals_green.1m@icloud.com">pals_green.1m@icloud.com</a>
+        </div>
+        <div class="card">
+          <strong>Phone</strong>
+          <a href="tel:+491728455339">+49 172 8455339</a>
+        </div>
+        <div class="card">
+          <strong>Bundle ID</strong>
+          <span>com.garagelog.app</span>
+        </div>
+      </div>
+
+      <h3>Frequently Asked Questions</h3>
+      <ul>
+        <li><strong>How does GarageLog calculate fuel economy?</strong> It uses your odometer and fill-up volume, and correctly handles full tanks, partial fills, and the occasional missed fill-up so your MPG / L/100km is accurate.</li>
+        <li><strong>Can I use miles and gallons — or kilometers and liters?</strong> Yes. Units and currency are fully configurable app-wide, and you can override them per vehicle.</li>
+        <li><strong>Does it support electric vehicles?</strong> Yes. GarageLog tracks kWh and charging costs for EVs alongside gas, diesel, and hybrid vehicles.</li>
+        <li><strong>How do reminders work?</strong> Set a reminder by mileage, by date, or both — GarageLog warns you whichever comes first and can predict the due date from how you actually drive.</li>
+        <li><strong>Where is my data stored?</strong> On your device. GarageLog is local-first — there are no accounts and your records are not uploaded to our servers. You can export everything to CSV or PDF at any time.</li>
+        <li><strong>What does GarageLog Pro include?</strong> Unlimited vehicles, advanced insights and anomaly alerts, smart predictive reminders, CSV &amp; PDF export, and no ads. Available as a one-time Lifetime unlock or a monthly / yearly plan.</li>
+        <li><strong>How do I restore my purchase?</strong> Open Settings inside the app and tap Restore Purchases. Pro is tied to your Apple ID.</li>
+      </ul>
+    </section>
+
+    <section id="privacy">
+      <h2>Privacy Policy</h2>
+      <p>Effective date: June 27, 2026</p>
+      <p>GarageLog is designed as a local-first, private logbook. This Privacy Policy explains what data is processed by the app and by the third-party services used for ads and purchases.</p>
+
+      <h3>Information You Provide</h3>
+      <ul>
+        <li>Vehicle details (name, make, model, year, and an optional photo or VIN you choose to add).</li>
+        <li>Fuel, service, and expense records, reminders, notes, and any receipt photos you add.</li>
+      </ul>
+      <p>This content is stored locally on your device. We do not operate an account system and we do not upload your vehicle records, notes, or photos to our own server.</p>
+
+      <h3>Camera and Photo Library</h3>
+      <p>The app asks for camera or photo library access only when you choose to add a vehicle photo or attach a receipt. You can manage these permissions at any time in iOS Settings.</p>
+
+      <h3>Notifications</h3>
+      <p>With your permission, GarageLog schedules local notifications to remind you about upcoming maintenance and expiring documents. These reminders are generated on your device.</p>
+
+      <h3>In-App Purchases</h3>
+      <p>GarageLog Pro is available as a one-time Lifetime purchase or as an auto-renewing monthly or yearly subscription, processed by Apple through StoreKit. Apple may process payment, purchase history, and account information according to Apple's own terms and privacy policy. We never see your payment details.</p>
+
+      <h3>Advertising</h3>
+      <p>The free version shows Google AdMob banner, interstitial, and rewarded ads. AdMob may process identifiers, advertising data, product interaction data, diagnostics, and related data for advertising and measurement. The app requests App Tracking Transparency permission before any tracking; you can decline and still use every feature. Upgrading to GarageLog Pro removes all ads.</p>
+
+      <h3>Data Sharing</h3>
+      <p>We do not sell your vehicle records, notes, or photos. We do not use your data for model training.</p>
+
+      <h3>Data Retention and Deletion</h3>
+      <p>Your vehicles, logs, reminders, notes, and photos remain on your device until you delete them or remove the app. You can delete individual records or entire vehicles at any time from within the app.</p>
+
+      <h3>Contact</h3>
+      <p>For privacy questions, contact <a href="mailto:pals_green.1m@icloud.com">pals_green.1m@icloud.com</a>.</p>
+    </section>
+
+    <section id="terms">
+      <h2>Terms of Use</h2>
+      <p>Effective date: June 27, 2026</p>
+
+      <h3>Acceptance of Terms</h3>
+      <p>By using GarageLog, you agree to these Terms of Use. If you do not agree, do not use the app.</p>
+
+      <h3>Personal Use</h3>
+      <p>GarageLog is provided as a personal vehicle logbook and maintenance tracker. Insights, health scores, and reminders are informational estimates based on the data you enter and are not a substitute for professional inspection or advice from a qualified mechanic.</p>
+
+      <h3>Purchases and Subscriptions</h3>
+      <p>GarageLog Pro is offered as a one-time Lifetime unlock and as auto-renewing monthly and yearly subscriptions through Apple in-app purchase. Subscriptions renew automatically unless cancelled at least 24 hours before the end of the current period; your Apple ID is charged for renewal within 24 hours prior to the end of the period. You can manage or cancel subscriptions in your Apple ID account settings. Any free-trial period is forfeited when you purchase Pro. The Lifetime unlock is a non-consumable purchase tied to your Apple ID and can be restored on any device signed in to the same Apple ID.</p>
+
+      <h3>Refunds</h3>
+      <p>All purchases are processed by Apple. Refund requests are handled by Apple according to App Store policies.</p>
+
+      <h3>Ads</h3>
+      <p>The free version shows ads. Upgrading to GarageLog Pro removes ads where technically available in the app.</p>
+
+      <h3>No Warranty</h3>
+      <p>The app is provided "as is" without warranties of any kind. We do not guarantee uninterrupted operation, data retention, or the accuracy of any estimate, prediction, or reminder.</p>
+
+      <h3>Limitation of Liability</h3>
+      <p>To the maximum extent permitted by law, we are not liable for indirect, incidental, special, or consequential damages arising from use of the app, including missed maintenance or vehicle issues.</p>
+
+      <h3>Contact</h3>
+      <p>For terms questions, contact <a href="mailto:pals_green.1m@icloud.com">pals_green.1m@icloud.com</a>.</p>
+    </section>
+  </main>
+
+  <footer>
+    © 2026 GarageLog. All rights reserved.
+  </footer>
+</body>
+</html>
