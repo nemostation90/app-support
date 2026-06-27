@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FaceForm Support</title>
+  <meta name="description" content="Support, privacy policy, and terms of use for FaceForm — gentle guided face-yoga and relaxation routines.">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --sage: #5F7F67;
+      --deep: #345241;
+      --sand: #F3EBDD;
+      --cream: #FAF8F3;
+      --blush: #D98C84;
+      --text: #1F2522;
+      --muted: #6E756F;
+      --border: #E6DDD0;
+      --white: #FFFFFF;
+    }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", system-ui, sans-serif;
+      color: var(--text);
+      background: var(--cream);
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+    nav {
+      position: sticky; top: 0; z-index: 10;
+      background: rgba(250,248,243,0.92);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-inner {
+      max-width: 1040px; margin: 0 auto; padding: 14px 22px;
+      display: flex; align-items: center; justify-content: space-between; gap: 16px;
+    }
+    .brand { color: var(--deep); text-decoration: none; font-weight: 800; letter-spacing: -0.3px; }
+    .nav-links { display: flex; gap: 14px; flex-wrap: wrap; }
+    .nav-links a { color: var(--muted); text-decoration: none; font-size: 14px; font-weight: 700; }
+    header {
+      background: linear-gradient(140deg, var(--deep), var(--sage));
+      color: var(--white);
+      padding: 92px 22px 86px;
+      overflow: hidden;
+      position: relative;
+    }
+    header::after {
+      content: "";
+      position: absolute; width: 360px; height: 360px; border-radius: 50%;
+      background: rgba(255,255,255,0.08);
+      right: -130px; top: -120px;
+    }
+    .hero { max-width: 1040px; margin: 0 auto; position: relative; z-index: 1; }
+    .app-icon {
+      width: 96px; height: 96px; border-radius: 24px;
+      box-shadow: 0 22px 60px rgba(0,0,0,0.22);
+      margin-bottom: 24px; display: block;
+    }
+    .eyebrow {
+      display: inline-flex; padding: 6px 12px; border-radius: 999px;
+      background: rgba(255,255,255,0.12); color: var(--sand);
+      font-size: 12px; font-weight: 800; letter-spacing: 1.8px; text-transform: uppercase;
+      margin-bottom: 18px;
+    }
+    h1 {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(42px, 7vw, 72px);
+      line-height: 1.02; letter-spacing: -2px; margin-bottom: 18px;
+    }
+    .hero p { color: rgba(255,255,255,0.82); font-size: 18px; max-width: 620px; }
+    main { max-width: 1040px; margin: -42px auto 0; padding: 0 22px 80px; position: relative; z-index: 2; }
+    section {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 28px;
+      padding: 34px;
+      margin-bottom: 22px;
+      box-shadow: 0 18px 50px rgba(31,37,34,0.07);
+    }
+    h2 {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 32px; line-height: 1.16; color: var(--deep); margin-bottom: 16px;
+    }
+    h3 { font-size: 18px; color: var(--text); margin: 22px 0 8px; }
+    p, li { color: var(--muted); font-size: 15px; }
+    ul { padding-left: 22px; margin: 10px 0; }
+    a { color: var(--sage); font-weight: 800; }
+    .cards {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 14px; margin-top: 18px;
+    }
+    .card {
+      background: var(--cream); border: 1px solid var(--border);
+      border-radius: 20px; padding: 18px;
+    }
+    .card strong { display: block; color: var(--text); margin-bottom: 4px; }
+    .notice {
+      background: rgba(217,140,132,0.12);
+      border: 1px solid rgba(217,140,132,0.30);
+      border-radius: 18px;
+      padding: 16px;
+      margin-top: 16px;
+    }
+    footer {
+      background: var(--deep); color: rgba(255,255,255,0.6);
+      text-align: center; padding: 34px 22px;
+      font-size: 13px;
+    }
+    @media (max-width: 700px) {
+      .nav-inner { align-items: flex-start; flex-direction: column; }
+      header { padding: 64px 20px 72px; }
+      section { padding: 24px; border-radius: 24px; }
+      main { padding-left: 16px; padding-right: 16px; }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="nav-inner">
+      <a class="brand" href="../../">App Support</a>
+      <div class="nav-links">
+        <a href="#support">Support</a>
+        <a href="#privacy">Privacy</a>
+        <a href="#terms">Terms</a>
+      </div>
+    </div>
+  </nav>
+
+  <header>
+    <div class="hero">
+      <img class="app-icon" src="icon.png" alt="FaceForm app icon" width="96" height="96">
+      <div class="eyebrow">FaceForm</div>
+      <h1>Gentle face-yoga, every day.</h1>
+      <p>FaceForm guides you through calming face-yoga and relaxation routines with clear visual tutorials, a private photo journal, and a streak tracker. Private, offline, and yours to keep.</p>
+    </div>
+  </header>
+
+  <main>
+    <section id="support">
+      <h2>Support</h2>
+      <p>Need help with FaceForm? Contact support and include your device model, iOS version, and a short description of the issue. We usually reply within 1–2 business days.</p>
+      <div class="cards">
+        <div class="card">
+          <strong>Email</strong>
+          <a href="mailto:pals_green.1m@icloud.com">pals_green.1m@icloud.com</a>
+        </div>
+        <div class="card">
+          <strong>Phone</strong>
+          <a href="tel:+491728455339">+49 172 8455339</a>
+        </div>
+        <div class="card">
+          <strong>Bundle ID</strong>
+          <span>com.facefitnesscoach.app</span>
+        </div>
+      </div>
+
+      <h3>Frequently Asked Questions</h3>
+      <ul>
+        <li><strong>How do the routines work?</strong> Each routine is a short, timed sequence of gentle face-yoga moves with a looping visual tutorial and step-by-step guidance.</li>
+        <li><strong>Where are my journal photos stored?</strong> Progress photos and notes stay on your device. Nothing is uploaded to our servers.</li>
+        <li><strong>Is this a medical app?</strong> No. FaceForm is a wellness and relaxation app for personal use only.</li>
+        <li><strong>What does the Lifetime Unlock include?</strong> It removes ads and unlocks every routine and exercise with a single one-time purchase — no subscription.</li>
+        <li><strong>How do I restore my purchase?</strong> Open Settings inside the app and tap Restore Purchases. The Lifetime Unlock is tied to your Apple ID.</li>
+        <li><strong>Can I change the app language?</strong> Yes. FaceForm is localized into 20 languages, selectable in Settings.</li>
+      </ul>
+    </section>
+
+    <section id="privacy">
+      <h2>Privacy Policy</h2>
+      <p>Effective date: June 27, 2026</p>
+      <p>FaceForm is designed as a local-first, private wellness app. This Privacy Policy explains what data is processed by the app and by the third-party services used for ads and purchases.</p>
+
+      <h3>Information You Provide</h3>
+      <ul>
+        <li>Progress photos you choose to capture or import into the journal.</li>
+        <li>Routine completion logs, streaks, goals, reminder times, and notes you enter.</li>
+      </ul>
+      <p>This content is stored locally on your device. We do not operate an account system and we do not upload your photos or notes to our own server.</p>
+
+      <h3>Camera and Photo Library</h3>
+      <p>The app asks for camera or photo library access only when you choose to take or import a journal photo. You can manage these permissions at any time in iOS Settings.</p>
+
+      <h3>In-App Purchases</h3>
+      <p>The Lifetime Unlock is a one-time, non-consumable purchase processed by Apple through StoreKit. Apple may process payment, purchase history, and account information according to Apple's own terms and privacy policy. We never see your payment details.</p>
+
+      <h3>Advertising</h3>
+      <p>The free version shows Google AdMob banner, interstitial, and rewarded ads. AdMob may process identifiers, advertising data, product interaction data, diagnostics, and related data for advertising and measurement. The app requests App Tracking Transparency permission before any tracking; you can decline and still use every feature. Purchasing the Lifetime Unlock removes all ads.</p>
+
+      <h3>Data Sharing</h3>
+      <p>We do not sell your personal photos or notes. We do not use your photos for medical diagnosis, model training, or advertising.</p>
+
+      <h3>Data Retention and Deletion</h3>
+      <p>Your in-app photos, logs, streaks, and notes remain on your device until you delete them or remove the app. You can delete individual journal entries at any time from within the app.</p>
+
+      <h3>Wellness Disclaimer</h3>
+      <div class="notice">
+        <p>FaceForm provides general wellness and relaxation routines for personal use. It does not provide medical advice, diagnosis, or treatment. Stop any exercise that causes pain or discomfort and consult a qualified healthcare professional with questions about a medical condition.</p>
+      </div>
+
+      <h3>Contact</h3>
+      <p>For privacy questions, contact <a href="mailto:pals_green.1m@icloud.com">pals_green.1m@icloud.com</a>.</p>
+    </section>
+
+    <section id="terms">
+      <h2>Terms of Use</h2>
+      <p>Effective date: June 27, 2026</p>
+
+      <h3>Acceptance of Terms</h3>
+      <p>By using FaceForm, you agree to these Terms of Use. If you do not agree, do not use the app.</p>
+
+      <h3>Personal Wellness Use Only</h3>
+      <p>The app is provided for personal relaxation, face-yoga practice, and progress journaling. It is not a medical device and does not provide medical advice, diagnosis, treatment, or prevention of any condition.</p>
+
+      <h3>Purchases</h3>
+      <p>FaceForm offers a one-time Lifetime Unlock through Apple in-app purchase, which removes ads and unlocks all routines and exercises. This is a non-consumable purchase tied to your Apple ID and is not an auto-renewing subscription. You can restore it on any device signed in to the same Apple ID.</p>
+
+      <h3>Refunds</h3>
+      <p>All purchases are processed by Apple. Refund requests are handled by Apple according to App Store policies.</p>
+
+      <h3>Ads</h3>
+      <p>The free version shows ads. Purchasing the Lifetime Unlock removes ads where technically available in the app.</p>
+
+      <h3>No Warranty</h3>
+      <p>The app is provided "as is" without warranties of any kind. We do not guarantee uninterrupted operation, data retention, or any particular physical or cosmetic outcome.</p>
+
+      <h3>Limitation of Liability</h3>
+      <p>To the maximum extent permitted by law, we are not liable for indirect, incidental, special, or consequential damages arising from use of the app.</p>
+
+      <h3>Contact</h3>
+      <p>For terms questions, contact <a href="mailto:pals_green.1m@icloud.com">pals_green.1m@icloud.com</a>.</p>
+    </section>
+  </main>
+
+  <footer>
+    © 2026 FaceForm. All rights reserved.
+  </footer>
+</body>
+</html>
