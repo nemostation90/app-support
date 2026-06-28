@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aquascape Journal Support</title>
+  <meta name="description" content="Support, privacy policy, and terms of use for Aquascape Journal — a calm, private logbook for planted aquariums with parameters, dosing plans, water changes and a scape photo timeline.">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --deep: #0C3B33;
+      --teal: #138A72;
+      --aqua: #2BB6A3;
+      --sand: #E7F3EC;
+      --cream: #F6FAF7;
+      --blue: #2E8FB8;
+      --text: #14201C;
+      --muted: #5C6A64;
+      --border: #DCE8E0;
+      --white: #FFFFFF;
+    }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", system-ui, sans-serif;
+      color: var(--text);
+      background: var(--cream);
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+    nav {
+      position: sticky; top: 0; z-index: 10;
+      background: rgba(246,250,247,0.92);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-inner {
+      max-width: 1040px; margin: 0 auto; padding: 14px 22px;
+      display: flex; align-items: center; justify-content: space-between; gap: 16px;
+    }
+    .brand { color: var(--deep); text-decoration: none; font-weight: 800; letter-spacing: -0.3px; }
+    .nav-links { display: flex; gap: 14px; flex-wrap: wrap; }
+    .nav-links a { color: var(--muted); text-decoration: none; font-size: 14px; font-weight: 700; }
+    header {
+      background: linear-gradient(140deg, var(--deep), var(--teal) 60%, var(--aqua));
+      color: var(--white);
+      padding: 92px 22px 86px;
+      overflow: hidden;
+      position: relative;
+    }
+    header::after {
+      content: "";
+      position: absolute; width: 360px; height: 360px; border-radius: 50%;
+      background: rgba(255,255,255,0.08);
+      right: -130px; top: -120px;
+    }
+    .hero { max-width: 1040px; margin: 0 auto; position: relative; z-index: 1; }
+    .app-icon {
+      width: 96px; height: 96px; border-radius: 24px;
+      box-shadow: 0 22px 60px rgba(0,0,0,0.22);
+      margin-bottom: 24px; display: block;
+    }
+    .eyebrow {
+      display: inline-flex; padding: 6px 12px; border-radius: 999px;
+      background: rgba(255,255,255,0.12); color: var(--sand);
+      font-size: 12px; font-weight: 800; letter-spacing: 1.8px; text-transform: uppercase;
+      margin-bottom: 18px;
+    }
+    h1 {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(42px, 7vw, 72px);
+      line-height: 1.02; letter-spacing: -2px; margin-bottom: 18px;
+    }
+    .hero p { color: rgba(255,255,255,0.85); font-size: 18px; max-width: 640px; }
+    main { max-width: 1040px; margin: -42px auto 0; padding: 0 22px 80px; position: relative; z-index: 2; }
+    section {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 28px;
+      padding: 34px;
+      margin-bottom: 22px;
+      box-shadow: 0 18px 50px rgba(20,32,28,0.07);
+    }
+    h2 {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 32px; line-height: 1.16; color: var(--deep); margin-bottom: 16px;
+    }
+    h3 { font-size: 18px; color: var(--text); margin: 22px 0 8px; }
+    p, li { color: var(--muted); font-size: 15px; }
+    ul { padding-left: 22px; margin: 10px 0; }
+    a { color: var(--teal); font-weight: 800; }
+    .cards {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 14px; margin-top: 18px;
+    }
+    .card {
+      background: var(--cream); border: 1px solid var(--border);
+      border-radius: 20px; padding: 18px;
+    }
+    .card strong { display: block; color: var(--text); margin-bottom: 4px; }
+    .notice {
+      background: rgba(43,182,163,0.12);
+      border: 1px solid rgba(43,182,163,0.30);
+      border-radius: 18px;
+      padding: 16px;
+      margin-top: 16px;
+    }
+    footer {
+      background: var(--deep); color: rgba(255,255,255,0.6);
+      text-align: center; padding: 34px 22px;
+      font-size: 13px;
+    }
+    @media (max-width: 700px) {
+      .nav-inner { align-items: flex-start; flex-direction: column; }
+      header { padding: 64px 20px 72px; }
+      section { padding: 24px; border-radius: 24px; }
+      main { padding-left: 16px; padding-right: 16px; }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="nav-inner">
+      <a class="brand" href="../../">App Support</a>
+      <div class="nav-links">
+        <a href="#support">Support</a>
+        <a href="#privacy">Privacy</a>
+        <a href="#terms">Terms</a>
+      </div>
+    </div>
+  </nav>
+
+  <header>
+    <div class="hero">
+      <img class="app-icon" src="icon.png" alt="Aquascape Journal app icon" width="96" height="96">
+      <div class="eyebrow">Aquascape Journal</div>
+      <h1>A calm log for planted tanks.</h1>
+      <p>Aquascape Journal keeps a real journal for every aquarium — log water parameters, plan and track fertilizer dosing, record water changes, and watch your scape grow on a photo timeline. Local-first, private, and yours to keep.</p>
+    </div>
+  </header>
+
+  <main>
+    <section id="support">
+      <h2>Support</h2>
+      <p>Need help with Aquascape Journal? Contact support and include your device model, iOS version, and a short description of the issue. We usually reply within 1–2 business days.</p>
+      <div class="cards">
+        <div class="card">
+          <strong>Email</strong>
+          <a href="mailto:pals_green.1m@icloud.com">pals_green.1m@icloud.com</a>
+        </div>
+        <div class="card">
+          <strong>Phone</strong>
+          <a href="tel:+491728455339">+49 172 8455339</a>
+        </div>
+        <div class="card">
+          <strong>Bundle ID</strong>
+          <span>com.aquascapejournalhq.app</span>
+        </div>
+      </div>
+
+      <h3>Frequently Asked Questions</h3>
+      <ul>
+        <li><strong>How does dosing work?</strong> Enter your tank's water volume and target parameters, and the app suggests fertilizer dosing as an informational husbandry estimate. Always verify with a test kit and a drop checker, and tune by observation.</li>
+        <li><strong>Where is my data stored?</strong> Your tanks, readings, dosing plans, photos and logs stay on your device. There is no account and nothing is uploaded to our servers.</li>
+        <li><strong>How do I delete all my data?</strong> Open Settings inside the app, scroll to "Privacy &amp; data" and tap "Delete all data" to permanently remove everything from your device.</li>
+        <li><strong>What does Aquascape Journal Pro include?</strong> A one-time Lifetime purchase removes ads and unlocks unlimited tanks, the full salt &amp; product database, advanced &amp; custom parameters, multi-parameter charts &amp; insights, the plant deficiency assistant, and CSV &amp; PDF export.</li>
+        <li><strong>How do I restore my purchase?</strong> Open Settings inside the app and tap Restore Purchase. Pro is tied to your Apple ID.</li>
+        <li><strong>Can I change the app language?</strong> Yes. Aquascape Journal is localized into 20 languages and follows your iOS language setting.</li>
+      </ul>
+    </section>
+
+    <section id="privacy">
+      <h2>Privacy Policy</h2>
+      <p>Effective date: June 28, 2026</p>
+      <p>Aquascape Journal is designed as a local-first, private aquarium logbook. This Privacy Policy explains what data is processed by the app and by the third-party services used for ads and purchases.</p>
+
+      <h3>Information You Provide</h3>
+      <ul>
+        <li>Tank profiles, water parameter readings, dosing plans, water-change logs, plants, livestock, maintenance tasks and notes you enter.</li>
+        <li>Scape photos you choose to capture or import into the journal.</li>
+      </ul>
+      <p>This content is stored locally on your device. We do not operate an account system and we do not upload your photos or logs to our own server.</p>
+
+      <h3>Camera and Photo Library</h3>
+      <p>The app asks for camera or photo library access only when you choose to take or import a journal photo. You can manage these permissions at any time in iOS Settings.</p>
+
+      <h3>In-App Purchases</h3>
+      <p>Aquascape Journal Pro is a one-time, non-consumable purchase processed by Apple through StoreKit. Apple may process payment, purchase history, and account information according to Apple's own terms and privacy policy. We never see your payment details.</p>
+
+      <h3>Advertising</h3>
+      <p>The free version shows Google AdMob banner, interstitial, and rewarded ads. AdMob may process identifiers, advertising data, product interaction data, diagnostics, and related data for advertising and measurement. The app requests App Tracking Transparency permission before any tracking; you can decline and still use every feature. Purchasing Aquascape Journal Pro removes all ads.</p>
+
+      <h3>Data Sharing</h3>
+      <p>We do not sell your personal data. We do not use your photos or journal data for model training or for advertising.</p>
+
+      <h3>Data Retention and Deletion</h3>
+      <p>Your in-app tanks, readings, plans, photos, and logs remain on your device until you delete them or remove the app. You can delete individual items at any time, and you can erase everything at once from Settings → Privacy &amp; data → Delete all data.</p>
+
+      <h3>Husbandry Disclaimer</h3>
+      <div class="notice">
+        <p>Aquascape Journal provides informational husbandry estimates for planted aquariums based on the water volume and values you enter. Dosing figures are not veterinary or medical advice — verify with a test kit and a drop checker, and tune by observation. Store fertilizer salts sealed and away from children and pets.</p>
+      </div>
+
+      <h3>Contact</h3>
+      <p>For privacy questions, contact <a href="mailto:pals_green.1m@icloud.com">pals_green.1m@icloud.com</a>.</p>
+    </section>
+
+    <section id="terms">
+      <h2>Terms of Use</h2>
+      <p>Effective date: June 28, 2026</p>
+
+      <h3>Acceptance of Terms</h3>
+      <p>By using Aquascape Journal, you agree to these Terms of Use. If you do not agree, do not use the app.</p>
+
+      <h3>Personal Hobby Use Only</h3>
+      <p>The app is provided for personal aquarium journaling and husbandry planning. Dosing and parameter guidance are informational estimates only and are not a substitute for your own testing and judgement.</p>
+
+      <h3>Purchases</h3>
+      <p>Aquascape Journal offers a one-time Lifetime Pro unlock through Apple in-app purchase, which removes ads and unlocks all Pro features. This is a non-consumable purchase tied to your Apple ID and is not an auto-renewing subscription. You can restore it on any device signed in to the same Apple ID.</p>
+
+      <h3>Refunds</h3>
+      <p>All purchases are processed by Apple. Refund requests are handled by Apple according to App Store policies.</p>
+
+      <h3>Ads</h3>
+      <p>The free version shows ads. Purchasing Aquascape Journal Pro removes ads where technically available in the app.</p>
+
+      <h3>No Warranty</h3>
+      <p>The app is provided "as is" without warranties of any kind. We do not guarantee uninterrupted operation, data retention, or any particular outcome for your aquarium.</p>
+
+      <h3>Limitation of Liability</h3>
+      <p>To the maximum extent permitted by law, we are not liable for indirect, incidental, special, or consequential damages — including livestock or plant loss — arising from use of the app.</p>
+
+      <h3>Contact</h3>
+      <p>For terms questions, contact <a href="mailto:pals_green.1m@icloud.com">pals_green.1m@icloud.com</a>.</p>
+    </section>
+  </main>
+
+  <footer>
+    © 2026 Aquascape Journal. All rights reserved.
+  </footer>
+</body>
+</html>
