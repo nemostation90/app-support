@@ -29,9 +29,9 @@ function advStarsFor(wpm, acc) {
 }
 function starStr(n) { return "★".repeat(n) + "☆".repeat(3 - n); }
 function spriteFor(adv) { return `img/spr-${adv.id.slice(4)}.jpg`; }
-function isUnlocked(i) {
-  if (i === 0) return true;
-  return !!advProgress[ADVENTURES[i - 1].id]?.cleared;
+function isUnlocked(_i) {
+  // All quests are always available (no locked progression).
+  return true;
 }
 
 // ---------- Persistence ----------
