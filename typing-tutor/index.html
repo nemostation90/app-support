@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SwiftKeys — Learn to Type</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="app">
+    <header class="topbar">
+      <div class="brand">
+        <div class="logo">⌨</div>
+        <span id="brandName">SwiftKeys</span>
+      </div>
+      <div class="topbar-actions">
+        <button class="btn ghost" id="themeBtn">🌙 Theme</button>
+        <button class="btn ghost" id="resetBtn">Reset progress</button>
+      </div>
+    </header>
+
+    <div class="layout">
+      <aside class="panel sidebar">
+        <h2>Lessons</h2>
+        <div id="lessonList"></div>
+      </aside>
+
+      <main class="panel stage">
+        <div class="stage-head">
+          <div>
+            <div class="lesson-title" id="lessonTitle">—</div>
+            <div class="lesson-unit" id="lessonUnit"></div>
+          </div>
+          <button class="btn primary" id="restartBtn">Restart</button>
+        </div>
+
+        <div class="metrics">
+          <div class="metric wpm"><div class="value" id="mWpm">0</div><div class="label">WPM</div></div>
+          <div class="metric acc"><div class="value" id="mAcc">100%</div><div class="label">Accuracy</div></div>
+          <div class="metric"><div class="value" id="mTime">0.0s</div><div class="label">Time</div></div>
+          <div class="metric"><div class="value" id="mErr">0</div><div class="label">Errors</div></div>
+        </div>
+
+        <div class="typing-box" id="typingBox" tabindex="0"></div>
+        <input class="hidden-input" id="hiddenInput" autocomplete="off" autocapitalize="off" autocorrect="off" spellcheck="false" />
+        <div class="tap-hint" id="tapHint">Click the text above and start typing</div>
+
+        <div class="keyboard" id="keyboard"></div>
+      </main>
+    </div>
+
+    <footer>
+      <span id="brandFooter">SwiftKeys</span> · Original typing trainer · Your progress is saved locally in this browser.
+    </footer>
+  </div>
+
+  <div class="overlay" id="overlay">
+    <div class="result-card">
+      <h3 id="resTitle">Lesson complete!</h3>
+      <div class="result-stars" id="resStars">★★★</div>
+      <div class="result-grid">
+        <div class="metric wpm"><div class="value" id="resWpm">0</div><div class="label">WPM</div></div>
+        <div class="metric acc"><div class="value" id="resAcc">100%</div><div class="label">Accuracy</div></div>
+      </div>
+      <div class="result-actions">
+        <button class="btn" id="resRetry">Try again</button>
+        <button class="btn primary" id="resNext">Next lesson →</button>
+      </div>
+    </div>
+  </div>
+
+  <script type="module" src="app.js"></script>
+</body>
+</html>
