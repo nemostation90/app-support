@@ -77,4 +77,13 @@ export const sfx = {
       tone(1568, 0.48, 0.3, { type: "triangle", gain: 0.14 });
     } catch {}
   },
+  // Extra celebratory sparkle cascade for a perfect 3-star win.
+  cheer() {
+    if (muted) return;
+    try {
+      const seq = [784, 988, 1175, 1319, 1568, 2093];
+      seq.forEach((f, i) => tone(f, 0.5 + i * 0.08, 0.18, { type: "triangle", gain: 0.12 }));
+      noiseBurst(0.5, 0.2, 0.08);
+    } catch {}
+  },
 };

@@ -28,6 +28,11 @@ function advStarsFor(wpm, acc) {
   return 1;
 }
 function starStr(n) { return "★".repeat(n) + "☆".repeat(3 - n); }
+function spriteFor(adv) { return `img/spr-${adv.id.slice(4)}.jpg`; }
+function isUnlocked(i) {
+  if (i === 0) return true;
+  return !!advProgress[ADVENTURES[i - 1].id]?.cleared;
+}
 
 // ---------- Persistence ----------
 function loadJSON(key) {
@@ -76,8 +81,10 @@ function renderAdventureList() {
   list.appendChild(u);
   ADVENTURES.forEach((adv, i) => {
     const item = document.createElement("div");
+    const unlocked = isUnlocked(i);
     item.className = "adv-item" +
-      (state.mode === "adventure" && state.advView === "battle" && i === state.advIndex ? " active" : "");
+      (state.mode === "adventure" && state.advView === "battle" && i === state.advIndex ? " active" : "") +
+      (unlocked ? "" : " locked");
     const rec = advProgress[adv.id];
     if (rec?.cleared) item.classList.add("done");
     const stars = rec?.stars ? `<span class="adv-stars">${starStr(rec.stars)}</span>` : "";
@@ -191,12 +198,16 @@ function renderQuestMap() {
   const map = $("questMap");
   map.innerHTML = "";
   ADVENTURES.forEach((adv, i) => {
+    const unlocked = isUnlocked(i);
     const card = document.createElement("div");
-    card.className = "quest-card" + (advProgress[adv.id]?.cleared ? " cleared" : "");
+    card.className = "quest-card" +
+      (advProgress[adv.id]?.cleared ? " cleared" : "") +
+      (unlocked ? "" : " locked");
     card.style.backgroundImage = `url("${adv.bg}")`;
     const stars = advProgress[adv.id]?.stars
       ? `<div class="qc-stars">${starStr(advProgress[adv.id].stars)}</div>` : "";
-    card.innerHTML = `<div class="qc-body">
+    const lock = unlocked ? "" : `<div class="qc-locked">🔒</div>`;
+    card.innerHTML = `${lock}<div class="qc-body">
         <div class="qc-emoji">${adv.emoji}</div>
         <div class="qc-title">${adv.title}</div>
         ${stars}
@@ -207,6 +218,7 @@ function renderQuestMap() {
 }
 
 function startQuest(index) {
+  if (!isUnlocked(index)) { sfx.error(); return; }
   state.advView = "battle";
   $("stage").classList.remove("map-view");
   $("lessonTitle").classList.remove("map-title");
@@ -292,7 +304,9 @@ function loadAdventure(index) {
   $("advGoalEmoji").textContent = adv.emoji;
   $("advGoalLabel").textContent = adv.goalLabel;
   const avatar = $("advAvatar");
-  avatar.textContent = adv.emoji;
+  avatar.textContent = "";
+  avatar.classList.add("has-sprite");
+  avatar.style.backgroundImage = `url("${spriteFor(adv)}")`;
   avatar.classList.remove("hit", "win");
   renderAdventureList();
   loadStage();
@@ -337,6 +351,21 @@ function spawnSparks() {
   }
 }
 
+function confetti() {
+  const colors = ["#ff6b6b", "#ffcf5c", "#4f8cff", "#3ddc97", "#a06bff", "#ff8ad8"];
+  for (let i = 0; i < 90; i++) {
+    const p = document.createElement("div");
+    p.className = "confetti-piece";
+    p.style.left = Math.random() * 100 + "vw";
+    p.style.background = colors[Math.floor(Math.random() * colors.length)];
+    p.style.setProperty("--dur", (1.6 + Math.random() * 1.6) + "s");
+    p.style.animationDelay = Math.random() * 0.4 + "s";
+    p.style.transform = `rotate(${Math.random() * 360}deg)`;
+    document.body.appendChild(p);
+    setTimeout(() => p.remove(), 3600);
+  }
+}
+
 function finishStage() {
   state.finished = true;
   stopTimer();
@@ -374,9 +403,10 @@ function finishStage() {
     avatar.classList.add("win");
     setTimeout(() => {
       sfx.win();
+      if (stars >= 3) { confetti(); sfx.cheer(); }
       showResult({
         win: true,
-        title: "Quest Complete!",
+        title: stars >= 3 ? "Perfect Quest!" : "Quest Complete!",
         emoji: adv.emoji,
         message: adv.winText,
         stars,
