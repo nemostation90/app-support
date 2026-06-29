@@ -12,3 +12,4 @@
 | Pixel Skin Maker for Minecraft | pixel-skin-maker | com.pixelskinstudio.app | In Development |
 | FaceForm | faceform | com.facefitnesscoach.app | TestFlight |
 | Aquascape Journal | aquascapejournal | com.aquascapejournalhq.app | TestFlight |
+| Loopart | loopart | com.loopartapp.app | TestFlight |
