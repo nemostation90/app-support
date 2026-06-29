@@ -21,6 +21,7 @@
           <button class="mode-tab active" id="tabLessons" data-mode="lessons">📘 Lessons</button>
           <button class="mode-tab" id="tabAdventures" data-mode="adventure">⚔️ Adventures</button>
         </div>
+        <button class="btn ghost" id="soundBtn">🔊 Sound</button>
         <button class="btn ghost" id="themeBtn">🌙 Theme</button>
         <button class="btn ghost" id="resetBtn">Reset progress</button>
       </div>
@@ -44,6 +45,10 @@
         </div>
 
         <div class="adv-panel" id="advPanel">
+          <div class="adv-avatar-wrap">
+            <div class="adv-avatar" id="advAvatar">👾</div>
+            <div class="adv-fx" id="advFx"></div>
+          </div>
           <div class="adv-enemy">
             <div class="adv-enemy-name"><span id="advGoalEmoji">👾</span> <span id="advGoalLabel">Enemy</span></div>
             <div class="adv-stage-count" id="advStageCount">Stage 1 / 6</div>

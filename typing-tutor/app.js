@@ -1,5 +1,6 @@
 import { LESSONS, FINGER_MAP, KEYBOARD_ROWS } from "./lessons.js";
 import { ADVENTURES } from "./adventures.js";
+import { sfx } from "./sfx.js";
 
 const STORE_KEY = "swiftkeys.progress.v1";
 const ADV_KEY = "swiftkeys.adventures.v1";
@@ -237,6 +238,9 @@ function loadAdventure(index) {
   $("lessonUnit").textContent = adv.intro;
   $("advGoalEmoji").textContent = adv.emoji;
   $("advGoalLabel").textContent = adv.goalLabel;
+  const avatar = $("advAvatar");
+  avatar.textContent = adv.emoji;
+  avatar.classList.remove("hit", "win");
   renderAdventureList();
   loadStage();
   focusInput();
@@ -254,6 +258,32 @@ function loadStage() {
   renderAll();
 }
 
+function reactEnemyHit() {
+  const avatar = $("advAvatar");
+  avatar.classList.remove("hit");
+  void avatar.offsetWidth; // restart animation
+  avatar.classList.add("hit");
+  setTimeout(() => avatar.classList.remove("hit"), 440);
+  spawnSparks();
+}
+
+function spawnSparks() {
+  const fx = $("advFx");
+  if (!fx) return;
+  const icons = ["✨", "💥", "⭐", "💫"];
+  for (let i = 0; i < 7; i++) {
+    const s = document.createElement("span");
+    s.className = "spark";
+    s.textContent = icons[Math.floor(Math.random() * icons.length)];
+    const angle = Math.random() * Math.PI * 2;
+    const dist = 40 + Math.random() * 50;
+    s.style.setProperty("--dx", `calc(-50% + ${Math.cos(angle) * dist}px)`);
+    s.style.setProperty("--dy", `calc(-50% + ${Math.sin(angle) * dist}px)`);
+    fx.appendChild(s);
+    setTimeout(() => s.remove(), 650);
+  }
+}
+
 function finishStage() {
   state.finished = true;
   stopTimer();
@@ -262,9 +292,11 @@ function finishStage() {
   // Deplete the enemy health by one stage.
   const remaining = (total - (state.stageIndex + 1)) / total;
   $("advHealthFill").style.width = (remaining * 100) + "%";
-  // Shake feedback.
+  // Shake + sound + enemy reaction.
   $("stage").classList.add("hit");
   setTimeout(() => $("stage").classList.remove("hit"), 320);
+  sfx.hit();
+  reactEnemyHit();
 
   if (state.stageIndex + 1 >= total) {
     // Adventure cleared.
@@ -273,15 +305,21 @@ function finishStage() {
     advProgress[adv.id] = { cleared: true, bestWpm: Math.max(wpm, advProgress[adv.id]?.bestWpm || 0) };
     saveAdvProgress();
     renderAdventureList();
-    setTimeout(() => showResult({
-      win: true,
-      title: "Quest Complete!",
-      emoji: adv.emoji,
-      message: adv.winText,
-      wpm,
-      acc,
-      nextLabel: "Next quest →",
-    }), 350);
+    const avatar = $("advAvatar");
+    avatar.classList.remove("hit");
+    avatar.classList.add("win");
+    setTimeout(() => {
+      sfx.win();
+      showResult({
+        win: true,
+        title: "Quest Complete!",
+        emoji: adv.emoji,
+        message: adv.winText,
+        wpm,
+        acc,
+        nextLabel: "Next quest →",
+      });
+    }, 350);
   } else {
     // Advance to next stage after a short beat.
     setTimeout(() => { state.stageIndex++; loadStage(); focusInput(); }, 500);
@@ -311,7 +349,8 @@ function handleChar(char) {
   $("tapHint").style.visibility = "hidden";
 
   const expected = state.text[state.typed.length];
-  if (char !== expected) state.errors++;
+  if (char !== expected) { state.errors++; sfx.error(); }
+  else sfx.key();
   state.typed += char;
 
   renderAll();
@@ -389,6 +428,16 @@ $("themeBtn").addEventListener("click", () => {
   $("themeBtn").textContent = next === "light" ? "☀️ Theme" : "🌙 Theme";
 });
 
+function updateSoundBtn() {
+  const muted = sfx.isMuted();
+  $("soundBtn").textContent = muted ? "🔇 Sound" : "🔊 Sound";
+  $("soundBtn").classList.toggle("muted", muted);
+}
+$("soundBtn").addEventListener("click", () => {
+  sfx.toggle();
+  updateSoundBtn();
+});
+
 // ---------- Boot ----------
 (function init() {
   const savedTheme = localStorage.getItem("swiftkeys.theme");
@@ -396,6 +445,7 @@ $("themeBtn").addEventListener("click", () => {
     document.documentElement.setAttribute("data-theme", savedTheme);
     $("themeBtn").textContent = savedTheme === "light" ? "☀️ Theme" : "🌙 Theme";
   }
+  updateSoundBtn();
   let start = LESSONS.findIndex((l) => !progress[l.id]);
   if (start < 0) start = 0;
   state.lessonIndex = start;
