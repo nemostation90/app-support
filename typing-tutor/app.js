@@ -8,9 +8,11 @@ const $ = (id) => document.getElementById(id);
 
 const state = {
   mode: "lessons",        // "lessons" | "adventure"
+  advView: "map",         // "map" | "battle"
   lessonIndex: 0,
   advIndex: 0,
   stageIndex: 0,
+  advStats: { chars: 0, errors: 0, start: null },
   text: "",
   typed: "",
   errors: 0,
@@ -18,6 +20,14 @@ const state = {
   finished: false,
   timer: null,
 };
+
+function advStarsFor(wpm, acc) {
+  // Kid-friendly thresholds.
+  if (acc >= 96 && wpm >= 18) return 3;
+  if (acc >= 88 && wpm >= 10) return 2;
+  return 1;
+}
+function starStr(n) { return "★".repeat(n) + "☆".repeat(3 - n); }
 
 // ---------- Persistence ----------
 function loadJSON(key) {
@@ -67,10 +77,12 @@ function renderAdventureList() {
   ADVENTURES.forEach((adv, i) => {
     const item = document.createElement("div");
     item.className = "adv-item" +
-      (state.mode === "adventure" && i === state.advIndex ? " active" : "");
-    if (advProgress[adv.id]?.cleared) item.classList.add("done");
-    item.innerHTML = `<span class="adv-emoji">${adv.emoji}</span><span class="adv-name">${adv.title}</span>`;
-    item.addEventListener("click", () => loadAdventure(i));
+      (state.mode === "adventure" && state.advView === "battle" && i === state.advIndex ? " active" : "");
+    const rec = advProgress[adv.id];
+    if (rec?.cleared) item.classList.add("done");
+    const stars = rec?.stars ? `<span class="adv-stars">${starStr(rec.stars)}</span>` : "";
+    item.innerHTML = `<span class="adv-emoji">${adv.emoji}</span><span class="adv-name">${adv.title}</span>${stars}`;
+    item.addEventListener("click", () => startQuest(i));
     list.appendChild(item);
   });
 }
@@ -158,8 +170,48 @@ function setMode(mode) {
     loadLesson(state.lessonIndex);
   } else {
     renderAdventureList();
-    loadAdventure(state.advIndex);
+    showMap();
   }
+}
+
+function showMap() {
+  state.mode = "adventure";
+  state.advView = "map";
+  document.documentElement.style.removeProperty("--accent");
+  $("stage").classList.add("map-view");
+  $("lessonTitle").textContent = "Choose Your Quest";
+  $("lessonTitle").classList.add("map-title");
+  $("lessonUnit").textContent = "Pick an adventure and type to win!";
+  $("lessonUnit").classList.add("map-title");
+  renderQuestMap();
+  renderAdventureList();
+}
+
+function renderQuestMap() {
+  const map = $("questMap");
+  map.innerHTML = "";
+  ADVENTURES.forEach((adv, i) => {
+    const card = document.createElement("div");
+    card.className = "quest-card" + (advProgress[adv.id]?.cleared ? " cleared" : "");
+    card.style.backgroundImage = `url("${adv.bg}")`;
+    const stars = advProgress[adv.id]?.stars
+      ? `<div class="qc-stars">${starStr(advProgress[adv.id].stars)}</div>` : "";
+    card.innerHTML = `<div class="qc-body">
+        <div class="qc-emoji">${adv.emoji}</div>
+        <div class="qc-title">${adv.title}</div>
+        ${stars}
+      </div>`;
+    card.addEventListener("click", () => startQuest(i));
+    map.appendChild(card);
+  });
+}
+
+function startQuest(index) {
+  state.advView = "battle";
+  $("stage").classList.remove("map-view");
+  $("lessonTitle").classList.remove("map-title");
+  $("lessonUnit").classList.remove("map-title");
+  loadAdventure(index);
 }
 
 // ---------- Lessons flow ----------
@@ -231,6 +283,7 @@ function loadAdventure(index) {
   state.mode = "adventure";
   state.advIndex = index;
   state.stageIndex = 0;
+  state.advStats = { chars: 0, errors: 0, start: null };
   const adv = ADVENTURES[index];
   $("stageBg").style.backgroundImage = `url("${adv.bg}")`;
   document.documentElement.style.setProperty("--accent", adv.accent);
@@ -289,6 +342,9 @@ function finishStage() {
   stopTimer();
   const adv = ADVENTURES[state.advIndex];
   const total = adv.stages.length;
+  // Accumulate quest-wide stats (before the next stage resets them).
+  state.advStats.chars += state.typed.length;
+  state.advStats.errors += state.errors;
   // Deplete the enemy health by one stage.
   const remaining = (total - (state.stageIndex + 1)) / total;
   $("advHealthFill").style.width = (remaining * 100) + "%";
@@ -299,10 +355,18 @@ function finishStage() {
   reactEnemyHit();
 
   if (state.stageIndex + 1 >= total) {
-    // Adventure cleared.
-    const wpm = computeWpm();
-    const acc = computeAccuracy();
-    advProgress[adv.id] = { cleared: true, bestWpm: Math.max(wpm, advProgress[adv.id]?.bestWpm || 0) };
+    // Adventure cleared — compute quest-wide score.
+    const minutes = Math.max((Date.now() - (state.advStats.start || Date.now())) / 60000, 1 / 600);
+    const wpm = Math.max(0, Math.round((state.advStats.chars / 5) / minutes));
+    const acc = state.advStats.chars
+      ? Math.round(((state.advStats.chars - state.advStats.errors) / state.advStats.chars) * 100) : 100;
+    const stars = advStarsFor(wpm, acc);
+    const prev = advProgress[adv.id] || {};
+    advProgress[adv.id] = {
+      cleared: true,
+      stars: Math.max(stars, prev.stars || 0),
+      bestWpm: Math.max(wpm, prev.bestWpm || 0),
+    };
     saveAdvProgress();
     renderAdventureList();
     const avatar = $("advAvatar");
@@ -315,6 +379,7 @@ function finishStage() {
         title: "Quest Complete!",
         emoji: adv.emoji,
         message: adv.winText,
+        stars,
         wpm,
         acc,
         nextLabel: "Next quest →",
@@ -332,7 +397,8 @@ function showResult({ win, title, emoji, message, stars, wpm, acc, nextLabel }) 
   card.classList.toggle("win", !!win);
   $("resTitle").textContent = title;
   if (win) {
-    $("resStars").innerHTML = `<div class="result-win-emoji">${emoji}</div>${message || ""}`;
+    const starsRow = stars ? `<div class="result-stars-row">${starStr(stars)}</div>` : "";
+    $("resStars").innerHTML = `<div class="result-win-emoji">${emoji}</div>${starsRow}${message || ""}`;
   } else {
     $("resStars").textContent = "★".repeat(stars) + "☆".repeat(3 - stars);
   }
@@ -345,7 +411,9 @@ function showResult({ win, title, emoji, message, stars, wpm, acc, nextLabel }) 
 // ---------- Char handling ----------
 function handleChar(char) {
   if (state.finished) return;
+  if (state.mode === "adventure" && state.advView === "map") return;
   if (!state.startTime) { state.startTime = Date.now(); startTimer(); }
+  if (state.mode === "adventure" && !state.advStats.start) state.advStats.start = Date.now();
   $("tapHint").style.visibility = "hidden";
 
   const expected = state.text[state.typed.length];
@@ -400,15 +468,18 @@ $("restartBtn").addEventListener("click", () => {
   else loadLesson(state.lessonIndex);
 });
 
+$("mapBtn").addEventListener("click", showMap);
+
 $("resRetry").addEventListener("click", () => {
   $("overlay").classList.remove("show");
-  if (state.mode === "adventure") loadAdventure(state.advIndex);
+  if (state.mode === "adventure") startQuest(state.advIndex);
   else loadLesson(state.lessonIndex);
 });
 $("resNext").addEventListener("click", () => {
   $("overlay").classList.remove("show");
   if (state.mode === "adventure") {
-    loadAdventure(Math.min(state.advIndex + 1, ADVENTURES.length - 1));
+    if (state.advIndex + 1 >= ADVENTURES.length) showMap();
+    else startQuest(state.advIndex + 1);
   } else {
     loadLesson(Math.min(state.lessonIndex + 1, LESSONS.length - 1));
   }
@@ -440,7 +511,9 @@ $("soundBtn").addEventListener("click", () => {
 
 // ---------- Boot ----------
 (function init() {
-  const savedTheme = localStorage.getItem("swiftkeys.theme");
+  const params = new URLSearchParams(location.search);
+  const themeOverride = params.get("theme");
+  const savedTheme = themeOverride || localStorage.getItem("swiftkeys.theme");
   if (savedTheme) {
     document.documentElement.setAttribute("data-theme", savedTheme);
     $("themeBtn").textContent = savedTheme === "light" ? "☀️ Theme" : "🌙 Theme";
@@ -449,6 +522,15 @@ $("soundBtn").addEventListener("click", () => {
   let start = LESSONS.findIndex((l) => !progress[l.id]);
   if (start < 0) start = 0;
   state.lessonIndex = start;
-  const wantsAdventure = location.hash.toLowerCase().startsWith("#adventure");
-  setMode(wantsAdventure ? "adventure" : "lessons");
+
+  const hash = location.hash.toLowerCase();
+  const questMatch = hash.match(/^#quest-(\d+)/);
+  if (questMatch) {
+    setMode("adventure");
+    startQuest(Math.min(parseInt(questMatch[1], 10), ADVENTURES.length - 1));
+  } else if (hash.startsWith("#adventure")) {
+    setMode("adventure");
+  } else {
+    setMode("lessons");
+  }
 })();

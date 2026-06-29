@@ -261,8 +261,21 @@ footer { text-align: center; color: var(--text-dim); font-size: 12px; margin-top
   border-color: rgba(255,255,255,.18);
   backdrop-filter: blur(2px);
 }
-.stage.adventure .key { background: rgba(20,26,40,.72); }
+.stage.adventure .key { background: rgba(20,26,40,.72); color: #d6deec; }
 .stage.adventure .tap-hint { color: #e8edf6; text-shadow: 0 1px 4px rgba(0,0,0,.6); }
+
+/* Adventure runs over a darkened photo, so foreground colors are locked
+   to legible light values in BOTH light and dark themes (the theme
+   variables would otherwise flip dark and become unreadable here). */
+.stage.adventure .typing-box .char.pending { color: #aeb8cc; }
+.stage.adventure .typing-box .char.correct { color: #56e39b; }
+.stage.adventure .typing-box .char.incorrect { color: #ff8585; background: rgba(255,107,107,.22); }
+.stage.adventure .typing-box .char.current { color: #fff; }
+.stage.adventure .metric .value { color: #fff; }
+.stage.adventure .metric.wpm .value { color: #8ab4ff; }
+.stage.adventure .metric.acc .value { color: #56e39b; }
+.stage.adventure .metric .label { color: rgba(255,255,255,.78); }
+.stage.adventure .key.pressed { color: #fff; }
 
 /* Adventure story panel */
 .adv-panel { display: none; margin: 14px 0 4px; }
@@ -352,3 +365,57 @@ footer { text-align: center; color: var(--text-dim); font-size: 12px; margin-top
 }
 
 .btn.muted { opacity: .55; }
+
+/* ---------- Adventure stars in sidebar ---------- */
+.adv-item .adv-stars { font-size: 12px; letter-spacing: 1px; color: var(--warn); white-space: nowrap; }
+.adv-item.done .adv-name::after { content: ""; }
+
+/* ---------- World map quest select ---------- */
+.quest-map { display: none; }
+.stage.map-view .quest-map {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 14px;
+}
+/* In map view, hide the battle UI. */
+.stage.map-view .adv-panel,
+.stage.map-view .metrics,
+.stage.map-view .typing-box,
+.stage.map-view .tap-hint,
+.stage.map-view .keyboard,
+.stage.map-view #restartBtn,
+.stage.map-view #mapBtn { display: none; }
+
+.quest-card {
+  position: relative; cursor: pointer;
+  border-radius: var(--radius); overflow: hidden;
+  border: 2px solid rgba(255,255,255,.18);
+  aspect-ratio: 16 / 11;
+  background-size: cover; background-position: center;
+  box-shadow: var(--shadow);
+  transition: transform .15s ease, border-color .15s ease;
+}
+.quest-card:hover { transform: translateY(-3px) scale(1.02); border-color: #fff; }
+.quest-card::after {
+  content: ""; position: absolute; inset: 0;
+  background: linear-gradient(180deg, rgba(0,0,0,.1) 30%, rgba(0,0,0,.78) 100%);
+}
+.quest-card .qc-body {
+  position: absolute; inset: auto 0 0 0; z-index: 1;
+  padding: 10px 12px; color: #fff;
+}
+.quest-card .qc-emoji { font-size: 24px; filter: drop-shadow(0 2px 4px rgba(0,0,0,.6)); }
+.quest-card .qc-title { font-size: 14px; font-weight: 800; text-shadow: 0 2px 6px rgba(0,0,0,.8); margin-top: 2px; }
+.quest-card .qc-stars { font-size: 13px; letter-spacing: 2px; color: var(--warn); text-shadow: 0 1px 3px rgba(0,0,0,.7); }
+.quest-card .qc-locked {
+  position: absolute; inset: 0; z-index: 2;
+  display: grid; place-items: center; font-size: 30px;
+  background: rgba(8,12,20,.62); color: #fff;
+}
+.quest-card.cleared { border-color: var(--good); }
+
+.map-title { color: var(--text); }
+.stage.adventure.map-view .stage-bg { opacity: 0; }
+.stage.adventure.map-view .map-title { color: var(--text); }
+
+.result-stars-row { font-size: 30px; color: var(--warn); letter-spacing: 4px; margin: 8px 0; }
