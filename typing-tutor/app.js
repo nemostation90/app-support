@@ -1,10 +1,15 @@
 import { LESSONS, FINGER_MAP, KEYBOARD_ROWS } from "./lessons.js";
+import { ADVENTURES } from "./adventures.js";
 
 const STORE_KEY = "swiftkeys.progress.v1";
+const ADV_KEY = "swiftkeys.adventures.v1";
 const $ = (id) => document.getElementById(id);
 
 const state = {
+  mode: "lessons",        // "lessons" | "adventure"
   lessonIndex: 0,
+  advIndex: 0,
+  stageIndex: 0,
   text: "",
   typed: "",
   errors: 0,
@@ -13,22 +18,20 @@ const state = {
   timer: null,
 };
 
-// ---------- Progress persistence ----------
-function loadProgress() {
-  try { return JSON.parse(localStorage.getItem(STORE_KEY)) || {}; }
+// ---------- Persistence ----------
+function loadJSON(key) {
+  try { return JSON.parse(localStorage.getItem(key)) || {}; }
   catch { return {}; }
 }
-function saveProgress(p) {
-  localStorage.setItem(STORE_KEY, JSON.stringify(p));
-}
-let progress = loadProgress();
+let progress = loadJSON(STORE_KEY);
+let advProgress = loadJSON(ADV_KEY);
+function saveProgress() { localStorage.setItem(STORE_KEY, JSON.stringify(progress)); }
+function saveAdvProgress() { localStorage.setItem(ADV_KEY, JSON.stringify(advProgress)); }
 
-// ---------- Lesson text ----------
-function lessonText(lesson) {
-  return lesson.lines.join(" ");
-}
+// ---------- Shared text helpers ----------
+function lessonText(lesson) { return lesson.lines.join(" "); }
 
-// ---------- Rendering ----------
+// ---------- Sidebar lists ----------
 function renderLessonList() {
   const list = $("lessonList");
   list.innerHTML = "";
@@ -42,7 +45,8 @@ function renderLessonList() {
       list.appendChild(u);
     }
     const item = document.createElement("div");
-    item.className = "lesson-item" + (i === state.lessonIndex ? " active" : "");
+    item.className = "lesson-item" +
+      (state.mode === "lessons" && i === state.lessonIndex ? " active" : "");
     const rec = progress[lesson.id];
     if (rec) item.classList.add("done");
     const stars = rec ? "★".repeat(rec.stars) + "☆".repeat(3 - rec.stars) : "";
@@ -52,6 +56,25 @@ function renderLessonList() {
   });
 }
 
+function renderAdventureList() {
+  const list = $("lessonList");
+  list.innerHTML = "";
+  const u = document.createElement("div");
+  u.className = "unit-label";
+  u.textContent = "Choose your quest";
+  list.appendChild(u);
+  ADVENTURES.forEach((adv, i) => {
+    const item = document.createElement("div");
+    item.className = "adv-item" +
+      (state.mode === "adventure" && i === state.advIndex ? " active" : "");
+    if (advProgress[adv.id]?.cleared) item.classList.add("done");
+    item.innerHTML = `<span class="adv-emoji">${adv.emoji}</span><span class="adv-name">${adv.title}</span>`;
+    item.addEventListener("click", () => loadAdventure(i));
+    list.appendChild(item);
+  });
+}
+
+// ---------- Typing surface ----------
 function renderTypingBox() {
   const box = $("typingBox");
   box.innerHTML = "";
@@ -60,15 +83,12 @@ function renderTypingBox() {
     const ch = state.text[i];
     const span = document.createElement("span");
     span.className = "char";
-    span.textContent = ch === " " ? "\u00B7" : ch; // visible middot for space
+    span.textContent = ch === " " ? "\u00B7" : ch;
     if (ch === " ") span.classList.add("space");
-
     if (i < pos) {
       span.classList.add(state.typed[i] === ch ? "correct" : "incorrect");
-      if (ch === " ") span.textContent = "\u00B7";
     } else if (i === pos) {
       span.classList.add("current");
-      span.textContent = ch === " " ? "\u00B7" : ch;
     } else {
       span.classList.add("pending");
     }
@@ -92,9 +112,7 @@ function renderKeyboard() {
       k.dataset.key = key;
       k.dataset.finger = FINGER_MAP[key] || "";
       k.textContent = key === " " ? "space" : key;
-      if (key === nextLower || (key === " " && nextChar === " ")) {
-        k.classList.add("next");
-      }
+      if (key === nextLower || (key === " " && nextChar === " ")) k.classList.add("next");
       rowEl.appendChild(k);
     });
     kb.appendChild(rowEl);
@@ -106,8 +124,7 @@ function computeWpm() {
   if (!state.startTime) return 0;
   const minutes = (Date.now() - state.startTime) / 60000;
   if (minutes <= 0) return 0;
-  const words = state.typed.length / 5;
-  return Math.max(0, Math.round(words / minutes));
+  return Math.max(0, Math.round((state.typed.length / 5) / minutes));
 }
 function computeAccuracy() {
   if (state.typed.length === 0) return 100;
@@ -125,33 +142,53 @@ function updateMetrics() {
   $("mTime").textContent = secs + "s";
 }
 
-// ---------- Game flow ----------
+function startTimer() { if (!state.timer) state.timer = setInterval(updateMetrics, 100); }
+function stopTimer() { if (state.timer) { clearInterval(state.timer); state.timer = null; } }
+
+// ---------- Mode switching ----------
+function setMode(mode) {
+  state.mode = mode;
+  $("tabLessons").classList.toggle("active", mode === "lessons");
+  $("tabAdventures").classList.toggle("active", mode === "adventure");
+  $("stage").classList.toggle("adventure", mode === "adventure");
+  if (mode === "lessons") {
+    document.documentElement.style.removeProperty("--accent");
+    renderLessonList();
+    loadLesson(state.lessonIndex);
+  } else {
+    renderAdventureList();
+    loadAdventure(state.advIndex);
+  }
+}
+
+// ---------- Lessons flow ----------
 function loadLesson(index) {
+  state.mode = "lessons";
   state.lessonIndex = index;
   const lesson = LESSONS[index];
-  state.text = lessonText(lesson);
+  resetTyping(lessonText(lesson));
+  $("lessonTitle").textContent = lesson.title;
+  $("lessonUnit").textContent = lesson.unit;
+  renderLessonList();
+  renderAll();
+  focusInput();
+}
+
+function resetTyping(text) {
+  state.text = text;
   state.typed = "";
   state.errors = 0;
   state.startTime = null;
   state.finished = false;
   stopTimer();
-  $("lessonTitle").textContent = lesson.title;
-  $("lessonUnit").textContent = lesson.unit;
   $("tapHint").style.visibility = "visible";
-  renderLessonList();
+  $("hiddenInput").value = "";
+}
+
+function renderAll() {
   renderTypingBox();
   renderKeyboard();
   updateMetrics();
-  $("hiddenInput").value = "";
-  focusInput();
-}
-
-function startTimer() {
-  if (state.timer) return;
-  state.timer = setInterval(updateMetrics, 100);
-}
-function stopTimer() {
-  if (state.timer) { clearInterval(state.timer); state.timer = null; }
 }
 
 function starsFor(wpm, acc) {
@@ -174,15 +211,100 @@ function finishLesson() {
       wpm: Math.max(wpm, prev?.wpm || 0),
       acc: Math.max(acc, prev?.acc || 0),
     };
-    saveProgress(progress);
+    saveProgress();
   }
   renderLessonList();
-  $("resStars").textContent = "★".repeat(stars) + "☆".repeat(3 - stars);
+  showResult({
+    win: false,
+    title: "Lesson complete!",
+    emoji: "",
+    stars,
+    wpm,
+    acc,
+    nextLabel: "Next lesson →",
+  });
+}
+
+// ---------- Adventure flow ----------
+function loadAdventure(index) {
+  state.mode = "adventure";
+  state.advIndex = index;
+  state.stageIndex = 0;
+  const adv = ADVENTURES[index];
+  $("stageBg").style.backgroundImage = `url("${adv.bg}")`;
+  document.documentElement.style.setProperty("--accent", adv.accent);
+  $("lessonTitle").textContent = adv.title;
+  $("lessonUnit").textContent = adv.intro;
+  $("advGoalEmoji").textContent = adv.emoji;
+  $("advGoalLabel").textContent = adv.goalLabel;
+  renderAdventureList();
+  loadStage();
+  focusInput();
+}
+
+function loadStage() {
+  const adv = ADVENTURES[state.advIndex];
+  const stage = adv.stages[state.stageIndex];
+  resetTyping(stage.type);
+  const total = adv.stages.length;
+  $("advStageCount").textContent = `Stage ${state.stageIndex + 1} / ${total}`;
+  const remaining = (total - state.stageIndex) / total;
+  $("advHealthFill").style.width = (remaining * 100) + "%";
+  $("advSay").textContent = stage.say;
+  renderAll();
+}
+
+function finishStage() {
+  state.finished = true;
+  stopTimer();
+  const adv = ADVENTURES[state.advIndex];
+  const total = adv.stages.length;
+  // Deplete the enemy health by one stage.
+  const remaining = (total - (state.stageIndex + 1)) / total;
+  $("advHealthFill").style.width = (remaining * 100) + "%";
+  // Shake feedback.
+  $("stage").classList.add("hit");
+  setTimeout(() => $("stage").classList.remove("hit"), 320);
+
+  if (state.stageIndex + 1 >= total) {
+    // Adventure cleared.
+    const wpm = computeWpm();
+    const acc = computeAccuracy();
+    advProgress[adv.id] = { cleared: true, bestWpm: Math.max(wpm, advProgress[adv.id]?.bestWpm || 0) };
+    saveAdvProgress();
+    renderAdventureList();
+    setTimeout(() => showResult({
+      win: true,
+      title: "Quest Complete!",
+      emoji: adv.emoji,
+      message: adv.winText,
+      wpm,
+      acc,
+      nextLabel: "Next quest →",
+    }), 350);
+  } else {
+    // Advance to next stage after a short beat.
+    setTimeout(() => { state.stageIndex++; loadStage(); focusInput(); }, 500);
+  }
+}
+
+// ---------- Result overlay ----------
+function showResult({ win, title, emoji, message, stars, wpm, acc, nextLabel }) {
+  const card = document.querySelector(".result-card");
+  card.classList.toggle("win", !!win);
+  $("resTitle").textContent = title;
+  if (win) {
+    $("resStars").innerHTML = `<div class="result-win-emoji">${emoji}</div>${message || ""}`;
+  } else {
+    $("resStars").textContent = "★".repeat(stars) + "☆".repeat(3 - stars);
+  }
   $("resWpm").textContent = wpm;
   $("resAcc").textContent = acc + "%";
+  $("resNext").textContent = nextLabel;
   $("overlay").classList.add("show");
 }
 
+// ---------- Char handling ----------
 function handleChar(char) {
   if (state.finished) return;
   if (!state.startTime) { state.startTime = Date.now(); startTimer(); }
@@ -192,25 +314,24 @@ function handleChar(char) {
   if (char !== expected) state.errors++;
   state.typed += char;
 
-  renderTypingBox();
-  renderKeyboard();
-  updateMetrics();
+  renderAll();
 
-  if (state.typed.length >= state.text.length) finishLesson();
+  if (state.typed.length >= state.text.length) {
+    if (state.mode === "adventure") finishStage();
+    else finishLesson();
+  }
 }
 
 function handleBackspace() {
   if (state.finished || state.typed.length === 0) return;
   state.typed = state.typed.slice(0, -1);
-  renderTypingBox();
-  renderKeyboard();
-  updateMetrics();
+  renderAll();
 }
 
-// ---------- Input handling ----------
+// ---------- Input ----------
 function focusInput() { $("hiddenInput").focus(); }
-
 $("typingBox").addEventListener("click", focusInput);
+$("stage").addEventListener("click", focusInput);
 
 $("hiddenInput").addEventListener("keydown", (e) => {
   if (e.key === "Backspace") { e.preventDefault(); handleBackspace(); return; }
@@ -223,30 +344,41 @@ $("hiddenInput").addEventListener("keydown", (e) => {
 });
 
 function flashKey(char) {
-  const lower = char.toLowerCase();
-  const sel = char === " " ? '.key.space' : `.key[data-key="${cssEscape(lower)}"]`;
+  const sel = char === " " ? ".key.space" : `.key[data-key="${cssEscape(char.toLowerCase())}"]`;
   const el = document.querySelector(sel);
   if (!el) return;
   el.classList.add("pressed");
   setTimeout(() => el.classList.remove("pressed"), 90);
 }
-function cssEscape(s) {
-  return s.replace(/["\\]/g, "\\$&");
-}
+function cssEscape(s) { return s.replace(/["\\]/g, "\\$&"); }
 
 // ---------- Buttons ----------
-$("restartBtn").addEventListener("click", () => loadLesson(state.lessonIndex));
-$("resRetry").addEventListener("click", () => { $("overlay").classList.remove("show"); loadLesson(state.lessonIndex); });
+$("tabLessons").addEventListener("click", () => setMode("lessons"));
+$("tabAdventures").addEventListener("click", () => setMode("adventure"));
+
+$("restartBtn").addEventListener("click", () => {
+  if (state.mode === "adventure") loadAdventure(state.advIndex);
+  else loadLesson(state.lessonIndex);
+});
+
+$("resRetry").addEventListener("click", () => {
+  $("overlay").classList.remove("show");
+  if (state.mode === "adventure") loadAdventure(state.advIndex);
+  else loadLesson(state.lessonIndex);
+});
 $("resNext").addEventListener("click", () => {
   $("overlay").classList.remove("show");
-  const next = Math.min(state.lessonIndex + 1, LESSONS.length - 1);
-  loadLesson(next);
+  if (state.mode === "adventure") {
+    loadAdventure(Math.min(state.advIndex + 1, ADVENTURES.length - 1));
+  } else {
+    loadLesson(Math.min(state.lessonIndex + 1, LESSONS.length - 1));
+  }
 });
 $("resetBtn").addEventListener("click", () => {
   if (confirm("Clear all saved progress?")) {
-    progress = {};
-    saveProgress(progress);
-    loadLesson(0);
+    progress = {}; advProgress = {};
+    saveProgress(); saveAdvProgress();
+    setMode(state.mode);
   }
 });
 $("themeBtn").addEventListener("click", () => {
@@ -264,8 +396,9 @@ $("themeBtn").addEventListener("click", () => {
     document.documentElement.setAttribute("data-theme", savedTheme);
     $("themeBtn").textContent = savedTheme === "light" ? "☀️ Theme" : "🌙 Theme";
   }
-  // First unfinished lesson, else first.
   let start = LESSONS.findIndex((l) => !progress[l.id]);
   if (start < 0) start = 0;
-  loadLesson(start);
+  state.lessonIndex = start;
+  const wantsAdventure = location.hash.toLowerCase().startsWith("#adventure");
+  setMode(wantsAdventure ? "adventure" : "lessons");
 })();

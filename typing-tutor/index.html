@@ -17,6 +17,10 @@
         <span id="brandName">SwiftKeys</span>
       </div>
       <div class="topbar-actions">
+        <div class="mode-tabs">
+          <button class="mode-tab active" id="tabLessons" data-mode="lessons">📘 Lessons</button>
+          <button class="mode-tab" id="tabAdventures" data-mode="adventure">⚔️ Adventures</button>
+        </div>
         <button class="btn ghost" id="themeBtn">🌙 Theme</button>
         <button class="btn ghost" id="resetBtn">Reset progress</button>
       </div>
@@ -28,13 +32,24 @@
         <div id="lessonList"></div>
       </aside>
 
-      <main class="panel stage">
+      <main class="panel stage" id="stage">
+        <div class="stage-bg" id="stageBg"></div>
+        <div class="stage-content">
         <div class="stage-head">
           <div>
             <div class="lesson-title" id="lessonTitle">—</div>
             <div class="lesson-unit" id="lessonUnit"></div>
           </div>
           <button class="btn primary" id="restartBtn">Restart</button>
+        </div>
+
+        <div class="adv-panel" id="advPanel">
+          <div class="adv-enemy">
+            <div class="adv-enemy-name"><span id="advGoalEmoji">👾</span> <span id="advGoalLabel">Enemy</span></div>
+            <div class="adv-stage-count" id="advStageCount">Stage 1 / 6</div>
+          </div>
+          <div class="adv-healthbar"><div class="adv-health-fill" id="advHealthFill"></div></div>
+          <div class="adv-say" id="advSay">Get ready...</div>
         </div>
 
         <div class="metrics">
@@ -49,6 +64,7 @@
         <div class="tap-hint" id="tapHint">Click the text above and start typing</div>
 
         <div class="keyboard" id="keyboard"></div>
+        </div>
       </main>
     </div>
 
