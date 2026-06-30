@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CueCam Support</title>
+  <meta name="description" content="Support, privacy policy, and terms of use for CueCam — the teleprompter camera. Read your script while you record.">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg: #0C0C12;
+      --bg2: #14141E;
+      --card: #181824;
+      --magenta: #FF2D9B;
+      --violet: #8A5BFF;
+      --teal: #1CC9DE;
+      --text: #F4F4F8;
+      --muted: #A7A7B8;
+      --border: #26263400;
+      --line: #272736;
+      --white: #FFFFFF;
+    }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", system-ui, sans-serif;
+      color: var(--text);
+      background: var(--bg);
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+    nav {
+      position: sticky; top: 0; z-index: 10;
+      background: rgba(12,12,18,0.82);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--line);
+    }
+    .nav-inner {
+      max-width: 1040px; margin: 0 auto; padding: 14px 22px;
+      display: flex; align-items: center; justify-content: space-between; gap: 16px;
+    }
+    .brand { color: var(--text); text-decoration: none; font-weight: 800; letter-spacing: -0.3px; }
+    .nav-links { display: flex; gap: 16px; flex-wrap: wrap; }
+    .nav-links a { color: var(--muted); text-decoration: none; font-size: 14px; font-weight: 700; }
+    .nav-links a:hover { color: var(--text); }
+    header {
+      background:
+        radial-gradient(900px 380px at 80% -10%, rgba(138,91,255,0.30), transparent 60%),
+        radial-gradient(700px 360px at 10% 0%, rgba(255,45,155,0.28), transparent 55%),
+        linear-gradient(160deg, #15101F, #0C0C12);
+      padding: 92px 22px 86px;
+      position: relative; overflow: hidden;
+      border-bottom: 1px solid var(--line);
+    }
+    .hero { max-width: 1040px; margin: 0 auto; position: relative; z-index: 1; }
+    .app-icon {
+      width: 96px; height: 96px; border-radius: 24px;
+      box-shadow: 0 22px 60px rgba(255,45,155,0.28);
+      margin-bottom: 24px; display: block;
+    }
+    .eyebrow {
+      display: inline-flex; padding: 6px 12px; border-radius: 999px;
+      background: rgba(255,255,255,0.08); color: var(--teal);
+      font-size: 12px; font-weight: 800; letter-spacing: 1.8px; text-transform: uppercase;
+      margin-bottom: 18px;
+    }
+    h1 {
+      font-size: clamp(40px, 7vw, 68px);
+      line-height: 1.03; letter-spacing: -1.6px; margin-bottom: 18px;
+      background: linear-gradient(100deg, #fff, #ffd9ee 40%, #c9b8ff);
+      -webkit-background-clip: text; background-clip: text; color: transparent;
+    }
+    .hero p { color: rgba(244,244,248,0.78); font-size: 18px; max-width: 640px; }
+    main { max-width: 1040px; margin: -42px auto 0; padding: 0 22px 80px; position: relative; z-index: 2; }
+    section {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 26px;
+      padding: 34px;
+      margin-bottom: 22px;
+      box-shadow: 0 18px 50px rgba(0,0,0,0.35);
+    }
+    h2 { font-size: 30px; line-height: 1.16; letter-spacing: -0.6px; margin-bottom: 16px; }
+    h3 { font-size: 18px; color: var(--text); margin: 22px 0 8px; }
+    p, li { color: var(--muted); font-size: 15px; }
+    ul { padding-left: 22px; margin: 10px 0; }
+    li::marker { color: var(--magenta); }
+    a { color: var(--teal); font-weight: 700; }
+    .cards {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 14px; margin-top: 18px;
+    }
+    .card {
+      background: var(--bg2); border: 1px solid var(--line);
+      border-radius: 18px; padding: 18px;
+    }
+    .card strong { display: block; color: var(--text); margin-bottom: 4px; }
+    .notice {
+      background: rgba(28,201,222,0.10);
+      border: 1px solid rgba(28,201,222,0.28);
+      border-radius: 16px; padding: 16px; margin-top: 16px;
+    }
+    footer {
+      background: var(--bg2); color: rgba(244,244,248,0.5);
+      text-align: center; padding: 34px 22px; font-size: 13px;
+      border-top: 1px solid var(--line);
+    }
+    @media (max-width: 700px) {
+      .nav-inner { align-items: flex-start; flex-direction: column; }
+      header { padding: 64px 20px 72px; }
+      section { padding: 24px; border-radius: 22px; }
+      main { padding-left: 16px; padding-right: 16px; }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="nav-inner">
+      <a class="brand" href="../../">App Support</a>
+      <div class="nav-links">
+        <a href="#support">Support</a>
+        <a href="#privacy">Privacy</a>
+        <a href="#terms">Terms</a>
+      </div>
+    </div>
+  </nav>
+
+  <header>
+    <div class="hero">
+      <img class="app-icon" src="icon.png" alt="CueCam app icon" width="96" height="96">
+      <div class="eyebrow">CueCam</div>
+      <h1>Read your script while you record.</h1>
+      <p>CueCam is the teleprompter camera for creators. Scroll your script over a live camera and record polished videos with on-device filters, beauty, background replacement, face effects, funny warps, and voice effects — private, offline, and yours to keep.</p>
+    </div>
+  </header>
+
+  <main>
+    <section id="support">
+      <h2>Support</h2>
+      <p>Need help with CueCam? Contact support and include your device model, iOS version, and a short description of the issue. We usually reply within 1–2 business days.</p>
+      <div class="cards">
+        <div class="card">
+          <strong>Email</strong>
+          <a href="mailto:pals_green.1m@icloud.com">pals_green.1m@icloud.com</a>
+        </div>
+        <div class="card">
+          <strong>Phone</strong>
+          <a href="tel:+491728455339">+49 172 8455339</a>
+        </div>
+        <div class="card">
+          <strong>Bundle ID</strong>
+          <span>com.loopartapp.app</span>
+        </div>
+      </div>
+
+      <h3>Frequently Asked Questions</h3>
+      <ul>
+        <li><strong>How does the teleprompter work?</strong> Paste or type your script, then it scrolls over the live camera while you record. You can adjust speed, font size, opacity, and mirroring, scrub by dragging, and control speed live during recording.</li>
+        <li><strong>Are the effects applied to my video?</strong> Yes. Filters, beauty, background, face items, funny warps, and voice effects are baked into the recording as you shoot — what you see is what you get.</li>
+        <li><strong>Where are my videos and scripts stored?</strong> Recordings are saved to your device's Photos library. Scripts and settings stay on your device. Nothing is uploaded to our servers.</li>
+        <li><strong>What does CueCam Pro include?</strong> A one-time purchase removes the watermark and unlocks 4K, unlimited recording length, unlimited scripts, all filters and effects, advanced beauty, backgrounds, face items, and presets. No subscription.</li>
+        <li><strong>How do I restore my purchase?</strong> Open Settings inside the app and tap Restore Purchases. CueCam Pro is tied to your Apple ID.</li>
+        <li><strong>How do I delete my data?</strong> Open Settings → Delete All My Data to erase all scripts, presets, and preferences from the device. Deleting the app also removes all local data.</li>
+        <li><strong>Does CueCam use AI or show ads?</strong> No. There is no AI, no ads, and no tracking. All processing happens on your device.</li>
+      </ul>
+    </section>
+
+    <section id="privacy">
+      <h2>Privacy Policy</h2>
+      <p>Effective date: June 30, 2026</p>
+      <p>CueCam is a local-first, private app. This Privacy Policy explains what data the app processes and the limited third-party service used for purchases.</p>
+
+      <h3>Information You Provide</h3>
+      <ul>
+        <li>Scripts you type or paste, teleprompter and capture settings, and saved presets.</li>
+        <li>Video and audio you record using the app.</li>
+      </ul>
+      <p>Scripts, settings, and presets are stored locally on your device. We do not operate an account system and we do not upload your scripts, videos, or audio to our own servers.</p>
+
+      <h3>Camera, Microphone, and Photo Library</h3>
+      <p>The app uses the camera and microphone to record your videos and audio, and requests permission to add finished videos to your Photo Library. Recording happens on-device; CueCam does not stream or transmit your camera or microphone to us or any third party. You can manage these permissions at any time in iOS Settings.</p>
+
+      <h3>In-App Purchases</h3>
+      <p>CueCam Pro is a one-time, non-consumable purchase processed by Apple through StoreKit. Apple may process payment, purchase history, and account information according to Apple's own terms and privacy policy. We never see your payment details.</p>
+
+      <h3>Tracking, Analytics, and Ads</h3>
+      <p>CueCam contains no advertising SDKs, no third-party analytics, and no tracking. We do not collect identifiers for advertising and we do not track you across apps or websites.</p>
+
+      <h3>Data Sharing</h3>
+      <p>We do not sell your data. We do not use your videos, audio, or scripts for advertising or model training.</p>
+
+      <h3>Data Retention and Deletion</h3>
+      <p>Your scripts, settings, and presets remain on your device until you delete them. You can erase all in-app data at any time via <strong>Settings → Delete All My Data</strong>, or by removing the app. Videos you saved to Photos are managed by you in the Photos app.</p>
+
+      <h3>Children's Privacy</h3>
+      <p>CueCam is not directed to children under 13 and does not knowingly collect personal information from children.</p>
+
+      <h3>Contact</h3>
+      <p>For privacy questions, contact <a href="mailto:pals_green.1m@icloud.com">pals_green.1m@icloud.com</a>.</p>
+    </section>
+
+    <section id="terms">
+      <h2>Terms of Use</h2>
+      <p>Effective date: June 30, 2026</p>
+
+      <h3>Acceptance of Terms</h3>
+      <p>By using CueCam, you agree to these Terms of Use. If you do not agree, do not use the app.</p>
+
+      <h3>License</h3>
+      <p>CueCam grants you a personal, non-transferable license to use the app for creating and recording your own video content. You are responsible for the content you record and for complying with the laws and rights of others when filming.</p>
+
+      <h3>Purchases</h3>
+      <p>CueCam offers a one-time CueCam Pro unlock through Apple in-app purchase, which removes the watermark and unlocks all Pro features. This is a non-consumable purchase tied to your Apple ID and is not an auto-renewing subscription. You can restore it on any device signed in to the same Apple ID.</p>
+
+      <h3>Refunds</h3>
+      <p>All purchases are processed by Apple. Refund requests are handled by Apple according to App Store policies.</p>
+
+      <h3>Acceptable Use</h3>
+      <p>You agree not to use CueCam to create unlawful content or to infringe the rights of others. You are solely responsible for the videos you create and how you distribute them.</p>
+
+      <h3>No Warranty</h3>
+      <p>The app is provided "as is" without warranties of any kind. We do not guarantee uninterrupted operation or that recordings will be free of defects.</p>
+
+      <h3>Limitation of Liability</h3>
+      <p>To the maximum extent permitted by law, we are not liable for indirect, incidental, special, or consequential damages, or for any loss of recordings or data, arising from use of the app.</p>
+
+      <h3>Contact</h3>
+      <p>For terms questions, contact <a href="mailto:pals_green.1m@icloud.com">pals_green.1m@icloud.com</a>.</p>
+    </section>
+  </main>
+
+  <footer>
+    © 2026 CueCam. All rights reserved.
+  </footer>
+</body>
+</html>

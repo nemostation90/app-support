@@ -13,3 +13,4 @@
 | FaceForm | faceform | com.facefitnesscoach.app | TestFlight |
 | Aquascape Journal | aquascapejournal | com.aquascapejournalhq.app | TestFlight |
 | Loopart | loopart | com.loopartapp.app | TestFlight |
+| CueCam | cuecam | com.loopartapp.app | TestFlight |
