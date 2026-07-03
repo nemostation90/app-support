@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Grasp — Support</title>
+  <meta name="description" content="Support, Privacy Policy, and Terms of Use for Grasp: Money & Investing — the visual what-if money simulator.">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --g900: #062E1E;
+      --g800: #0C7A48;
+      --g600: #16A45E;
+      --g500: #23C26F;
+      --g300: #6FE0A6;
+      --g100: #D5F5E3;
+      --g50:  #EDFBF3;
+      --white: #FFFFFF;
+      --gray200: #E5E7EB;
+      --gray400: #9CA3AF;
+      --gray600: #4B5563;
+      --gray800: #1F2937;
+      --text: #0C2A1C;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", system-ui, sans-serif;
+      color: var(--text);
+      background: var(--white);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    nav {
+      position: sticky; top: 0; z-index: 100;
+      background: rgba(255,255,255,0.93);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--g100);
+    }
+    .nav-inner {
+      max-width: 860px; margin: 0 auto;
+      display: flex; align-items: center; justify-content: space-between;
+      height: 58px; padding: 0 24px; gap: 16px;
+    }
+    .nav-brand { font-weight: 700; font-size: 17px; color: var(--g800); text-decoration: none; }
+    .nav-links { display: flex; gap: 20px; }
+    .nav-links a { font-size: 14px; font-weight: 500; color: var(--gray600); text-decoration: none; transition: color .15s; }
+    .nav-links a:hover { color: var(--g800); }
+
+    .hero {
+      background: linear-gradient(135deg, var(--g800), var(--g500));
+      color: var(--white);
+      text-align: center;
+      padding: 72px 24px 64px;
+    }
+    .hero-icon {
+      width: 88px; height: 88px; border-radius: 22px;
+      display: inline-flex; align-items: center; justify-content: center;
+      margin-bottom: 20px; object-fit: cover;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+    }
+    .hero h1 { font-size: 32px; font-weight: 800; margin-bottom: 8px; }
+    .hero p { font-size: 17px; opacity: 0.90; max-width: 500px; margin: 0 auto; }
+
+    .section { max-width: 860px; margin: 0 auto; padding: 56px 24px 48px; }
+    .section + .section { border-top: 1px solid var(--gray200); }
+    .section h2 { font-size: 24px; font-weight: 700; margin-bottom: 20px; color: var(--g900); }
+    .section h3 { font-size: 17px; font-weight: 600; margin: 24px 0 8px; color: var(--gray800); }
+    .section p, .section li { font-size: 15px; color: var(--gray600); line-height: 1.7; }
+    .section ul { padding-left: 20px; margin: 8px 0 16px; }
+    .section li { margin-bottom: 6px; }
+    .section a { color: var(--g800); text-decoration: none; }
+    .section a:hover { text-decoration: underline; }
+
+    .contact-btn {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 12px 28px; border-radius: 12px;
+      background: var(--g800); color: var(--white);
+      font-weight: 600; font-size: 15px;
+      text-decoration: none; transition: background .15s;
+      margin-top: 12px;
+    }
+    .contact-btn:hover { background: var(--g900); text-decoration: none; }
+
+    .faq-item { margin-bottom: 16px; }
+    .faq-item strong { color: var(--gray800); font-size: 15px; }
+    .faq-item p { margin-top: 4px; }
+
+    footer {
+      text-align: center; padding: 32px 24px; font-size: 13px;
+      color: var(--gray400); border-top: 1px solid var(--gray200);
+    }
+
+    @media (max-width: 600px) {
+      .hero { padding: 48px 20px 40px; }
+      .hero h1 { font-size: 26px; }
+      .nav-links { gap: 14px; }
+      .nav-links a { font-size: 13px; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="nav-inner">
+      <a href="#" class="nav-brand">Grasp</a>
+      <div class="nav-links">
+        <a href="#support">Support</a>
+        <a href="#privacy">Privacy</a>
+        <a href="#terms">Terms</a>
+      </div>
+    </div>
+  </nav>
+
+  <div class="hero">
+    <img class="hero-icon" src="icon.png" alt="Grasp">
+    <h1>Grasp: Money &amp; Investing</h1>
+    <p>Money made obvious. Drag a slider and watch what happens to your money — five visual what-if simulators plus plain-language lessons.</p>
+    <p style="margin-top:18px;"><a href="https://apps.apple.com/app/id6787222501" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:8px;background:#0a84ff;color:#fff;padding:11px 18px;border-radius:14px;font-weight:800;text-decoration:none;"><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>Download on the App Store</a></p>
+  </div>
+
+  <!-- SUPPORT -->
+  <div class="section" id="support">
+    <h2>Support</h2>
+    <p>Need help with Grasp? Check the FAQ below or contact us directly.</p>
+
+    <a href="mailto:pals_green.1m@icloud.com" class="contact-btn">✉ Contact Support</a>
+
+    <h3>Frequently Asked Questions</h3>
+
+    <div class="faq-item">
+      <strong>What does Grasp do?</strong>
+      <p>Grasp turns money questions into simple, visual answers. Drag a slider and instantly see what happens — how compound interest grows your money, how inflation erodes it, when you'll be debt-free, how much to save for a goal, and where your net worth is heading.</p>
+    </div>
+
+    <div class="faq-item">
+      <strong>Do I need to connect my bank?</strong>
+      <p>No. Grasp never connects to your bank and never asks you to log in. You type in the numbers you want to explore, and everything stays on your device.</p>
+    </div>
+
+    <div class="faq-item">
+      <strong>Is this financial advice?</strong>
+      <p>No. Grasp is an educational tool. All projections are illustrative estimates based on the figures you enter and assume constant rates. For decisions about your money, consult a qualified professional.</p>
+    </div>
+
+    <div class="faq-item">
+      <strong>What's included in the free version?</strong>
+      <p>You can use the core simulators and read the first lessons for free. Grasp Premium unlocks every simulator, the complete lesson library, unlimited saved scenarios, and removes ads.</p>
+    </div>
+
+    <div class="faq-item">
+      <strong>How do I save a scenario?</strong>
+      <p>Adjust the sliders on any simulator and tap the save icon. Saved scenarios appear on your Home screen so you can revisit them anytime.</p>
+    </div>
+
+    <div class="faq-item">
+      <strong>How do I cancel my subscription?</strong>
+      <p>Open the Settings app on your device, tap your name → Subscriptions → Grasp, and cancel there. You keep access until the end of the current billing period.</p>
+    </div>
+
+    <div class="faq-item">
+      <strong>How do I restore a purchase?</strong>
+      <p>Go to Settings inside Grasp and tap "Restore Purchases". Your previous subscription or lifetime unlock will be restored to this device.</p>
+    </div>
+  </div>
+
+  <!-- PRIVACY POLICY -->
+  <div class="section" id="privacy">
+    <h2>Privacy Policy</h2>
+    <p><em>Last updated: July 2026</em></p>
+
+    <h3>1. Information We Collect</h3>
+    <p>Grasp does not require an account and does not ask for your name, email, or any financial account access. The scenarios and numbers you enter, plus any scenarios you save, are stored locally on your device using Apple's SwiftData framework. We do not operate servers that store your personal data.</p>
+
+    <h3>2. Advertising</h3>
+    <p>Grasp uses Google AdMob to show ads to free-tier users. AdMob may collect device identifiers and usage data for advertising. You can choose whether to allow tracking through the App Tracking Transparency prompt, or change it anytime in Settings → Privacy &amp; Security → Tracking. Declining tracking still lets you use every free feature.</p>
+
+    <h3>3. Subscriptions &amp; Purchases</h3>
+    <p>Grasp uses Apple's StoreKit to manage subscriptions and the one-time lifetime unlock. Payment is handled entirely by Apple through your Apple ID. We never see or store your payment details.</p>
+
+    <h3>4. Data Storage</h3>
+    <p>All of your inputs and saved scenarios remain on your device. Deleting the app removes this data. We do not upload your scenarios anywhere.</p>
+
+    <h3>5. Third-Party Services</h3>
+    <ul>
+      <li><strong>Google AdMob</strong> — advertising (free tier only)</li>
+      <li><strong>Apple StoreKit</strong> — in-app purchases, managed by Apple</li>
+    </ul>
+
+    <h3>6. Data We Do NOT Collect</h3>
+    <p>We do not collect your name, email, phone number, precise location, contacts, health data, or any bank or brokerage information. We do not sell any data to third parties.</p>
+
+    <h3>7. Children's Privacy</h3>
+    <p>Grasp is a general-audience app and is not directed at children under 13. We do not knowingly collect personal data from children.</p>
+
+    <h3>8. Your Rights</h3>
+    <p>Because your data lives only on your device, you are in full control — delete saved scenarios in the app or remove the app to erase everything. Under GDPR and CCPA you have the right to access, correct, or delete your personal data.</p>
+
+    <h3>9. Changes to This Policy</h3>
+    <p>We may update this privacy policy from time to time. Continued use of the app after changes constitutes acceptance of the updated policy.</p>
+
+    <h3>10. Contact</h3>
+    <p>For privacy questions, contact us at <a href="mailto:pals_green.1m@icloud.com">pals_green.1m@icloud.com</a></p>
+  </div>
+
+  <!-- TERMS OF USE -->
+  <div class="section" id="terms">
+    <h2>Terms of Use</h2>
+    <p><em>Last updated: July 2026</em></p>
+
+    <h3>1. Acceptance of Terms</h3>
+    <p>By downloading and using Grasp, you agree to these Terms of Use. If you do not agree, please do not use the app.</p>
+
+    <h3>2. Description of Service</h3>
+    <p>Grasp is an educational money app that provides interactive "what-if" simulators (compound growth, inflation, debt payoff, savings goals, and net worth) and short lessons that explain financial concepts.</p>
+
+    <h3>3. Not Financial Advice</h3>
+    <p>Grasp is for education and illustration only. It does not provide financial, investment, tax, or legal advice, and its projections are estimates based on the assumptions and figures you enter. You are solely responsible for decisions you make about your money. Consult a qualified professional before acting.</p>
+
+    <h3>4. Free and Premium Tiers</h3>
+    <p>Grasp offers a free tier (core features, with ads) and Grasp Premium (all simulators, the full lesson library, unlimited saved scenarios, and no ads). Premium is available as a monthly or yearly subscription, or a one-time lifetime unlock, billed through your Apple ID.</p>
+
+    <h3>5. Subscription Terms</h3>
+    <ul>
+      <li>Payment is charged to your Apple ID account at confirmation of purchase</li>
+      <li>Subscriptions automatically renew unless canceled at least 24 hours before the end of the current period</li>
+      <li>Your account is charged for renewal within 24 hours before the end of the current period</li>
+      <li>You can manage or cancel subscriptions in your device's Settings → Apple ID → Subscriptions</li>
+      <li>Any unused portion of a free trial is forfeited when you purchase a subscription</li>
+    </ul>
+
+    <h3>6. User Content</h3>
+    <p>You retain ownership of the numbers and scenarios you enter into Grasp. We do not claim any rights to them.</p>
+
+    <h3>7. Acceptable Use</h3>
+    <p>You agree to use Grasp only for its intended educational purpose. You may not reverse-engineer, decompile, or attempt to extract the source code of the application.</p>
+
+    <h3>8. Disclaimer of Warranties</h3>
+    <p>Grasp is provided "as is" without warranty of any kind. We do not guarantee that any calculation, projection, or lesson is accurate, complete, or suitable for your situation.</p>
+
+    <h3>9. Limitation of Liability</h3>
+    <p>Grasp and its developers shall not be liable for any indirect, incidental, or consequential damages arising from your use of the app, including any financial decisions made in reliance on its projections.</p>
+
+    <h3>10. Changes to Terms</h3>
+    <p>We may update these terms from time to time. Continued use of the app after changes constitutes acceptance of the new terms.</p>
+
+    <h3>11. Contact</h3>
+    <p>For questions about these terms, contact us at <a href="mailto:pals_green.1m@icloud.com">pals_green.1m@icloud.com</a></p>
+  </div>
+
+  <footer>
+    &copy; 2026 Grasp. All rights reserved.
+  </footer>
+
+</body>
+</html>
