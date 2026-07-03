@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PhonicsPath — Support</title>
+  <meta name="description" content="Support, Privacy Policy, and Terms of Use for PhonicsPath — the silent, parent-led learn-to-read app. Everything stays on your device.">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --t950: #0A3F3A;
+      --t900: #0C5A54;
+      --t700: #12998F;
+      --t500: #2FB9AE;
+      --t300: #8FDCD5;
+      --t100: #D6F2EF;
+      --t50:  #F0FBFA;
+      --cream: #FFFBF2;
+      --white: #FFFFFF;
+      --gray100: #F3F4F6;
+      --gray200: #E5E7EB;
+      --gray400: #9CA3AF;
+      --gray600: #4B5563;
+      --gray800: #1F2937;
+      --text: #22201C;
+      --coral: #FF7366;
+      --sun: #FFD24D;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", system-ui, sans-serif;
+      color: var(--text);
+      background: var(--white);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: sticky; top: 0; z-index: 100;
+      background: rgba(255,255,255,0.93);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--t100);
+    }
+    .nav-inner {
+      max-width: 860px; margin: 0 auto;
+      display: flex; align-items: center; justify-content: space-between;
+      height: 58px; padding: 0 24px; gap: 16px;
+    }
+    .nav-brand { display: flex; align-items: center; gap: 10px; text-decoration: none; color: var(--t900); }
+    .nav-brand-icon {
+      width: 30px; height: 30px; border-radius: 8px;
+      background: linear-gradient(135deg, var(--t700), var(--t500));
+      display: flex; align-items: center; justify-content: center; color: var(--white);
+    }
+    .nav-brand span { font-size: 15px; font-weight: 700; letter-spacing: -0.2px; }
+    .nav-links { display: flex; gap: 2px; list-style: none; }
+    .nav-links a {
+      display: block; padding: 6px 13px; border-radius: 20px;
+      font-size: 13.5px; font-weight: 500; color: var(--gray600);
+      text-decoration: none; transition: all 0.18s;
+    }
+    .nav-links a:hover, .nav-links a.active { color: var(--t900); background: var(--t100); }
+
+    /* ── HERO ── */
+    .hero {
+      background: linear-gradient(150deg, var(--t900) 0%, var(--t700) 55%, #199E93 100%);
+      padding: 72px 24px 80px; text-align: center; position: relative; overflow: hidden;
+    }
+    .hero::before {
+      content: ''; position: absolute; inset: 0;
+      background:
+        radial-gradient(ellipse at 15% 60%, rgba(47,185,174,0.20) 0%, transparent 55%),
+        radial-gradient(ellipse at 85% 20%, rgba(255,210,77,0.14) 0%, transparent 50%);
+      pointer-events: none;
+    }
+    .hero-inner { position: relative; z-index: 1; }
+    .app-icon {
+      width: 100px; height: 100px; border-radius: 24px; margin: 0 auto 22px;
+      box-shadow: 0 24px 64px rgba(0,0,0,0.32), 0 0 0 3px rgba(255,255,255,0.14);
+      object-fit: cover;
+    }
+    .hero h1 {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(30px, 5.5vw, 54px);
+      font-weight: 700; color: var(--white);
+      letter-spacing: -1.5px; line-height: 1.1; margin-bottom: 14px;
+    }
+    .hero-sub { font-size: 16px; color: var(--t300); max-width: 500px; margin: 0 auto 28px; line-height: 1.6; }
+    .coming-soon-pill {
+      display: inline-flex; align-items: center; gap: 7px;
+      background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2);
+      color: rgba(255,255,255,0.78); padding: 9px 18px; border-radius: 24px;
+      font-size: 13px; font-weight: 500;
+    }
+
+    /* ── FEATURES STRIP ── */
+    .features-strip { background: var(--t50); border-bottom: 1px solid var(--t100); padding: 28px 24px; }
+    .features-list { display: flex; gap: 10px; max-width: 860px; margin: 0 auto; flex-wrap: wrap; justify-content: center; }
+    .feature-chip {
+      display: inline-flex; align-items: center; gap: 6px;
+      background: var(--white); border: 1px solid #BEE8E3; border-radius: 20px;
+      padding: 7px 14px; font-size: 13px; font-weight: 500; color: var(--t700); white-space: nowrap;
+    }
+    .feature-chip svg { color: var(--t500); flex-shrink: 0; }
+
+    /* ── INFO BANNER ── */
+    .disclaimer-banner { background: #FFF6E8; border-bottom: 1px solid #FCE4B6; padding: 18px 24px; }
+    .disclaimer-inner {
+      max-width: 860px; margin: 0 auto; display: flex; align-items: flex-start; gap: 12px;
+      font-size: 13.5px; color: #92400E; line-height: 1.6;
+    }
+    .disclaimer-inner svg { flex-shrink: 0; margin-top: 2px; }
+    .disclaimer-inner strong { color: #78350F; }
+
+    /* ── CONTENT ── */
+    .content-wrap { max-width: 720px; margin: 0 auto; padding: 0 24px; }
+    .section { padding: 76px 0; border-bottom: 1px solid var(--t100); }
+    .section:last-of-type { border-bottom: none; }
+    .section-tag {
+      display: inline-block; font-size: 10.5px; font-weight: 700;
+      letter-spacing: 2.2px; text-transform: uppercase;
+      color: var(--t500); background: var(--t50);
+      padding: 5px 12px; border-radius: 20px; margin-bottom: 14px;
+    }
+    .section h2 {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(26px, 4vw, 38px);
+      font-weight: 700; color: var(--t900);
+      letter-spacing: -0.8px; line-height: 1.2; margin-bottom: 8px;
+    }
+    .section-lead { font-size: 16px; color: var(--gray600); line-height: 1.7; margin-bottom: 40px; }
+
+    /* FAQ */
+    .faq { display: flex; flex-direction: column; }
+    .faq-item { border-bottom: 1px solid var(--t100); }
+    .faq-item:first-child { border-top: 1px solid var(--t100); }
+    .faq-btn {
+      width: 100%; text-align: left; background: none; border: none; padding: 20px 0; cursor: pointer;
+      display: flex; justify-content: space-between; align-items: center; gap: 16px;
+      font-size: 15.5px; font-weight: 600; color: var(--t900); transition: color 0.18s;
+    }
+    .faq-btn:hover { color: var(--t700); }
+    .faq-icon {
+      flex-shrink: 0; width: 22px; height: 22px; display: flex; align-items: center; justify-content: center;
+      color: var(--t500); transition: transform 0.25s ease;
+    }
+    .faq-item.open .faq-icon { transform: rotate(180deg); }
+    .faq-body { max-height: 0; overflow: hidden; transition: max-height 0.35s ease; }
+    .faq-item.open .faq-body { max-height: 600px; }
+    .faq-body p { font-size: 14.5px; color: var(--gray600); line-height: 1.75; padding-bottom: 20px; }
+
+    /* Contact */
+    .contact-card {
+      margin-top: 52px; background: linear-gradient(140deg, var(--t900) 0%, var(--t700) 100%);
+      border-radius: 28px; padding: 44px 40px; text-align: center; position: relative; overflow: hidden;
+    }
+    .contact-card::before {
+      content: ''; position: absolute; inset: 0;
+      background: radial-gradient(ellipse at 25% 60%, rgba(47,185,174,0.24) 0%, transparent 60%);
+    }
+    .contact-inner { position: relative; }
+    .contact-icon {
+      width: 52px; height: 52px; background: rgba(255,255,255,0.12); border-radius: 50%;
+      display: flex; align-items: center; justify-content: center; margin: 0 auto 16px; color: var(--t300);
+    }
+    .contact-card h3 { font-family: Georgia, "Times New Roman", serif; font-size: 22px; font-weight: 700; color: var(--white); margin-bottom: 8px; }
+    .contact-card p { font-size: 15px; color: var(--t300); margin-bottom: 26px; }
+    .contact-btn {
+      display: inline-block; background: var(--white); color: var(--t900);
+      padding: 12px 30px; border-radius: 25px; font-size: 15px; font-weight: 600; text-decoration: none;
+      box-shadow: 0 6px 24px rgba(0,0,0,0.22); transition: transform 0.18s, box-shadow 0.18s;
+    }
+    .contact-btn:hover { transform: translateY(-2px); box-shadow: 0 10px 36px rgba(0,0,0,0.3); }
+
+    /* Legal */
+    .legal-date { display: inline-block; font-size: 12.5px; color: var(--gray400); background: var(--gray100); padding: 4px 12px; border-radius: 12px; margin-bottom: 36px; }
+    .legal-block { margin-bottom: 32px; }
+    .legal-block h3 { font-size: 16px; font-weight: 700; color: var(--t900); margin-bottom: 10px; }
+    .legal-block p, .legal-block li { font-size: 14.5px; color: var(--gray600); line-height: 1.8; }
+    .legal-block p + p { margin-top: 10px; }
+    .legal-block ul { padding-left: 20px; margin-top: 8px; }
+    .legal-block ul li { margin-bottom: 5px; }
+    .legal-block a { color: var(--t700); }
+    .legal-sub { font-size: 14.5px; font-weight: 600; color: var(--t900); margin-top: 14px; margin-bottom: 4px; }
+
+    /* ── FOOTER ── */
+    footer { background: var(--t950); padding: 44px 24px; text-align: center; }
+    .footer-inner { max-width: 720px; margin: 0 auto; }
+    .footer-mark { width: 36px; height: 36px; background: rgba(255,255,255,0.08); border-radius: 10px; display: flex; align-items: center; justify-content: center; margin: 0 auto 18px; color: var(--t300); font-size: 18px; }
+    .footer-nav { display: flex; justify-content: center; gap: 6px; margin-bottom: 18px; flex-wrap: wrap; }
+    .footer-nav a { font-size: 13px; color: var(--t300); opacity: 0.7; text-decoration: none; padding: 4px 10px; transition: opacity 0.18s; }
+    .footer-nav a:hover { opacity: 1; }
+    .footer-sep { color: rgba(255,255,255,0.15); font-size: 13px; line-height: 1; }
+    .footer-copy { font-size: 12.5px; color: rgba(255,255,255,0.25); }
+    .footer-back { display: inline-block; margin-top: 12px; font-size: 12.5px; color: var(--t300); opacity: 0.6; text-decoration: none; }
+    .footer-back:hover { opacity: 1; }
+
+    @media (max-width: 640px) {
+      .nav-links { display: none; }
+      .hero { padding: 56px 20px 64px; }
+      .hero h1 { letter-spacing: -0.8px; }
+      .section { padding: 56px 0; }
+      .contact-card { padding: 32px 24px; }
+      .features-list { justify-content: flex-start; }
+      .disclaimer-inner { font-size: 13px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <a href="#" class="nav-brand">
+      <span class="nav-brand-icon">
+        <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+      </span>
+      <span>PhonicsPath</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#support">Support</a></li>
+      <li><a href="#privacy">Privacy Policy</a></li>
+      <li><a href="#terms">Terms of Use</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- HERO -->
+<header class="hero">
+  <div class="hero-inner">
+    <img class="app-icon" src="icon.png" alt="PhonicsPath">
+    <h1>PhonicsPath</h1>
+    <p class="hero-sub">A silent, parent-led way to teach your child to read — short daily lessons where you say the sounds and your child follows along. Everything stays on your device.</p>
+    <span class="coming-soon-pill">
+      <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+      Coming soon to the App Store
+    </span>
+  </div>
+</header>
+
+<!-- FEATURE CHIPS -->
+<div class="features-strip">
+  <div class="features-list">
+    <span class="feature-chip">
+      <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+      Parent-led lessons
+    </span>
+    <span class="feature-chip">
+      <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M11 5 6 9H2v6h4l5 4z"/><line x1="22" y1="9" x2="16" y2="15"/><line x1="16" y1="9" x2="22" y2="15"/></svg>
+      No app voice — you say the sounds
+    </span>
+    <span class="feature-chip">
+      <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 2l2.4 7.4H22l-6 4.6 2.3 7.4-6.3-4.6L5.7 21 8 14 2 9.4h7.6z"/></svg>
+      Decodable stories
+    </span>
+    <span class="feature-chip">
+      <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+      Short daily sessions
+    </span>
+    <span class="feature-chip">
+      <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+      No ads · no tracking · offline
+    </span>
+    <span class="feature-chip">
+      <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>
+      One-time unlock, no subscription
+    </span>
+  </div>
+</div>
+
+<!-- INFO -->
+<div class="disclaimer-banner">
+  <div class="disclaimer-inner">
+    <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+    <span><strong>PhonicsPath is intentionally silent.</strong> It is a parent-led companion — the grown-up says every sound and the child copies. The app shows what to do and keeps score, but never speaks. This is by design, not a bug.</span>
+  </div>
+</div>
+
+<!-- SUPPORT -->
+<section id="support">
+  <div class="content-wrap">
+    <div class="section">
+      <span class="section-tag">Help &amp; Support</span>
+      <h2>Frequently Asked Questions</h2>
+      <p class="section-lead">Quick answers to common questions about PhonicsPath.</p>
+
+      <div class="faq">
+
+        <div class="faq-item">
+          <button class="faq-btn" aria-expanded="false">
+            What does PhonicsPath do?
+            <span class="faq-icon"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></span>
+          </button>
+          <div class="faq-body">
+            <p>PhonicsPath helps a parent teach a young child to read through short, joyful daily lessons. It follows a proven, parent-led phonics method: the app shows each step — a new sound, blending, word reading, a quick check — while you say the sounds out loud and your child copies you.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-btn" aria-expanded="false">
+            Why doesn't the app speak or read aloud?
+            <span class="faq-icon"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></span>
+          </button>
+          <div class="faq-body">
+            <p>This is intentional. Children learn to decode best when a caring adult models each sound precisely. PhonicsPath keeps a clean, distraction-free screen and lets you be the voice — you say "mmm", your child says it back. A short in-app guide (tap the "?" on the home screen) explains exactly how to say each sound.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-btn" aria-expanded="false">
+            Where is my data stored?
+            <span class="faq-icon"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></span>
+          </button>
+          <div class="faq-body">
+            <p>Everything — your child's name, chosen avatar, and lesson progress — is stored locally on your device using Apple's SwiftData framework. PhonicsPath has no backend, no accounts, and never transmits your data anywhere.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-btn" aria-expanded="false">
+            What's free, and what does the purchase unlock?
+            <span class="faq-icon"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></span>
+          </button>
+          <div class="faq-body">
+            <p>Stage 1 is free so you can try the full experience with your child. A single one-time purchase, "Full Reading Path," unlocks every remaining lesson and decodable story. There is no subscription and there are no ads.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-btn" aria-expanded="false">
+            How do I restore my purchase?
+            <span class="faq-icon"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></span>
+          </button>
+          <div class="faq-body">
+            <p>Open Parent Corner (tap the gear on the home screen and pass the grown-ups-only check), then tap "Restore purchase." Make sure you're signed in with the same Apple Account used for the original purchase.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-btn" aria-expanded="false">
+            How do I request a refund?
+            <span class="faq-icon"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></span>
+          </button>
+          <div class="faq-body">
+            <p>All refunds are handled by Apple. Please visit <a href="https://reportaproblem.apple.com" target="_blank" rel="noopener">reportaproblem.apple.com</a> or contact Apple Support.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-btn" aria-expanded="false">
+            How do I delete all my data?
+            <span class="faq-icon"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></span>
+          </button>
+          <div class="faq-body">
+            <p>Open Parent Corner → "Your data" → "Delete all my data" to erase your child's profile and all progress from the device. Because everything is local, deleting the app also removes all data. Both actions are complete and irreversible.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-btn" aria-expanded="false">
+            Is PhonicsPath safe for children?
+            <span class="faq-icon"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></span>
+          </button>
+          <div class="faq-body">
+            <p>Yes. PhonicsPath is designed to be used by a parent and child together. There are no ads, no third-party tracking, and no external links or purchases reachable by a child — purchases and settings sit behind a grown-ups-only gate. No data is collected from children or sent off the device.</p>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="contact-card">
+        <div class="contact-inner">
+          <div class="contact-icon">
+            <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          </div>
+          <h3>Still need help?</h3>
+          <p>We usually reply within 24–48 hours.</p>
+          <a href="mailto:pals_green.1m@icloud.com?subject=PhonicsPath%20Support" class="contact-btn">Email Support</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRIVACY -->
+<section id="privacy" style="background: var(--cream);">
+  <div class="content-wrap">
+    <div class="section">
+      <span class="section-tag">Legal</span>
+      <h2>Privacy Policy</h2>
+      <p class="section-lead">PhonicsPath is built privacy-first — everything you enter stays on your device.</p>
+      <span class="legal-date">Effective Date: July 3, 2026</span>
+
+      <div class="legal-block">
+        <h3>Overview</h3>
+        <p>PhonicsPath is built privacy-first. All data you enter stays entirely on your device — we have no servers, no accounts, and no cloud backend. We never see, transmit, or store your data, and we do not share it with any third party.</p>
+      </div>
+
+      <div class="legal-block">
+        <h3>Data We Collect</h3>
+        <p>The following is stored locally on your device only, using Apple's SwiftData framework:</p>
+        <ul>
+          <li>Your child's first name or nickname (optional, parent-entered)</li>
+          <li>The chosen avatar</li>
+          <li>A gentle daily-lesson length preference</li>
+          <li>Lesson and story progress, and per-sound/per-word mastery used to place the next lesson</li>
+        </ul>
+        <p>None of this is ever transmitted to any external server. There is no analytics, no advertising, no third-party data sharing, and no behavioural profiling.</p>
+      </div>
+
+      <div class="legal-block">
+        <h3>No Audio Recording</h3>
+        <p>PhonicsPath does not use the microphone and does not record, process, or transmit your child's voice. The child speaks to the parent, not to the app.</p>
+      </div>
+
+      <div class="legal-block">
+        <h3>In-App Purchase</h3>
+        <p>The optional one-time "Full Reading Path" unlock is processed entirely by Apple through the App Store. PhonicsPath never handles or stores any payment information. Your purchase status is verified locally via Apple's StoreKit framework.</p>
+      </div>
+
+      <div class="legal-block">
+        <h3>Analytics &amp; Tracking</h3>
+        <p>PhonicsPath contains no analytics SDKs, no advertising frameworks, no attribution tools, and no tracking of any kind. Our <code>PrivacyInfo.xcprivacy</code> file declares <code>NSPrivacyTracking = false</code> with no tracking domains.</p>
+      </div>
+
+      <div class="legal-block">
+        <h3>Children's Privacy (COPPA)</h3>
+        <p>PhonicsPath is designed to be operated by a parent or guardian alongside their child. The app does not knowingly collect personal data directly from children. Purchases and settings are placed behind a grown-ups-only gate. Because all data is stored locally on the device, it is fully controlled by the device owner — no child data is ever transmitted off-device or shared with us or any third party.</p>
+      </div>
+
+      <div class="legal-block">
+        <h3>iCloud Backup</h3>
+        <p>If you have iCloud Backup enabled in your iOS Settings, your device's local data (including PhonicsPath data) may be included in your iCloud backup. This is controlled entirely by your iOS settings and is not initiated by PhonicsPath. The app itself does not sync to iCloud or any other cloud service.</p>
+      </div>
+
+      <div class="legal-block">
+        <h3>Data Deletion</h3>
+        <p>You can erase all your data from inside the app: Parent Corner → "Your data" → "Delete all my data." You can also delete the app to remove everything. Because we hold no data on external servers, deletion is complete and irreversible.</p>
+      </div>
+
+      <div class="legal-block">
+        <h3>Changes to This Policy</h3>
+        <p>If we make material changes to this policy, we will note them in the App Store release notes. Continued use of the app after an update constitutes acceptance of the revised policy.</p>
+      </div>
+
+      <div class="legal-block">
+        <h3>Contact</h3>
+        <p>Questions about this Privacy Policy:<br>
+        <a href="mailto:pals_green.1m@icloud.com">pals_green.1m@icloud.com</a></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TERMS -->
+<section id="terms">
+  <div class="content-wrap">
+    <div class="section">
+      <span class="section-tag">Legal</span>
+      <h2>Terms of Use</h2>
+      <p class="section-lead">By downloading or using PhonicsPath, you agree to these terms.</p>
+      <span class="legal-date">Effective Date: July 3, 2026</span>
+
+      <div class="legal-block">
+        <h3>Agreement</h3>
+        <p>By downloading or using PhonicsPath, you agree to these Terms of Use. These terms apply to the parent or guardian who installs and operates the app alongside a child.</p>
+      </div>
+
+      <div class="legal-block">
+        <h3>What PhonicsPath Is</h3>
+        <p>PhonicsPath is an educational app that helps a parent teach a child to read using a structured, parent-led phonics method. The app provides a guided lesson path, sound and blending activities, decodable words and stories, and gentle progress tracking.</p>
+        <p>PhonicsPath is intentionally silent: the parent says the sounds and the child copies. All content runs entirely on your device. The app does not connect to any server, AI service, or analytics provider.</p>
+      </div>
+
+      <div class="legal-block">
+        <h3>Intended Use</h3>
+        <p>PhonicsPath is designed for use by a parent or guardian together with a young child. Purchases and settings are placed behind a grown-ups-only gate. The app does not collect data from a child user.</p>
+      </div>
+
+      <div class="legal-block">
+        <h3>In-App Purchase</h3>
+        <p>Stage 1 is free. An optional one-time purchase, "Full Reading Path" (<code>com.phonicspath.app.unlock</code>), unlocks all remaining lessons and stories. It is a non-consumable purchase processed by Apple through the App Store — there is no subscription and no recurring charge. Pricing is set in App Store Connect and may vary by region; your local price is shown at the time of purchase. PhonicsPath does not process or store any payment information.</p>
+      </div>
+
+      <div class="legal-block">
+        <h3>Refunds</h3>
+        <p>All refunds are handled by Apple. Please visit <a href="https://reportaproblem.apple.com" target="_blank" rel="noopener">reportaproblem.apple.com</a> or contact Apple Support.</p>
+      </div>
+
+      <div class="legal-block">
+        <h3>Restore Purchase</h3>
+        <p>If you previously bought the unlock, you can restore access any time via Parent Corner → "Restore purchase," using the same Apple Account.</p>
+      </div>
+
+      <div class="legal-block">
+        <h3>User Data</h3>
+        <p>All data (your child's name, avatar, preferences, and progress) is stored locally on your device using Apple's SwiftData framework. PhonicsPath has no backend, does not collect or transmit your data, and does not share any data with third parties. You are responsible for the data on your device.</p>
+      </div>
+
+      <div class="legal-block">
+        <h3>Intellectual Property</h3>
+        <p>All content in PhonicsPath — including lessons, artwork, decodable stories, and copy — is the property of PhonicsPath. You may not reproduce, distribute, or create derivative works from any app content without written permission.</p>
+      </div>
+
+      <div class="legal-block">
+        <h3>Disclaimer of Warranties</h3>
+        <p>PhonicsPath is provided "as is" without warranties of any kind. Every child develops at their own pace, and we do not guarantee any specific reading outcome or timeline.</p>
+      </div>
+
+      <div class="legal-block">
+        <h3>Limitation of Liability</h3>
+        <p>To the maximum extent permitted by applicable law, PhonicsPath and its developers are not liable for any indirect, incidental, or consequential damages arising from your use of the app.</p>
+      </div>
+
+      <div class="legal-block">
+        <h3>Changes to These Terms</h3>
+        <p>We may update these Terms at any time. Material changes will be noted in App Store release notes. Continued use of the app after an update constitutes your acceptance of the revised terms.</p>
+      </div>
+
+      <div class="legal-block">
+        <h3>Contact</h3>
+        <p>Questions about these Terms of Use:<br>
+        <a href="mailto:pals_green.1m@icloud.com">pals_green.1m@icloud.com</a></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-mark">🦉</div>
+    <div class="footer-nav">
+      <a href="#support">Support</a>
+      <span class="footer-sep">·</span>
+      <a href="#privacy">Privacy Policy</a>
+      <span class="footer-sep">·</span>
+      <a href="#terms">Terms of Use</a>
+      <span class="footer-sep">·</span>
+      <a href="mailto:pals_green.1m@icloud.com">pals_green.1m@icloud.com</a>
+    </div>
+    <p class="footer-copy">© 2026 PhonicsPath. All rights reserved.</p>
+    <a href="../../" class="footer-back">← All apps</a>
+  </div>
+</footer>
+
+<script>
+  document.querySelectorAll('.faq-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const item = btn.closest('.faq-item');
+      const isOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item.open').forEach(i => {
+        i.classList.remove('open');
+        i.querySelector('.faq-btn').setAttribute('aria-expanded', 'false');
+      });
+      if (!isOpen) {
+        item.classList.add('open');
+        btn.setAttribute('aria-expanded', 'true');
+      }
+    });
+  });
+
+  const sections = document.querySelectorAll('section[id]');
+  const navLinks = document.querySelectorAll('.nav-links a');
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        navLinks.forEach(a => a.classList.remove('active'));
+        const active = document.querySelector(`.nav-links a[href="#${entry.target.id}"]`);
+        if (active) active.classList.add('active');
+      }
+    });
+  }, { rootMargin: '-40% 0px -55% 0px' });
+  sections.forEach(s => observer.observe(s));
+</script>
+
+</body>
+</html>
