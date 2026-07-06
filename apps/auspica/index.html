@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Auspica — Support</title>
+  <meta name="description" content="Support, Privacy Policy, and Terms of Use for Auspica — an offline Chinese metaphysics app for auspicious date selection, BaZi, face/mole/palm reading, zodiac, and numerology.">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --c900: #4A0F0B;
+      --c800: #8F211B;
+      --c600: #C0332B;
+      --c500: #D8463C;
+      --c300: #E89A93;
+      --c100: #F6E0DD;
+      --c50:  #FCF1EF;
+      --gold: #A9791F;
+      --goldDeep: #7E5912;
+      --paper: #FBF6EC;
+      --white: #FFFFFF;
+      --gray200: #E7DAC5;
+      --gray400: #9C8F80;
+      --gray600: #6A5F53;
+      --gray800: #2B2320;
+      --text: #231D18;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", system-ui, sans-serif;
+      color: var(--text);
+      background: var(--white);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    nav {
+      position: sticky; top: 0; z-index: 100;
+      background: rgba(255,255,255,0.93);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--c100);
+    }
+    .nav-inner {
+      max-width: 860px; margin: 0 auto;
+      display: flex; align-items: center; justify-content: space-between;
+      height: 58px; padding: 0 24px; gap: 16px;
+    }
+    .nav-brand { font-weight: 700; font-size: 17px; color: var(--c800); text-decoration: none; }
+    .nav-links { display: flex; gap: 20px; }
+    .nav-links a { font-size: 14px; font-weight: 500; color: var(--gray600); text-decoration: none; transition: color .15s; }
+    .nav-links a:hover { color: var(--c800); }
+
+    .hero {
+      background: linear-gradient(135deg, var(--c900), var(--c600));
+      color: var(--white);
+      text-align: center;
+      padding: 72px 24px 64px;
+    }
+    .hero-icon {
+      width: 88px; height: 88px; border-radius: 22px;
+      display: inline-flex; align-items: center; justify-content: center;
+      margin-bottom: 20px;
+      background: linear-gradient(150deg, var(--c800), var(--c900));
+      border: 1px solid rgba(233,154,147,0.35);
+      font-family: Georgia, "Songti SC", "Noto Serif SC", serif;
+      font-size: 44px; font-weight: 700;
+      color: var(--gold);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.28);
+    }
+    .hero h1 { font-family: Georgia, "Times New Roman", serif; font-size: 34px; font-weight: 800; margin-bottom: 8px; letter-spacing: -0.5px; }
+    .hero p { font-size: 17px; opacity: 0.92; max-width: 520px; margin: 0 auto; }
+
+    .section { max-width: 860px; margin: 0 auto; padding: 56px 24px 48px; }
+    .section + .section { border-top: 1px solid var(--gray200); }
+    .section h2 { font-size: 24px; font-weight: 700; margin-bottom: 20px; color: var(--c900); }
+    .section h3 { font-size: 17px; font-weight: 600; margin: 24px 0 8px; color: var(--gray800); }
+    .section p, .section li { font-size: 15px; color: var(--gray600); line-height: 1.7; }
+    .section ul { padding-left: 20px; margin: 8px 0 16px; }
+    .section li { margin-bottom: 6px; }
+    .section a { color: var(--c800); text-decoration: none; }
+    .section a:hover { text-decoration: underline; }
+
+    .contact-btn {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 12px 28px; border-radius: 12px;
+      background: var(--c800); color: var(--white);
+      font-weight: 600; font-size: 15px;
+      text-decoration: none; transition: background .15s;
+      margin-top: 12px;
+    }
+    .contact-btn:hover { background: var(--c900); text-decoration: none; }
+
+    .faq-item { margin-bottom: 16px; }
+    .faq-item strong { color: var(--gray800); font-size: 15px; }
+    .faq-item p { margin-top: 4px; }
+
+    .callout {
+      background: var(--c50);
+      border: 1px solid var(--c100);
+      border-left: 4px solid var(--gold);
+      border-radius: 10px;
+      padding: 14px 18px;
+      margin: 8px 0 4px;
+    }
+    .callout p { color: var(--gray800); }
+
+    footer {
+      text-align: center; padding: 32px 24px; font-size: 13px;
+      color: var(--gray400); border-top: 1px solid var(--gray200);
+    }
+
+    @media (max-width: 600px) {
+      .hero { padding: 48px 20px 40px; }
+      .hero h1 { font-size: 28px; }
+      .nav-links { gap: 14px; }
+      .nav-links a { font-size: 13px; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="nav-inner">
+      <a href="#" class="nav-brand">Auspica</a>
+      <div class="nav-links">
+        <a href="#support">Support</a>
+        <a href="#privacy">Privacy</a>
+        <a href="#terms">Terms</a>
+      </div>
+    </div>
+  </nav>
+
+  <div class="hero">
+    <div class="hero-icon">擇</div>
+    <h1>Auspica</h1>
+    <p>Chinese metaphysics in your pocket — auspicious date selection (擇日), BaZi, face, mole &amp; palm reading, zodiac, and numerology. Computed entirely on your device.</p>
+  </div>
+
+  <!-- SUPPORT -->
+  <div class="section" id="support">
+    <h2>Support</h2>
+    <p>Need help with Auspica? Check the FAQ below or contact us directly.</p>
+
+    <a href="mailto:pals_green.1m@icloud.com" class="contact-btn">✉ Contact Support</a>
+
+    <h3>Frequently Asked Questions</h3>
+
+    <div class="faq-item">
+      <strong>What does Auspica do?</strong>
+      <p>Auspica brings classical Chinese metaphysics into one calm, modern app: pick auspicious dates (擇日) for weddings, moving, business openings and travel; generate your BaZi (Four Pillars) chart; explore face, mole and palm reading by tapping points on a diagram; and read your Chinese zodiac and numerology. Everything is computed from the birth details you enter.</p>
+    </div>
+
+    <div class="faq-item">
+      <strong>Does Auspica use my camera or photos?</strong>
+      <p>No. Face, mole and palm reading work by tapping features on an on-screen diagram — Auspica never uses your camera, never scans your face or hands, and never accesses your photo library.</p>
+    </div>
+
+    <div class="faq-item">
+      <strong>Is my birth data sent anywhere?</strong>
+      <p>No. Auspica is 100% offline. Your birth details and every reading are calculated on your device and stay on your device. There is no account, no login, and no server — nothing is uploaded.</p>
+    </div>
+
+    <div class="faq-item">
+      <strong>Is this real advice?</strong>
+      <p>No. Auspica is for entertainment and cultural interest only. It is not medical, health, psychological, financial, legal, or professional advice. Use your own judgment for real-life decisions.</p>
+    </div>
+
+    <div class="faq-item">
+      <strong>What can I buy in the app?</strong>
+      <p>Auspica is free to use with ads. Optional purchases include one-time reading packs (1, 5, or 12 readings), a one-time Event Date Reading, an annual Auspica Unlimited subscription, and an Auspica Premium lifetime unlock that removes ads and unlocks everything.</p>
+    </div>
+
+    <div class="faq-item">
+      <strong>Why do I see ads and a tracking prompt?</strong>
+      <p>The free version shows ads via Google AdMob. On first launch you'll see Apple's App Tracking Transparency prompt. If you allow it, ads may be more relevant (personalized); if you decline, you'll still see ads and every feature keeps working. A subscription or the lifetime unlock removes ads entirely.</p>
+    </div>
+
+    <div class="faq-item">
+      <strong>How do I delete my data?</strong>
+      <p>Open Auspica and go to Settings → Delete My Data. This erases your saved birth profiles and readings from the device. Deleting the app also removes everything.</p>
+    </div>
+
+    <div class="faq-item">
+      <strong>How do I manage or cancel my subscription?</strong>
+      <p>Open the Settings app on your device, tap your name → Subscriptions → Auspica, and manage it there. You keep access until the end of the current billing period.</p>
+    </div>
+
+    <div class="faq-item">
+      <strong>How do I restore a purchase?</strong>
+      <p>Open Auspica's Settings and tap "Restore Purchases". Your previous purchases and subscription will be restored to this device.</p>
+    </div>
+  </div>
+
+  <!-- PRIVACY POLICY -->
+  <div class="section" id="privacy">
+    <h2>Privacy Policy</h2>
+    <p><em>Last updated: July 2026</em></p>
+
+    <div class="callout">
+      <p><strong>Auspica is 100% offline.</strong> Your birth details and all readings are computed and stored on your device. We do not operate any server, we have no account system, and we never upload your personal data.</p>
+    </div>
+
+    <h3>1. Information We Collect</h3>
+    <p>Auspica does not require an account and does not ask for your name, email, or login. The birth details you enter (such as date, time, and place of birth), your saved profiles, and the readings generated from them are stored locally on your device. We do not collect, transmit, or store this information on any server.</p>
+
+    <h3>2. On-Device Computation</h3>
+    <p>All calculations — auspicious date selection (擇日), BaZi charts, face/mole/palm interpretations, zodiac, and numerology — happen entirely on your device. Auspica does not use your camera, microphone, health data, contacts, or precise location, and it does not read your photo library. Face, mole, and palm features are entered by tapping a diagram, not by scanning you.</p>
+
+    <h3>3. Advertising</h3>
+    <p>Auspica shows ads through Google AdMob (a Google service). To serve ads, AdMob may use a device identifier and standard ad-request data. On first launch you'll be shown Apple's App Tracking Transparency (ATT) prompt: if you allow tracking, you may receive personalized ads; if you decline, ads remain non-personalized and every feature still works. You can change this anytime in Settings → Privacy &amp; Security → Tracking. Google AdMob is the only third party that receives any data from the app. See Google's policies at <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">policies.google.com/privacy</a>.</p>
+
+    <h3>4. Subscriptions &amp; Purchases</h3>
+    <p>Auspica uses Apple's StoreKit for in-app purchases and subscriptions. Payment is handled entirely by Apple through your Apple ID. We never see or store your payment details.</p>
+
+    <h3>5. Third-Party Services</h3>
+    <ul>
+      <li><strong>Google AdMob</strong> — advertising (free tier); may use a device identifier for ads, subject to your ATT choice</li>
+      <li><strong>Apple StoreKit</strong> — in-app purchases and subscriptions, managed by Apple</li>
+    </ul>
+
+    <h3>6. Data We Do NOT Collect</h3>
+    <p>We do not collect your name, email, phone number, precise location, contacts, camera or photo data, health data, or any account information. We have no analytics servers and we do not sell any data to third parties.</p>
+
+    <h3>7. Children's Privacy</h3>
+    <p>Auspica is a general-audience app and is not directed at children under 13. We do not knowingly collect personal data from children.</p>
+
+    <h3>8. Data Deletion &amp; Your Rights</h3>
+    <p>Because your data lives only on your device, you are in full control. You can erase everything at any time from Settings → Delete My Data inside the app, or by deleting the app. Under GDPR and CCPA you have the right to access, correct, or delete your personal data — with Auspica, that data never leaves your device.</p>
+
+    <h3>9. Changes to This Policy</h3>
+    <p>We may update this privacy policy from time to time. Continued use of the app after changes constitutes acceptance of the updated policy.</p>
+
+    <h3>10. Contact</h3>
+    <p>For privacy questions, contact us at <a href="mailto:pals_green.1m@icloud.com">pals_green.1m@icloud.com</a></p>
+  </div>
+
+  <!-- TERMS OF USE -->
+  <div class="section" id="terms">
+    <h2>Terms of Use</h2>
+    <p><em>Last updated: July 2026</em></p>
+
+    <h3>1. Acceptance of Terms</h3>
+    <p>By downloading and using Auspica, you agree to these Terms of Use. If you do not agree, please do not use the app.</p>
+
+    <h3>2. Description of Service</h3>
+    <p>Auspica is a Chinese metaphysics app offering auspicious date selection (擇日), BaZi (Four Pillars) charts, face/mole/palm reading via a tap diagram, Chinese zodiac, and numerology. All results are generated on your device from the details you enter.</p>
+
+    <h3>3. Entertainment Only — Not Professional Advice</h3>
+    <p>Auspica is provided for entertainment and cultural interest only. Its readings, dates, and interpretations are not medical, health, psychological, financial, investment, legal, or any other form of professional advice, and must not be relied upon as such. You are solely responsible for your decisions. Consult a qualified professional for any important matter.</p>
+
+    <h3>4. Free Version, Purchases &amp; Subscriptions</h3>
+    <p>Auspica is free to use with ads. Optional in-app purchases include one-time reading packs (1, 5, or 12 readings), a one-time Event Date Reading, an Auspica Premium lifetime unlock, and an annual Auspica Unlimited subscription. Ad-supported features are available at no cost.</p>
+
+    <h3>5. Subscription Terms</h3>
+    <ul>
+      <li>Payment is charged to your Apple ID account at confirmation of purchase</li>
+      <li>The annual subscription automatically renews unless canceled at least 24 hours before the end of the current period</li>
+      <li>Your account is charged for renewal within 24 hours before the end of the current period</li>
+      <li>You can manage or cancel subscriptions in your device's Settings → Apple ID → Subscriptions</li>
+      <li>One-time reading packs, the Event Date Reading, and the lifetime unlock are one-time purchases and do not renew</li>
+    </ul>
+
+    <h3>6. User Content</h3>
+    <p>You retain ownership of the birth details and profiles you enter into Auspica. Because this data stays on your device, we do not access, claim, or store any rights to it.</p>
+
+    <h3>7. Acceptable Use</h3>
+    <p>You agree to use Auspica only for its intended purpose. You may not reverse-engineer, decompile, or attempt to extract the source code of the application.</p>
+
+    <h3>8. Disclaimer of Warranties</h3>
+    <p>Auspica is provided "as is" without warranty of any kind. Metaphysical readings are inherently interpretive; we do not guarantee that any reading, date, or interpretation is accurate, complete, or suitable for your situation.</p>
+
+    <h3>9. Limitation of Liability</h3>
+    <p>Auspica and its developers shall not be liable for any indirect, incidental, or consequential damages arising from your use of the app, including any decisions made in reliance on its readings.</p>
+
+    <h3>10. Changes to Terms</h3>
+    <p>We may update these terms from time to time. Continued use of the app after changes constitutes acceptance of the new terms.</p>
+
+    <h3>11. Contact</h3>
+    <p>For questions about these terms, contact us at <a href="mailto:pals_green.1m@icloud.com">pals_green.1m@icloud.com</a></p>
+  </div>
+
+  <footer>
+    &copy; 2026 Auspica. All rights reserved.
+  </footer>
+
+</body>
+</html>
