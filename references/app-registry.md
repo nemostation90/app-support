@@ -18,3 +18,4 @@
 | CueCam | cuecam | com.loopartapp.app | TestFlight | — |
 | Grasp | grasp | com.graspmoney.app | In Review | 6787222501 |
 | Auspica | auspica | com.auspica.app | TestFlight | — |
+| Wren | wren | com.wrenbaby.app | TestFlight | — |

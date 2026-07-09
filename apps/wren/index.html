@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wren — Support</title>
+  <meta name="description" content="Support, Privacy Policy, and Terms of Use for Wren — a private, on-device baby tracker for feeds, sleep, diapers, growth and more. No account, no ads, no tracking.">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --c900: #0F4A42;
+      --c800: #157065;
+      --c600: #1F8F82;
+      --c500: #2FA489;
+      --c300: #4CC2A0;
+      --c100: #DCF0EA;
+      --c50:  #F1FAF7;
+      --paper: #FBFDFC;
+      --white: #FFFFFF;
+      --gray200: #E4EDEA;
+      --gray400: #93A39E;
+      --gray600: #5E6E69;
+      --gray800: #263230;
+      --text: #1E2A27;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", system-ui, sans-serif;
+      color: var(--text);
+      background: var(--white);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    nav {
+      position: sticky; top: 0; z-index: 100;
+      background: rgba(255,255,255,0.93);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--c100);
+    }
+    .nav-inner {
+      max-width: 860px; margin: 0 auto;
+      display: flex; align-items: center; justify-content: space-between;
+      height: 58px; padding: 0 24px; gap: 16px;
+    }
+    .nav-brand { font-weight: 700; font-size: 17px; color: var(--c800); text-decoration: none; }
+    .nav-links { display: flex; gap: 20px; }
+    .nav-links a { font-size: 14px; font-weight: 500; color: var(--gray600); text-decoration: none; transition: color .15s; }
+    .nav-links a:hover { color: var(--c800); }
+
+    .hero {
+      background: linear-gradient(135deg, var(--c900), var(--c600));
+      color: var(--white);
+      text-align: center;
+      padding: 72px 24px 64px;
+    }
+    .hero-icon {
+      width: 88px; height: 88px; border-radius: 22px;
+      display: inline-flex; align-items: center; justify-content: center;
+      margin-bottom: 20px;
+      background: linear-gradient(150deg, var(--c500), var(--c800));
+      border: 1px solid rgba(76,194,160,0.4);
+      font-size: 46px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.22);
+    }
+    .hero h1 { font-size: 34px; font-weight: 800; margin-bottom: 8px; letter-spacing: -0.5px; }
+    .hero p { font-size: 17px; opacity: 0.92; max-width: 540px; margin: 0 auto; }
+
+    .section { max-width: 860px; margin: 0 auto; padding: 56px 24px 48px; }
+    .section + .section { border-top: 1px solid var(--gray200); }
+    .section h2 { font-size: 24px; font-weight: 700; margin-bottom: 20px; color: var(--c900); }
+    .section h3 { font-size: 17px; font-weight: 600; margin: 24px 0 8px; color: var(--gray800); }
+    .section p, .section li { font-size: 15px; color: var(--gray600); line-height: 1.7; }
+    .section ul { padding-left: 20px; margin: 8px 0 16px; }
+    .section li { margin-bottom: 6px; }
+    .section a { color: var(--c800); text-decoration: none; }
+    .section a:hover { text-decoration: underline; }
+
+    .contact-btn {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 12px 28px; border-radius: 12px;
+      background: var(--c800); color: var(--white);
+      font-weight: 600; font-size: 15px;
+      text-decoration: none; transition: background .15s;
+      margin-top: 12px;
+    }
+    .contact-btn:hover { background: var(--c900); text-decoration: none; }
+
+    .faq-item { margin-bottom: 16px; }
+    .faq-item strong { color: var(--gray800); font-size: 15px; }
+    .faq-item p { margin-top: 4px; }
+
+    .callout {
+      background: var(--c50);
+      border: 1px solid var(--c100);
+      border-left: 4px solid var(--c500);
+      border-radius: 10px;
+      padding: 14px 18px;
+      margin: 8px 0 4px;
+    }
+    .callout p { color: var(--gray800); }
+
+    footer {
+      text-align: center; padding: 32px 24px; font-size: 13px;
+      color: var(--gray400); border-top: 1px solid var(--gray200);
+    }
+
+    @media (max-width: 600px) {
+      .hero { padding: 48px 20px 40px; }
+      .hero h1 { font-size: 28px; }
+      .nav-links { gap: 14px; }
+      .nav-links a { font-size: 13px; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="nav-inner">
+      <a href="#" class="nav-brand">Wren</a>
+      <div class="nav-links">
+        <a href="#support">Support</a>
+        <a href="#privacy">Privacy</a>
+        <a href="#terms">Terms</a>
+      </div>
+    </div>
+  </nav>
+
+  <div class="hero">
+    <div class="hero-icon">🐦</div>
+    <h1>Wren</h1>
+    <p>A calm, private baby tracker — feeds, sleep, diapers, solids, medicine, growth and milestones, with on-device nap guidance. No account, no ads, no tracking.</p>
+  </div>
+
+  <!-- SUPPORT -->
+  <div class="section" id="support">
+    <h2>Support</h2>
+    <p>Need help with Wren? Check the FAQ below or contact us directly.</p>
+
+    <a href="mailto:pals_green.1m@icloud.com" class="contact-btn">✉ Contact Support</a>
+
+    <h3>Frequently Asked Questions</h3>
+
+    <div class="faq-item">
+      <strong>What does Wren do?</strong>
+      <p>Wren helps you track your baby's day in one calm place: breastfeeding with per-side timers, bottles, pumping, sleep, diapers, solids, medicine (with next-dose reminders), growth and milestones. It shows time since the last feed, live timers on your Lock Screen, daily summaries, weekly trend charts, and on-device "Rhythm" nap-window guidance based on your baby's age and logged sleep.</p>
+    </div>
+
+    <div class="faq-item">
+      <strong>Do I need an account?</strong>
+      <p>No. Wren has no login and no account. Everything works out of the box and your data stays on your device.</p>
+    </div>
+
+    <div class="faq-item">
+      <strong>Is my baby's data sent anywhere?</strong>
+      <p>No. By default all of your data stays on your device. If you turn on iCloud sync in Settings, your log is stored in your own private iCloud (Apple CloudKit) so it can sync across your devices and, optionally, be shared with a second caregiver. There is no other server and no third-party analytics.</p>
+    </div>
+
+    <div class="faq-item">
+      <strong>Is Wren medical advice?</strong>
+      <p>No. Wren is a personal logging tool for general wellness. It is not a medical, diagnostic, or sleep-training app and does not provide medical advice. Always consult your pediatrician for health decisions.</p>
+    </div>
+
+    <div class="faq-item">
+      <strong>What can I buy in the app?</strong>
+      <p>Wren is free to use. There is one optional purchase — <strong>Wren Lifetime</strong>, a one-time (non-subscription) unlock that adds unlimited history, unlimited children, Apple Watch quick-log, second-caregiver sharing, and CSV + PDF export. Widgets and Live Activities are free for everyone.</p>
+    </div>
+
+    <div class="faq-item">
+      <strong>Why does Wren ask for notifications?</strong>
+      <p>Only if you enable reminders. Wren can send an optional daily catch-up reminder and medication next-dose reminders. Notifications are entirely optional and off until you turn them on. Wren never uses your camera, microphone, location, or contacts.</p>
+    </div>
+
+    <div class="faq-item">
+      <strong>How do I delete my data?</strong>
+      <p>Open Wren and go to Settings → Delete all my data. This permanently erases every child and log entry stored on the device. Deleting the app also removes everything, and if iCloud sync was on you can remove the app's data in iOS Settings → your name → iCloud.</p>
+    </div>
+
+    <div class="faq-item">
+      <strong>How do I restore a purchase?</strong>
+      <p>Open Wren's paywall (Settings → Unlock Wren) and tap "Restore Purchases". Your Lifetime unlock will be restored to this device and any device signed in to the same Apple ID.</p>
+    </div>
+  </div>
+
+  <!-- PRIVACY POLICY -->
+  <div class="section" id="privacy">
+    <h2>Privacy Policy</h2>
+    <p><em>Last updated: July 2026</em></p>
+
+    <div class="callout">
+      <p><strong>Wren is private by design.</strong> Your data is stored on your device and, only if you choose, in your own private iCloud. We operate no server of our own, have no account system, and never sell or share your data. No ads, no tracking, ever.</p>
+    </div>
+
+    <h3>1. Information We Collect</h3>
+    <p>Wren does not require an account and does not ask for your name, email, or login. The information you enter — your children's profiles and the log entries you record (feeds, sleep, diapers, solids, medicine, growth, milestones, notes) — is stored locally on your device. We do not collect, transmit, or store this information on any server we operate.</p>
+
+    <h3>2. On-Device by Default</h3>
+    <p>All core features — logging, timers, daily summaries, trend charts, and "Rhythm" nap-window guidance — run entirely on your device. Rhythm predictions are computed on-device from your baby's age and your logged sleep; no cloud service or AI provider is involved.</p>
+
+    <h3>3. Optional iCloud Sync &amp; Caregiver Sharing</h3>
+    <p>If you enable iCloud sync in Settings, your log is stored in your own private iCloud database using Apple CloudKit, so it can sync across your devices and, optionally, be shared with a second caregiver you invite. This data lives in your personal iCloud account and is governed by <a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener">Apple's Privacy Policy</a>. We (the developer) have no access to it. iCloud sync is off until you turn it on.</p>
+
+    <h3>4. Purchases</h3>
+    <p>Wren uses Apple's StoreKit for the optional one-time in-app purchase. Payment is handled entirely by Apple through your Apple ID. We never see or store your payment details.</p>
+
+    <h3>5. No Advertising, No Tracking</h3>
+    <p>Wren contains no advertising SDKs and no analytics or tracking SDKs. We do not use any advertising identifier, we do not track you across apps or websites, and the app does not present an App Tracking Transparency prompt because it performs no tracking. The app's privacy manifest declares "Data Not Collected" and no tracking.</p>
+
+    <h3>6. Third-Party Services</h3>
+    <ul>
+      <li><strong>Apple iCloud / CloudKit</strong> — optional sync and caregiver sharing, only if you enable it; data stays in your private Apple account</li>
+      <li><strong>Apple StoreKit</strong> — the optional in-app purchase, managed by Apple</li>
+    </ul>
+    <p>No other third party receives any data from the app.</p>
+
+    <h3>7. Data We Do NOT Collect</h3>
+    <p>We do not collect your name, email, phone number, precise location, contacts, camera or photo data, or any account information, and we run no analytics servers.</p>
+
+    <h3>8. Children's Privacy</h3>
+    <p>Wren is a tool for parents and caregivers to record information about their own children. It is not directed to children as users, and we do not knowingly collect personal data directly from children.</p>
+
+    <h3>9. Data Deletion &amp; Your Rights</h3>
+    <p>Because your data lives on your device (and, if enabled, your own iCloud), you are in full control. You can erase everything at any time from Settings → Delete all my data, or by deleting the app. Under GDPR and CCPA you have the right to access, correct, or delete your personal data — with Wren, that data never leaves your own control.</p>
+
+    <h3>10. Changes to This Policy</h3>
+    <p>We may update this privacy policy from time to time. Continued use of the app after changes constitutes acceptance of the updated policy.</p>
+
+    <h3>11. Contact</h3>
+    <p>For privacy questions, contact us at <a href="mailto:pals_green.1m@icloud.com">pals_green.1m@icloud.com</a></p>
+  </div>
+
+  <!-- TERMS OF USE -->
+  <div class="section" id="terms">
+    <h2>Terms of Use</h2>
+    <p><em>Last updated: July 2026</em></p>
+
+    <h3>1. Acceptance of Terms</h3>
+    <p>By downloading and using Wren, you agree to these Terms of Use. If you do not agree, please do not use the app.</p>
+
+    <h3>2. Description of Service</h3>
+    <p>Wren is a baby-tracking app for logging feeds, sleep, diapers, solids, medicine, growth and milestones, with daily summaries, trend charts, and on-device nap-window guidance. All core features run on your device from the information you enter.</p>
+
+    <h3>3. General Wellness — Not Medical Advice</h3>
+    <p>Wren is a personal logging tool for general wellness and informational purposes only. It is not a medical, diagnostic, therapeutic, or sleep-training service, and its summaries and nap-window suggestions are not medical advice. Always consult a qualified pediatrician or healthcare professional for any health decision concerning your child.</p>
+
+    <h3>4. Purchases</h3>
+    <p>Wren is free to use. It offers one optional in-app purchase — Wren Lifetime — a one-time, non-consumable unlock. It is not a subscription and does not auto-renew.</p>
+
+    <h3>5. Purchase Terms</h3>
+    <ul>
+      <li>Payment is charged to your Apple ID account at confirmation of purchase</li>
+      <li>Wren Lifetime is a one-time purchase and does not renew</li>
+      <li>The purchase is tied to your Apple ID and can be restored via "Restore Purchases"</li>
+      <li>Purchases are handled by Apple; refunds are subject to Apple's App Store policies</li>
+    </ul>
+
+    <h3>6. Your Content</h3>
+    <p>You retain ownership of the profiles and entries you create in Wren. Because this data stays on your device (and, if enabled, in your own iCloud), we do not access, claim, or store any rights to it.</p>
+
+    <h3>7. Acceptable Use</h3>
+    <p>You agree to use Wren only for its intended purpose. You may not reverse-engineer, decompile, or attempt to extract the source code of the application.</p>
+
+    <h3>8. Disclaimer of Warranties</h3>
+    <p>Wren is provided "as is" without warranty of any kind. We do not guarantee that any summary, chart, or nap-window suggestion is accurate, complete, or suitable for your situation.</p>
+
+    <h3>9. Limitation of Liability</h3>
+    <p>Wren and its developers shall not be liable for any indirect, incidental, or consequential damages arising from your use of the app, including any decisions made in reliance on its content.</p>
+
+    <h3>10. Changes to Terms</h3>
+    <p>We may update these terms from time to time. Continued use of the app after changes constitutes acceptance of the new terms.</p>
+
+    <h3>11. Contact</h3>
+    <p>For questions about these terms, contact us at <a href="mailto:pals_green.1m@icloud.com">pals_green.1m@icloud.com</a></p>
+  </div>
+
+  <footer>
+    &copy; 2026 Wren. All rights reserved.
+  </footer>
+
+</body>
+</html>
