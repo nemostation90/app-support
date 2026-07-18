@@ -19,3 +19,4 @@
 | Grasp | grasp | com.graspmoney.app | In Review | 6787222501 |
 | Auspica | auspica | com.auspica.app | TestFlight | — |
 | Wren | wren | com.wrenbaby.app | TestFlight | — |
+| Spot: Cozy Hidden Object Game | spot | com.spotdaily.app | TestFlight | — |

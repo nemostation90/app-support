@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Spot: Cozy Hidden Object Game — Support</title>
+  <meta name="description" content="Support, Privacy Policy, and Terms of Use for Spot: Cozy Hidden Object Game — find Spot the black cat in every cozy hand-painted room. Relaxing, family-friendly hidden object game.">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --c900: #5B3A1E;
+      --c800: #7A4E28;
+      --c600: #A6702F;
+      --c500: #C68A3E;
+      --c300: #E4B571;
+      --c100: #F7E7CE;
+      --c50:  #FDF5E9;
+      --cream: #FBF3E6;
+      --paper: #FFFCF6;
+      --white: #FFFFFF;
+      --gray200: #ECE1CE;
+      --gray400: #B39E82;
+      --gray600: #7A6B57;
+      --gray800: #3E3222;
+      --text: #2E2618;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", system-ui, sans-serif;
+      color: var(--text);
+      background: var(--paper);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    nav {
+      position: sticky; top: 0; z-index: 100;
+      background: rgba(255,252,246,0.93);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--c100);
+    }
+    .nav-inner {
+      max-width: 860px; margin: 0 auto;
+      display: flex; align-items: center; justify-content: space-between;
+      height: 58px; padding: 0 24px; gap: 16px;
+    }
+    .nav-brand { font-weight: 700; font-size: 17px; color: var(--c800); text-decoration: none; }
+    .nav-links { display: flex; gap: 20px; }
+    .nav-links a { font-size: 14px; font-weight: 500; color: var(--gray600); text-decoration: none; transition: color .15s; }
+    .nav-links a:hover { color: var(--c800); }
+
+    .hero {
+      background: linear-gradient(135deg, var(--c900), var(--c600));
+      color: var(--white);
+      text-align: center;
+      padding: 72px 24px 64px;
+      position: relative; overflow: hidden;
+    }
+    .hero::after {
+      content: '';
+      position: absolute; inset: 0; opacity: 0.06;
+      background-image: url("data:image/svg+xml,%3Csvg width='70' height='70' viewBox='0 0 70 70' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M35 20c-6 0-11 5-11 12 0 3 1 5 2 7l-3 6h24l-3-6c1-2 2-4 2-7 0-7-5-12-11-12zm-7 4l-5-6 2 8zm14 0l5-6-2 8z' fill='%23ffffff'/%3E%3C/svg%3E");
+      background-size: 70px 70px;
+      pointer-events: none;
+    }
+    .hero-inner { position: relative; z-index: 1; }
+    .hero-icon {
+      width: 88px; height: 88px; border-radius: 22px;
+      display: inline-flex; align-items: center; justify-content: center;
+      margin-bottom: 20px;
+      background: linear-gradient(150deg, var(--c500), var(--c800));
+      border: 1px solid rgba(228,181,113,0.5);
+      font-size: 46px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.22);
+    }
+    .hero h1 { font-size: 32px; font-weight: 800; margin-bottom: 8px; letter-spacing: -0.5px; }
+    .hero p { font-size: 17px; opacity: 0.93; max-width: 540px; margin: 0 auto; }
+    .hero-badge {
+      display: inline-block; margin-top: 18px;
+      background: rgba(255,255,255,0.14);
+      border: 1px solid rgba(255,255,255,0.22);
+      color: #FBF3E6;
+      padding: 6px 14px; border-radius: 20px;
+      font-size: 12px; font-weight: 600; letter-spacing: 0.6px;
+    }
+
+    .section { max-width: 860px; margin: 0 auto; padding: 56px 24px 48px; }
+    .section + .section { border-top: 1px solid var(--gray200); }
+    .section h2 { font-size: 24px; font-weight: 700; margin-bottom: 20px; color: var(--c900); }
+    .section h3 { font-size: 17px; font-weight: 600; margin: 24px 0 8px; color: var(--gray800); }
+    .section p, .section li { font-size: 15px; color: var(--gray600); line-height: 1.7; }
+    .section ul { padding-left: 20px; margin: 8px 0 16px; }
+    .section li { margin-bottom: 6px; }
+    .section a { color: var(--c800); text-decoration: none; }
+    .section a:hover { text-decoration: underline; }
+
+    .contact-btn {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 12px 28px; border-radius: 12px;
+      background: var(--c800); color: var(--white);
+      font-weight: 600; font-size: 15px;
+      text-decoration: none; transition: background .15s;
+      margin-top: 12px;
+    }
+    .contact-btn:hover { background: var(--c900); text-decoration: none; }
+
+    .faq-item { margin-bottom: 16px; }
+    .faq-item strong { color: var(--gray800); font-size: 15px; }
+    .faq-item p { margin-top: 4px; }
+
+    .callout {
+      background: var(--c50);
+      border: 1px solid var(--c100);
+      border-left: 4px solid var(--c500);
+      border-radius: 10px;
+      padding: 14px 18px;
+      margin: 8px 0 4px;
+    }
+    .callout p { color: var(--gray800); }
+
+    footer {
+      text-align: center; padding: 32px 24px; font-size: 13px;
+      color: var(--gray400); border-top: 1px solid var(--gray200);
+    }
+
+    @media (max-width: 600px) {
+      .hero { padding: 48px 20px 40px; }
+      .hero h1 { font-size: 26px; }
+      .nav-links { gap: 14px; }
+      .nav-links a { font-size: 13px; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="nav-inner">
+      <a href="#" class="nav-brand">Spot</a>
+      <div class="nav-links">
+        <a href="#support">Support</a>
+        <a href="#privacy">Privacy</a>
+        <a href="#terms">Terms</a>
+      </div>
+    </div>
+  </nav>
+
+  <div class="hero">
+    <div class="hero-inner">
+      <div class="hero-icon">🐈‍⬛</div>
+      <h1>Spot: Cozy Hidden Object Game</h1>
+      <p>Find Spot the black cat in every cozy hand-painted room.</p>
+      <div class="hero-badge">Relaxing · Family-Friendly · Ages 4+</div>
+    </div>
+  </div>
+
+  <!-- SUPPORT -->
+  <div class="section" id="support">
+    <h2>Support</h2>
+    <p>Need help with Spot? Check the FAQ below or contact us directly by email.</p>
+
+    <a href="mailto:pals_green.1m@icloud.com" class="contact-btn">✉ Contact Support</a>
+
+    <h3>Frequently Asked Questions</h3>
+
+    <div class="faq-item">
+      <strong>What is Spot?</strong>
+      <p>Spot is a cozy hidden object game. Each level is a richly hand-painted room — a tearoom, bakery, observatory, apothecary, greenhouse and more. You hunt down a list of hidden objects, and every single room also hides a signature black cat named Spot for you to find. It launches with 25 hand-painted scenes.</p>
+    </div>
+
+    <div class="faq-item">
+      <strong>Is this a spot-the-difference game?</strong>
+      <p>No. Spot is a hidden object game — you search a single detailed scene for objects on your list (and for Spot the cat), rather than comparing two images for differences.</p>
+    </div>
+
+    <div class="faq-item">
+      <strong>Is Spot suitable for children?</strong>
+      <p>Yes. Spot is a relaxing, family-friendly game rated 4+. There is no violence, no chat, and no user-generated content — just calm, cozy searching.</p>
+    </div>
+
+    <div class="faq-item">
+      <strong>Do I need an account to play?</strong>
+      <p>No. Spot has no login and no account. Just open the app and start playing. Your progress and settings are saved locally on your device.</p>
+    </div>
+
+    <div class="faq-item">
+      <strong>Is Spot free? What can I buy?</strong>
+      <p>Spot is free to play and is supported by ads. There is one optional in-app purchase — a one-time <strong>Remove Ads</strong> unlock that removes advertising from the game. It is a one-time purchase, not a subscription.</p>
+    </div>
+
+    <div class="faq-item">
+      <strong>How do I remove the ads?</strong>
+      <p>Open the app's settings or shop and tap "Remove Ads" to make the one-time purchase. Payment is handled securely by Apple through your Apple ID.</p>
+    </div>
+
+    <div class="faq-item">
+      <strong>How do I restore my "Remove Ads" purchase?</strong>
+      <p>If you reinstall Spot or switch devices, tap "Restore Purchases" in settings. Your Remove Ads unlock will be restored to any device signed in to the same Apple ID.</p>
+    </div>
+
+    <div class="faq-item">
+      <strong>Why did the app ask about tracking?</strong>
+      <p>Spot uses Apple's App Tracking Transparency. The prompt lets you choose whether our advertising partner (Google AdMob) may use your device identifier for personalized ads. You can decline and still play the full game — you'll simply see less-personalized ads. You can change this any time in iOS Settings → Privacy &amp; Security → Tracking.</p>
+    </div>
+
+    <div class="faq-item">
+      <strong>How do I reset my game progress?</strong>
+      <p>Because all progress is stored locally on your device, deleting the app removes your saved progress and settings. Reinstalling gives you a fresh start.</p>
+    </div>
+  </div>
+
+  <!-- PRIVACY POLICY -->
+  <div class="section" id="privacy">
+    <h2>Privacy Policy</h2>
+    <p><em>Last updated: July 2026</em></p>
+
+    <div class="callout">
+      <p><strong>Spot keeps your game data on your device.</strong> We operate no servers of our own and have no account system. To keep the game free, we show ads through Google AdMob, which may collect device identifiers and usage data for advertising. We never sell your personal data.</p>
+    </div>
+
+    <h3>1. Information We Collect</h3>
+    <p>Spot does not require an account and does not ask for your name, email, or login. Your game progress, level completion, and settings are stored locally on your device. We (the developer) do not operate any server that collects, transmits, or stores this information.</p>
+
+    <h3>2. Advertising (Google AdMob)</h3>
+    <p>To keep Spot free, the app displays advertisements served by Google AdMob, a third-party advertising service. To deliver and measure ads, the AdMob SDK may collect certain information from your device, including device identifiers (such as the advertising identifier), IP address, general device and usage information, and ad interaction data. This information may be used to serve personalized or non-personalized ads, subject to your App Tracking Transparency choice and consent.</p>
+    <p>You can review how Google uses this data in the <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google Privacy Policy</a> and learn about ad personalization at <a href="https://policies.google.com/technologies/ads" target="_blank" rel="noopener">Google Ads &amp; Data</a>. Purchasing the one-time <strong>Remove Ads</strong> option removes advertising from the app.</p>
+
+    <h3>3. App Tracking Transparency</h3>
+    <p>On iOS, Spot uses Apple's App Tracking Transparency (ATT) framework and asks for your permission before allowing our advertising partner to use your device's advertising identifier for tracking across apps and websites. If you decline, we do not use your identifier for cross-app tracking, and you will see less-personalized ads. You can change this choice at any time in iOS Settings → Privacy &amp; Security → Tracking.</p>
+
+    <h3>4. Purchases</h3>
+    <p>Spot uses Apple's StoreKit for the optional one-time "Remove Ads" in-app purchase. Payment is handled entirely by Apple through your Apple ID. We never see or store your payment details.</p>
+
+    <h3>5. Third-Party Services</h3>
+    <ul>
+      <li><strong>Google AdMob</strong> — serves ads and may collect device identifiers and usage data for advertising. See the <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google Privacy Policy</a>.</li>
+      <li><strong>Apple StoreKit</strong> — processes the optional in-app purchase, managed by Apple.</li>
+    </ul>
+
+    <h3>6. Data We Do NOT Collect</h3>
+    <p>We do not ask for or collect your name, email address, phone number, precise location, contacts, camera, or photo data, and we operate no analytics servers of our own. The only data processing beyond your device is performed by the third-party services listed above.</p>
+
+    <h3>7. Children's Privacy</h3>
+    <p>Spot is a family-friendly game rated 4+. We do not knowingly collect personal data directly from children. The game requires no account and no personal information to play. Because the app is ad-supported, we configure our advertising to serve age-appropriate advertising in line with the game's rating. Parents who prefer an ad-free experience for their child can purchase the one-time "Remove Ads" option. If you believe a child has provided personal information, please contact us so we can address it.</p>
+
+    <h3>8. Your Rights (GDPR &amp; CCPA)</h3>
+    <p>Spot is designed to comply with the EU General Data Protection Regulation (GDPR) and the California Consumer Privacy Act (CCPA). Because your game data lives on your device, you remain in control — deleting the app erases it. Where applicable, you have the right to access, correct, or delete personal data and to opt out of the sale or sharing of personal information. We do not sell your personal data. For advertising data handled by Google, you can manage your choices via the App Tracking Transparency prompt and Google's ad settings, or exercise your rights directly through Google.</p>
+
+    <h3>9. Data Retention &amp; Deletion</h3>
+    <p>Game progress and settings are retained on your device until you delete them or uninstall the app. Data handled by our advertising partner is retained according to that provider's own policies.</p>
+
+    <h3>10. Changes to This Policy</h3>
+    <p>We may update this privacy policy from time to time. Continued use of the app after changes constitutes acceptance of the updated policy.</p>
+
+    <h3>11. Contact</h3>
+    <p>For privacy questions, contact us at <a href="mailto:pals_green.1m@icloud.com">pals_green.1m@icloud.com</a></p>
+  </div>
+
+  <!-- TERMS OF USE -->
+  <div class="section" id="terms">
+    <h2>Terms of Use</h2>
+    <p><em>Last updated: July 2026</em></p>
+
+    <h3>1. Acceptance of Terms</h3>
+    <p>By downloading and using Spot: Cozy Hidden Object Game, you agree to these Terms of Use. If you do not agree, please do not use the app.</p>
+
+    <h3>2. Description of Service</h3>
+    <p>Spot is a hidden object game in which you search hand-painted cozy rooms for a list of hidden objects and find Spot the black cat in every scene. The app is free to play and supported by advertising, with an optional one-time in-app purchase to remove ads.</p>
+
+    <h3>3. Advertising</h3>
+    <p>Spot displays third-party advertisements served by Google AdMob to keep the game free. By using the free version of the app, you agree to the display of these advertisements. You may remove ads by purchasing the one-time "Remove Ads" option.</p>
+
+    <h3>4. Purchases</h3>
+    <p>Spot offers one optional in-app purchase — "Remove Ads" — a one-time, non-consumable unlock. It is not a subscription and does not auto-renew.</p>
+
+    <h3>5. Purchase Terms</h3>
+    <ul>
+      <li>Payment is charged to your Apple ID account at confirmation of purchase</li>
+      <li>"Remove Ads" is a one-time purchase and does not renew</li>
+      <li>The purchase is tied to your Apple ID and can be restored via "Restore Purchases"</li>
+      <li>Purchases are handled by Apple; refunds are subject to Apple's App Store policies</li>
+    </ul>
+
+    <h3>6. Acceptable Use</h3>
+    <p>You agree to use Spot only for its intended purpose as an entertainment game. You may not reverse-engineer, decompile, or attempt to extract the source code or assets of the application.</p>
+
+    <h3>7. Intellectual Property</h3>
+    <p>All artwork, scenes, characters (including Spot the cat), and other content in the app are the property of the developer and are protected by copyright. You are granted a personal, non-exclusive, non-transferable license to use the app for your own entertainment.</p>
+
+    <h3>8. Disclaimer of Warranties</h3>
+    <p>Spot is provided "as is" without warranty of any kind. We do not guarantee that the app will be uninterrupted, error-free, or available at all times.</p>
+
+    <h3>9. Limitation of Liability</h3>
+    <p>Spot and its developers shall not be liable for any indirect, incidental, or consequential damages arising from your use of the app.</p>
+
+    <h3>10. Changes to Terms</h3>
+    <p>We may update these terms from time to time. Continued use of the app after changes constitutes acceptance of the new terms.</p>
+
+    <h3>11. Contact</h3>
+    <p>For questions about these terms, contact us at <a href="mailto:pals_green.1m@icloud.com">pals_green.1m@icloud.com</a></p>
+  </div>
+
+  <footer>
+    &copy; 2026 Spot: Cozy Hidden Object Game. All rights reserved.
+  </footer>
+
+</body>
+</html>
