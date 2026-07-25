@@ -20,3 +20,4 @@
 | Auspica | auspica | com.auspica.app | TestFlight | — |
 | Wren | wren | com.wrenbaby.app | TestFlight | — |
 | Spot: Cozy Hidden Object Game | spot | com.spotdaily.app | TestFlight | — |
+| Cellarbook | cellarbook | com.cellarbookhq.app | TestFlight | — |

@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cellarbook — Support</title>
+  <meta name="description" content="Support, Privacy Policy, and Terms of Use for Cellarbook — the private, offline-first wine cellar journal with drinking-window reminders.">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --burgundy-deep: #4C1721;
+      --burgundy: #731D34;
+      --burgundy-mid: #8E2A46;
+      --gold: #C79E52;
+      --gold-soft: #E7D3A8;
+      --cream: #F6EEE8;
+      --white: #FFFFFF;
+      --gray200: #E7E1DC;
+      --gray400: #9C948C;
+      --gray600: #5A524C;
+      --gray800: #2A2320;
+      --text: #241417;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", system-ui, sans-serif;
+      color: var(--text);
+      background: var(--white);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    nav {
+      position: sticky; top: 0; z-index: 100;
+      background: rgba(255,255,255,0.93);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--gray200);
+    }
+    .nav-inner {
+      max-width: 860px; margin: 0 auto;
+      display: flex; align-items: center; justify-content: space-between;
+      height: 58px; padding: 0 24px; gap: 16px;
+    }
+    .nav-brand { font-weight: 700; font-size: 17px; color: var(--burgundy); text-decoration: none; letter-spacing: .2px; }
+    .nav-links { display: flex; gap: 20px; }
+    .nav-links a { font-size: 14px; font-weight: 500; color: var(--gray600); text-decoration: none; transition: color .15s; }
+    .nav-links a:hover { color: var(--burgundy); }
+
+    .hero {
+      background: linear-gradient(160deg, var(--burgundy) 0%, var(--burgundy-deep) 100%);
+      color: var(--white);
+      text-align: center;
+      padding: 72px 24px 64px;
+    }
+    .hero-icon {
+      width: 92px; height: 92px; border-radius: 22px;
+      display: inline-block; margin-bottom: 20px; object-fit: cover;
+      box-shadow: 0 12px 34px rgba(0,0,0,0.35);
+    }
+    .hero h1 { font-size: 32px; font-weight: 800; margin-bottom: 8px; }
+    .hero p { font-size: 17px; opacity: 0.92; max-width: 520px; margin: 0 auto; }
+
+    .section { max-width: 860px; margin: 0 auto; padding: 56px 24px 48px; }
+    .section + .section { border-top: 1px solid var(--gray200); }
+    .section h2 { font-size: 24px; font-weight: 700; margin-bottom: 20px; color: var(--burgundy-deep); }
+    .section h3 { font-size: 17px; font-weight: 600; margin: 24px 0 8px; color: var(--gray800); }
+    .section p, .section li { font-size: 15px; color: var(--gray600); line-height: 1.7; }
+    .section ul { padding-left: 20px; margin: 8px 0 16px; }
+    .section li { margin-bottom: 6px; }
+    .section a { color: var(--burgundy); text-decoration: none; }
+    .section a:hover { text-decoration: underline; }
+
+    .contact-btn {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 12px 28px; border-radius: 12px;
+      background: var(--burgundy); color: var(--white);
+      font-weight: 600; font-size: 15px;
+      text-decoration: none; transition: background .15s;
+      margin-top: 12px;
+    }
+    .contact-btn:hover { background: var(--burgundy-deep); text-decoration: none; }
+
+    .faq-item { margin-bottom: 16px; }
+    .faq-item strong { color: var(--gray800); font-size: 15px; }
+    .faq-item p { margin-top: 4px; }
+
+    footer {
+      text-align: center; padding: 32px 24px; font-size: 13px;
+      color: var(--gray400); border-top: 1px solid var(--gray200);
+    }
+
+    @media (max-width: 600px) {
+      .hero { padding: 48px 20px 40px; }
+      .hero h1 { font-size: 26px; }
+      .nav-links { gap: 14px; }
+      .nav-links a { font-size: 13px; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="nav-inner">
+      <a href="#" class="nav-brand">Cellarbook</a>
+      <div class="nav-links">
+        <a href="#support">Support</a>
+        <a href="#privacy">Privacy</a>
+        <a href="#terms">Terms</a>
+      </div>
+    </div>
+  </nav>
+
+  <div class="hero">
+    <img class="hero-icon" src="icon.png" alt="Cellarbook">
+    <h1>Cellarbook</h1>
+    <p>Your private wine cellar &amp; tasting journal. Log what you drink, track what you own, and never miss a bottle's drinking window — all offline, on your device.</p>
+  </div>
+
+  <!-- SUPPORT -->
+  <div class="section" id="support">
+    <h2>Support</h2>
+    <p>Need help with Cellarbook? Check the FAQ below or contact us directly — we read every message.</p>
+
+    <a href="mailto:pals_green.1m@icloud.com?subject=Cellarbook%20Support" class="contact-btn">✉ Contact Support</a>
+
+    <h3>Frequently Asked Questions</h3>
+
+    <div class="faq-item">
+      <strong>What does Cellarbook do?</strong>
+      <p>Cellarbook is a private wine journal and cellar manager. Add the bottles you own, log tasting notes and ratings for wines you drink, and get a reminder when a bottle enters its ideal drinking window — so you open it at its best, not too early or too late.</p>
+    </div>
+
+    <div class="faq-item">
+      <strong>Do I need an account?</strong>
+      <p>No. Cellarbook has no account, no login, and no server. Everything you enter lives on your device. There is no social feed and no marketplace.</p>
+    </div>
+
+    <div class="faq-item">
+      <strong>Does my cellar sync between my devices?</strong>
+      <p>Yes — privately. If you're signed in to the same Apple ID (iCloud) on your iPhone and iPad, your cellar syncs automatically through your own private iCloud. Your data is never shared with us or anyone else.</p>
+    </div>
+
+    <div class="faq-item">
+      <strong>How does label scanning work?</strong>
+      <p>Cellarbook can read a wine label from a photo entirely on your device using Apple's on-device text recognition. The photo and text never leave your iPhone.</p>
+    </div>
+
+    <div class="faq-item">
+      <strong>What's included for free, and what's Pro?</strong>
+      <p>The free version lets you build and browse your cellar, log tastings, and export your data as CSV. Cellarbook Pro is a one-time purchase (no subscription) that unlocks unlimited bottles, drinking-window reminders, CSV import, full insights, and removes ads.</p>
+    </div>
+
+    <div class="faq-item">
+      <strong>Why do I see ads, and how do I remove them?</strong>
+      <p>The free version is supported by ads so the app can stay free. Unlocking Cellarbook Pro removes all ads permanently.</p>
+    </div>
+
+    <div class="faq-item">
+      <strong>How do I restore my purchase?</strong>
+      <p>Open Settings inside Cellarbook and tap "Restore Purchase". Your Cellarbook Pro unlock will be restored to any device signed in to the same Apple ID.</p>
+    </div>
+
+    <div class="faq-item">
+      <strong>Can I import my existing cellar (e.g. from CellarTracker)?</strong>
+      <p>Yes. With Cellarbook Pro you can import a CSV export from other cellar tools. Free users can always export their Cellarbook data to CSV at any time.</p>
+    </div>
+  </div>
+
+  <!-- PRIVACY POLICY -->
+  <div class="section" id="privacy">
+    <h2>Privacy Policy</h2>
+    <p><em>Last updated: July 2026</em></p>
+
+    <h3>1. Information We Collect</h3>
+    <p>Cellarbook does not require an account and does not ask for your name, email, or contacts. The bottles, tasting notes, ratings, and photos you add are stored locally on your device using Apple's SwiftData framework, and — if you use iCloud — in your own private iCloud account. We do not operate servers that store your cellar or personal data.</p>
+
+    <h3>2. Advertising</h3>
+    <p>Cellarbook uses Google AdMob to show ads to free-tier users. AdMob may collect device identifiers and usage data for advertising. On first launch we ask, through Apple's App Tracking Transparency prompt, whether you allow tracking; you can change this anytime in Settings → Privacy &amp; Security → Tracking. Declining tracking still lets you use every free feature — you'll simply see less-personalized ads. Your cellar contents are never used for advertising.</p>
+
+    <h3>3. Purchases</h3>
+    <p>Cellarbook uses Apple's StoreKit to manage the one-time Cellarbook Pro unlock. Payment is handled entirely by Apple through your Apple ID. We never see or store your payment details.</p>
+
+    <h3>4. Data Storage &amp; iCloud Sync</h3>
+    <p>Your cellar remains on your device and, if enabled, in your private iCloud account so it can sync across your own devices signed in to the same Apple ID. This is standard Apple CloudKit private-database sync; we have no access to it. Deleting the app removes its local data.</p>
+
+    <h3>5. Photos &amp; Label Scanning</h3>
+    <p>Any bottle or label photos you add stay on your device (and your private iCloud). Label text recognition runs entirely on-device using Apple's Vision framework. Photos are never uploaded to us.</p>
+
+    <h3>6. Third-Party Services</h3>
+    <ul>
+      <li><strong>Google AdMob</strong> — advertising (free tier only)</li>
+      <li><strong>Apple StoreKit</strong> — in-app purchase, managed by Apple</li>
+      <li><strong>Apple iCloud / CloudKit</strong> — optional private sync across your own devices</li>
+    </ul>
+
+    <h3>7. Data We Do NOT Collect</h3>
+    <p>We do not collect your name, email, phone number, precise location, contacts, or health data. We do not sell any data to third parties, and we never share your cellar contents.</p>
+
+    <h3>8. Children's Privacy</h3>
+    <p>Cellarbook concerns alcoholic beverages and is intended for adults of legal drinking age. It is not directed at children, and we do not knowingly collect personal data from children.</p>
+
+    <h3>9. Your Rights</h3>
+    <p>Because your data lives on your device and in your own iCloud, you are in full control — edit or delete any bottle in the app, or remove the app to erase its local data. Under GDPR and CCPA you have the right to access, correct, or delete your personal data.</p>
+
+    <h3>10. Changes to This Policy</h3>
+    <p>We may update this privacy policy from time to time. Continued use of the app after changes constitutes acceptance of the updated policy.</p>
+
+    <h3>11. Contact</h3>
+    <p>For privacy questions, contact us at <a href="mailto:pals_green.1m@icloud.com?subject=Cellarbook%20Privacy">pals_green.1m@icloud.com</a></p>
+  </div>
+
+  <!-- TERMS OF USE -->
+  <div class="section" id="terms">
+    <h2>Terms of Use</h2>
+    <p><em>Last updated: July 2026</em></p>
+
+    <h3>1. Acceptance of Terms</h3>
+    <p>By downloading and using Cellarbook, you agree to these Terms of Use. If you do not agree, please do not use the app.</p>
+
+    <h3>2. Description of Service</h3>
+    <p>Cellarbook is a private wine cellar manager and tasting journal. It lets you record the wines you own and drink, add tasting notes and ratings, and receive local reminders when a bottle enters its drinking window.</p>
+
+    <h3>3. Intended for Adults</h3>
+    <p>Cellarbook relates to alcoholic beverages and is intended solely for adults of legal drinking age in their jurisdiction. Please enjoy wine responsibly.</p>
+
+    <h3>4. Free and Pro Tiers</h3>
+    <p>Cellarbook offers a free tier (supported by ads) and Cellarbook Pro, a one-time purchase that unlocks unlimited bottles, drinking-window reminders, CSV import, full insights, and removes ads. There is no subscription.</p>
+
+    <h3>5. Purchase Terms</h3>
+    <ul>
+      <li>Payment is charged to your Apple ID at confirmation of purchase</li>
+      <li>Cellarbook Pro is a one-time, non-consumable purchase — not a subscription</li>
+      <li>Your purchase can be restored on any device signed in to the same Apple ID via "Restore Purchase"</li>
+      <li>Purchases are managed by Apple; refunds are handled under Apple's App Store policies</li>
+    </ul>
+
+    <h3>6. Your Content</h3>
+    <p>You retain ownership of the bottles, notes, ratings, and photos you enter into Cellarbook. We do not claim any rights to them and we cannot access them.</p>
+
+    <h3>7. Acceptable Use</h3>
+    <p>You agree to use Cellarbook only for its intended personal purpose. You may not reverse-engineer, decompile, or attempt to extract the source code of the application.</p>
+
+    <h3>8. Disclaimer of Warranties</h3>
+    <p>Cellarbook is provided "as is" without warranty of any kind. Drinking-window estimates and any suggested dates are informational only and may not reflect a specific bottle's actual condition or optimal timing.</p>
+
+    <h3>9. Limitation of Liability</h3>
+    <p>Cellarbook and its developers shall not be liable for any indirect, incidental, or consequential damages arising from your use of the app.</p>
+
+    <h3>10. Changes to Terms</h3>
+    <p>We may update these terms from time to time. Continued use of the app after changes constitutes acceptance of the new terms.</p>
+
+    <h3>11. Contact</h3>
+    <p>For questions about these terms, contact us at <a href="mailto:pals_green.1m@icloud.com?subject=Cellarbook%20Terms">pals_green.1m@icloud.com</a></p>
+  </div>
+
+  <footer>
+    &copy; 2026 Cellarbook. All rights reserved.
+  </footer>
+
+</body>
+</html>
