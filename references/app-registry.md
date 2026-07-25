@@ -21,3 +21,4 @@
 | Wren | wren | com.wrenbaby.app | TestFlight | — |
 | Spot: Cozy Hidden Object Game | spot | com.spotdaily.app | TestFlight | — |
 | Cellarbook | cellarbook | com.cellarbookhq.app | TestFlight | — |
+| Contour | contour | com.contourhq.app | TestFlight | — |
