@@ -15,7 +15,7 @@
 | FaceForm | faceform | com.facefitnesscoach.app | TestFlight | — |
 | Aquascape Journal | aquascapejournal | com.aquascapejournalhq.app | TestFlight | — |
 | Loopart | loopart | com.loopartapp.app | TestFlight | — |
-| CueCam | cuecam | com.loopartapp.app | TestFlight | — |
+| Prompta Teleprompter | cuecam | com.loopartapp.app | TestFlight | — |
 | Grasp | grasp | com.graspmoney.app | In Review | 6787222501 |
 | Auspica | auspica | com.auspica.app | TestFlight | — |
 | Wren | wren | com.wrenbaby.app | TestFlight | — |
