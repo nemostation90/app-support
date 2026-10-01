@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DryStars — Support</title>
+  <meta name="description" content="Support, Privacy Policy, and Terms of Use for DryStars — a private, on-device bedwetting tracker and star chart for parents.">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --n950: #12163A;
+      --n900: #1F2559;
+      --n700: #3B3F9E;
+      --n500: #5B5FE0;
+      --n300: #B7B9F5;
+      --n100: #E4E5FC;
+      --n50:  #F4F4FE;
+      --star: #F5B83D;
+      --cream: #FBFAFF;
+      --white: #FFFFFF;
+      --gray100: #F3F4F6;
+      --gray400: #9CA3AF;
+      --gray600: #4B5563;
+      --text: #1A1D3D;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", system-ui, sans-serif;
+      color: var(--text);
+      background: var(--white);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    nav {
+      position: sticky; top: 0; z-index: 100;
+      background: rgba(255,255,255,0.93);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--n100);
+    }
+    .nav-inner {
+      max-width: 860px; margin: 0 auto;
+      display: flex; align-items: center; justify-content: space-between;
+      height: 58px; padding: 0 24px; gap: 16px;
+    }
+    .nav-brand { display: flex; align-items: center; gap: 10px; text-decoration: none; color: var(--n900); }
+    .nav-brand img { width: 30px; height: 30px; border-radius: 8px; }
+    .nav-brand span { font-size: 15px; font-weight: 700; letter-spacing: -0.2px; }
+    .nav-links { display: flex; gap: 2px; list-style: none; }
+    .nav-links a {
+      display: block; padding: 6px 13px; border-radius: 20px;
+      font-size: 13.5px; font-weight: 500; color: var(--gray600);
+      text-decoration: none; transition: all 0.18s;
+    }
+    .nav-links a:hover, .nav-links a.active { color: var(--n900); background: var(--n100); }
+
+    .hero {
+      background: linear-gradient(160deg, var(--n950) 0%, var(--n900) 50%, #3A3290 100%);
+      padding: 72px 24px 80px; text-align: center;
+      position: relative; overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute; inset: 0;
+      background:
+        radial-gradient(ellipse at 15% 60%, rgba(91,95,224,0.25) 0%, transparent 55%),
+        radial-gradient(ellipse at 85% 20%, rgba(245,184,61,0.12) 0%, transparent 50%);
+      pointer-events: none;
+    }
+    .hero-inner { position: relative; z-index: 1; }
+    .app-icon {
+      width: 100px; height: 100px; border-radius: 24px;
+      display: block; margin: 0 auto 22px; object-fit: cover;
+      box-shadow: 0 24px 64px rgba(0,0,0,0.4), 0 0 0 3px rgba(255,255,255,0.14);
+    }
+    .hero h1 {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(30px, 5.5vw, 54px);
+      font-weight: 700; color: var(--white);
+      letter-spacing: -1.5px; line-height: 1.1; margin-bottom: 14px;
+    }
+    .hero-sub { font-size: 16px; color: var(--n300); max-width: 500px; margin: 0 auto 28px; line-height: 1.6; }
+    .store-pill {
+      display: inline-flex; align-items: center; gap: 7px;
+      background: rgba(255,255,255,0.1);
+      border: 1px solid rgba(255,255,255,0.2);
+      color: rgba(255,255,255,0.8);
+      padding: 9px 18px; border-radius: 24px;
+      font-size: 13px; font-weight: 500;
+    }
+
+    .features-strip { background: var(--n50); border-bottom: 1px solid var(--n100); padding: 28px 24px; }
+    .features-list { display: flex; gap: 10px; max-width: 860px; margin: 0 auto; flex-wrap: wrap; justify-content: center; }
+    .feature-chip {
+      display: inline-flex; align-items: center; gap: 6px;
+      background: var(--white); border: 1px solid #D3D5F8; border-radius: 20px;
+      padding: 7px 14px; font-size: 13px; font-weight: 500; color: var(--n700); white-space: nowrap;
+    }
+    .feature-chip::before { content: '★'; color: var(--star); }
+
+    .disclaimer-banner { background: #FFF8EC; border-bottom: 1px solid #FCE4B6; padding: 18px 24px; }
+    .disclaimer-inner {
+      max-width: 860px; margin: 0 auto;
+      display: flex; align-items: flex-start; gap: 12px;
+      font-size: 13.5px; color: #92400E; line-height: 1.6;
+    }
+    .disclaimer-inner svg { flex-shrink: 0; margin-top: 2px; }
+    .disclaimer-inner strong { color: #78350F; }
+
+    .content-wrap { max-width: 720px; margin: 0 auto; padding: 0 24px; }
+    .section { padding: 76px 0; border-bottom: 1px solid var(--n100); }
+    .section-tag {
+      display: inline-block; font-size: 10.5px; font-weight: 700;
+      letter-spacing: 2.2px; text-transform: uppercase;
+      color: var(--n500); background: var(--n50);
+      padding: 5px 12px; border-radius: 20px; margin-bottom: 14px;
+    }
+    .section h2 {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(26px, 4vw, 38px);
+      font-weight: 700; color: var(--n900);
+      letter-spacing: -0.8px; line-height: 1.2; margin-bottom: 8px;
+    }
+    .section-lead { font-size: 16px; color: var(--gray600); line-height: 1.7; margin-bottom: 40px; }
+
+    .faq { display: flex; flex-direction: column; }
+    .faq-item { border-bottom: 1px solid var(--n100); }
+    .faq-item:first-child { border-top: 1px solid var(--n100); }
+    .faq-btn {
+      width: 100%; text-align: left; background: none; border: none;
+      padding: 20px 0; cursor: pointer;
+      display: flex; justify-content: space-between; align-items: center; gap: 16px;
+      font-size: 15.5px; font-weight: 600; color: var(--n900); font-family: inherit;
+    }
+    .faq-btn:hover { color: var(--n700); }
+    .faq-icon { flex-shrink: 0; width: 22px; height: 22px; display: flex; align-items: center; justify-content: center; color: var(--n500); transition: transform 0.25s ease; }
+    .faq-item.open .faq-icon { transform: rotate(180deg); }
+    .faq-body { max-height: 0; overflow: hidden; transition: max-height 0.35s ease; }
+    .faq-item.open .faq-body { max-height: 700px; }
+    .faq-body p, .faq-body li { font-size: 14.5px; color: var(--gray600); line-height: 1.75; }
+    .faq-body p { padding-bottom: 14px; }
+    .faq-body ul { padding: 0 0 16px 20px; }
+    .faq-body a { color: var(--n700); }
+
+    .contact-card {
+      margin-top: 52px;
+      background: linear-gradient(140deg, var(--n900) 0%, var(--n700) 100%);
+      border-radius: 28px; padding: 44px 40px; text-align: center;
+    }
+    .contact-card h3 { font-family: Georgia, "Times New Roman", serif; font-size: 22px; font-weight: 700; color: var(--white); margin-bottom: 8px; }
+    .contact-card p { font-size: 15px; color: var(--n300); margin-bottom: 26px; }
+    .contact-btn {
+      display: inline-block; background: var(--white); color: var(--n900);
+      padding: 12px 30px; border-radius: 25px; font-size: 15px; font-weight: 600;
+      text-decoration: none; box-shadow: 0 6px 24px rgba(0,0,0,0.22);
+    }
+
+    .legal-date { display: inline-block; font-size: 12.5px; color: var(--gray400); background: var(--gray100); padding: 4px 12px; border-radius: 12px; margin-bottom: 36px; }
+    .legal-block { margin-bottom: 32px; }
+    .legal-block h3 { font-size: 16px; font-weight: 700; color: var(--n900); margin-bottom: 10px; }
+    .legal-block p, .legal-block li { font-size: 14.5px; color: var(--gray600); line-height: 1.8; }
+    .legal-block p + p { margin-top: 10px; }
+    .legal-block ul { padding-left: 20px; margin-top: 8px; }
+    .legal-block a { color: var(--n700); }
+
+    footer { background: var(--n950); padding: 44px 24px; text-align: center; }
+    .footer-nav { display: flex; justify-content: center; gap: 6px; margin-bottom: 18px; flex-wrap: wrap; }
+    .footer-nav a { font-size: 13px; color: var(--n300); opacity: 0.75; text-decoration: none; padding: 4px 10px; }
+    .footer-nav a:hover { opacity: 1; }
+    .footer-copy { font-size: 12.5px; color: rgba(255,255,255,0.3); }
+    .footer-back { display: inline-block; margin-top: 12px; font-size: 12.5px; color: var(--n300); opacity: 0.6; text-decoration: none; }
+
+    @media (max-width: 640px) {
+      .nav-links { display: none; }
+      .hero { padding: 56px 20px 64px; }
+      .section { padding: 56px 0; }
+      .contact-card { padding: 32px 24px; }
+      .features-list { justify-content: flex-start; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="#" class="nav-brand">
+      <img src="icon.png" alt="">
+      <span>DryStars</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#support">Support</a></li>
+      <li><a href="#privacy">Privacy Policy</a></li>
+      <li><a href="#terms">Terms of Use</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="hero-inner">
+    <img class="app-icon" src="icon.png" alt="DryStars app icon">
+    <h1>DryStars</h1>
+    <p class="hero-sub">A calm bedwetting tracker and star chart for parents of children aged 5–10. Log nights in seconds, reward effort, spot patterns, and bring a clear report to the doctor. Everything stays on your iPhone.</p>
+    <span class="store-pill">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+      Coming soon to the App Store
+    </span>
+  </div>
+</header>
+
+<div class="features-strip">
+  <div class="features-list">
+    <span class="feature-chip">Morning check-in</span>
+    <span class="feature-chip">Effort-based star chart</span>
+    <span class="feature-chip">Bedtime routine</span>
+    <span class="feature-chip">Drinks &amp; toilet diary</span>
+    <span class="feature-chip">Trends &amp; calendar</span>
+    <span class="feature-chip">Doctor report (PDF/CSV)</span>
+    <span class="feature-chip">100% on-device</span>
+  </div>
+</div>
+
+<div class="disclaimer-banner">
+  <div class="disclaimer-inner">
+    <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+    <span><strong>Not medical advice.</strong> DryStars is a tracking and habit tool. It does not diagnose, treat or cure any medical condition. If you are worried about your child's health — for example new wetting after being dry, daytime wetting, pain when peeing, unusual thirst, or snoring with pauses in breathing — talk to a doctor or nurse.</span>
+  </div>
+</div>
+
+<section id="support">
+  <div class="content-wrap">
+    <div class="section">
+      <span class="section-tag">Help &amp; Support</span>
+      <h2>Frequently Asked Questions</h2>
+      <p class="section-lead">Quick answers to common questions about DryStars.</p>
+
+      <div class="faq">
+        <div class="faq-item">
+          <button class="faq-btn" aria-expanded="false">What does DryStars do?
+            <span class="faq-icon"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></span></button>
+          <div class="faq-body">
+            <p>DryStars helps parents support a child who wets the bed. Each morning you log the night as dry, wet, or "woke &amp; went". In the evening your child earns stars for the bedtime routine. A simple day diary records drinks and toilet trips, and the Progress tab shows streaks, trends and patterns.</p>
+            <p>Learn articles explain the common causes and what helps, based on published guidance from NICE, the NHS, the American Academy of Pediatrics and the International Children's Continence Society.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-btn" aria-expanded="false">Why do stars reward the routine and not dry nights?
+            <span class="faq-icon"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></span></button>
+          <div class="faq-body">
+            <p>Children can't control whether a night is dry. NICE and NHS guidance recommend rewarding things a child can do — drinking well during the day, using the toilet before bed, getting up to pee — rather than dry nights. DryStars follows that approach, so wet nights never cost stars.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-btn" aria-expanded="false">What's included for free, and what does DryStars Pro add?
+            <span class="faq-icon"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></span></button>
+          <div class="faq-body">
+            <p>Free: one child, the morning check-in, star chart and rewards, bedtime routine, day diary, reminders, the last 14 nights of progress, and every Learn article.</p>
+            <p>DryStars Pro is a one-time purchase (not a subscription). It adds multiple children, full history and the monthly calendar, weekly trends, alarm and diary insights, the PDF/CSV doctor report, and logging any past night. Family Sharing is supported.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-btn" aria-expanded="false">How do I restore my DryStars Pro purchase?
+            <span class="faq-icon"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></span></button>
+          <div class="faq-body">
+            <p>Open <strong>Settings → Restore purchases</strong> in the app, or tap <strong>Restore</strong> on the DryStars Pro screen. Make sure you are signed in with the same Apple ID you used to buy it (or a Family Sharing member's Apple ID).</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-btn" aria-expanded="false">How do I request a refund?
+            <span class="faq-icon"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></span></button>
+          <div class="faq-body">
+            <p>Refunds are handled by Apple. Visit <a href="https://reportaproblem.apple.com" target="_blank" rel="noopener">reportaproblem.apple.com</a> or contact Apple Support.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-btn" aria-expanded="false">How do reminders work?
+            <span class="faq-icon"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></span></button>
+          <div class="faq-body">
+            <p>All reminders are off until you turn them on in Settings. They are local notifications scheduled on your iPhone: morning check-in, last drink of the day, bedtime routine, and an optional planned night wake-up. The NHS doesn't recommend routinely waking children at night, so that one is only for families whose plan includes it.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-btn" aria-expanded="false">How do I share progress with my child's doctor?
+            <span class="faq-icon"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></span></button>
+          <div class="faq-body">
+            <p>With DryStars Pro, open <strong>Progress → Doctor report</strong>, choose 14, 28 or 90 nights, and share the PDF or CSV using the iOS share sheet. The report is created on your device and only leaves it when you share it.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-btn" aria-expanded="false">Where is my data stored, and how do I delete it?
+            <span class="faq-icon"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></span></button>
+          <div class="faq-body">
+            <p>Everything is stored only on your iPhone. There is no account and no server. To delete one child, open <strong>Settings → Children</strong>, choose the child, and tap Delete. To erase everything, use <strong>Settings → Delete all data</strong>. Deleting the app also removes all its data.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-btn" aria-expanded="false">When should we see a doctor?
+            <span class="faq-icon"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></span></button>
+          <div class="faq-body">
+            <p>You can ask a doctor or nurse for help with bedwetting at any age. Book a visit sooner if your child:</p>
+            <ul>
+              <li>starts wetting again after being dry for more than 6 months</li>
+              <li>also has accidents during the day</li>
+              <li>has pain or burning when peeing, or pee that looks pink, red or cloudy</li>
+              <li>is very thirsty, pees a lot more than usual, or is losing weight</li>
+              <li>is often constipated</li>
+              <li>snores loudly or seems to stop breathing during sleep</li>
+              <li>is upset or bothered by the wetting</li>
+            </ul>
+            <p>If your child seems very unwell, get urgent medical help.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="contact-card">
+        <h3>Still need help?</h3>
+        <p>We usually reply within 24–48 hours.</p>
+        <a href="mailto:pals_green.1m@icloud.com?subject=DryStars%20Support" class="contact-btn">Email Support</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="privacy" style="background: var(--cream);">
+  <div class="content-wrap">
+    <div class="section">
+      <span class="section-tag">Legal</span>
+      <h2>Privacy Policy</h2>
+      <p class="section-lead">DryStars is built to keep your family's information private. This policy explains what the app stores and what it doesn't.</p>
+      <span class="legal-date">Last updated: October 1, 2026</span>
+
+      <div class="legal-block">
+        <h3>Data stored on your device</h3>
+        <p>Everything you enter is stored only on your device: your child's first name or nickname, age, avatar, chosen approach, nightly logs, day diary (drinks, toilet trips, routine steps), rewards, and notes. We do not run servers that receive this data, and there is no account to create.</p>
+      </div>
+
+      <div class="legal-block">
+        <h3>Data we collect</h3>
+        <p>None. DryStars has no analytics, no advertising, no tracking, and no third-party SDKs. We cannot see your data. The app's privacy manifest declares no tracking and no collected data.</p>
+      </div>
+
+      <div class="legal-block">
+        <h3>Purchases</h3>
+        <p>The optional DryStars Pro purchase is processed by Apple through the App Store. We never receive your payment details. The app checks your purchase status with Apple on your device using StoreKit.</p>
+      </div>
+
+      <div class="legal-block">
+        <h3>Notifications</h3>
+        <p>Reminders are local notifications scheduled on your device. They are off until you turn them on, and no reminder content is sent anywhere.</p>
+      </div>
+
+      <div class="legal-block">
+        <h3>Reports and exports</h3>
+        <p>PDF and CSV reports are created on your device. They only leave it if you choose to share them, for example with your child's doctor, using the system share sheet.</p>
+      </div>
+
+      <div class="legal-block">
+        <h3>Backups</h3>
+        <p>If you use iCloud Backup or an encrypted computer backup, your device backup may include DryStars data. Apple handles those backups under its own privacy policy. DryStars itself does not sync to any cloud service.</p>
+      </div>
+
+      <div class="legal-block">
+        <h3>Children's privacy</h3>
+        <p>DryStars is designed for parents and caregivers. It does not collect personal information from children, and nothing entered about a child is transmitted to us or to third parties.</p>
+      </div>
+
+      <div class="legal-block">
+        <h3>Deleting your data</h3>
+        <p>You can delete a child, or all data, at any time in Settings → Delete all data. Deleting the app also removes all of its data from your device.</p>
+      </div>
+
+      <div class="legal-block">
+        <h3>Changes to this policy</h3>
+        <p>If we make material changes, we will update this page and note the change in the App Store release notes.</p>
+      </div>
+
+      <div class="legal-block">
+        <h3>Contact</h3>
+        <p>Questions about privacy? Email <a href="mailto:pals_green.1m@icloud.com">pals_green.1m@icloud.com</a>.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="terms">
+  <div class="content-wrap">
+    <div class="section">
+      <span class="section-tag">Legal</span>
+      <h2>Terms of Use</h2>
+      <p class="section-lead">By using DryStars you agree to these terms. If you don't agree, please don't use the app.</p>
+      <span class="legal-date">Last updated: October 1, 2026</span>
+
+      <div class="legal-block">
+        <h3>Not medical advice</h3>
+        <p>DryStars is a tracking and habit tool. It does not diagnose, treat or cure any medical condition, and its content is general information only. Always seek the advice of a qualified healthcare professional about your child's health. In an emergency, contact your local emergency services.</p>
+        <p>The educational content is based on published guidance, including NICE CG111 (Bedwetting in under 19s), NHS information on bedwetting, the American Academy of Pediatrics (HealthyChildren.org), and the International Children's Continence Society. It is not personalised advice.</p>
+      </div>
+
+      <div class="legal-block">
+        <h3>DryStars Pro</h3>
+        <p>DryStars Pro is an optional one-time, non-consumable in-app purchase (<code>com.drystarshq.pro.lifetime</code>). It permanently unlocks additional features on devices signed in with your Apple ID, including Family Sharing where enabled. It is not a subscription and there are no recurring charges. Payment is charged to your Apple ID when you confirm the purchase. Your local price is shown in the app and on the App Store.</p>
+        <p>Refunds are handled by Apple under its policies. You can restore your purchase at any time from Settings → Restore purchases.</p>
+      </div>
+
+      <div class="legal-block">
+        <h3>Your data</h3>
+        <p>Your data is stored on your device, and you are responsible for keeping backups. We are not liable for data lost through device loss, deletion or failure.</p>
+      </div>
+
+      <div class="legal-block">
+        <h3>Acceptable use</h3>
+        <p>Use DryStars only for lawful, personal, non-commercial purposes, in support of a child in your care.</p>
+      </div>
+
+      <div class="legal-block">
+        <h3>Intellectual property</h3>
+        <p>The app, its design and its written content belong to the developer. You may not copy, redistribute or create derivative works from the app's content without written permission.</p>
+      </div>
+
+      <div class="legal-block">
+        <h3>No warranty</h3>
+        <p>The app is provided "as is" without warranties of any kind. We do not promise any particular outcome or timeline. To the extent permitted by law, we are not liable for any indirect or consequential damages arising from use of the app.</p>
+      </div>
+
+      <div class="legal-block">
+        <h3>Apple's standard terms</h3>
+        <p>Your use of the app is also governed by Apple's <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/" target="_blank" rel="noopener">Licensed Application End User License Agreement (EULA)</a>. Apple is not responsible for the app or its content.</p>
+      </div>
+
+      <div class="legal-block">
+        <h3>Changes</h3>
+        <p>We may update these terms. Continued use after an update means you accept the new terms.</p>
+      </div>
+
+      <div class="legal-block">
+        <h3>Contact</h3>
+        <p>Questions? Email <a href="mailto:pals_green.1m@icloud.com">pals_green.1m@icloud.com</a>.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-nav">
+    <a href="#support">Support</a>
+    <a href="#privacy">Privacy Policy</a>
+    <a href="#terms">Terms of Use</a>
+    <a href="mailto:pals_green.1m@icloud.com">pals_green.1m@icloud.com</a>
+  </div>
+  <p class="footer-copy">© 2026 DryStars. All rights reserved.</p>
+  <a href="../../" class="footer-back">← All apps</a>
+</footer>
+
+<script>
+  document.querySelectorAll('.faq-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const item = btn.closest('.faq-item');
+      const isOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item.open').forEach(i => {
+        i.classList.remove('open');
+        i.querySelector('.faq-btn').setAttribute('aria-expanded', 'false');
+      });
+      if (!isOpen) {
+        item.classList.add('open');
+        btn.setAttribute('aria-expanded', 'true');
+      }
+    });
+  });
+
+  const sections = document.querySelectorAll('section[id]');
+  const navLinks = document.querySelectorAll('.nav-links a');
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        navLinks.forEach(a => a.classList.remove('active'));
+        const active = document.querySelector(`.nav-links a[href="#${entry.target.id}"]`);
+        if (active) active.classList.add('active');
+      }
+    });
+  }, { rootMargin: '-40% 0px -55% 0px' });
+  sections.forEach(s => observer.observe(s));
+</script>
+
+</body>
+</html>
