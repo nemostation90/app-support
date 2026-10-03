@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Glintwall: Aesthetic Wallpaper — Support, Privacy &amp; Terms</title>
+  <meta name="description" content="Support, Privacy Policy, and Terms of Use for Glintwall: Widgets &amp; Lock Screen Themes. Original wallpapers, matching Lock + Home Screen sets and widgets for iPhone.">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #0B0B10;
+      --card: #17171F;
+      --card2: #1F1F2A;
+      --border: #2A2A36;
+      --primary: #B48CFF;
+      --primary-dark: #9A6FF0;
+      --accent: #5CE1E6;
+      --text: #F5F5FA;
+      --text2: #A0A0B2;
+      --muted: #8A8A9E;
+      --on-primary: #0B0B10;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", system-ui, sans-serif;
+      color: var(--text);
+      background: var(--bg);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    nav {
+      position: sticky; top: 0; z-index: 100;
+      background: rgba(11,11,16,0.88);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-inner {
+      max-width: 860px; margin: 0 auto;
+      display: flex; align-items: center; justify-content: space-between;
+      height: 58px; padding: 0 24px; gap: 16px;
+    }
+    .nav-brand { display: flex; align-items: center; gap: 10px; text-decoration: none; color: var(--text); }
+    .glyph {
+      display: inline-flex; align-items: center; justify-content: center;
+      background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+      color: var(--on-primary); font-weight: 800;
+    }
+    .nav-brand .glyph { width: 30px; height: 30px; border-radius: 8px; font-size: 16px; }
+    .nav-brand span.name { font-size: 15px; font-weight: 700; letter-spacing: -0.2px; }
+    .nav-links { display: flex; gap: 2px; list-style: none; }
+    .nav-links a {
+      display: block; padding: 6px 13px; border-radius: 20px;
+      font-size: 13.5px; font-weight: 500; color: var(--text2);
+      text-decoration: none; transition: all 0.18s;
+    }
+    .nav-links a:hover, .nav-links a.active { color: var(--text); background: var(--card2); }
+
+    .hero {
+      background: radial-gradient(ellipse at 20% 30%, rgba(180,140,255,0.28) 0%, transparent 55%),
+                  radial-gradient(ellipse at 85% 70%, rgba(92,225,230,0.2) 0%, transparent 50%),
+                  var(--bg);
+      padding: 72px 24px 80px; text-align: center;
+      border-bottom: 1px solid var(--border);
+    }
+    .app-icon {
+      width: 100px; height: 100px; border-radius: 24px; font-size: 52px;
+      margin: 0 auto 22px;
+      box-shadow: 0 24px 64px rgba(0,0,0,0.5), 0 0 0 3px rgba(255,255,255,0.1);
+    }
+    .hero h1 {
+      font-size: clamp(32px, 5.5vw, 54px);
+      font-weight: 800; color: var(--text);
+      letter-spacing: -1.5px; line-height: 1.1; margin-bottom: 14px;
+    }
+    .hero-sub { font-size: 16px; color: var(--text2); max-width: 520px; margin: 0 auto 28px; line-height: 1.6; }
+    .store-pill {
+      display: inline-flex; align-items: center; gap: 7px;
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.14);
+      color: var(--text2);
+      padding: 9px 18px; border-radius: 24px;
+      font-size: 13px; font-weight: 500;
+    }
+
+    .disclaimer-banner { background: var(--card); border-bottom: 1px solid var(--border); padding: 18px 24px; }
+    .disclaimer-inner {
+      max-width: 860px; margin: 0 auto;
+      display: flex; align-items: flex-start; gap: 12px;
+      font-size: 13.5px; color: var(--text2); line-height: 1.6;
+    }
+    .disclaimer-inner svg { flex-shrink: 0; margin-top: 2px; color: var(--accent); }
+
+    .content-wrap { max-width: 720px; margin: 0 auto; padding: 0 24px; }
+    .section { padding: 76px 0; border-bottom: 1px solid var(--border); }
+    .section-tag {
+      display: inline-block; font-size: 10.5px; font-weight: 700;
+      letter-spacing: 2.2px; text-transform: uppercase;
+      color: var(--primary); background: var(--card);
+      padding: 5px 12px; border-radius: 20px; margin-bottom: 14px;
+    }
+    .section h2 {
+      font-size: clamp(26px, 4vw, 38px);
+      font-weight: 800; color: var(--text);
+      letter-spacing: -0.8px; line-height: 1.2; margin-bottom: 8px;
+    }
+    .section-lead { font-size: 16px; color: var(--text2); line-height: 1.7; margin-bottom: 40px; }
+
+    .faq { display: flex; flex-direction: column; }
+    .faq-item { border-bottom: 1px solid var(--border); }
+    .faq-item:first-child { border-top: 1px solid var(--border); }
+    .faq-btn {
+      width: 100%; text-align: left; background: none; border: none;
+      padding: 20px 0; cursor: pointer;
+      display: flex; justify-content: space-between; align-items: center; gap: 16px;
+      font-size: 15.5px; font-weight: 600; color: var(--text); font-family: inherit;
+    }
+    .faq-btn:hover { color: var(--primary); }
+    .faq-icon { flex-shrink: 0; width: 22px; height: 22px; display: flex; align-items: center; justify-content: center; color: var(--primary); transition: transform 0.25s ease; }
+    .faq-item.open .faq-icon { transform: rotate(180deg); }
+    .faq-body { max-height: 0; overflow: hidden; transition: max-height 0.35s ease; }
+    .faq-item.open .faq-body { max-height: 800px; }
+    .faq-body p { font-size: 14.5px; color: var(--text2); line-height: 1.75; padding-bottom: 16px; }
+    .faq-body a { color: var(--primary); }
+
+    .contact-card {
+      margin-top: 52px;
+      background: linear-gradient(140deg, #B48CFF 0%, #7B5BD6 100%);
+      border-radius: 28px; padding: 44px 40px; text-align: center;
+    }
+    .contact-card h3 { font-size: 22px; font-weight: 800; color: var(--on-primary); margin-bottom: 8px; }
+    .contact-card p { font-size: 15px; color: rgba(11,11,16,0.8); margin-bottom: 26px; }
+    .contact-btn {
+      display: inline-block; background: var(--bg); color: var(--text);
+      padding: 12px 30px; border-radius: 25px; font-size: 15px; font-weight: 600;
+      text-decoration: none; box-shadow: 0 6px 24px rgba(0,0,0,0.3);
+    }
+
+    .legal-date { display: inline-block; font-size: 12.5px; color: var(--muted); background: var(--card); padding: 4px 12px; border-radius: 12px; margin-bottom: 36px; }
+    .legal-block { margin-bottom: 32px; }
+    .legal-block h3 { font-size: 16px; font-weight: 700; color: var(--text); margin-bottom: 10px; }
+    .legal-block p, .legal-block li { font-size: 14.5px; color: var(--text2); line-height: 1.8; }
+    .legal-block p + p { margin-top: 10px; }
+    .legal-block ul { padding-left: 20px; margin-top: 8px; }
+    .legal-block a { color: var(--primary); word-break: break-word; }
+    .legal-block strong { color: var(--text); }
+
+    footer { background: #07070B; padding: 44px 24px; text-align: center; border-top: 1px solid var(--border); }
+    .footer-nav { display: flex; justify-content: center; gap: 6px; margin-bottom: 18px; flex-wrap: wrap; }
+    .footer-nav a { font-size: 13px; color: var(--text2); text-decoration: none; padding: 4px 10px; }
+    .footer-nav a:hover { color: var(--text); }
+    .footer-copy { font-size: 12.5px; color: var(--muted); }
+    .footer-back { display: inline-block; margin-top: 12px; font-size: 12.5px; color: var(--text2); text-decoration: none; }
+
+    @media (max-width: 640px) {
+      .nav-links { display: none; }
+      .hero { padding: 56px 20px 64px; }
+      .section { padding: 56px 0; }
+      .contact-card { padding: 32px 24px; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="#" class="nav-brand">
+      <span class="glyph" aria-hidden="true">G</span>
+      <span class="name">Glintwall</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#support">Support</a></li>
+      <li><a href="#privacy">Privacy Policy</a></li>
+      <li><a href="#terms">Terms of Use</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="hero-inner">
+    <div class="glyph app-icon" aria-hidden="true">G</div>
+    <h1>Glintwall</h1>
+    <p class="hero-sub">Original wallpapers, matching Lock + Home Screen sets and widgets for iPhone.</p>
+    <span class="store-pill">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+      Coming soon to the App Store
+    </span>
+  </div>
+</header>
+
+<div class="disclaimer-banner">
+  <div class="disclaimer-inner">
+    <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+    <span>Wallpapers are original art created with AI assistance and are not affiliated with any brand, franchise or character owner.</span>
+  </div>
+</div>
+
+<section id="support">
+  <div class="content-wrap">
+    <div class="section">
+      <span class="section-tag">Help &amp; Support</span>
+      <h2>Frequently Asked Questions</h2>
+      <p class="section-lead">We read every email and aim to reply within 3 business days. Contact: <a href="mailto:pals_green.1m@icloud.com" style="color:var(--primary)">pals_green.1m@icloud.com</a>.</p>
+
+      <div class="faq">
+        <div class="faq-item">
+          <button class="faq-btn" aria-expanded="false">How do I set a wallpaper?
+            <span class="faq-icon"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></span></button>
+          <div class="faq-body"><p>Save it in Glintwall, then open Photos, open the image, tap Share &gt; Use as Wallpaper, adjust it and tap Add. Glintwall can't set your wallpaper automatically; iOS doesn't allow it. The Lock and Home Screen versions are saved as two images, so you can use Customize Home Screen to give the Home Screen its own image.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-btn" aria-expanded="false">How do I add a widget?
+            <span class="faq-icon"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></span></button>
+          <div class="faq-body"><p>Touch and hold an empty spot on your Home Screen, tap Edit &gt; Add Widget, search for Glintwall, choose a widget and tap Add Widget. To switch the pack, touch and hold the widget and tap Edit Widget.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-btn" aria-expanded="false">How do I unlock a locked wallpaper?
+            <span class="faq-icon"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></span></button>
+          <div class="faq-body"><p>Tap the wallpaper, then choose Watch an ad to unlock it, or get Glintwall Pro to unlock everything with no ads.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-btn" aria-expanded="false">What does Glintwall Pro include?
+            <span class="faq-icon"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></span></button>
+          <div class="faq-body"><p>Every pack and widget, every new drop and no ads. Pro is available as an annual plan (with a 3-day free trial for eligible new subscribers), a monthly plan, or a one-time lifetime purchase. Current prices are shown in the app and App Store in your local currency before you confirm.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-btn" aria-expanded="false">How do I restore my purchase?
+            <span class="faq-icon"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></span></button>
+          <div class="faq-body"><p>In Glintwall, open Settings &gt; Restore Purchases (or tap Restore Purchases on the Pro screen). Use the same Apple ID you bought with.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-btn" aria-expanded="false">How do I cancel my subscription?
+            <span class="faq-icon"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></span></button>
+          <div class="faq-body"><p>Open the iPhone Settings app, tap your name &gt; Subscriptions &gt; Glintwall, then tap Cancel Subscription. Cancel at least 24 hours before the renewal date to avoid the next charge. Deleting the app does not cancel a subscription. If you cancel during a free trial, you keep access until the trial ends.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-btn" aria-expanded="false">How do I get a refund?
+            <span class="faq-icon"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></span></button>
+          <div class="faq-body"><p>Apple handles all payments and refunds. Request a refund at <a href="https://reportaproblem.apple.com" target="_blank" rel="noopener">reportaproblem.apple.com</a>. We can't issue refunds directly.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-btn" aria-expanded="false">How do I delete my data?
+            <span class="faq-icon"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></span></button>
+          <div class="faq-body"><p>Open Settings &gt; Delete All Data in the app. This removes your favorites, recently viewed, chosen vibes, ad unlocks, downloaded images and widget settings from your device. It doesn't remove wallpapers you saved to Photos (delete them in Photos), your Pro purchase (you can restore it), or your tracking choice (iOS Settings &gt; Privacy &amp; Security &gt; Tracking). Glintwall has no accounts and keeps no profile of you on a server, so there is nothing else to delete.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-btn" aria-expanded="false">Why do I see ads?
+            <span class="faq-icon"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></span></button>
+          <div class="faq-body"><p>The free version offers optional ads: you choose to watch a short ad to unlock a wallpaper. Pro has no ads.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-btn" aria-expanded="false">Why can't I load new wallpapers?
+            <span class="faq-icon"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></span></button>
+          <div class="faq-body"><p>Glintwall downloads new packs from the internet. Check your connection and try again. A starter pack stays available offline.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-btn" aria-expanded="false">The image I saved looks different from the preview.
+            <span class="faq-icon"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></span></button>
+          <div class="faq-body"><p>The preview is a mockup of how your clock and icons sit on the image. The saved file is the full wallpaper without icons.</p></div>
+        </div>
+      </div>
+
+      <div class="contact-card">
+        <h3>Still need help?</h3>
+        <p>Email us with your iPhone model and iOS version.</p>
+        <a class="contact-btn" href="mailto:pals_green.1m@icloud.com">pals_green.1m@icloud.com</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="privacy" style="background: #0E0E14;">
+  <div class="content-wrap">
+    <div class="section">
+      <span class="section-tag">Privacy Policy</span>
+      <h2>Privacy Policy</h2>
+      <span class="legal-date">Effective date: 2026-10-03</span>
+
+      <div class="legal-block">
+        <p>Glintwall is a wallpaper and widget app for iPhone. This policy explains what data Glintwall uses and what it does not. We keep it short because we collect very little.</p>
+      </div>
+
+      <div class="legal-block">
+        <h3>Summary</h3>
+        <ul>
+          <li>No accounts, no sign-in, no analytics SDK, no profile of you on our servers.</li>
+          <li>Your favorites, history and settings stay on your device.</li>
+          <li>The free version shows ads through Google AdMob, which may use data about your device. You control this.</li>
+          <li>Purchases are handled entirely by Apple.</li>
+        </ul>
+      </div>
+
+      <div class="legal-block">
+        <h3>Data stored on your device</h3>
+        <p>Glintwall stores your favorites, recently viewed wallpapers, chosen vibes, ad-unlock records, downloaded images and widget settings on your device. It is not sent to us. Widgets read a small amount of this from a shared storage area on your device. You can erase it at any time with Settings &gt; Delete All Data. Because we do not receive it, we cannot access or recover it.</p>
+      </div>
+
+      <div class="legal-block">
+        <h3>Data we collect</h3>
+        <p>We do not collect personal data and have no servers that receive data from you, apart from the content download described below. We do not use analytics or crash-reporting SDKs.</p>
+      </div>
+
+      <div class="legal-block">
+        <h3>Content downloads and your IP address</h3>
+        <p>New wallpapers and packs are downloaded from a content host run on GitHub Pages (GitHub, Inc.). When your device requests this content, GitHub receives standard request information such as your IP address and device/app request headers and may keep server logs under its own privacy policy (<a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement" target="_blank" rel="noopener">https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement</a>). Glintwall does not combine this with any other data.</p>
+      </div>
+
+      <div class="legal-block">
+        <h3>Photos</h3>
+        <p>Glintwall asks for permission to add images to your Photos library so you can save wallpapers. It uses add-only access: it cannot read, view or upload your photos or videos.</p>
+      </div>
+
+      <div class="legal-block">
+        <h3>Ads in the free version</h3>
+        <p>The free version of Glintwall shows rewarded ads through Google AdMob. Google and its partners may collect and use data such as your device identifiers (including the advertising identifier if you allow tracking), IP address, and ad interaction information to deliver, personalize and measure ads and to prevent fraud. This happens only when you have made the privacy choices that allow it.</p>
+        <ul>
+          <li><strong>Consent (EEA, UK, Switzerland):</strong> Where required, Glintwall shows a consent form powered by Google's User Messaging Platform before ads load. You can review or change your choice any time in Settings &gt; Privacy Choices.</li>
+          <li><strong>App Tracking Transparency:</strong> On iOS, Glintwall asks whether it may track your activity across other companies' apps and websites. If you choose Ask App Not to Track, ads are non-personalized, and Glintwall works the same. You can change this in iOS Settings &gt; Privacy &amp; Security &gt; Tracking.</li>
+          <li><strong>Pro:</strong> Glintwall Pro shows no ads and Pro users are not asked to track.</li>
+          <li>Learn how Google uses data: <a href="https://policies.google.com/technologies/partner-sites" target="_blank" rel="noopener">https://policies.google.com/technologies/partner-sites</a> and <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">https://policies.google.com/privacy</a>. Manage Google ad settings at <a href="https://adssettings.google.com" target="_blank" rel="noopener">https://adssettings.google.com</a>.</li>
+        </ul>
+      </div>
+
+      <div class="legal-block">
+        <h3>Purchases</h3>
+        <p>Subscriptions and the lifetime purchase are processed by Apple through the App Store. We do not receive your payment details or Apple ID. Glintwall only checks with Apple whether you have an active Pro purchase.</p>
+      </div>
+
+      <div class="legal-block">
+        <h3>Children's privacy</h3>
+        <p>Glintwall is not directed at children under 13, and we do not knowingly collect personal information from children. If you believe a child under 13 has provided information, contact us and we will help. Ads are set to general-audience content.</p>
+      </div>
+
+      <div class="legal-block">
+        <h3>Your choices and deleting your data</h3>
+        <p>You can delete all Glintwall data from your device with Settings &gt; Delete All Data. This does not remove images you saved to Photos, your Apple purchases (restorable), your iOS tracking setting, or data Google holds under its own privacy policy. You can delete the app at any time. Under laws such as GDPR and CCPA you may have rights to access, correct or delete your personal data; since we hold none, email us if you want help with a request.</p>
+      </div>
+
+      <div class="legal-block">
+        <h3>Security</h3>
+        <p>Data on your device is protected by iOS. Content downloads use HTTPS.</p>
+      </div>
+
+      <div class="legal-block">
+        <h3>Changes to this policy</h3>
+        <p>If we change this policy we will update the effective date above and, for material changes, tell you in the app update notes.</p>
+      </div>
+
+      <div class="legal-block">
+        <h3>Contact</h3>
+        <p><a href="mailto:pals_green.1m@icloud.com">pals_green.1m@icloud.com</a></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="terms">
+  <div class="content-wrap">
+    <div class="section" style="border-bottom:none;">
+      <span class="section-tag">Terms of Use</span>
+      <h2>Terms of Use</h2>
+      <span class="legal-date">Effective date: 2026-10-03</span>
+
+      <div class="legal-block">
+        <p>By using Glintwall you agree to these terms.</p>
+      </div>
+
+      <div class="legal-block">
+        <h3>Glintwall Pro</h3>
+        <p>Glintwall Pro is an optional subscription or one-time purchase that unlocks every pack and widget and removes ads.</p>
+        <ul>
+          <li><strong>Annual and monthly</strong> plans are auto-renewing subscriptions. The annual plan may include a 3-day free trial for eligible new subscribers. The price and billing period are shown on the purchase screen in your local currency before you confirm.</li>
+          <li>Payment is charged to your Apple ID account at confirmation of purchase, or at the end of a free trial. A subscription renews automatically unless canceled at least 24 hours before the end of the current period. Your account is charged for renewal within 24 hours before the period ends.</li>
+          <li>Manage or cancel in iPhone Settings &gt; your name &gt; Subscriptions. Deleting the app does not cancel a subscription. Any unused part of a free trial is forfeited when you purchase a subscription.</li>
+          <li><strong>Lifetime</strong> is a one-time purchase that does not renew. It gives access to Pro features for as long as Glintwall is offered. Content and features may change over time.</li>
+          <li>Payments and refunds are handled by Apple (<a href="https://reportaproblem.apple.com" target="_blank" rel="noopener">reportaproblem.apple.com</a>). We can't issue refunds directly.</li>
+        </ul>
+      </div>
+
+      <div class="legal-block">
+        <h3>Ads and unlocks</h3>
+        <p>Free users can watch rewarded ads to unlock wallpapers. Unlocks are for personal use and are stored on your device; they are removed if you use Delete All Data.</p>
+      </div>
+
+      <div class="legal-block">
+        <h3>Your use of the content</h3>
+        <p>Wallpapers, widget designs and other content in Glintwall are licensed to you for personal, non-commercial use as phone wallpapers and widgets. You may not resell, redistribute, rehost or re-upload them, offer them in another app or wallpaper collection, or use them to train AI models.</p>
+      </div>
+
+      <div class="legal-block">
+        <h3>Original art, AI assistance</h3>
+        <p>Glintwall's art is original and created with AI assistance. It is not affiliated with, endorsed by or based on any brand, franchise, studio or character. If you believe any image infringes your rights, email us and we will review and remove it promptly.</p>
+      </div>
+
+      <div class="legal-block">
+        <h3>Acceptable use</h3>
+        <p>Don't misuse the app, attempt to disrupt our content hosting, reverse engineer the app or circumvent ads or purchases.</p>
+      </div>
+
+      <div class="legal-block">
+        <h3>Intellectual property</h3>
+        <p>Glintwall, its name, icon and original content belong to the developer. Apple, iPhone and App Store are trademarks of Apple Inc.</p>
+      </div>
+
+      <div class="legal-block">
+        <h3>No warranty</h3>
+        <p>Glintwall is provided "as is" without warranties of any kind. We aren't liable for indirect or incidental damages to the extent permitted by law.</p>
+      </div>
+
+      <div class="legal-block">
+        <h3>Apple's standard terms</h3>
+        <p>Apple's Licensed Application End User License Agreement applies to Glintwall: <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/" target="_blank" rel="noopener">https://www.apple.com/legal/internet-services/itunes/dev/stdeula/</a></p>
+      </div>
+
+      <div class="legal-block">
+        <h3>Changes</h3>
+        <p>We may update these terms. Continued use after an update means you accept it. The effective date above shows the latest version.</p>
+      </div>
+
+      <div class="legal-block">
+        <h3>Contact</h3>
+        <p><a href="mailto:pals_green.1m@icloud.com">pals_green.1m@icloud.com</a></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-nav">
+    <a href="#support">Support</a>
+    <a href="#privacy">Privacy Policy</a>
+    <a href="#terms">Terms of Use</a>
+    <a href="mailto:pals_green.1m@icloud.com">pals_green.1m@icloud.com</a>
+  </div>
+  <p class="footer-copy">© 2026 Glintwall. All rights reserved.</p>
+  <a href="../../" class="footer-back">← All apps</a>
+</footer>
+
+<script>
+  document.querySelectorAll('.faq-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const item = btn.closest('.faq-item');
+      const isOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item.open').forEach(i => {
+        i.classList.remove('open');
+        i.querySelector('.faq-btn').setAttribute('aria-expanded', 'false');
+      });
+      if (!isOpen) {
+        item.classList.add('open');
+        btn.setAttribute('aria-expanded', 'true');
+      }
+    });
+  });
+
+  const sections = document.querySelectorAll('section[id]');
+  const navLinks = document.querySelectorAll('.nav-links a');
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        navLinks.forEach(a => a.classList.remove('active'));
+        const active = document.querySelector(`.nav-links a[href="#${entry.target.id}"]`);
+        if (active) active.classList.add('active');
+      }
+    });
+  }, { rootMargin: '-40% 0px -55% 0px' });
+  sections.forEach(s => observer.observe(s));
+</script>
+
+</body>
+</html>
