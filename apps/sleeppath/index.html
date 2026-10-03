@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SleepPath — Support, Privacy Policy &amp; Terms of Use</title>
+  <meta name="description" content="Support, Privacy Policy, and Terms of Use for SleepPath — a baby and toddler sleep-training coach with a gentle night-time check-in timer.">
+  <link rel="icon" href="icon.png">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --navy: #0F1B33;
+      --navy2: #18284A;
+      --lav: #8E7CF0;
+      --lav-d: #5B49C9;
+      --lav-l: #EEEAFD;
+      --amber: #FFB86B;
+      --amber-l: #FFF4E5;
+      --text: #1B2440;
+      --muted: #4F5873;
+      --line: #E4E1F3;
+      --white: #fff;
+    }
+    html { scroll-behavior: smooth; scroll-padding-top: 70px; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", system-ui, sans-serif;
+      color: var(--text); background: var(--white); line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: var(--lav-d); }
+
+    nav {
+      position: sticky; top: 0; z-index: 100;
+      background: rgba(15,27,51,0.95);
+      backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);
+    }
+    .nav-inner {
+      max-width: 860px; margin: 0 auto; height: 58px; padding: 0 24px;
+      display: flex; align-items: center; justify-content: space-between; gap: 16px;
+    }
+    .nav-brand { display: flex; align-items: center; gap: 10px; text-decoration: none; color: var(--white); font-weight: 700; font-size: 15px; }
+    .nav-brand img { width: 30px; height: 30px; border-radius: 8px; }
+    .nav-links { display: flex; gap: 2px; list-style: none; }
+    .nav-links a {
+      display: block; padding: 6px 13px; border-radius: 20px;
+      font-size: 13.5px; font-weight: 500; color: #C9C5EE; text-decoration: none;
+    }
+    .nav-links a:hover, .nav-links a.active { color: var(--white); background: rgba(142,124,240,0.28); }
+
+    .hero {
+      background: linear-gradient(160deg, var(--navy) 0%, var(--navy2) 60%, #2A2466 100%);
+      padding: 72px 24px 76px; text-align: center; position: relative; overflow: hidden;
+    }
+    .hero::before {
+      content: ''; position: absolute; inset: 0; pointer-events: none;
+      background:
+        radial-gradient(ellipse at 15% 70%, rgba(142,124,240,0.22) 0%, transparent 55%),
+        radial-gradient(ellipse at 85% 15%, rgba(255,184,107,0.14) 0%, transparent 45%);
+    }
+    .hero-inner { position: relative; }
+    .app-icon {
+      width: 100px; height: 100px; border-radius: 24px; object-fit: cover; margin: 0 auto 22px; display: block;
+      box-shadow: 0 24px 64px rgba(0,0,0,0.4), 0 0 0 3px rgba(255,255,255,0.14);
+    }
+    .hero h1 {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(30px, 5.5vw, 52px); color: var(--white);
+      letter-spacing: -1.2px; line-height: 1.1; margin-bottom: 14px;
+    }
+    .hero-sub { font-size: 16px; color: #C9C5EE; max-width: 520px; margin: 0 auto; }
+
+    .chips { background: var(--lav-l); border-bottom: 1px solid var(--line); padding: 24px; }
+    .chips-list { max-width: 860px; margin: 0 auto; display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; }
+    .chip {
+      background: var(--white); border: 1px solid #D7D1F7; border-radius: 20px;
+      padding: 7px 14px; font-size: 13px; font-weight: 500; color: var(--lav-d); white-space: nowrap;
+    }
+
+    .disclaimer { background: var(--amber-l); border-bottom: 1px solid #FFDDB0; padding: 18px 24px; }
+    .disclaimer p { max-width: 860px; margin: 0 auto; font-size: 13.5px; color: #7A4A0E; }
+    .disclaimer strong { color: #5C3504; }
+
+    .content-wrap { max-width: 720px; margin: 0 auto; padding: 0 24px; }
+    .section { padding: 72px 0; }
+    section + section .section { border-top: 1px solid var(--line); }
+    .tag {
+      display: inline-block; font-size: 10.5px; font-weight: 700; letter-spacing: 2.2px; text-transform: uppercase;
+      color: var(--lav-d); background: var(--lav-l); padding: 5px 12px; border-radius: 20px; margin-bottom: 14px;
+    }
+    h2 {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(26px, 4vw, 36px); color: var(--navy); letter-spacing: -0.6px; line-height: 1.2; margin-bottom: 8px;
+    }
+    .lead { font-size: 16px; color: var(--muted); margin-bottom: 36px; }
+
+    details { border-bottom: 1px solid var(--line); }
+    details:first-of-type { border-top: 1px solid var(--line); }
+    summary {
+      list-style: none; cursor: pointer; padding: 18px 28px 18px 0; position: relative;
+      font-size: 15.5px; font-weight: 600; color: var(--navy);
+    }
+    summary::-webkit-details-marker { display: none; }
+    summary::after { content: '+'; position: absolute; right: 4px; top: 14px; font-size: 22px; color: var(--lav); font-weight: 400; }
+    details[open] summary::after { content: '–'; }
+    details .body { padding-bottom: 18px; }
+    details .body p { font-size: 14.5px; color: var(--muted); line-height: 1.75; }
+    details .body p + p { margin-top: 10px; }
+    details .body ul { padding-left: 20px; margin-top: 8px; font-size: 14.5px; color: var(--muted); }
+
+    .contact-card {
+      margin-top: 48px; border-radius: 26px; padding: 40px 32px; text-align: center;
+      background: linear-gradient(140deg, var(--navy) 0%, #2A2466 100%);
+    }
+    .contact-card h3 { font-family: Georgia, serif; font-size: 22px; color: var(--white); margin-bottom: 8px; }
+    .contact-card p { color: #C9C5EE; font-size: 15px; margin-bottom: 22px; }
+    .btn {
+      display: inline-block; background: var(--amber); color: var(--navy); padding: 12px 28px;
+      border-radius: 25px; font-size: 15px; font-weight: 700; text-decoration: none;
+    }
+    .btn:hover { filter: brightness(1.05); }
+
+    .date { display: inline-block; font-size: 12.5px; color: var(--muted); background: #F1F0F8; padding: 4px 12px; border-radius: 12px; margin-bottom: 32px; }
+    .legal h3 { font-size: 16px; color: var(--navy); margin: 28px 0 8px; }
+    .legal p, .legal li { font-size: 14.5px; color: var(--muted); line-height: 1.8; }
+    .legal p + p { margin-top: 10px; }
+    .legal ul { padding-left: 20px; margin-top: 8px; }
+    .legal li { margin-bottom: 6px; }
+    .legal .short { background: var(--lav-l); border-radius: 14px; padding: 18px 20px; margin-bottom: 8px; }
+    .legal .short h3 { margin-top: 0; }
+    .legal a { word-break: break-word; }
+
+    footer { background: var(--navy); padding: 44px 24px; text-align: center; }
+    .footer-nav { display: flex; justify-content: center; gap: 6px; flex-wrap: wrap; margin-bottom: 16px; }
+    .footer-nav a { font-size: 13px; color: #C9C5EE; opacity: 0.8; text-decoration: none; padding: 4px 10px; }
+    .footer-nav a:hover { opacity: 1; }
+    .copy { font-size: 12.5px; color: rgba(255,255,255,0.35); }
+    .back { display: inline-block; margin-top: 12px; font-size: 12.5px; color: #C9C5EE; opacity: 0.7; text-decoration: none; }
+
+    @media (max-width: 640px) {
+      .nav-links { display: none; }
+      .hero { padding: 56px 20px 60px; }
+      .section { padding: 52px 0; }
+      .contact-card { padding: 30px 22px; }
+      .chips-list { justify-content: flex-start; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="#" class="nav-brand"><img src="icon.png" alt="" width="30" height="30"><span>SleepPath</span></a>
+    <ul class="nav-links">
+      <li><a href="#support">Support</a></li>
+      <li><a href="#privacy">Privacy Policy</a></li>
+      <li><a href="#terms">Terms of Use</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="hero-inner">
+    <img class="app-icon" src="icon.png" alt="SleepPath app icon" width="100" height="100">
+    <h1>SleepPath</h1>
+    <p class="hero-sub">A sleep-training coach for babies and toddlers. Pick a method that fits your family, and SleepPath times every night-time check-in for you and shows your progress, night over night.</p>
+  </div>
+</header>
+
+<div class="chips">
+  <div class="chips-list">
+    <span class="chip">Gentle and cry-based methods</span>
+    <span class="chip">Night Mode check-in timer</span>
+    <span class="chip">Night log and morning summary</span>
+    <span class="chip">Progress charts</span>
+    <span class="chip">Wake windows and nap schedule</span>
+    <span class="chip">Bedtime routine reminders</span>
+    <span class="chip">Data stays on your device</span>
+  </div>
+</div>
+
+<div class="disclaimer">
+  <p><strong>Not medical advice.</strong> SleepPath offers general sleep-training information and a timer. It does not diagnose or treat any condition and does not replace your pediatrician. Talk to your doctor before sleep training if your child has a medical condition, reflux, breathing problems or was born prematurely, or if you have any concern about their health.</p>
+</div>
+
+<!-- SUPPORT -->
+<section id="support">
+  <div class="content-wrap">
+    <div class="section">
+      <span class="tag">Help &amp; Support</span>
+      <h2>Frequently Asked Questions</h2>
+      <p class="lead">Quick answers about using SleepPath.</p>
+
+      <details>
+        <summary>How do Night Mode check-ins work?</summary>
+        <div class="body">
+          <p>Tonight shows your plan for the day. Tap <strong>Start night</strong> to open Night Mode, a dim, red-shifted screen with large buttons made for one-handed use in the dark. Put your little one down awake and a wait timer starts. When it ends, SleepPath tells you it is time for a check-in, then starts the next wait on your method's schedule.</p>
+          <p>Use <strong>Asleep</strong>, <strong>Awake</strong> and <strong>Check in</strong> to log what happens. In the morning you get a summary: time to fall asleep, night wakings and the longest stretch.</p>
+        </div>
+      </details>
+
+      <details>
+        <summary>Will I get alerts while my phone is locked?</summary>
+        <div class="body">
+          <p>Yes, if notifications are on. Check-in alerts and bedtime reminders are local notifications scheduled on your device, so you can lock your phone during a night. If alerts are off, turn them on in iOS Settings › Notifications › SleepPath, or from SleepPath › Settings › Notifications.</p>
+        </div>
+      </details>
+
+      <details>
+        <summary>How do I restore my purchases?</summary>
+        <div class="body">
+          <p>Open SleepPath › Settings › <strong>Restore purchases</strong> (also on the paywall). Make sure you are signed in to the same Apple ID that made the purchase.</p>
+        </div>
+      </details>
+
+      <details>
+        <summary>How do I manage or cancel my subscription?</summary>
+        <div class="body">
+          <p>Subscriptions are managed by Apple. Open the iOS <strong>Settings</strong> app, tap your name, then <strong>Subscriptions</strong>, then <strong>SleepPath</strong>. You can also use <strong>Manage subscription</strong> in SleepPath › Settings. Cancel at least 24 hours before the end of the current period to avoid being charged for the next one. Refunds are handled by Apple at <a href="https://reportaproblem.apple.com" target="_blank" rel="noopener">reportaproblem.apple.com</a>.</p>
+        </div>
+      </details>
+
+      <details>
+        <summary>How do I delete all my data?</summary>
+        <div class="body">
+          <p>Open SleepPath › Settings › Data › <strong>Delete all data</strong>. This permanently removes your child's profile, every night log, your plan, routines and settings from this device. It cannot be undone. Your Premium purchase is not affected, and subscriptions are managed in your Apple ID settings. SleepPath keeps data only on your device, so deleting the app also removes its data.</p>
+        </div>
+      </details>
+
+      <details>
+        <summary>How do I change my ad and tracking choices?</summary>
+        <div class="body">
+          <p>The free version shows ads on some screens. Where required by law, SleepPath shows Google's consent form before ads are requested. You can review or change it in SleepPath › Settings › <strong>Privacy choices</strong>. You can also change the iOS tracking permission at any time in iOS Settings › Privacy &amp; Security › Tracking. Everything in SleepPath works the same either way. Premium removes ads.</p>
+        </div>
+      </details>
+
+      <details>
+        <summary>How do I report an inappropriate ad?</summary>
+        <div class="body">
+          <p>Free users can tap <strong>Report an ad</strong> in SleepPath › Settings, or email us directly at <a href="mailto:pals_green.1m@icloud.com?subject=SleepPath%20ad%20report">pals_green.1m@icloud.com</a> with the subject <strong>"SleepPath ad report"</strong>. Please describe the ad and, if you can, attach a screenshot. We review every report. Ads are never shown in Night Mode or during onboarding.</p>
+        </div>
+      </details>
+
+      <details>
+        <summary>Is SleepPath medical advice? When should I call a doctor?</summary>
+        <div class="body">
+          <p>No. SleepPath provides general information and a timer to help you follow a method you choose. It does not replace your pediatrician. Talk to a doctor before sleep training if your child has a medical condition, was born prematurely, has reflux or breathing difficulties, or if you have any concern about their health or safety.</p>
+          <p>If you think your child needs urgent help, contact your local emergency number. Always follow safe-sleep guidance: back to sleep, on a firm, flat surface, with nothing else in the crib.</p>
+        </div>
+      </details>
+
+      <details>
+        <summary>Can I change my sleep method?</summary>
+        <div class="body">
+          <p>Yes, any night. Nothing in SleepPath locks you in. The gentle method, night logging and 7 days of history are always free. Premium unlocks all methods, the full plan, charts, full history and schedules, and removes ads.</p>
+        </div>
+      </details>
+
+      <div class="contact-card">
+        <h3>Still need help?</h3>
+        <p>We usually reply within 24–48 hours.</p>
+        <a class="btn" href="mailto:pals_green.1m@icloud.com?subject=SleepPath%20Support">Email Support</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRIVACY -->
+<section id="privacy" style="background:#FBFAFF;">
+  <div class="content-wrap">
+    <div class="section legal">
+      <span class="tag">Legal</span>
+      <h2>Privacy Policy</h2>
+      <p class="lead">SleepPath keeps your information on your device.</p>
+      <span class="date">Last updated: 3 October 2026</span>
+
+      <div class="short">
+        <h3>The short version</h3>
+        <p>SleepPath keeps your information on your device. There is no account, no sign-up and no analytics. The free version shows ads provided by Google AdMob, which can collect certain device information, subject to your consent choices. Premium removes ads. You can delete everything stored by SleepPath at any time in Settings.</p>
+      </div>
+
+      <h3>1. What SleepPath stores on your device</h3>
+      <p>When you use SleepPath you may enter or generate: your child's first name (optional), your child's age range, your answers to the onboarding questions, the sleep method and plan, night logs (times asleep and awake, check-ins, wakings, notes), routine checklists, reminder times and app settings. This information is stored only on your device. We do not receive it, we cannot see it and we do not have a server that holds it.</p>
+
+      <h3>2. What we do not collect</h3>
+      <p>We do not ask you to create an account. We do not collect your name, email address, phone number, precise location, contacts, photos, or health records. We do not use analytics, crash-reporting or advertising-attribution tools of our own. We do not sell your personal information.</p>
+
+      <h3>3. Ads (free version)</h3>
+      <p>The free version of SleepPath shows banner ads on the Progress, Learn and History screens. Ads are never shown in Night Mode or during onboarding. Ads are provided by Google AdMob. To show and measure ads, Google may collect and use information such as your device's advertising identifier (if you allow tracking), IP address, device and app information, and how you interact with ads. Google uses this data to serve ads, measure performance, prevent fraud and, where you consent, to personalise ads. SleepPath does not give Google your child's name, logs or answers.</p>
+      <ul>
+        <li>On iOS, SleepPath asks for your permission through Apple's App Tracking Transparency prompt before any tracking across other companies' apps and websites. If you choose "Ask App Not to Track", ads can still be shown, but they won't be personalised using tracking. You can change this any time in iOS Settings › Privacy &amp; Security › Tracking.</li>
+        <li>Where required by law (for example in the European Economic Area, the United Kingdom and Switzerland), SleepPath shows Google's consent form before ads are requested. You can review or change your choices in Settings › Privacy choices.</li>
+        <li>Learn more about how Google uses data: <a href="https://policies.google.com/technologies/partner-sites" target="_blank" rel="noopener">https://policies.google.com/technologies/partner-sites</a></li>
+        <li>When you have an active Premium purchase, SleepPath does not request ads.</li>
+      </ul>
+
+      <h3>4. Purchases</h3>
+      <p>Purchases and subscriptions are processed by Apple through the App Store. We do not receive your payment card, billing details or Apple ID. We receive only confirmation from Apple that a purchase is active so we can unlock Premium. Apple's privacy practices apply to purchases.</p>
+
+      <h3>5. Notifications</h3>
+      <p>Check-in alerts and bedtime reminders are local notifications scheduled on your device. They are not sent from a server. You can turn them off in iOS Settings.</p>
+
+      <h3>6. Backups</h3>
+      <p>If you use iCloud Backup or an encrypted computer backup, SleepPath's on-device data may be included in your device backup according to your iOS settings. That backup is controlled by Apple and you.</p>
+
+      <h3>7. Children's privacy</h3>
+      <p>SleepPath is designed for parents and caregivers, not for children. We do not knowingly collect personal information from children. Information about your child that you enter stays on your device.</p>
+
+      <h3>8. How long we keep information, and how to delete it</h3>
+      <p>Information stays on your device until you delete it. To remove everything SleepPath has stored, open Settings › Delete all data, or delete the app. Deleting the app also deletes its data from your device. Purchases are held by Apple and are not deleted by this.</p>
+
+      <h3>9. Your rights</h3>
+      <p>Because we do not hold your personal data on any server, there is nothing for us to access, correct or delete on your behalf beyond what you can already do in the app. For advertising data held by Google, you can use the controls described in section 3 and the settings in your Google account. If you live where privacy law grants you rights (such as GDPR or CCPA/CPRA), you can contact us using the link below and we will tell you what applies.</p>
+
+      <h3>10. Changes to this policy</h3>
+      <p>If we change this policy, we will update the date at the top and, for material changes, tell you inside the app.</p>
+
+      <h3>11. Contact</h3>
+      <p>Questions about privacy: <a href="https://nemostation90.github.io/app-support/apps/sleeppath/#privacy">https://nemostation90.github.io/app-support/apps/sleeppath/#privacy</a></p>
+      <p>Support: <a href="https://nemostation90.github.io/app-support/apps/sleeppath/#support">https://nemostation90.github.io/app-support/apps/sleeppath/#support</a></p>
+    </div>
+  </div>
+</section>
+
+<!-- TERMS -->
+<section id="terms">
+  <div class="content-wrap">
+    <div class="section legal">
+      <span class="tag">Legal</span>
+      <h2>Terms of Use</h2>
+      <p class="lead">By using SleepPath you agree to these terms.</p>
+      <span class="date">Last updated: 3 October 2026</span>
+
+      <h3>1. Agreement</h3>
+      <p>By using SleepPath you agree to these Terms of Use and to the Apple Standard End User License Agreement (<a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/" target="_blank" rel="noopener">https://www.apple.com/legal/internet-services/itunes/dev/stdeula/</a>). If you do not agree, do not use the app.</p>
+
+      <h3>2. Not medical advice</h3>
+      <p>SleepPath provides general information about infant and toddler sleep and a timer to help you follow a method you choose. It is not medical advice and does not diagnose, treat or prevent any condition. It does not replace your pediatrician or other qualified professional. Talk to a professional before sleep training if your child has a medical condition, was born prematurely, has reflux or breathing difficulties, or if you have any concern about their health or safety. If you think your child needs urgent help, contact your local emergency number. Always follow safe-sleep guidance. You decide whether and how to use any method, and you are responsible for your child's safety at all times.</p>
+
+      <h3>3. Your use of the app</h3>
+      <p>You may use SleepPath for personal, non-commercial purposes. You agree not to copy, reverse engineer, resell or misuse the app, or interfere with its operation.</p>
+
+      <h3>4. Premium and subscriptions</h3>
+      <p>Premium is available as an auto-renewing yearly subscription (which may begin with a free trial), an auto-renewing monthly subscription, or a one-time lifetime purchase. Prices are shown in the app before you buy and may vary by country.</p>
+      <ul>
+        <li>Payment is charged to your Apple ID at confirmation of purchase (after any free trial ends).</li>
+        <li>Subscriptions renew automatically unless you cancel at least 24 hours before the end of the current period. Your account is charged for renewal within 24 hours before the end of the current period at the then-current price.</li>
+        <li>Manage or cancel any time in Settings › your name › Subscriptions on your device.</li>
+        <li>Any unused portion of a free trial is forfeited when you purchase a subscription.</li>
+        <li>The lifetime purchase is one-time, does not renew and is tied to your Apple ID.</li>
+        <li>Refunds are handled by Apple (<a href="https://reportaproblem.apple.com" target="_blank" rel="noopener">reportaproblem.apple.com</a>) under Apple's policies.</li>
+        <li>You can restore earlier purchases from Settings › Restore purchases.</li>
+      </ul>
+
+      <h3>5. Ads</h3>
+      <p>The free version shows ads supplied by a third party (Google AdMob). We are not responsible for the content of third-party ads. Premium removes ads.</p>
+
+      <h3>6. Your data</h3>
+      <p>Your information is stored on your device as described in the Privacy Policy. You can delete it at any time in Settings › Delete all data.</p>
+
+      <h3>7. Content and intellectual property</h3>
+      <p>The app, its design, text and illustrations belong to SleepPath or its licensors. We grant you a limited, revocable, non-exclusive licence to use the app for personal use.</p>
+
+      <h3>8. No guarantee of results</h3>
+      <p>Every child is different. We do not promise any particular result, timing or improvement in your child's sleep.</p>
+
+      <h3>9. Disclaimer and limitation of liability</h3>
+      <p>The app is provided "as is" and "as available". To the extent permitted by law, we are not liable for indirect, incidental or consequential damages, or for any loss arising from your use of or inability to use the app, and our total liability is limited to the amount you paid for Premium in the twelve months before the claim. Nothing in these terms limits any rights you have under mandatory consumer law, or liability that cannot be excluded by law.</p>
+
+      <h3>10. Changes</h3>
+      <p>We may update the app and these terms. If we make a material change, we will tell you in the app. Continued use after a change means you accept it.</p>
+
+      <h3>11. Contact</h3>
+      <p><a href="https://nemostation90.github.io/app-support/apps/sleeppath/#support">https://nemostation90.github.io/app-support/apps/sleeppath/#support</a></p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-nav">
+    <a href="#support">Support</a>
+    <a href="#privacy">Privacy Policy</a>
+    <a href="#terms">Terms of Use</a>
+    <a href="mailto:pals_green.1m@icloud.com">pals_green.1m@icloud.com</a>
+  </div>
+  <p class="copy">© 2026 SleepPath. All rights reserved.</p>
+  <a href="../../" class="back">← All apps</a>
+</footer>
+
+<script>
+  const navLinks = document.querySelectorAll('.nav-links a');
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        navLinks.forEach(a => a.classList.remove('active'));
+        const a = document.querySelector('.nav-links a[href="#' + e.target.id + '"]');
+        if (a) a.classList.add('active');
+      }
+    });
+  }, { rootMargin: '-40% 0px -55% 0px' });
+  document.querySelectorAll('section[id]').forEach(s => observer.observe(s));
+</script>
+
+</body>
+</html>
