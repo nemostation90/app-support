@@ -22,6 +22,6 @@
 | Spot: Cozy Hidden Object Game | spot | com.spotdaily.app | TestFlight | — |
 | Cellarbook | cellarbook | com.cellarbookhq.app | TestFlight | — |
 | Contour | contour | com.contourhq.app | TestFlight | — |
-| Babbly | babbly | com.babblyhq.app | Prepare for Submission | 6818745873 |
+| Babbly | babbly | com.babblyhq.app | Waiting for Review | 6818745873 |
 | DryStars | drystars | com.drystarshq.app | Prepare for Submission | 6818233246 |
 | MathPath | mathpath | com.mathpathhq.app | Waiting for Review | 6797945912 |
