@@ -1,0 +1,3852 @@
+{
+  "catalogVersion": 2,
+  "generatedAt": "2026-10-04T11:14:04Z",
+  "minAppVersion": "1.0.0",
+  "packs": [
+    {
+      "accent": "#B48CFF",
+      "cover": {
+        "bytes": 146791,
+        "height": 1000,
+        "path": "images/packs/anime/cover-r1.jpg",
+        "width": 800
+      },
+      "id": "anime",
+      "order": 1,
+      "subtitle": "Dreamy anime-style nights",
+      "tier": "mixed",
+      "title": "Neon Hour",
+      "vibe": "anime",
+      "widgetTheme": {
+        "accent": "#FF7AC6",
+        "background": "#1B1033",
+        "backgroundSecondary": "#2A1A4A",
+        "clockStyle": "stacked",
+        "fontDesign": "rounded",
+        "photoScrim": true,
+        "text": "#FFE9F5",
+        "textSecondary": "#D9C8F5"
+      }
+    },
+    {
+      "accent": "#E8A87C",
+      "cover": {
+        "bytes": 140842,
+        "height": 1000,
+        "path": "images/packs/cozy/cover-r1.jpg",
+        "width": 800
+      },
+      "id": "cozy",
+      "order": 2,
+      "subtitle": "Rainy-day warmth, slow mornings",
+      "tier": "mixed",
+      "title": "Warm Nook",
+      "vibe": "cozy",
+      "widgetTheme": {
+        "accent": "#E8A87C",
+        "background": "#3B2A22",
+        "backgroundSecondary": "#4A362B",
+        "clockStyle": "stacked",
+        "fontDesign": "serif",
+        "photoScrim": true,
+        "text": "#FFF4E6",
+        "textSecondary": "#F6D8B8"
+      }
+    },
+    {
+      "accent": "#5CE1E6",
+      "cover": {
+        "bytes": 87813,
+        "height": 1000,
+        "path": "images/packs/amoled/cover-r1.jpg",
+        "width": 800
+      },
+      "id": "amoled",
+      "order": 3,
+      "subtitle": "True-black glow for OLED",
+      "tier": "mixed",
+      "title": "Void Glow",
+      "vibe": "amoled",
+      "widgetTheme": {
+        "accent": "#5CE1E6",
+        "background": "#000000",
+        "backgroundSecondary": null,
+        "clockStyle": "inline",
+        "fontDesign": "monospaced",
+        "photoScrim": false,
+        "text": "#FFFFFF",
+        "textSecondary": "#9FB4BC"
+      }
+    },
+    {
+      "accent": "#C9B8FF",
+      "cover": {
+        "bytes": 14931,
+        "height": 1000,
+        "path": "images/packs/minimal/cover-r1.jpg",
+        "width": 800
+      },
+      "id": "minimal",
+      "order": 4,
+      "subtitle": "Calm shapes, lots of space",
+      "tier": "mixed",
+      "title": "Quiet Form",
+      "vibe": "minimal",
+      "widgetTheme": {
+        "accent": "#6A4FE0",
+        "background": "#F2EFEA",
+        "backgroundSecondary": null,
+        "clockStyle": "inline",
+        "fontDesign": "default",
+        "photoScrim": false,
+        "text": "#2B2B2B",
+        "textSecondary": "#6B665C"
+      }
+    },
+    {
+      "accent": "#8CC7A1",
+      "cover": {
+        "bytes": 82942,
+        "height": 1000,
+        "path": "images/packs/nature/cover-r1.jpg",
+        "width": 800
+      },
+      "id": "nature",
+      "order": 5,
+      "subtitle": "Misty golden-hour scenes",
+      "tier": "mixed",
+      "title": "Wild Light",
+      "vibe": "nature",
+      "widgetTheme": {
+        "accent": "#F2C879",
+        "background": "#0E2A2B",
+        "backgroundSecondary": "#16393A",
+        "clockStyle": "stacked",
+        "fontDesign": "serif",
+        "photoScrim": true,
+        "text": "#F6EBD0",
+        "textSecondary": "#C9DCCB"
+      }
+    },
+    {
+      "accent": "#FF9AD5",
+      "cover": {
+        "bytes": 100202,
+        "height": 1000,
+        "path": "images/packs/y2k/cover-r1.jpg",
+        "width": 800
+      },
+      "id": "y2k",
+      "order": 6,
+      "subtitle": "Glossy 2000s futurism",
+      "tier": "mixed",
+      "title": "Chrome Pop",
+      "vibe": "y2k",
+      "widgetTheme": {
+        "accent": "#FF9AD5",
+        "background": "#2D2B55",
+        "backgroundSecondary": "#3A3870",
+        "clockStyle": "inline",
+        "fontDesign": "rounded",
+        "photoScrim": true,
+        "text": "#FFFFFF",
+        "textSecondary": "#C7F0FF"
+      }
+    }
+  ],
+  "quotes": [
+    {
+      "id": "q-001",
+      "packIds": [
+        "cozy"
+      ],
+      "text": "Soft light, slow evening."
+    },
+    {
+      "id": "q-002",
+      "packIds": [],
+      "text": "Quiet screens, loud ideas."
+    },
+    {
+      "id": "q-003",
+      "packIds": [
+        "amoled"
+      ],
+      "text": "Stay glowing in the dark."
+    },
+    {
+      "id": "q-004",
+      "packIds": [],
+      "text": "Make room for small joys."
+    },
+    {
+      "id": "q-005",
+      "packIds": [],
+      "text": "Today is a fresh canvas."
+    },
+    {
+      "id": "q-006",
+      "packIds": [
+        "cozy"
+      ],
+      "text": "Warm drink, calm mind."
+    },
+    {
+      "id": "q-007",
+      "packIds": [
+        "minimal"
+      ],
+      "text": "Less noise, more light."
+    },
+    {
+      "id": "q-008",
+      "packIds": [
+        "nature"
+      ],
+      "text": "Breathe in the golden hour."
+    },
+    {
+      "id": "q-009",
+      "packIds": [
+        "y2k"
+      ],
+      "text": "Shine on your own frequency."
+    },
+    {
+      "id": "q-010",
+      "packIds": [
+        "anime"
+      ],
+      "text": "Every night has its own glow."
+    },
+    {
+      "id": "q-011",
+      "packIds": [
+        "minimal"
+      ],
+      "text": "Keep it simple, keep it kind."
+    },
+    {
+      "id": "q-012",
+      "packIds": [],
+      "text": "Find your calm, then your spark."
+    }
+  ],
+  "schemaVersion": 1,
+  "tagVocabulary": [
+    "aurora",
+    "butterfly",
+    "calm",
+    "cat",
+    "chrome",
+    "city",
+    "desert",
+    "flower",
+    "forest",
+    "glow",
+    "heart",
+    "lake",
+    "lantern",
+    "minimal-lines",
+    "mist",
+    "moon",
+    "mountain",
+    "neon",
+    "night",
+    "ocean",
+    "orb",
+    "plant",
+    "rain",
+    "rooftop",
+    "shapes",
+    "sky",
+    "snow",
+    "soft",
+    "star",
+    "sun",
+    "tea",
+    "train",
+    "warm",
+    "window"
+  ],
+  "vibes": [
+    {
+      "id": "anime",
+      "title": "Anime-style"
+    },
+    {
+      "id": "cozy",
+      "title": "Cozy"
+    },
+    {
+      "id": "amoled",
+      "title": "Dark & AMOLED"
+    },
+    {
+      "id": "minimal",
+      "title": "Minimal"
+    },
+    {
+      "id": "nature",
+      "title": "Nature"
+    },
+    {
+      "id": "y2k",
+      "title": "Y2K"
+    }
+  ],
+  "wallpapers": [
+    {
+      "daily": true,
+      "dominantColor": "#2B2556",
+      "focal": {
+        "x": 0.5,
+        "y": 0.55
+      },
+      "home": {
+        "dim": 0.15,
+        "image": null,
+        "mode": "derived"
+      },
+      "id": "anime-001",
+      "lock": {
+        "bytes": 375853,
+        "height": 3120,
+        "path": "images/wallpapers/anime-001/lock-r1.heic",
+        "width": 1440
+      },
+      "packId": "anime",
+      "provenanceId": "prov-anime-001",
+      "publishedAt": "2026-10-01T00:00:00Z",
+      "rev": 1,
+      "tags": [
+        "night",
+        "neon",
+        "city"
+      ],
+      "thumb": {
+        "bytes": 81941,
+        "height": 1040,
+        "path": "images/wallpapers/anime-001/thumb-r1.jpg",
+        "width": 480
+      },
+      "tier": "free",
+      "title": "Rooftop Signal"
+    },
+    {
+      "daily": false,
+      "dominantColor": "#403A62",
+      "focal": {
+        "x": 0.5,
+        "y": 0.55
+      },
+      "home": {
+        "dim": 0.15,
+        "image": null,
+        "mode": "derived"
+      },
+      "id": "anime-002",
+      "lock": {
+        "bytes": 476643,
+        "height": 3120,
+        "path": "images/wallpapers/anime-002/lock-r1.heic",
+        "width": 1440
+      },
+      "packId": "anime",
+      "provenanceId": "prov-anime-002",
+      "publishedAt": "2026-10-01T00:00:00Z",
+      "rev": 1,
+      "tags": [
+        "sky",
+        "glow",
+        "rain"
+      ],
+      "thumb": {
+        "bytes": 90540,
+        "height": 1040,
+        "path": "images/wallpapers/anime-002/thumb-r1.jpg",
+        "width": 480
+      },
+      "tier": "rewarded",
+      "title": "Lantern Line"
+    },
+    {
+      "daily": true,
+      "dominantColor": "#131842",
+      "focal": {
+        "x": 0.5,
+        "y": 0.58
+      },
+      "home": {
+        "dim": 0.15,
+        "image": null,
+        "mode": "derived"
+      },
+      "id": "anime-003",
+      "lock": {
+        "bytes": 381265,
+        "height": 3120,
+        "path": "images/wallpapers/anime-003/lock-r1.heic",
+        "width": 1440
+      },
+      "packId": "anime",
+      "provenanceId": "prov-anime-003",
+      "publishedAt": "2026-10-04T00:00:00Z",
+      "rev": 1,
+      "tags": [
+        "train",
+        "night",
+        "city"
+      ],
+      "thumb": {
+        "bytes": 61945,
+        "height": 1040,
+        "path": "images/wallpapers/anime-003/thumb-r1.jpg",
+        "width": 480
+      },
+      "tier": "pro",
+      "title": "Last Train Home"
+    },
+    {
+      "daily": true,
+      "dominantColor": "#241A34",
+      "focal": {
+        "x": 0.5,
+        "y": 0.56
+      },
+      "home": {
+        "dim": 0.15,
+        "image": null,
+        "mode": "derived"
+      },
+      "id": "anime-004",
+      "lock": {
+        "bytes": 622659,
+        "height": 3120,
+        "path": "images/wallpapers/anime-004/lock-r1.heic",
+        "width": 1440
+      },
+      "packId": "anime",
+      "provenanceId": "prov-anime-004",
+      "publishedAt": "2026-10-10T00:00:00Z",
+      "rev": 1,
+      "tags": [
+        "flower",
+        "soft",
+        "sky"
+      ],
+      "thumb": {
+        "bytes": 88852,
+        "height": 1040,
+        "path": "images/wallpapers/anime-004/thumb-r1.jpg",
+        "width": 480
+      },
+      "tier": "free",
+      "title": "Blossom Alley"
+    },
+    {
+      "daily": true,
+      "dominantColor": "#151640",
+      "focal": {
+        "x": 0.5,
+        "y": 0.6
+      },
+      "home": {
+        "dim": 0.15,
+        "image": null,
+        "mode": "derived"
+      },
+      "id": "anime-005",
+      "lock": {
+        "bytes": 509177,
+        "height": 3120,
+        "path": "images/wallpapers/anime-005/lock-r1.heic",
+        "width": 1440
+      },
+      "packId": "anime",
+      "provenanceId": "prov-anime-005",
+      "publishedAt": "2026-10-16T00:00:00Z",
+      "rev": 1,
+      "tags": [
+        "star",
+        "train",
+        "night"
+      ],
+      "thumb": {
+        "bytes": 83595,
+        "height": 1040,
+        "path": "images/wallpapers/anime-005/thumb-r1.jpg",
+        "width": 480
+      },
+      "tier": "rewarded",
+      "title": "Starlit Rails"
+    },
+    {
+      "daily": true,
+      "dominantColor": "#2B2B4C",
+      "focal": {
+        "x": 0.5,
+        "y": 0.55
+      },
+      "home": {
+        "dim": 0.15,
+        "image": null,
+        "mode": "derived"
+      },
+      "id": "anime-006",
+      "lock": {
+        "bytes": 543223,
+        "height": 3120,
+        "path": "images/wallpapers/anime-006/lock-r1.heic",
+        "width": 1440
+      },
+      "packId": "anime",
+      "provenanceId": "prov-anime-006",
+      "publishedAt": "2026-10-22T00:00:00Z",
+      "rev": 1,
+      "tags": [
+        "city",
+        "neon",
+        "rain"
+      ],
+      "thumb": {
+        "bytes": 85637,
+        "height": 1040,
+        "path": "images/wallpapers/anime-006/thumb-r1.jpg",
+        "width": 480
+      },
+      "tier": "pro",
+      "title": "Crosswalk Glow"
+    },
+    {
+      "daily": true,
+      "dominantColor": "#161A3E",
+      "focal": {
+        "x": 0.5,
+        "y": 0.56
+      },
+      "home": {
+        "dim": 0.15,
+        "image": null,
+        "mode": "derived"
+      },
+      "id": "anime-007",
+      "lock": {
+        "bytes": 368442,
+        "height": 3120,
+        "path": "images/wallpapers/anime-007/lock-r1.heic",
+        "width": 1440
+      },
+      "packId": "anime",
+      "provenanceId": "prov-anime-007",
+      "publishedAt": "2026-10-28T00:00:00Z",
+      "rev": 1,
+      "tags": [
+        "moon",
+        "night",
+        "calm"
+      ],
+      "thumb": {
+        "bytes": 65762,
+        "height": 1040,
+        "path": "images/wallpapers/anime-007/thumb-r1.jpg",
+        "width": 480
+      },
+      "tier": "free",
+      "title": "Moonlit Balcony"
+    },
+    {
+      "daily": false,
+      "dominantColor": "#4D2C64",
+      "focal": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "home": {
+        "dim": 0.15,
+        "image": null,
+        "mode": "derived"
+      },
+      "id": "anime-008",
+      "lock": {
+        "bytes": 427838,
+        "height": 3120,
+        "path": "images/wallpapers/anime-008/lock-r1.heic",
+        "width": 1440
+      },
+      "packId": "anime",
+      "provenanceId": "prov-anime-008",
+      "publishedAt": "2026-10-03T00:00:00Z",
+      "rev": 1,
+      "tags": [
+        "sky",
+        "soft",
+        "glow"
+      ],
+      "thumb": {
+        "bytes": 75675,
+        "height": 1040,
+        "path": "images/wallpapers/anime-008/thumb-r1.jpg",
+        "width": 480
+      },
+      "tier": "rewarded",
+      "title": "Paper Planes"
+    },
+    {
+      "daily": false,
+      "dominantColor": "#181E42",
+      "focal": {
+        "x": 0.5,
+        "y": 0.58
+      },
+      "home": {
+        "dim": 0.15,
+        "image": null,
+        "mode": "derived"
+      },
+      "id": "anime-009",
+      "lock": {
+        "bytes": 412160,
+        "height": 3120,
+        "path": "images/wallpapers/anime-009/lock-r1.heic",
+        "width": 1440
+      },
+      "packId": "anime",
+      "provenanceId": "prov-anime-009",
+      "publishedAt": "2026-10-03T00:00:00Z",
+      "rev": 1,
+      "tags": [
+        "neon",
+        "night",
+        "city"
+      ],
+      "thumb": {
+        "bytes": 77167,
+        "height": 1040,
+        "path": "images/wallpapers/anime-009/thumb-r1.jpg",
+        "width": 480
+      },
+      "tier": "pro",
+      "title": "Vending Machine Hour"
+    },
+    {
+      "daily": false,
+      "dominantColor": "#2F2853",
+      "focal": {
+        "x": 0.5,
+        "y": 0.6
+      },
+      "home": {
+        "dim": 0.15,
+        "image": null,
+        "mode": "derived"
+      },
+      "id": "anime-010",
+      "lock": {
+        "bytes": 437364,
+        "height": 3120,
+        "path": "images/wallpapers/anime-010/lock-r1.heic",
+        "width": 1440
+      },
+      "packId": "anime",
+      "provenanceId": "prov-anime-010",
+      "publishedAt": "2026-10-03T00:00:00Z",
+      "rev": 1,
+      "tags": [
+        "neon",
+        "city",
+        "night"
+      ],
+      "thumb": {
+        "bytes": 78945,
+        "height": 1040,
+        "path": "images/wallpapers/anime-010/thumb-r1.jpg",
+        "width": 480
+      },
+      "tier": "free",
+      "title": "Bike Under Neon"
+    },
+    {
+      "daily": false,
+      "dominantColor": "#172240",
+      "focal": {
+        "x": 0.5,
+        "y": 0.52
+      },
+      "home": {
+        "dim": 0.15,
+        "image": null,
+        "mode": "derived"
+      },
+      "id": "anime-011",
+      "lock": {
+        "bytes": 490124,
+        "height": 3120,
+        "path": "images/wallpapers/anime-011/lock-r1.heic",
+        "width": 1440
+      },
+      "packId": "anime",
+      "provenanceId": "prov-anime-011",
+      "publishedAt": "2026-10-03T00:00:00Z",
+      "rev": 1,
+      "tags": [
+        "rain",
+        "city",
+        "sky"
+      ],
+      "thumb": {
+        "bytes": 82173,
+        "height": 1040,
+        "path": "images/wallpapers/anime-011/thumb-r1.jpg",
+        "width": 480
+      },
+      "tier": "rewarded",
+      "title": "Skyline Rain"
+    },
+    {
+      "daily": false,
+      "dominantColor": "#2B2749",
+      "focal": {
+        "x": 0.5,
+        "y": 0.55
+      },
+      "home": {
+        "dim": 0.15,
+        "image": null,
+        "mode": "derived"
+      },
+      "id": "anime-012",
+      "lock": {
+        "bytes": 460055,
+        "height": 3120,
+        "path": "images/wallpapers/anime-012/lock-r1.heic",
+        "width": 1440
+      },
+      "packId": "anime",
+      "provenanceId": "prov-anime-012",
+      "publishedAt": "2026-10-03T00:00:00Z",
+      "rev": 1,
+      "tags": [
+        "lantern",
+        "glow",
+        "night"
+      ],
+      "thumb": {
+        "bytes": 83487,
+        "height": 1040,
+        "path": "images/wallpapers/anime-012/thumb-r1.jpg",
+        "width": 480
+      },
+      "tier": "pro",
+      "title": "Festival Lights"
+    },
+    {
+      "daily": false,
+      "dominantColor": "#312264",
+      "focal": {
+        "x": 0.5,
+        "y": 0.56
+      },
+      "home": {
+        "dim": 0.15,
+        "image": null,
+        "mode": "derived"
+      },
+      "id": "anime-013",
+      "lock": {
+        "bytes": 427200,
+        "height": 3120,
+        "path": "images/wallpapers/anime-013/lock-r1.heic",
+        "width": 1440
+      },
+      "packId": "anime",
+      "provenanceId": "prov-anime-013",
+      "publishedAt": "2026-10-03T00:00:00Z",
+      "rev": 1,
+      "tags": [
+        "star",
+        "sky",
+        "night"
+      ],
+      "thumb": {
+        "bytes": 77401,
+        "height": 1040,
+        "path": "images/wallpapers/anime-013/thumb-r1.jpg",
+        "width": 480
+      },
+      "tier": "free",
+      "title": "Observatory Roof"
+    },
+    {
+      "daily": false,
+      "dominantColor": "#101223",
+      "focal": {
+        "x": 0.5,
+        "y": 0.55
+      },
+      "home": {
+        "dim": 0.15,
+        "image": null,
+        "mode": "derived"
+      },
+      "id": "anime-014",
+      "lock": {
+        "bytes": 326281,
+        "height": 3120,
+        "path": "images/wallpapers/anime-014/lock-r1.heic",
+        "width": 1440
+      },
+      "packId": "anime",
+      "provenanceId": "prov-anime-014",
+      "publishedAt": "2026-10-03T00:00:00Z",
+      "rev": 1,
+      "tags": [
+        "train",
+        "rain",
+        "calm"
+      ],
+      "thumb": {
+        "bytes": 58608,
+        "height": 1040,
+        "path": "images/wallpapers/anime-014/thumb-r1.jpg",
+        "width": 480
+      },
+      "tier": "rewarded",
+      "title": "Tram Window"
+    },
+    {
+      "daily": false,
+      "dominantColor": "#2A2454",
+      "focal": {
+        "x": 0.5,
+        "y": 0.58
+      },
+      "home": {
+        "dim": 0.15,
+        "image": null,
+        "mode": "derived"
+      },
+      "id": "anime-015",
+      "lock": {
+        "bytes": 379133,
+        "height": 3120,
+        "path": "images/wallpapers/anime-015/lock-r1.heic",
+        "width": 1440
+      },
+      "packId": "anime",
+      "provenanceId": "prov-anime-015",
+      "publishedAt": "2026-10-03T00:00:00Z",
+      "rev": 1,
+      "tags": [
+        "city",
+        "sky",
+        "glow"
+      ],
+      "thumb": {
+        "bytes": 65181,
+        "height": 1040,
+        "path": "images/wallpapers/anime-015/thumb-r1.jpg",
+        "width": 480
+      },
+      "tier": "pro",
+      "title": "Violet Overpass"
+    },
+    {
+      "daily": false,
+      "dominantColor": "#574E64",
+      "focal": {
+        "x": 0.5,
+        "y": 0.57
+      },
+      "home": {
+        "dim": 0.15,
+        "image": null,
+        "mode": "derived"
+      },
+      "id": "anime-016",
+      "lock": {
+        "bytes": 327955,
+        "height": 3120,
+        "path": "images/wallpapers/anime-016/lock-r1.heic",
+        "width": 1440
+      },
+      "packId": "anime",
+      "provenanceId": "prov-anime-016",
+      "publishedAt": "2026-10-03T00:00:00Z",
+      "rev": 1,
+      "tags": [
+        "train",
+        "sky",
+        "soft"
+      ],
+      "thumb": {
+        "bytes": 58982,
+        "height": 1040,
+        "path": "images/wallpapers/anime-016/thumb-r1.jpg",
+        "width": 480
+      },
+      "tier": "free",
+      "title": "Dawn Platform"
+    },
+    {
+      "daily": true,
+      "dominantColor": "#A0896C",
+      "focal": {
+        "x": 0.5,
+        "y": 0.55
+      },
+      "home": {
+        "dim": 0.15,
+        "image": null,
+        "mode": "derived"
+      },
+      "id": "cozy-001",
+      "lock": {
+        "bytes": 390779,
+        "height": 3120,
+        "path": "images/wallpapers/cozy-001/lock-r1.heic",
+        "width": 1440
+      },
+      "packId": "cozy",
+      "provenanceId": "prov-cozy-001",
+      "publishedAt": "2026-10-02T00:00:00Z",
+      "rev": 1,
+      "tags": [
+        "rain",
+        "window",
+        "warm"
+      ],
+      "thumb": {
+        "bytes": 61020,
+        "height": 1040,
+        "path": "images/wallpapers/cozy-001/thumb-r1.jpg",
+        "width": 480
+      },
+      "tier": "free",
+      "title": "Window Seat"
+    },
+    {
+      "daily": false,
+      "dominantColor": "#A58968",
+      "focal": {
+        "x": 0.5,
+        "y": 0.55
+      },
+      "home": {
+        "dim": 0.15,
+        "image": null,
+        "mode": "derived"
+      },
+      "id": "cozy-002",
+      "lock": {
+        "bytes": 303999,
+        "height": 3120,
+        "path": "images/wallpapers/cozy-002/lock-r1.heic",
+        "width": 1440
+      },
+      "packId": "cozy",
+      "provenanceId": "prov-cozy-002",
+      "publishedAt": "2026-10-02T00:00:00Z",
+      "rev": 1,
+      "tags": [
+        "warm",
+        "calm",
+        "soft"
+      ],
+      "thumb": {
+        "bytes": 46911,
+        "height": 1040,
+        "path": "images/wallpapers/cozy-002/thumb-r1.jpg",
+        "width": 480
+      },
+      "tier": "rewarded",
+      "title": "Tea and Rain"
+    },
+    {
+      "daily": true,
+      "dominantColor": "#AC8862",
+      "focal": {
+        "x": 0.5,
+        "y": 0.57
+      },
+      "home": {
+        "dim": 0.15,
+        "image": null,
+        "mode": "derived"
+      },
+      "id": "cozy-003",
+      "lock": {
+        "bytes": 475568,
+        "height": 3120,
+        "path": "images/wallpapers/cozy-003/lock-r1.heic",
+        "width": 1440
+      },
+      "packId": "cozy",
+      "provenanceId": "prov-cozy-003",
+      "publishedAt": "2026-10-05T00:00:00Z",
+      "rev": 1,
+      "tags": [
+        "cat",
+        "soft",
+        "warm"
+      ],
+      "thumb": {
+        "bytes": 76856,
+        "height": 1040,
+        "path": "images/wallpapers/cozy-003/thumb-r1.jpg",
+        "width": 480
+      },
+      "tier": "pro",
+      "title": "Sleepy Cat Blanket"
+    },
+    {
+      "daily": true,
+      "dominantColor": "#7B7558",
+      "focal": {
+        "x": 0.5,
+        "y": 0.52
+      },
+      "home": {
+        "dim": 0.15,
+        "image": null,
+        "mode": "derived"
+      },
+      "id": "cozy-004",
+      "lock": {
+        "bytes": 284686,
+        "height": 3120,
+        "path": "images/wallpapers/cozy-004/lock-r1.heic",
+        "width": 1440
+      },
+      "packId": "cozy",
+      "provenanceId": "prov-cozy-004",
+      "publishedAt": "2026-10-11T00:00:00Z",
+      "rev": 1,
+      "tags": [
+        "plant",
+        "warm",
+        "calm"
+      ],
+      "thumb": {
+        "bytes": 37777,
+        "height": 1040,
+        "path": "images/wallpapers/cozy-004/thumb-r1.jpg",
+        "width": 480
+      },
+      "tier": "free",
+      "title": "Plant Shelf"
+    },
+    {
+      "daily": true,
+      "dominantColor": "#AD9472",
+      "focal": {
+        "x": 0.5,
+        "y": 0.58
+      },
+      "home": {
+        "dim": 0.15,
+        "image": null,
+        "mode": "derived"
+      },
+      "id": "cozy-005",
+      "lock": {
+        "bytes": 245710,
+        "height": 3120,
+        "path": "images/wallpapers/cozy-005/lock-r1.heic",
+        "width": 1440
+      },
+      "packId": "cozy",
+      "provenanceId": "prov-cozy-005",
+      "publishedAt": "2026-10-17T00:00:00Z",
+      "rev": 1,
+      "tags": [
+        "warm",
+        "calm",
+        "soft"
+      ],
+      "thumb": {
+        "bytes": 32932,
+        "height": 1040,
+        "path": "images/wallpapers/cozy-005/thumb-r1.jpg",
+        "width": 480
+      },
+      "tier": "rewarded",
+      "title": "Candle and Book"
+    },
+    {
+      "daily": true,
+      "dominantColor": "#AD8C6B",
+      "focal": {
+        "x": 0.5,
+        "y": 0.55
+      },
+      "home": {
+        "dim": 0.15,
+        "image": null,
+        "mode": "derived"
+      },
+      "id": "cozy-006",
+      "lock": {
+        "bytes": 364561,
+        "height": 3120,
+        "path": "images/wallpapers/cozy-006/lock-r1.heic",
+        "width": 1440
+      },
+      "packId": "cozy",
+      "provenanceId": "prov-cozy-006",
+      "publishedAt": "2026-10-23T00:00:00Z",
+      "rev": 1,
+      "tags": [
+        "warm",
+        "window",
+        "forest"
+      ],
+      "thumb": {
+        "bytes": 63828,
+        "height": 1040,
+        "path": "images/wallpapers/cozy-006/thumb-r1.jpg",
+        "width": 480
+      },
+      "tier": "pro",
+      "title": "Tiny Cabin"
+    },
+    {
+      "daily": true,
+      "dominantColor": "#B9AD9A",
+      "focal": {
+        "x": 0.5,
+        "y": 0.56
+      },
+      "home": {
+        "dim": 0.15,
+        "image": null,
+        "mode": "derived"
+      },
+      "id": "cozy-007",
+      "lock": {
+        "bytes": 359182,
+        "height": 3120,
+        "path": "images/wallpapers/cozy-007/lock-r1.heic",
+        "width": 1440
+      },
+      "packId": "cozy",
+      "provenanceId": "prov-cozy-007",
+      "publishedAt": "2026-10-29T00:00:00Z",
+      "rev": 1,
+      "tags": [
+        "warm",
+        "window",
+        "soft"
+      ],
+      "thumb": {
+        "bytes": 56187,
+        "height": 1040,
+        "path": "images/wallpapers/cozy-007/thumb-r1.jpg",
+        "width": 480
+      },
+      "tier": "free",
+      "title": "Bakery Corner"
+    },
+    {
+      "daily": false,
+      "dominantColor": "#544840",
+      "focal": {
+        "x": 0.5,
+        "y": 0.58
+      },
+      "home": {
+        "dim": 0.15,
+        "image": null,
+        "mode": "derived"
+      },
+      "id": "cozy-008",
+      "lock": {
+        "bytes": 336233,
+        "height": 3120,
+        "path": "images/wallpapers/cozy-008/lock-r1.heic",
+        "width": 1440
+      },
+      "packId": "cozy",
+      "provenanceId": "prov-cozy-008",
+      "publishedAt": "2026-10-03T00:00:00Z",
+      "rev": 1,
+      "tags": [
+        "warm",
+        "night",
+        "calm"
+      ],
+      "thumb": {
+        "bytes": 50307,
+        "height": 1040,
+        "path": "images/wallpapers/cozy-008/thumb-r1.jpg",
+        "width": 480
+      },
+      "tier": "rewarded",
+      "title": "Desk Lamp Night"
+    },
+    {
+      "daily": false,
+      "dominantColor": "#93775D",
+      "focal": {
+        "x": 0.5,
+        "y": 0.55
+      },
+      "home": {
+        "dim": 0.15,
+        "image": null,
+        "mode": "derived"
+      },
+      "id": "cozy-009",
+      "lock": {
+        "bytes": 370855,
+        "height": 3120,
+        "path": "images/wallpapers/cozy-009/lock-r1.heic",
+        "width": 1440
+      },
+      "packId": "cozy",
+      "provenanceId": "prov-cozy-009",
+      "publishedAt": "2026-10-03T00:00:00Z",
+      "rev": 1,
+      "tags": [
+        "rain",
+        "window",
+        "soft"
+      ],
+      "thumb": {
+        "bytes": 58643,
+        "height": 1040,
+        "path": "images/wallpapers/cozy-009/thumb-r1.jpg",
+        "width": 480
+      },
+      "tier": "pro",
+      "title": "Rainy Reading Nook"
+    },
+    {
+      "daily": false,
+      "dominantColor": "#DFCAAD",
+      "focal": {
+        "x": 0.5,
+        "y": 0.57
+      },
+      "home": {
+        "dim": 0.15,
+        "image": null,
+        "mode": "derived"
+      },
+      "id": "cozy-010",
+      "lock": {
+        "bytes": 299105,
+        "height": 3120,
+        "path": "images/wallpapers/cozy-010/lock-r1.heic",
+        "width": 1440
+      },
+      "packId": "cozy",
+      "provenanceId": "prov-cozy-010",
+      "publishedAt": "2026-10-03T00:00:00Z",
+      "rev": 1,
+      "tags": [
+        "warm",
+        "calm",
+        "sun"
+      ],
+      "thumb": {
+        "bytes": 49862,
+        "height": 1040,
+        "path": "images/wallpapers/cozy-010/thumb-r1.jpg",
+        "width": 480
+      },
+      "tier": "free",
+      "title": "Morning Kettle"
+    },
+    {
+      "daily": false,
+      "dominantColor": "#CBAD91",
+      "focal": {
+        "x": 0.5,
+        "y": 0.6
+      },
+      "home": {
+        "dim": 0.15,
+        "image": null,
+        "mode": "derived"
+      },
+      "id": "cozy-011",
+      "lock": {
+        "bytes": 366463,
+        "height": 3120,
+        "path": "images/wallpapers/cozy-011/lock-r1.heic",
+        "width": 1440
+      },
+      "packId": "cozy",
+      "provenanceId": "prov-cozy-011",
+      "publishedAt": "2026-10-03T00:00:00Z",
+      "rev": 1,
+      "tags": [
+        "warm",
+        "soft",
+        "calm"
+      ],
+      "thumb": {
+        "bytes": 58816,
+        "height": 1040,
+        "path": "images/wallpapers/cozy-011/thumb-r1.jpg",
+        "width": 480
+      },
+      "tier": "rewarded",
+      "title": "Fireplace Socks"
+    },
+    {
+      "daily": false,
+      "dominantColor": "#E6D1B1",
+      "focal": {
+        "x": 0.5,
+        "y": 0.55
+      },
+      "home": {
+        "dim": 0.15,
+        "image": null,
+        "mode": "derived"
+      },
+      "id": "cozy-012",
+      "lock": {
+        "bytes": 401300,
+        "height": 3120,
+        "path": "images/wallpapers/cozy-012/lock-r1.heic",
+        "width": 1440
+      },
+      "packId": "cozy",
+      "provenanceId": "prov-cozy-012",
+      "publishedAt": "2026-10-03T00:00:00Z",
+      "rev": 1,
+      "tags": [
+        "plant",
+        "window",
+        "sun"
+      ],
+      "thumb": {
+        "bytes": 69741,
+        "height": 1040,
+        "path": "images/wallpapers/cozy-012/thumb-r1.jpg",
+        "width": 480
+      },
+      "tier": "pro",
+      "title": "Windowsill Herbs"
+    },
+    {
+      "daily": false,
+      "dominantColor": "#75544E",
+      "focal": {
+        "x": 0.5,
+        "y": 0.58
+      },
+      "home": {
+        "dim": 0.15,
+        "image": null,
+        "mode": "derived"
+      },
+      "id": "cozy-013",
+      "lock": {
+        "bytes": 448083,
+        "height": 3120,
+        "path": "images/wallpapers/cozy-013/lock-r1.heic",
+        "width": 1440
+      },
+      "packId": "cozy",
+      "provenanceId": "prov-cozy-013",
+      "publishedAt": "2026-10-03T00:00:00Z",
+      "rev": 1,
+      "tags": [
+        "warm",
+        "soft",
+        "lantern"
+      ],
+      "thumb": {
+        "bytes": 84733,
+        "height": 1040,
+        "path": "images/wallpapers/cozy-013/thumb-r1.jpg",
+        "width": 480
+      },
+      "tier": "free",
+      "title": "Autumn Porch"
+    },
+    {
+      "daily": false,
+      "dominantColor": "#928374",
+      "focal": {
+        "x": 0.5,
+        "y": 0.55
+      },
+      "home": {
+        "dim": 0.15,
+        "image": null,
+        "mode": "derived"
+      },
+      "id": "cozy-014",
+      "lock": {
+        "bytes": 369499,
+        "height": 3120,
+        "path": "images/wallpapers/cozy-014/lock-r1.heic",
+        "width": 1440
+      },
+      "packId": "cozy",
+      "provenanceId": "prov-cozy-014",
+      "publishedAt": "2026-10-03T00:00:00Z",
+      "rev": 1,
+      "tags": [
+        "cat",
+        "window",
+        "rain"
+      ],
+      "thumb": {
+        "bytes": 60244,
+        "height": 1040,
+        "path": "images/wallpapers/cozy-014/thumb-r1.jpg",
+        "width": 480
+      },
+      "tier": "rewarded",
+      "title": "Cat on the Sill"
+    },
+    {
+      "daily": false,
+      "dominantColor": "#C2AA89",
+      "focal": {
+        "x": 0.5,
+        "y": 0.55
+      },
+      "home": {
+        "dim": 0.15,
+        "image": null,
+        "mode": "derived"
+      },
+      "id": "cozy-015",
+      "lock": {
+        "bytes": 212743,
+        "height": 3120,
+        "path": "images/wallpapers/cozy-015/lock-r1.heic",
+        "width": 1440
+      },
+      "packId": "cozy",
+      "provenanceId": "prov-cozy-015",
+      "publishedAt": "2026-10-03T00:00:00Z",
+      "rev": 1,
+      "tags": [
+        "warm",
+        "soft",
+        "calm"
+      ],
+      "thumb": {
+        "bytes": 28949,
+        "height": 1040,
+        "path": "images/wallpapers/cozy-015/thumb-r1.jpg",
+        "width": 480
+      },
+      "tier": "pro",
+      "title": "Pottery Shelf"
+    },
+    {
+      "daily": false,
+      "dominantColor": "#B4A08B",
+      "focal": {
+        "x": 0.5,
+        "y": 0.56
+      },
+      "home": {
+        "dim": 0.15,
+        "image": null,
+        "mode": "derived"
+      },
+      "id": "cozy-016",
+      "lock": {
+        "bytes": 382641,
+        "height": 3120,
+        "path": "images/wallpapers/cozy-016/lock-r1.heic",
+        "width": 1440
+      },
+      "packId": "cozy",
+      "provenanceId": "prov-cozy-016",
+      "publishedAt": "2026-10-03T00:00:00Z",
+      "rev": 1,
+      "tags": [
+        "moon",
+        "soft",
+        "night"
+      ],
+      "thumb": {
+        "bytes": 51603,
+        "height": 1040,
+        "path": "images/wallpapers/cozy-016/thumb-r1.jpg",
+        "width": 480
+      },
+      "tier": "free",
+      "title": "Quilt and Moon"
+    },
+    {
+      "daily": true,
+      "dominantColor": "#09090A",
+      "focal": {
+        "x": 0.5,
+        "y": 0.55
+      },
+      "home": {
+        "dim": 0.0,
+        "image": null,
+        "mode": "same"
+      },
+      "id": "amoled-001",
+      "lock": {
+        "bytes": 154327,
+        "height": 3120,
+        "path": "images/wallpapers/amoled-001/lock-r1.heic",
+        "width": 1440
+      },
+      "packId": "amoled",
+      "provenanceId": "prov-amoled-001",
+      "publishedAt": "2026-10-03T00:00:00Z",
+      "rev": 1,
+      "tags": [
+        "moon",
+        "glow",
+        "minimal-lines"
+      ],
+      "thumb": {
+        "bytes": 34998,
+        "height": 1040,
+        "path": "images/wallpapers/amoled-001/thumb-r1.jpg",
+        "width": 480
+      },
+      "tier": "free",
+      "title": "Wire Moon"
+    },
+    {
+      "daily": false,
+      "dominantColor": "#080808",
+      "focal": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "home": {
+        "dim": 0.0,
+        "image": null,
+        "mode": "same"
+      },
+      "id": "amoled-002",
+      "lock": {
+        "bytes": 24744,
+        "height": 3120,
+        "path": "images/wallpapers/amoled-002/lock-r1.heic",
+        "width": 1440
+      },
+      "packId": "amoled",
+      "provenanceId": "prov-amoled-002",
+      "publishedAt": "2026-10-03T00:00:00Z",
+      "rev": 1,
+      "tags": [
+        "neon",
+        "night",
+        "glow"
+      ],
+      "thumb": {
+        "bytes": 7685,
+        "height": 1040,
+        "path": "images/wallpapers/amoled-002/thumb-r1.jpg",
+        "width": 480
+      },
+      "tier": "pro",
+      "title": "Comet Trail"
+    },
+    {
+      "daily": true,
+      "dominantColor": "#090809",
+      "focal": {
+        "x": 0.5,
+        "y": 0.55
+      },
+      "home": {
+        "dim": 0.0,
+        "image": null,
+        "mode": "same"
+      },
+      "id": "amoled-003",
+      "lock": {
+        "bytes": 28777,
+        "height": 3120,
+        "path": "images/wallpapers/amoled-003/lock-r1.heic",
+        "width": 1440
+      },
+      "packId": "amoled",
+      "provenanceId": "prov-amoled-003",
+      "publishedAt": "2026-10-06T00:00:00Z",
+      "rev": 1,
+      "tags": [
+        "orb",
+        "glow",
+        "calm"
+      ],
+      "thumb": {
+        "bytes": 8563,
+        "height": 1040,
+        "path": "images/wallpapers/amoled-003/thumb-r1.jpg",
+        "width": 480
+      },
+      "tier": "rewarded",
+      "title": "Glow Orb"
+    },
+    {
+      "daily": true,
+      "dominantColor": "#080808",
+      "focal": {
+        "x": 0.5,
+        "y": 0.62
+      },
+      "home": {
+        "dim": 0.0,
+        "image": null,
+        "mode": "same"
+      },
+      "id": "amoled-004",
+      "lock": {
+        "bytes": 32854,
+        "height": 3120,
+        "path": "images/wallpapers/amoled-004/lock-r1.heic",
+        "width": 1440
+      },
+      "packId": "amoled",
+      "provenanceId": "prov-amoled-004",
+      "publishedAt": "2026-10-12T00:00:00Z",
+      "rev": 1,
+      "tags": [
+        "mountain",
+        "neon",
+        "minimal-lines"
+      ],
+      "thumb": {
+        "bytes": 11416,
+        "height": 1040,
+        "path": "images/wallpapers/amoled-004/thumb-r1.jpg",
+        "width": 480
+      },
+      "tier": "free",
+      "title": "Neon Ridge"
+    },
+    {
+      "daily": true,
+      "dominantColor": "#080808",
+      "focal": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "home": {
+        "dim": 0.0,
+        "image": null,
+        "mode": "same"
+      },
+      "id": "amoled-005",
+      "lock": {
+        "bytes": 15768,
+        "height": 3120,
+        "path": "images/wallpapers/amoled-005/lock-r1.heic",
+        "width": 1440
+      },
+      "packId": "amoled",
+      "provenanceId": "prov-amoled-005",
+      "publishedAt": "2026-10-18T00:00:00Z",
+      "rev": 1,
+      "tags": [
+        "orb",
+        "glow",
+        "minimal-lines"
+      ],
+      "thumb": {
+        "bytes": 5810,
+        "height": 1040,
+        "path": "images/wallpapers/amoled-005/thumb-r1.jpg",
+        "width": 480
+      },
+      "tier": "rewarded",
+      "title": "Thin Ring Planet"
+    },
+    {
+      "daily": true,
+      "dominantColor": "#0A0A0D",
+      "focal": {
+        "x": 0.5,
+        "y": 0.6
+      },
+      "home": {
+        "dim": 0.15,
+        "image": null,
+        "mode": "derived"
+      },
+      "id": "amoled-006",
+      "lock": {
+        "bytes": 73243,
+        "height": 3120,
+        "path": "images/wallpapers/amoled-006/lock-r1.heic",
+        "width": 1440
+      },
+      "packId": "amoled",
+      "provenanceId": "prov-amoled-006",
+      "publishedAt": "2026-10-24T00:00:00Z",
+      "rev": 1,
+      "tags": [
+        "glow",
+        "soft",
+        "neon"
+      ],
+      "thumb": {
+        "bytes": 23335,
+        "height": 1040,
+        "path": "images/wallpapers/amoled-006/thumb-r1.jpg",
+        "width": 480
+      },
+      "tier": "pro",
+      "title": "Liquid Ribbon"
+    },
+    {
+      "daily": true,
+      "dominantColor": "#080A0B",
+      "focal": {
+        "x": 0.5,
+        "y": 0.55
+      },
+      "home": {
+        "dim": 0.15,
+        "image": null,
+        "mode": "derived"
+      },
+      "id": "amoled-007",
+      "lock": {
+        "bytes": 91466,
+        "height": 3120,
+        "path": "images/wallpapers/amoled-007/lock-r1.heic",
+        "width": 1440
+      },
+      "packId": "amoled",
+      "provenanceId": "prov-amoled-007",
+      "publishedAt": "2026-10-30T00:00:00Z",
+      "rev": 1,
+      "tags": [
+        "glow",
+        "shapes",
+        "calm"
+      ],
+      "thumb": {
+        "bytes": 25441,
+        "height": 1040,
+        "path": "images/wallpapers/amoled-007/thumb-r1.jpg",
+        "width": 480
+      },
+      "tier": "free",
+      "title": "Glass Crystal"
+    },
+    {
+      "daily": false,
+      "dominantColor": "#09090C",
+      "focal": {
+        "x": 0.5,
+        "y": 0.58
+      },
+      "home": {
+        "dim": 0.15,
+        "image": null,
+        "mode": "derived"
+      },
+      "id": "amoled-008",
+      "lock": {
+        "bytes": 149990,
+        "height": 3120,
+        "path": "images/wallpapers/amoled-008/lock-r1.heic",
+        "width": 1440
+      },
+      "packId": "amoled",
+      "provenanceId": "prov-amoled-008",
+      "publishedAt": "2026-10-03T00:00:00Z",
+      "rev": 1,
+      "tags": [
+        "flower",
+        "glow",
+        "night"
+      ],
+      "thumb": {
+        "bytes": 30634,
+        "height": 1040,
+        "path": "images/wallpapers/amoled-008/thumb-r1.jpg",
+        "width": 480
+      },
+      "tier": "rewarded",
+      "title": "Dark Bloom"
+    },
+    {
+      "daily": false,
+      "dominantColor": "#080A0B",
+      "focal": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "home": {
+        "dim": 0.15,
+        "image": null,
+        "mode": "derived"
+      },
+      "id": "amoled-009",
+      "lock": {
+        "bytes": 63886,
+        "height": 3120,
+        "path": "images/wallpapers/amoled-009/lock-r1.heic",
+        "width": 1440
+      },
+      "packId": "amoled",
+      "provenanceId": "prov-amoled-009",
+      "publishedAt": "2026-10-03T00:00:00Z",
+      "rev": 1,
+      "tags": [
+        "orb",
+        "minimal-lines",
+        "glow"
+      ],
+      "thumb": {
+        "bytes": 20878,
+        "height": 1040,
+        "path": "images/wallpapers/amoled-009/thumb-r1.jpg",
+        "width": 480
+      },
+      "tier": "pro",
+      "title": "Orbit Lines"
+    },
+    {
+      "daily": false,
+      "dominantColor": "#090909",
+      "focal": {
+        "x": 0.5,
+        "y": 0.45
+      },
+      "home": {
+        "dim": 0.15,
+        "image": null,
+        "mode": "derived"
+      },
+      "id": "amoled-010",
+      "lock": {
+        "bytes": 42983,
+        "height": 3120,
+        "path": "images/wallpapers/amoled-010/lock-r1.heic",
+        "width": 1440
+      },
+      "packId": "amoled",
+      "provenanceId": "prov-amoled-010",
+      "publishedAt": "2026-10-03T00:00:00Z",
+      "rev": 1,
+      "tags": [
+        "aurora",
+        "glow",
+        "sky"
+      ],
+      "thumb": {
+        "bytes": 12085,
+        "height": 1040,
+        "path": "images/wallpapers/amoled-010/thumb-r1.jpg",
+        "width": 480
+      },
+      "tier": "free",
+      "title": "Aurora Thread"
+    },
+    {
+      "daily": false,
+      "dominantColor": "#090808",
+      "focal": {
+        "x": 0.5,
+        "y": 0.62
+      },
+      "home": {
+        "dim": 0.15,
+        "image": null,
+        "mode": "derived"
+      },
+      "id": "amoled-011",
+      "lock": {
+        "bytes": 21438,
+        "height": 3120,
+        "path": "images/wallpapers/amoled-011/lock-r1.heic",
+        "width": 1440
+      },
+      "packId": "amoled",
+      "provenanceId": "prov-amoled-011",
+      "publishedAt": "2026-10-03T00:00:00Z",
+      "rev": 1,
+      "tags": [
+        "glow",
+        "minimal-lines",
+        "calm"
+      ],
+      "thumb": {
+        "bytes": 6598,
+        "height": 1040,
+        "path": "images/wallpapers/amoled-011/thumb-r1.jpg",
+        "width": 480
+      },
+      "tier": "rewarded",
+      "title": "Pulse Horizon"
+    },
+    {
+      "daily": false,
+      "dominantColor": "#080808",
+      "focal": {
+        "x": 0.5,
+        "y": 0.55
+      },
+      "home": {
+        "dim": 0.15,
+        "image": null,
+        "mode": "derived"
+      },
+      "id": "amoled-012",
+      "lock": {
+        "bytes": 15356,
+        "height": 3120,
+        "path": "images/wallpapers/amoled-012/lock-r1.heic",
+        "width": 1440
+      },
+      "packId": "amoled",
+      "provenanceId": "prov-amoled-012",
+      "publishedAt": "2026-10-03T00:00:00Z",
+      "rev": 1,
+      "tags": [
+        "star",
+        "glow",
+        "calm"
+      ],
+      "thumb": {
+        "bytes": 6653,
+        "height": 1040,
+        "path": "images/wallpapers/amoled-012/thumb-r1.jpg",
+        "width": 480
+      },
+      "tier": "pro",
+      "title": "Starlight Drop"
+    },
+    {
+      "daily": false,
+      "dominantColor": "#09090A",
+      "focal": {
+        "x": 0.5,
+        "y": 0.6
+      },
+      "home": {
+        "dim": 0.15,
+        "image": null,
+        "mode": "derived"
+      },
+      "id": "amoled-013",
+      "lock": {
+        "bytes": 49351,
+        "height": 3120,
+        "path": "images/wallpapers/amoled-013/lock-r1.heic",
+        "width": 1440
+      },
+      "packId": "amoled",
+      "provenanceId": "prov-amoled-013",
+      "publishedAt": "2026-10-03T00:00:00Z",
+      "rev": 1,
+      "tags": [
+        "mist",
+        "glow",
+        "soft"
+      ],
+      "thumb": {
+        "bytes": 15270,
+        "height": 1040,
+        "path": "images/wallpapers/amoled-013/thumb-r1.jpg",
+        "width": 480
+      },
+      "tier": "free",
+      "title": "Lavender Mist"
+    },
+    {
+      "daily": false,
+      "dominantColor": "#080808",
+      "focal": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "home": {
+        "dim": 0.15,
+        "image": null,
+        "mode": "derived"
+      },
+      "id": "amoled-014",
+      "lock": {
+        "bytes": 16181,
+        "height": 3120,
+        "path": "images/wallpapers/amoled-014/lock-r1.heic",
+        "width": 1440
+      },
+      "packId": "amoled",
+      "provenanceId": "prov-amoled-014",
+      "publishedAt": "2026-10-03T00:00:00Z",
+      "rev": 1,
+      "tags": [
+        "glow",
+        "shapes",
+        "minimal-lines"
+      ],
+      "thumb": {
+        "bytes": 6490,
+        "height": 1040,
+        "path": "images/wallpapers/amoled-014/thumb-r1.jpg",
+        "width": 480
+      },
+      "tier": "rewarded",
+      "title": "Cyan Arc"
+    },
+    {
+      "daily": false,
+      "dominantColor": "#090809",
+      "focal": {
+        "x": 0.5,
+        "y": 0.55
+      },
+      "home": {
+        "dim": 0.15,
+        "image": null,
+        "mode": "derived"
+      },
+      "id": "amoled-015",
+      "lock": {
+        "bytes": 30845,
+        "height": 3120,
+        "path": "images/wallpapers/amoled-015/lock-r1.heic",
+        "width": 1440
+      },
+      "packId": "amoled",
+      "provenanceId": "prov-amoled-015",
+      "publishedAt": "2026-10-03T00:00:00Z",
+      "rev": 1,
+      "tags": [
+        "heart",
+        "glow",
+        "neon"
+      ],
+      "thumb": {
+        "bytes": 11654,
+        "height": 1040,
+        "path": "images/wallpapers/amoled-015/thumb-r1.jpg",
+        "width": 480
+      },
+      "tier": "pro",
+      "title": "Ember Heart"
+    },
+    {
+      "daily": false,
+      "dominantColor": "#080809",
+      "focal": {
+        "x": 0.5,
+        "y": 0.55
+      },
+      "home": {
+        "dim": 0.15,
+        "image": null,
+        "mode": "derived"
+      },
+      "id": "amoled-016",
+      "lock": {
+        "bytes": 23272,
+        "height": 3120,
+        "path": "images/wallpapers/amoled-016/lock-r1.heic",
+        "width": 1440
+      },
+      "packId": "amoled",
+      "provenanceId": "prov-amoled-016",
+      "publishedAt": "2026-10-03T00:00:00Z",
+      "rev": 1,
+      "tags": [
+        "orb",
+        "calm",
+        "glow"
+      ],
+      "thumb": {
+        "bytes": 9245,
+        "height": 1040,
+        "path": "images/wallpapers/amoled-016/thumb-r1.jpg",
+        "width": 480
+      },
+      "tier": "free",
+      "title": "Quiet Halo"
+    },
+    {
+      "daily": true,
+      "dominantColor": "#E3E0D3",
+      "focal": {
+        "x": 0.5,
+        "y": 0.55
+      },
+      "home": {
+        "dim": 0.15,
+        "image": null,
+        "mode": "derived"
+      },
+      "id": "minimal-001",
+      "lock": {
+        "bytes": 169281,
+        "height": 3120,
+        "path": "images/wallpapers/minimal-001/lock-r1.heic",
+        "width": 1440
+      },
+      "packId": "minimal",
+      "provenanceId": "prov-minimal-001",
+      "publishedAt": "2026-10-01T00:00:00Z",
+      "rev": 1,
+      "tags": [
+        "shapes",
+        "calm",
+        "soft"
+      ],
+      "thumb": {
+        "bytes": 8005,
+        "height": 1040,
+        "path": "images/wallpapers/minimal-001/thumb-r1.jpg",
+        "width": 480
+      },
+      "tier": "free",
+      "title": "Soft Arches"
+    },
+    {
+      "daily": false,
+      "dominantColor": "#ADAD9D",
+      "focal": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "home": {
+        "dim": 0.15,
+        "image": null,
+        "mode": "derived"
+      },
+      "id": "minimal-002",
+      "lock": {
+        "bytes": 197330,
+        "height": 3120,
+        "path": "images/wallpapers/minimal-002/lock-r1.heic",
+        "width": 1440
+      },
+      "packId": "minimal",
+      "provenanceId": "prov-minimal-002",
+      "publishedAt": "2026-10-01T00:00:00Z",
+      "rev": 1,
+      "tags": [
+        "minimal-lines",
+        "shapes",
+        "sun"
+      ],
+      "thumb": {
+        "bytes": 7528,
+        "height": 1040,
+        "path": "images/wallpapers/minimal-002/thumb-r1.jpg",
+        "width": 480
+      },
+      "tier": "pro",
+      "title": "Sun Disc"
+    },
+    {
+      "daily": true,
+      "dominantColor": "#A89896",
+      "focal": {
+        "x": 0.5,
+        "y": 0.55
+      },
+      "home": {
+        "dim": 0.15,
+        "image": null,
+        "mode": "derived"
+      },
+      "id": "minimal-003",
+      "lock": {
+        "bytes": 196130,
+        "height": 3120,
+        "path": "images/wallpapers/minimal-003/lock-r1.heic",
+        "width": 1440
+      },
+      "packId": "minimal",
+      "provenanceId": "prov-minimal-003",
+      "publishedAt": "2026-10-07T00:00:00Z",
+      "rev": 1,
+      "tags": [
+        "shapes",
+        "calm",
+        "soft"
+      ],
+      "thumb": {
+        "bytes": 7534,
+        "height": 1040,
+        "path": "images/wallpapers/minimal-003/thumb-r1.jpg",
+        "width": 480
+      },
+      "tier": "rewarded",
+      "title": "Half Circles"
+    },
+    {
+      "daily": true,
+      "dominantColor": "#B8B8A8",
+      "focal": {
+        "x": 0.5,
+        "y": 0.55
+      },
+      "home": {
+        "dim": 0.15,
+        "image": null,
+        "mode": "derived"
+      },
+      "id": "minimal-004",
+      "lock": {
+        "bytes": 196946,
+        "height": 3120,
+        "path": "images/wallpapers/minimal-004/lock-r1.heic",
+        "width": 1440
+      },
+      "packId": "minimal",
+      "provenanceId": "prov-minimal-004",
+      "publishedAt": "2026-10-13T00:00:00Z",
+      "rev": 1,
+      "tags": [
+        "soft",
+        "calm",
+        "sky"
+      ],
+      "thumb": {
+        "bytes": 4968,
+        "height": 1040,
+        "path": "images/wallpapers/minimal-004/thumb-r1.jpg",
+        "width": 480
+      },
+      "tier": "free",
+      "title": "Gradient Haze"
+    },
+    {
+      "daily": true,
+      "dominantColor": "#959779",
+      "focal": {
+        "x": 0.5,
+        "y": 0.6
+      },
+      "home": {
+        "dim": 0.15,
+        "image": null,
+        "mode": "derived"
+      },
+      "id": "minimal-005",
+      "lock": {
+        "bytes": 182036,
+        "height": 3120,
+        "path": "images/wallpapers/minimal-005/lock-r1.heic",
+        "width": 1440
+      },
+      "packId": "minimal",
+      "provenanceId": "prov-minimal-005",
+      "publishedAt": "2026-10-19T00:00:00Z",
+      "rev": 1,
+      "tags": [
+        "shapes",
+        "calm",
+        "soft"
+      ],
+      "thumb": {
+        "bytes": 8769,
+        "height": 1040,
+        "path": "images/wallpapers/minimal-005/thumb-r1.jpg",
+        "width": 480
+      },
+      "tier": "rewarded",
+      "title": "Pebble Stack"
+    },
+    {
+      "daily": true,
+      "dominantColor": "#989898",
+      "focal": {
+        "x": 0.5,
+        "y": 0.55
+      },
+      "home": {
+        "dim": 0.15,
+        "image": null,
+        "mode": "derived"
+      },
+      "id": "minimal-006",
+      "lock": {
+        "bytes": 198689,
+        "height": 3120,
+        "path": "images/wallpapers/minimal-006/lock-r1.heic",
+        "width": 1440
+      },
+      "packId": "minimal",
+      "provenanceId": "prov-minimal-006",
+      "publishedAt": "2026-10-25T00:00:00Z",
+      "rev": 1,
+      "tags": [
+        "minimal-lines",
+        "calm",
+        "ocean"
+      ],
+      "thumb": {
+        "bytes": 5642,
+        "height": 1040,
+        "path": "images/wallpapers/minimal-006/thumb-r1.jpg",
+        "width": 480
+      },
+      "tier": "pro",
+      "title": "Single Wave"
+    },
+    {
+      "daily": true,
+      "dominantColor": "#B8B8A8",
+      "focal": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "home": {
+        "dim": 0.15,
+        "image": null,
+        "mode": "derived"
+      },
+      "id": "minimal-007",
+      "lock": {
+        "bytes": 201103,
+        "height": 3120,
+        "path": "images/wallpapers/minimal-007/lock-r1.heic",
+        "width": 1440
+      },
+      "packId": "minimal",
+      "provenanceId": "prov-minimal-007",
+      "publishedAt": "2026-10-31T00:00:00Z",
+      "rev": 1,
+      "tags": [
+        "shapes",
+        "soft",
+        "calm"
+      ],
+      "thumb": {
+        "bytes": 7591,
+        "height": 1040,
+        "path": "images/wallpapers/minimal-007/thumb-r1.jpg",
+        "width": 480
+      },
+      "tier": "free",
+      "title": "Terrazzo"
+    },
+    {
+      "daily": false,
+      "dominantColor": "#ABA999",
+      "focal": {
+        "x": 0.5,
+        "y": 0.55
+      },
+      "home": {
+        "dim": 0.15,
+        "image": null,
+        "mode": "derived"
+      },
+      "id": "minimal-008",
+      "lock": {
+        "bytes": 194230,
+        "height": 3120,
+        "path": "images/wallpapers/minimal-008/lock-r1.heic",
+        "width": 1440
+      },
+      "packId": "minimal",
+      "provenanceId": "prov-minimal-008",
+      "publishedAt": "2026-10-03T00:00:00Z",
+      "rev": 1,
+      "tags": [
+        "shapes",
+        "soft",
+        "glow"
+      ],
+      "thumb": {
+        "bytes": 8627,
+        "height": 1040,
+        "path": "images/wallpapers/minimal-008/thumb-r1.jpg",
+        "width": 480
+      },
+      "tier": "rewarded",
+      "title": "Overlap Circles"
+    },
+    {
+      "daily": false,
+      "dominantColor": "#A59B91",
+      "focal": {
+        "x": 0.5,
+        "y": 0.62
+      },
+      "home": {
+        "dim": 0.15,
+        "image": null,
+        "mode": "derived"
+      },
+      "id": "minimal-009",
+      "lock": {
+        "bytes": 192292,
+        "height": 3120,
+        "path": "images/wallpapers/minimal-009/lock-r1.heic",
+        "width": 1440
+      },
+      "packId": "minimal",
+      "provenanceId": "prov-minimal-009",
+      "publishedAt": "2026-10-03T00:00:00Z",
+      "rev": 1,
+      "tags": [
+        "sun",
+        "calm",
+        "soft"
+      ],
+      "thumb": {
+        "bytes": 10504,
+        "height": 1040,
+        "path": "images/wallpapers/minimal-009/thumb-r1.jpg",
+        "width": 480
+      },
+      "tier": "pro",
+      "title": "Morning Hill"
+    },
+    {
+      "daily": false,
+      "dominantColor": "#B8B0A8",
+      "focal": {
+        "x": 0.5,
+        "y": 0.55
+      },
+      "home": {
+        "dim": 0.15,
+        "image": null,
+        "mode": "derived"
+      },
+      "id": "minimal-010",
+      "lock": {
+        "bytes": 193967,
+        "height": 3120,
+        "path": "images/wallpapers/minimal-010/lock-r1.heic",
+        "width": 1440
+      },
+      "packId": "minimal",
+      "provenanceId": "prov-minimal-010",
+      "publishedAt": "2026-10-03T00:00:00Z",
+      "rev": 1,
+      "tags": [
+        "shapes",
+        "calm",
+        "minimal-lines"
+      ],
+      "thumb": {
+        "bytes": 9608,
+        "height": 1040,
+        "path": "images/wallpapers/minimal-010/thumb-r1.jpg",
+        "width": 480
+      },
+      "tier": "free",
+      "title": "Paper Fold"
+    },
+    {
+      "daily": false,
+      "dominantColor": "#B79197",
+      "focal": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "home": {
+        "dim": 0.15,
+        "image": null,
+        "mode": "derived"
+      },
+      "id": "minimal-011",
+      "lock": {
+        "bytes": 205585,
+        "height": 3120,
+        "path": "images/wallpapers/minimal-011/lock-r1.heic",
+        "width": 1440
+      },
+      "packId": "minimal",
+      "provenanceId": "prov-minimal-011",
+      "publishedAt": "2026-10-03T00:00:00Z",
+      "rev": 1,
+      "tags": [
+        "soft",
+        "sky",
+        "calm"
+      ],
+      "thumb": {
+        "bytes": 6523,
+        "height": 1040,
+        "path": "images/wallpapers/minimal-011/thumb-r1.jpg",
+        "width": 480
+      },
+      "tier": "rewarded",
+      "title": "Dusk Gradient"
+    },
+    {
+      "daily": false,
+      "dominantColor": "#B8A8A8",
+      "focal": {
+        "x": 0.5,
+        "y": 0.58
+      },
+      "home": {
+        "dim": 0.15,
+        "image": null,
+        "mode": "derived"
+      },
+      "id": "minimal-012",
+      "lock": {
+        "bytes": 194208,
+        "height": 3120,
+        "path": "images/wallpapers/minimal-012/lock-r1.heic",
+        "width": 1440
+      },
+      "packId": "minimal",
+      "provenanceId": "prov-minimal-012",
+      "publishedAt": "2026-10-03T00:00:00Z",
+      "rev": 1,
+      "tags": [
+        "shapes",
+        "soft",
+        "calm"
+      ],
+      "thumb": {
+        "bytes": 6934,
+        "height": 1040,
+        "path": "images/wallpapers/minimal-012/thumb-r1.jpg",
+        "width": 480
+      },
+      "tier": "pro",
+      "title": "Rounded Tiles"
+    },
+    {
+      "daily": false,
+      "dominantColor": "#DFCDBC",
+      "focal": {
+        "x": 0.5,
+        "y": 0.55
+      },
+      "home": {
+        "dim": 0.15,
+        "image": null,
+        "mode": "derived"
+      },
+      "id": "minimal-013",
+      "lock": {
+        "bytes": 163493,
+        "height": 3120,
+        "path": "images/wallpapers/minimal-013/lock-r1.heic",
+        "width": 1440
+      },
+      "packId": "minimal",
+      "provenanceId": "prov-minimal-013",
+      "publishedAt": "2026-10-03T00:00:00Z",
+      "rev": 1,
+      "tags": [
+        "moon",
+        "shapes",
+        "calm"
+      ],
+      "thumb": {
+        "bytes": 9869,
+        "height": 1040,
+        "path": "images/wallpapers/minimal-013/thumb-r1.jpg",
+        "width": 480
+      },
+      "tier": "free",
+      "title": "Moon Arch"
+    },
+    {
+      "daily": false,
+      "dominantColor": "#B7B7A7",
+      "focal": {
+        "x": 0.5,
+        "y": 0.6
+      },
+      "home": {
+        "dim": 0.15,
+        "image": null,
+        "mode": "derived"
+      },
+      "id": "minimal-014",
+      "lock": {
+        "bytes": 204754,
+        "height": 3120,
+        "path": "images/wallpapers/minimal-014/lock-r1.heic",
+        "width": 1440
+      },
+      "packId": "minimal",
+      "provenanceId": "prov-minimal-014",
+      "publishedAt": "2026-10-03T00:00:00Z",
+      "rev": 1,
+      "tags": [
+        "mountain",
+        "minimal-lines",
+        "calm"
+      ],
+      "thumb": {
+        "bytes": 12723,
+        "height": 1040,
+        "path": "images/wallpapers/minimal-014/thumb-r1.jpg",
+        "width": 480
+      },
+      "tier": "rewarded",
+      "title": "Linework Peaks"
+    },
+    {
+      "daily": false,
+      "dominantColor": "#C8C2B8",
+      "focal": {
+        "x": 0.5,
+        "y": 0.55
+      },
+      "home": {
+        "dim": 0.15,
+        "image": null,
+        "mode": "derived"
+      },
+      "id": "minimal-015",
+      "lock": {
+        "bytes": 192681,
+        "height": 3120,
+        "path": "images/wallpapers/minimal-015/lock-r1.heic",
+        "width": 1440
+      },
+      "packId": "minimal",
+      "provenanceId": "prov-minimal-015",
+      "publishedAt": "2026-10-03T00:00:00Z",
+      "rev": 1,
+      "tags": [
+        "shapes",
+        "soft",
+        "calm"
+      ],
+      "thumb": {
+        "bytes": 8396,
+        "height": 1040,
+        "path": "images/wallpapers/minimal-015/thumb-r1.jpg",
+        "width": 480
+      },
+      "tier": "pro",
+      "title": "Soft Stripes"
+    },
+    {
+      "daily": false,
+      "dominantColor": "#989898",
+      "focal": {
+        "x": 0.5,
+        "y": 0.55
+      },
+      "home": {
+        "dim": 0.15,
+        "image": null,
+        "mode": "derived"
+      },
+      "id": "minimal-016",
+      "lock": {
+        "bytes": 184076,
+        "height": 3120,
+        "path": "images/wallpapers/minimal-016/lock-r1.heic",
+        "width": 1440
+      },
+      "packId": "minimal",
+      "provenanceId": "prov-minimal-016",
+      "publishedAt": "2026-10-03T00:00:00Z",
+      "rev": 1,
+      "tags": [
+        "sky",
+        "shapes",
+        "soft"
+      ],
+      "thumb": {
+        "bytes": 7728,
+        "height": 1040,
+        "path": "images/wallpapers/minimal-016/thumb-r1.jpg",
+        "width": 480
+      },
+      "tier": "free",
+      "title": "Cloud Blocks"
+    },
+    {
+      "daily": true,
+      "dominantColor": "#C4B19F",
+      "focal": {
+        "x": 0.5,
+        "y": 0.55
+      },
+      "home": {
+        "dim": 0.15,
+        "image": null,
+        "mode": "derived"
+      },
+      "id": "nature-001",
+      "lock": {
+        "bytes": 255705,
+        "height": 3120,
+        "path": "images/wallpapers/nature-001/lock-r1.heic",
+        "width": 1440
+      },
+      "packId": "nature",
+      "provenanceId": "prov-nature-001",
+      "publishedAt": "2026-10-02T00:00:00Z",
+      "rev": 1,
+      "tags": [
+        "forest",
+        "mist",
+        "sun"
+      ],
+      "thumb": {
+        "bytes": 35072,
+        "height": 1040,
+        "path": "images/wallpapers/nature-001/thumb-r1.jpg",
+        "width": 480
+      },
+      "tier": "free",
+      "title": "Pine Ridge Mist"
+    },
+    {
+      "daily": false,
+      "dominantColor": "#4F5C65",
+      "focal": {
+        "x": 0.5,
+        "y": 0.58
+      },
+      "home": {
+        "dim": 0.15,
+        "image": null,
+        "mode": "derived"
+      },
+      "id": "nature-002",
+      "lock": {
+        "bytes": 380885,
+        "height": 3120,
+        "path": "images/wallpapers/nature-002/lock-r1.heic",
+        "width": 1440
+      },
+      "packId": "nature",
+      "provenanceId": "prov-nature-002",
+      "publishedAt": "2026-10-02T00:00:00Z",
+      "rev": 1,
+      "tags": [
+        "lake",
+        "calm",
+        "sky"
+      ],
+      "thumb": {
+        "bytes": 51216,
+        "height": 1040,
+        "path": "images/wallpapers/nature-002/thumb-r1.jpg",
+        "width": 480
+      },
+      "tier": "rewarded",
+      "title": "Still Lake"
+    },
+    {
+      "daily": true,
+      "dominantColor": "#715D4F",
+      "focal": {
+        "x": 0.5,
+        "y": 0.6
+      },
+      "home": {
+        "dim": 0.15,
+        "image": null,
+        "mode": "derived"
+      },
+      "id": "nature-003",
+      "lock": {
+        "bytes": 203755,
+        "height": 3120,
+        "path": "images/wallpapers/nature-003/lock-r1.heic",
+        "width": 1440
+      },
+      "packId": "nature",
+      "provenanceId": "prov-nature-003",
+      "publishedAt": "2026-10-08T00:00:00Z",
+      "rev": 1,
+      "tags": [
+        "desert",
+        "sun",
+        "warm"
+      ],
+      "thumb": {
+        "bytes": 23482,
+        "height": 1040,
+        "path": "images/wallpapers/nature-003/thumb-r1.jpg",
+        "width": 480
+      },
+      "tier": "free",
+      "title": "Golden Dunes"
+    },
+    {
+      "daily": true,
+      "dominantColor": "#363636",
+      "focal": {
+        "x": 0.5,
+        "y": 0.58
+      },
+      "home": {
+        "dim": 0.15,
+        "image": null,
+        "mode": "derived"
+      },
+      "id": "nature-004",
+      "lock": {
+        "bytes": 713861,
+        "height": 3120,
+        "path": "images/wallpapers/nature-004/lock-r1.heic",
+        "width": 1440
+      },
+      "packId": "nature",
+      "provenanceId": "prov-nature-004",
+      "publishedAt": "2026-10-14T00:00:00Z",
+      "rev": 1,
+      "tags": [
+        "forest",
+        "mist",
+        "calm"
+      ],
+      "thumb": {
+        "bytes": 86560,
+        "height": 1040,
+        "path": "images/wallpapers/nature-004/thumb-r1.jpg",
+        "width": 480
+      },
+      "tier": "rewarded",
+      "title": "Foggy Path"
+    },
+    {
+      "daily": true,
+      "dominantColor": "#5F667B",
+      "focal": {
+        "x": 0.5,
+        "y": 0.6
+      },
+      "home": {
+        "dim": 0.15,
+        "image": null,
+        "mode": "derived"
+      },
+      "id": "nature-005",
+      "lock": {
+        "bytes": 261434,
+        "height": 3120,
+        "path": "images/wallpapers/nature-005/lock-r1.heic",
+        "width": 1440
+      },
+      "packId": "nature",
+      "provenanceId": "prov-nature-005",
+      "publishedAt": "2026-10-20T00:00:00Z",
+      "rev": 1,
+      "tags": [
+        "ocean",
+        "sky",
+        "calm"
+      ],
+      "thumb": {
+        "bytes": 36228,
+        "height": 1040,
+        "path": "images/wallpapers/nature-005/thumb-r1.jpg",
+        "width": 480
+      },
+      "tier": "free",
+      "title": "Dusk Shore"
+    },
+    {
+      "daily": true,
+      "dominantColor": "#636D7B",
+      "focal": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "home": {
+        "dim": 0.15,
+        "image": null,
+        "mode": "derived"
+      },
+      "id": "nature-006",
+      "lock": {
+        "bytes": 249655,
+        "height": 3120,
+        "path": "images/wallpapers/nature-006/lock-r1.heic",
+        "width": 1440
+      },
+      "packId": "nature",
+      "provenanceId": "prov-nature-006",
+      "publishedAt": "2026-10-26T00:00:00Z",
+      "rev": 1,
+      "tags": [
+        "aurora",
+        "snow",
+        "night"
+      ],
+      "thumb": {
+        "bytes": 22411,
+        "height": 1040,
+        "path": "images/wallpapers/nature-006/thumb-r1.jpg",
+        "width": 480
+      },
+      "tier": "pro",
+      "title": "Snowfield Aurora"
+    },
+    {
+      "daily": true,
+      "dominantColor": "#80806C",
+      "focal": {
+        "x": 0.5,
+        "y": 0.62
+      },
+      "home": {
+        "dim": 0.15,
+        "image": null,
+        "mode": "derived"
+      },
+      "id": "nature-007",
+      "lock": {
+        "bytes": 431516,
+        "height": 3120,
+        "path": "images/wallpapers/nature-007/lock-r1.heic",
+        "width": 1440
+      },
+      "packId": "nature",
+      "provenanceId": "prov-nature-007",
+      "publishedAt": "2026-11-01T00:00:00Z",
+      "rev": 1,
+      "tags": [
+        "flower",
+        "sun",
+        "soft"
+      ],
+      "thumb": {
+        "bytes": 90606,
+        "height": 1040,
+        "path": "images/wallpapers/nature-007/thumb-r1.jpg",
+        "width": 480
+      },
+      "tier": "free",
+      "title": "Wildflower Meadow"
+    },
+    {
+      "daily": false,
+      "dominantColor": "#3D2626",
+      "focal": {
+        "x": 0.5,
+        "y": 0.55
+      },
+      "home": {
+        "dim": 0.15,
+        "image": null,
+        "mode": "derived"
+      },
+      "id": "nature-008",
+      "lock": {
+        "bytes": 380030,
+        "height": 3120,
+        "path": "images/wallpapers/nature-008/lock-r1.heic",
+        "width": 1440
+      },
+      "packId": "nature",
+      "provenanceId": "prov-nature-008",
+      "publishedAt": "2026-10-03T00:00:00Z",
+      "rev": 1,
+      "tags": [
+        "desert",
+        "sun",
+        "warm"
+      ],
+      "thumb": {
+        "bytes": 41056,
+        "height": 1040,
+        "path": "images/wallpapers/nature-008/thumb-r1.jpg",
+        "width": 480
+      },
+      "tier": "rewarded",
+      "title": "Canyon Light"
+    },
+    {
+      "daily": false,
+      "dominantColor": "#0F2743",
+      "focal": {
+        "x": 0.5,
+        "y": 0.55
+      },
+      "home": {
+        "dim": 0.15,
+        "image": null,
+        "mode": "derived"
+      },
+      "id": "nature-009",
+      "lock": {
+        "bytes": 387564,
+        "height": 3120,
+        "path": "images/wallpapers/nature-009/lock-r1.heic",
+        "width": 1440
+      },
+      "packId": "nature",
+      "provenanceId": "prov-nature-009",
+      "publishedAt": "2026-10-03T00:00:00Z",
+      "rev": 1,
+      "tags": [
+        "mountain",
+        "sky",
+        "calm"
+      ],
+      "thumb": {
+        "bytes": 31768,
+        "height": 1040,
+        "path": "images/wallpapers/nature-009/thumb-r1.jpg",
+        "width": 480
+      },
+      "tier": "pro",
+      "title": "Blue Hour Peaks"
+    },
+    {
+      "daily": false,
+      "dominantColor": "#7A8681",
+      "focal": {
+        "x": 0.5,
+        "y": 0.55
+      },
+      "home": {
+        "dim": 0.15,
+        "image": null,
+        "mode": "derived"
+      },
+      "id": "nature-010",
+      "lock": {
+        "bytes": 544612,
+        "height": 3120,
+        "path": "images/wallpapers/nature-010/lock-r1.heic",
+        "width": 1440
+      },
+      "packId": "nature",
+      "provenanceId": "prov-nature-010",
+      "publishedAt": "2026-10-03T00:00:00Z",
+      "rev": 1,
+      "tags": [
+        "forest",
+        "rain",
+        "mist"
+      ],
+      "thumb": {
+        "bytes": 80017,
+        "height": 1040,
+        "path": "images/wallpapers/nature-010/thumb-r1.jpg",
+        "width": 480
+      },
+      "tier": "free",
+      "title": "Rain Forest Canopy"
+    },
+    {
+      "daily": false,
+      "dominantColor": "#A39BAD",
+      "focal": {
+        "x": 0.5,
+        "y": 0.6
+      },
+      "home": {
+        "dim": 0.15,
+        "image": null,
+        "mode": "derived"
+      },
+      "id": "nature-011",
+      "lock": {
+        "bytes": 214474,
+        "height": 3120,
+        "path": "images/wallpapers/nature-011/lock-r1.heic",
+        "width": 1440
+      },
+      "packId": "nature",
+      "provenanceId": "prov-nature-011",
+      "publishedAt": "2026-10-03T00:00:00Z",
+      "rev": 1,
+      "tags": [
+        "ocean",
+        "mist",
+        "soft"
+      ],
+      "thumb": {
+        "bytes": 39697,
+        "height": 1040,
+        "path": "images/wallpapers/nature-011/thumb-r1.jpg",
+        "width": 480
+      },
+      "tier": "rewarded",
+      "title": "Ocean Haze"
+    },
+    {
+      "daily": false,
+      "dominantColor": "#A27835",
+      "focal": {
+        "x": 0.5,
+        "y": 0.55
+      },
+      "home": {
+        "dim": 0.15,
+        "image": null,
+        "mode": "derived"
+      },
+      "id": "nature-012",
+      "lock": {
+        "bytes": 703716,
+        "height": 3120,
+        "path": "images/wallpapers/nature-012/lock-r1.heic",
+        "width": 1440
+      },
+      "packId": "nature",
+      "provenanceId": "prov-nature-012",
+      "publishedAt": "2026-10-03T00:00:00Z",
+      "rev": 1,
+      "tags": [
+        "forest",
+        "warm",
+        "sun"
+      ],
+      "thumb": {
+        "bytes": 89967,
+        "height": 1040,
+        "path": "images/wallpapers/nature-012/thumb-r1.jpg",
+        "width": 480
+      },
+      "tier": "pro",
+      "title": "Autumn Birches"
+    },
+    {
+      "daily": false,
+      "dominantColor": "#5D5452",
+      "focal": {
+        "x": 0.5,
+        "y": 0.6
+      },
+      "home": {
+        "dim": 0.15,
+        "image": null,
+        "mode": "derived"
+      },
+      "id": "nature-013",
+      "lock": {
+        "bytes": 538454,
+        "height": 3120,
+        "path": "images/wallpapers/nature-013/lock-r1.heic",
+        "width": 1440
+      },
+      "packId": "nature",
+      "provenanceId": "prov-nature-013",
+      "publishedAt": "2026-10-03T00:00:00Z",
+      "rev": 1,
+      "tags": [
+        "flower",
+        "soft",
+        "sky"
+      ],
+      "thumb": {
+        "bytes": 62391,
+        "height": 1040,
+        "path": "images/wallpapers/nature-013/thumb-r1.jpg",
+        "width": 480
+      },
+      "tier": "free",
+      "title": "Lavender Fields"
+    },
+    {
+      "daily": false,
+      "dominantColor": "#B9C7CF",
+      "focal": {
+        "x": 0.5,
+        "y": 0.58
+      },
+      "home": {
+        "dim": 0.15,
+        "image": null,
+        "mode": "derived"
+      },
+      "id": "nature-014",
+      "lock": {
+        "bytes": 523370,
+        "height": 3120,
+        "path": "images/wallpapers/nature-014/lock-r1.heic",
+        "width": 1440
+      },
+      "packId": "nature",
+      "provenanceId": "prov-nature-014",
+      "publishedAt": "2026-10-03T00:00:00Z",
+      "rev": 1,
+      "tags": [
+        "lake",
+        "mountain",
+        "calm"
+      ],
+      "thumb": {
+        "bytes": 76324,
+        "height": 1040,
+        "path": "images/wallpapers/nature-014/thumb-r1.jpg",
+        "width": 480
+      },
+      "tier": "rewarded",
+      "title": "Glacier Lake"
+    },
+    {
+      "daily": false,
+      "dominantColor": "#1A1A23",
+      "focal": {
+        "x": 0.5,
+        "y": 0.45
+      },
+      "home": {
+        "dim": 0.15,
+        "image": null,
+        "mode": "derived"
+      },
+      "id": "nature-015",
+      "lock": {
+        "bytes": 313209,
+        "height": 3120,
+        "path": "images/wallpapers/nature-015/lock-r1.heic",
+        "width": 1440
+      },
+      "packId": "nature",
+      "provenanceId": "prov-nature-015",
+      "publishedAt": "2026-10-03T00:00:00Z",
+      "rev": 1,
+      "tags": [
+        "star",
+        "night",
+        "mountain"
+      ],
+      "thumb": {
+        "bytes": 22562,
+        "height": 1040,
+        "path": "images/wallpapers/nature-015/thumb-r1.jpg",
+        "width": 480
+      },
+      "tier": "pro",
+      "title": "Night Sky Valley"
+    },
+    {
+      "daily": false,
+      "dominantColor": "#A49E96",
+      "focal": {
+        "x": 0.5,
+        "y": 0.58
+      },
+      "home": {
+        "dim": 0.15,
+        "image": null,
+        "mode": "derived"
+      },
+      "id": "nature-016",
+      "lock": {
+        "bytes": 387412,
+        "height": 3120,
+        "path": "images/wallpapers/nature-016/lock-r1.heic",
+        "width": 1440
+      },
+      "packId": "nature",
+      "provenanceId": "prov-nature-016",
+      "publishedAt": "2026-10-03T00:00:00Z",
+      "rev": 1,
+      "tags": [
+        "ocean",
+        "sky",
+        "sun"
+      ],
+      "thumb": {
+        "bytes": 40836,
+        "height": 1040,
+        "path": "images/wallpapers/nature-016/thumb-r1.jpg",
+        "width": 480
+      },
+      "tier": "free",
+      "title": "Coastal Cliffs"
+    },
+    {
+      "daily": true,
+      "dominantColor": "#E9CFEB",
+      "focal": {
+        "x": 0.5,
+        "y": 0.55
+      },
+      "home": {
+        "dim": 0.15,
+        "image": null,
+        "mode": "derived"
+      },
+      "id": "y2k-001",
+      "lock": {
+        "bytes": 291182,
+        "height": 3120,
+        "path": "images/wallpapers/y2k-001/lock-r1.heic",
+        "width": 1440
+      },
+      "packId": "y2k",
+      "provenanceId": "prov-y2k-001",
+      "publishedAt": "2026-10-03T00:00:00Z",
+      "rev": 1,
+      "tags": [
+        "chrome",
+        "glow",
+        "sky"
+      ],
+      "thumb": {
+        "bytes": 39474,
+        "height": 1040,
+        "path": "images/wallpapers/y2k-001/thumb-r1.jpg",
+        "width": 480
+      },
+      "tier": "free",
+      "title": "Chrome Wings"
+    },
+    {
+      "daily": false,
+      "dominantColor": "#F2CCD4",
+      "focal": {
+        "x": 0.5,
+        "y": 0.55
+      },
+      "home": {
+        "dim": 0.15,
+        "image": null,
+        "mode": "derived"
+      },
+      "id": "y2k-002",
+      "lock": {
+        "bytes": 169926,
+        "height": 3120,
+        "path": "images/wallpapers/y2k-002/lock-r1.heic",
+        "width": 1440
+      },
+      "packId": "y2k",
+      "provenanceId": "prov-y2k-002",
+      "publishedAt": "2026-10-03T00:00:00Z",
+      "rev": 1,
+      "tags": [
+        "chrome",
+        "neon",
+        "soft"
+      ],
+      "thumb": {
+        "bytes": 23421,
+        "height": 1040,
+        "path": "images/wallpapers/y2k-002/thumb-r1.jpg",
+        "width": 480
+      },
+      "tier": "pro",
+      "title": "Bubble Heart"
+    },
+    {
+      "daily": true,
+      "dominantColor": "#DFD1EF",
+      "focal": {
+        "x": 0.5,
+        "y": 0.55
+      },
+      "home": {
+        "dim": 0.15,
+        "image": null,
+        "mode": "derived"
+      },
+      "id": "y2k-003",
+      "lock": {
+        "bytes": 226244,
+        "height": 3120,
+        "path": "images/wallpapers/y2k-003/lock-r1.heic",
+        "width": 1440
+      },
+      "packId": "y2k",
+      "provenanceId": "prov-y2k-003",
+      "publishedAt": "2026-10-09T00:00:00Z",
+      "rev": 1,
+      "tags": [
+        "star",
+        "chrome",
+        "glow"
+      ],
+      "thumb": {
+        "bytes": 25181,
+        "height": 1040,
+        "path": "images/wallpapers/y2k-003/thumb-r1.jpg",
+        "width": 480
+      },
+      "tier": "free",
+      "title": "Star Glint"
+    },
+    {
+      "daily": true,
+      "dominantColor": "#DFC1F0",
+      "focal": {
+        "x": 0.5,
+        "y": 0.55
+      },
+      "home": {
+        "dim": 0.15,
+        "image": null,
+        "mode": "derived"
+      },
+      "id": "y2k-004",
+      "lock": {
+        "bytes": 241066,
+        "height": 3120,
+        "path": "images/wallpapers/y2k-004/lock-r1.heic",
+        "width": 1440
+      },
+      "packId": "y2k",
+      "provenanceId": "prov-y2k-004",
+      "publishedAt": "2026-10-15T00:00:00Z",
+      "rev": 1,
+      "tags": [
+        "orb",
+        "chrome",
+        "neon"
+      ],
+      "thumb": {
+        "bytes": 34191,
+        "height": 1040,
+        "path": "images/wallpapers/y2k-004/thumb-r1.jpg",
+        "width": 480
+      },
+      "tier": "rewarded",
+      "title": "Cyber Orb"
+    },
+    {
+      "daily": true,
+      "dominantColor": "#E9BBD5",
+      "focal": {
+        "x": 0.5,
+        "y": 0.55
+      },
+      "home": {
+        "dim": 0.15,
+        "image": null,
+        "mode": "derived"
+      },
+      "id": "y2k-005",
+      "lock": {
+        "bytes": 270874,
+        "height": 3120,
+        "path": "images/wallpapers/y2k-005/lock-r1.heic",
+        "width": 1440
+      },
+      "packId": "y2k",
+      "provenanceId": "prov-y2k-005",
+      "publishedAt": "2026-10-21T00:00:00Z",
+      "rev": 1,
+      "tags": [
+        "flower",
+        "chrome",
+        "soft"
+      ],
+      "thumb": {
+        "bytes": 40717,
+        "height": 1040,
+        "path": "images/wallpapers/y2k-005/thumb-r1.jpg",
+        "width": 480
+      },
+      "tier": "free",
+      "title": "Holo Flower"
+    },
+    {
+      "daily": true,
+      "dominantColor": "#EACFDC",
+      "focal": {
+        "x": 0.5,
+        "y": 0.55
+      },
+      "home": {
+        "dim": 0.15,
+        "image": null,
+        "mode": "derived"
+      },
+      "id": "y2k-006",
+      "lock": {
+        "bytes": 177357,
+        "height": 3120,
+        "path": "images/wallpapers/y2k-006/lock-r1.heic",
+        "width": 1440
+      },
+      "packId": "y2k",
+      "provenanceId": "prov-y2k-006",
+      "publishedAt": "2026-10-27T00:00:00Z",
+      "rev": 1,
+      "tags": [
+        "chrome",
+        "soft",
+        "glow"
+      ],
+      "thumb": {
+        "bytes": 23957,
+        "height": 1040,
+        "path": "images/wallpapers/y2k-006/thumb-r1.jpg",
+        "width": 480
+      },
+      "tier": "pro",
+      "title": "Translucent Gadget"
+    },
+    {
+      "daily": true,
+      "dominantColor": "#EDCFE1",
+      "focal": {
+        "x": 0.5,
+        "y": 0.55
+      },
+      "home": {
+        "dim": 0.15,
+        "image": null,
+        "mode": "derived"
+      },
+      "id": "y2k-007",
+      "lock": {
+        "bytes": 187397,
+        "height": 3120,
+        "path": "images/wallpapers/y2k-007/lock-r1.heic",
+        "width": 1440
+      },
+      "packId": "y2k",
+      "provenanceId": "prov-y2k-007",
+      "publishedAt": "2026-11-02T00:00:00Z",
+      "rev": 1,
+      "tags": [
+        "chrome",
+        "soft",
+        "glow"
+      ],
+      "thumb": {
+        "bytes": 21143,
+        "height": 1040,
+        "path": "images/wallpapers/y2k-007/thumb-r1.jpg",
+        "width": 480
+      },
+      "tier": "free",
+      "title": "Glossy Ribbon"
+    },
+    {
+      "daily": false,
+      "dominantColor": "#E5BDE0",
+      "focal": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "home": {
+        "dim": 0.15,
+        "image": null,
+        "mode": "derived"
+      },
+      "id": "y2k-008",
+      "lock": {
+        "bytes": 232696,
+        "height": 3120,
+        "path": "images/wallpapers/y2k-008/lock-r1.heic",
+        "width": 1440
+      },
+      "packId": "y2k",
+      "provenanceId": "prov-y2k-008",
+      "publishedAt": "2026-10-03T00:00:00Z",
+      "rev": 1,
+      "tags": [
+        "chrome",
+        "glow",
+        "star"
+      ],
+      "thumb": {
+        "bytes": 30215,
+        "height": 1040,
+        "path": "images/wallpapers/y2k-008/thumb-r1.jpg",
+        "width": 480
+      },
+      "tier": "rewarded",
+      "title": "Disco Ball"
+    },
+    {
+      "daily": false,
+      "dominantColor": "#EED1DD",
+      "focal": {
+        "x": 0.5,
+        "y": 0.55
+      },
+      "home": {
+        "dim": 0.15,
+        "image": null,
+        "mode": "derived"
+      },
+      "id": "y2k-009",
+      "lock": {
+        "bytes": 185312,
+        "height": 3120,
+        "path": "images/wallpapers/y2k-009/lock-r1.heic",
+        "width": 1440
+      },
+      "packId": "y2k",
+      "provenanceId": "prov-y2k-009",
+      "publishedAt": "2026-10-03T00:00:00Z",
+      "rev": 1,
+      "tags": [
+        "orb",
+        "soft",
+        "chrome"
+      ],
+      "thumb": {
+        "bytes": 22001,
+        "height": 1040,
+        "path": "images/wallpapers/y2k-009/thumb-r1.jpg",
+        "width": 480
+      },
+      "tier": "pro",
+      "title": "Bubble Cluster"
+    },
+    {
+      "daily": false,
+      "dominantColor": "#CEDFF6",
+      "focal": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "home": {
+        "dim": 0.15,
+        "image": null,
+        "mode": "derived"
+      },
+      "id": "y2k-010",
+      "lock": {
+        "bytes": 207070,
+        "height": 3120,
+        "path": "images/wallpapers/y2k-010/lock-r1.heic",
+        "width": 1440
+      },
+      "packId": "y2k",
+      "provenanceId": "prov-y2k-010",
+      "publishedAt": "2026-10-03T00:00:00Z",
+      "rev": 1,
+      "tags": [
+        "sky",
+        "chrome",
+        "soft"
+      ],
+      "thumb": {
+        "bytes": 30163,
+        "height": 1040,
+        "path": "images/wallpapers/y2k-010/thumb-r1.jpg",
+        "width": 480
+      },
+      "tier": "free",
+      "title": "Chrome Cloud"
+    },
+    {
+      "daily": false,
+      "dominantColor": "#CBBBE6",
+      "focal": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "home": {
+        "dim": 0.15,
+        "image": null,
+        "mode": "derived"
+      },
+      "id": "y2k-011",
+      "lock": {
+        "bytes": 260420,
+        "height": 3120,
+        "path": "images/wallpapers/y2k-011/lock-r1.heic",
+        "width": 1440
+      },
+      "packId": "y2k",
+      "provenanceId": "prov-y2k-011",
+      "publishedAt": "2026-10-03T00:00:00Z",
+      "rev": 1,
+      "tags": [
+        "star",
+        "glow",
+        "neon"
+      ],
+      "thumb": {
+        "bytes": 22620,
+        "height": 1040,
+        "path": "images/wallpapers/y2k-011/thumb-r1.jpg",
+        "width": 480
+      },
+      "tier": "rewarded",
+      "title": "Pixel Sparkle"
+    },
+    {
+      "daily": false,
+      "dominantColor": "#DFC1E5",
+      "focal": {
+        "x": 0.5,
+        "y": 0.55
+      },
+      "home": {
+        "dim": 0.15,
+        "image": null,
+        "mode": "derived"
+      },
+      "id": "y2k-012",
+      "lock": {
+        "bytes": 315033,
+        "height": 3120,
+        "path": "images/wallpapers/y2k-012/lock-r1.heic",
+        "width": 1440
+      },
+      "packId": "y2k",
+      "provenanceId": "prov-y2k-012",
+      "publishedAt": "2026-10-03T00:00:00Z",
+      "rev": 1,
+      "tags": [
+        "chrome",
+        "glow",
+        "soft"
+      ],
+      "thumb": {
+        "bytes": 48962,
+        "height": 1040,
+        "path": "images/wallpapers/y2k-012/thumb-r1.jpg",
+        "width": 480
+      },
+      "tier": "pro",
+      "title": "Liquid Metal Swirl"
+    },
+    {
+      "daily": false,
+      "dominantColor": "#E4BCD4",
+      "focal": {
+        "x": 0.5,
+        "y": 0.55
+      },
+      "home": {
+        "dim": 0.15,
+        "image": null,
+        "mode": "derived"
+      },
+      "id": "y2k-013",
+      "lock": {
+        "bytes": 231555,
+        "height": 3120,
+        "path": "images/wallpapers/y2k-013/lock-r1.heic",
+        "width": 1440
+      },
+      "packId": "y2k",
+      "provenanceId": "prov-y2k-013",
+      "publishedAt": "2026-10-03T00:00:00Z",
+      "rev": 1,
+      "tags": [
+        "heart",
+        "chrome",
+        "soft"
+      ],
+      "thumb": {
+        "bytes": 26790,
+        "height": 1040,
+        "path": "images/wallpapers/y2k-013/thumb-r1.jpg",
+        "width": 480
+      },
+      "tier": "free",
+      "title": "Cherry Gloss"
+    },
+    {
+      "daily": false,
+      "dominantColor": "#EDD1DD",
+      "focal": {
+        "x": 0.5,
+        "y": 0.55
+      },
+      "home": {
+        "dim": 0.15,
+        "image": null,
+        "mode": "derived"
+      },
+      "id": "y2k-014",
+      "lock": {
+        "bytes": 194867,
+        "height": 3120,
+        "path": "images/wallpapers/y2k-014/lock-r1.heic",
+        "width": 1440
+      },
+      "packId": "y2k",
+      "provenanceId": "prov-y2k-014",
+      "publishedAt": "2026-10-03T00:00:00Z",
+      "rev": 1,
+      "tags": [
+        "orb",
+        "neon",
+        "glow"
+      ],
+      "thumb": {
+        "bytes": 25580,
+        "height": 1040,
+        "path": "images/wallpapers/y2k-014/thumb-r1.jpg",
+        "width": 480
+      },
+      "tier": "rewarded",
+      "title": "Gel Orbit"
+    },
+    {
+      "daily": false,
+      "dominantColor": "#E2C0EA",
+      "focal": {
+        "x": 0.5,
+        "y": 0.55
+      },
+      "home": {
+        "dim": 0.15,
+        "image": null,
+        "mode": "derived"
+      },
+      "id": "y2k-015",
+      "lock": {
+        "bytes": 226621,
+        "height": 3120,
+        "path": "images/wallpapers/y2k-015/lock-r1.heic",
+        "width": 1440
+      },
+      "packId": "y2k",
+      "provenanceId": "prov-y2k-015",
+      "publishedAt": "2026-10-03T00:00:00Z",
+      "rev": 1,
+      "tags": [
+        "glow",
+        "soft",
+        "neon"
+      ],
+      "thumb": {
+        "bytes": 30187,
+        "height": 1040,
+        "path": "images/wallpapers/y2k-015/thumb-r1.jpg",
+        "width": 480
+      },
+      "tier": "pro",
+      "title": "Pastel Flame"
+    },
+    {
+      "daily": false,
+      "dominantColor": "#E1D0E1",
+      "focal": {
+        "x": 0.5,
+        "y": 0.55
+      },
+      "home": {
+        "dim": 0.15,
+        "image": null,
+        "mode": "derived"
+      },
+      "id": "y2k-016",
+      "lock": {
+        "bytes": 260642,
+        "height": 3120,
+        "path": "images/wallpapers/y2k-016/lock-r1.heic",
+        "width": 1440
+      },
+      "packId": "y2k",
+      "provenanceId": "prov-y2k-016",
+      "publishedAt": "2026-10-03T00:00:00Z",
+      "rev": 1,
+      "tags": [
+        "butterfly",
+        "chrome",
+        "soft"
+      ],
+      "thumb": {
+        "bytes": 35386,
+        "height": 1040,
+        "path": "images/wallpapers/y2k-016/thumb-r1.jpg",
+        "width": 480
+      },
+      "tier": "free",
+      "title": "Butterfly Clip"
+    }
+  ]
+}
