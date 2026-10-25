@@ -26,4 +26,4 @@
 | DryStars | drystars | com.drystarshq.app | Prepare for Submission | 6818233246 |
 | MathPath | mathpath | com.mathpathhq.app | Waiting for Review | 6797945912 |
 | SleepPath | sleeppath | com.sleeppathhq.app | Pre-release | — |
-| Gridwright | gridwright | com.gridwrightapp.app | In development (not in ASC) | — |
+| Gridwright Drawing Grid | gridwright | com.gridwrightapp.app | Prepare for Submission | 6826788209 |
