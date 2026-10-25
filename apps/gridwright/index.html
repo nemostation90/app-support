@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gridwright — Support</title>
+  <meta name="description" content="Support, Privacy Policy, and Terms of Use for Gridwright — an offline drawing-grid app that lays a true-to-size grid over your reference photo.">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --n950: #0B1F2E;
+      --n900: #12384F;
+      --n700: #1F6A8C;
+      --n500: #2A9DB8;
+      --n300: #A8DCE8;
+      --n100: #DDF1F6;
+      --n50:  #F1FAFC;
+      --star: #F2A93B;
+      --cream: #F7FCFD;
+      --white: #FFFFFF;
+      --gray100: #F3F4F6;
+      --gray400: #9CA3AF;
+      --gray600: #4B5563;
+      --text: #10242F;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", system-ui, sans-serif;
+      color: var(--text);
+      background: var(--white);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    nav {
+      position: sticky; top: 0; z-index: 100;
+      background: rgba(255,255,255,0.93);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--n100);
+    }
+    .nav-inner {
+      max-width: 860px; margin: 0 auto;
+      display: flex; align-items: center; justify-content: space-between;
+      height: 58px; padding: 0 24px; gap: 16px;
+    }
+    .nav-brand { display: flex; align-items: center; gap: 10px; text-decoration: none; color: var(--n900); }
+    .nav-brand img { width: 30px; height: 30px; border-radius: 8px; }
+    .nav-brand span { font-size: 15px; font-weight: 700; letter-spacing: -0.2px; }
+    .nav-links { display: flex; gap: 2px; list-style: none; }
+    .nav-links a {
+      display: block; padding: 6px 13px; border-radius: 20px;
+      font-size: 13.5px; font-weight: 500; color: var(--gray600);
+      text-decoration: none; transition: all 0.18s;
+    }
+    .nav-links a:hover, .nav-links a.active { color: var(--n900); background: var(--n100); }
+
+    .hero {
+      background: linear-gradient(160deg, var(--n950) 0%, var(--n900) 50%, #1F6A8C 100%);
+      padding: 72px 24px 80px; text-align: center;
+      position: relative; overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute; inset: 0;
+      background:
+        radial-gradient(ellipse at 15% 60%, rgba(42,157,184,0.28) 0%, transparent 55%),
+        radial-gradient(ellipse at 85% 20%, rgba(242,169,59,0.14) 0%, transparent 50%);
+      pointer-events: none;
+    }
+    .hero-inner { position: relative; z-index: 1; }
+    .app-icon {
+      width: 100px; height: 100px; border-radius: 24px;
+      display: block; margin: 0 auto 22px; object-fit: cover;
+      box-shadow: 0 24px 64px rgba(0,0,0,0.4), 0 0 0 3px rgba(255,255,255,0.14);
+    }
+    .hero h1 {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(30px, 5.5vw, 54px);
+      font-weight: 700; color: var(--white);
+      letter-spacing: -1.5px; line-height: 1.1; margin-bottom: 14px;
+    }
+    .hero-sub { font-size: 16px; color: var(--n300); max-width: 500px; margin: 0 auto 28px; line-height: 1.6; }
+    .store-pill {
+      display: inline-flex; align-items: center; gap: 7px;
+      background: rgba(255,255,255,0.1);
+      border: 1px solid rgba(255,255,255,0.2);
+      color: rgba(255,255,255,0.8);
+      padding: 9px 18px; border-radius: 24px;
+      font-size: 13px; font-weight: 500;
+    }
+
+    .features-strip { background: var(--n50); border-bottom: 1px solid var(--n100); padding: 28px 24px; }
+    .features-list { display: flex; gap: 10px; max-width: 860px; margin: 0 auto; flex-wrap: wrap; justify-content: center; }
+    .feature-chip {
+      display: inline-flex; align-items: center; gap: 6px;
+      background: var(--white); border: 1px solid #BFE3EC; border-radius: 20px;
+      padding: 7px 14px; font-size: 13px; font-weight: 500; color: var(--n700); white-space: nowrap;
+    }
+    .feature-chip::before { content: '✓'; color: var(--star); }
+
+    .disclaimer-banner { background: #FFF8EC; border-bottom: 1px solid #FCE4B6; padding: 18px 24px; }
+    .disclaimer-inner {
+      max-width: 860px; margin: 0 auto;
+      display: flex; align-items: flex-start; gap: 12px;
+      font-size: 13.5px; color: #92400E; line-height: 1.6;
+    }
+    .disclaimer-inner svg { flex-shrink: 0; margin-top: 2px; }
+    .disclaimer-inner strong { color: #78350F; }
+
+    .content-wrap { max-width: 720px; margin: 0 auto; padding: 0 24px; }
+    .section { padding: 76px 0; border-bottom: 1px solid var(--n100); }
+    .section-tag {
+      display: inline-block; font-size: 10.5px; font-weight: 700;
+      letter-spacing: 2.2px; text-transform: uppercase;
+      color: var(--n500); background: var(--n50);
+      padding: 5px 12px; border-radius: 20px; margin-bottom: 14px;
+    }
+    .section h2 {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(26px, 4vw, 38px);
+      font-weight: 700; color: var(--n900);
+      letter-spacing: -0.8px; line-height: 1.2; margin-bottom: 8px;
+    }
+    .section-lead { font-size: 16px; color: var(--gray600); line-height: 1.7; margin-bottom: 40px; }
+
+    .faq { display: flex; flex-direction: column; }
+    .faq-item { border-bottom: 1px solid var(--n100); }
+    .faq-item:first-child { border-top: 1px solid var(--n100); }
+    .faq-btn {
+      width: 100%; text-align: left; background: none; border: none;
+      padding: 20px 0; cursor: pointer;
+      display: flex; justify-content: space-between; align-items: center; gap: 16px;
+      font-size: 15.5px; font-weight: 600; color: var(--n900); font-family: inherit;
+    }
+    .faq-btn:hover { color: var(--n700); }
+    .faq-icon { flex-shrink: 0; width: 22px; height: 22px; display: flex; align-items: center; justify-content: center; color: var(--n500); transition: transform 0.25s ease; }
+    .faq-item.open .faq-icon { transform: rotate(180deg); }
+    .faq-body { max-height: 0; overflow: hidden; transition: max-height 0.35s ease; }
+    .faq-item.open .faq-body { max-height: 700px; }
+    .faq-body p, .faq-body li { font-size: 14.5px; color: var(--gray600); line-height: 1.75; }
+    .faq-body p { padding-bottom: 14px; }
+    .faq-body ul { padding: 0 0 16px 20px; }
+    .faq-body a { color: var(--n700); }
+
+    .contact-card {
+      margin-top: 52px;
+      background: linear-gradient(140deg, var(--n900) 0%, var(--n700) 100%);
+      border-radius: 28px; padding: 44px 40px; text-align: center;
+    }
+    .contact-card h3 { font-family: Georgia, "Times New Roman", serif; font-size: 22px; font-weight: 700; color: var(--white); margin-bottom: 8px; }
+    .contact-card p { font-size: 15px; color: var(--n300); margin-bottom: 26px; }
+    .contact-btn {
+      display: inline-block; background: var(--white); color: var(--n900);
+      padding: 12px 30px; border-radius: 25px; font-size: 15px; font-weight: 600;
+      text-decoration: none; box-shadow: 0 6px 24px rgba(0,0,0,0.22);
+    }
+
+    .legal-date { display: inline-block; font-size: 12.5px; color: var(--gray400); background: var(--gray100); padding: 4px 12px; border-radius: 12px; margin-bottom: 36px; }
+    .legal-block { margin-bottom: 32px; }
+    .legal-block h3 { font-size: 16px; font-weight: 700; color: var(--n900); margin-bottom: 10px; }
+    .legal-block p, .legal-block li { font-size: 14.5px; color: var(--gray600); line-height: 1.8; }
+    .legal-block p + p { margin-top: 10px; }
+    .legal-block ul { padding-left: 20px; margin-top: 8px; }
+    .legal-block a { color: var(--n700); }
+
+    footer { background: var(--n950); padding: 44px 24px; text-align: center; }
+    .footer-nav { display: flex; justify-content: center; gap: 6px; margin-bottom: 18px; flex-wrap: wrap; }
+    .footer-nav a { font-size: 13px; color: var(--n300); opacity: 0.75; text-decoration: none; padding: 4px 10px; }
+    .footer-nav a:hover { opacity: 1; }
+    .footer-copy { font-size: 12.5px; color: rgba(255,255,255,0.3); }
+    .footer-back { display: inline-block; margin-top: 12px; font-size: 12.5px; color: var(--n300); opacity: 0.6; text-decoration: none; }
+
+    @media (max-width: 640px) {
+      .nav-links { display: none; }
+      .hero { padding: 56px 20px 64px; }
+      .section { padding: 56px 0; }
+      .contact-card { padding: 32px 24px; }
+      .features-list { justify-content: flex-start; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="#" class="nav-brand">
+      <img src="icon.png" alt="">
+      <span>Gridwright</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#support">Support</a></li>
+      <li><a href="#privacy">Privacy Policy</a></li>
+      <li><a href="#terms">Terms of Use</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="hero-inner">
+    <img class="app-icon" src="icon.png" alt="Gridwright app icon">
+    <h1>Gridwright</h1>
+    <p class="hero-sub">Draw from a photo with a grid that matches your real paper. Set the sheet size and cell size, get true squares and exact counts, label every cell, mark your progress and print at true scale. Your projects stay on your device.</p>
+    <span class="store-pill">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+      Coming soon to the App Store
+    </span>
+  </div>
+</header>
+
+<div class="features-strip">
+  <div class="features-list">
+    <span class="feature-chip">Real-size sheet setup</span>
+    <span class="feature-chip">True squares &amp; exact counts</span>
+    <span class="feature-chip">A1/B2 cell labels</span>
+    <span class="feature-chip">Cell zoom &amp; progress marks</span>
+    <span class="feature-chip">Gray view &amp; guide lines</span>
+    <span class="feature-chip">True-scale PDF printing</span>
+    <span class="feature-chip">No account, works offline</span>
+  </div>
+</div>
+
+<section id="support">
+  <div class="content-wrap">
+    <div class="section">
+      <span class="section-tag">Help &amp; Support</span>
+      <h2>Frequently Asked Questions</h2>
+      <p class="section-lead">Quick answers to common questions about Gridwright.</p>
+
+      <div class="faq">
+        <div class="faq-item">
+          <button class="faq-btn" aria-expanded="false">What does Gridwright do?
+            <span class="faq-icon"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></span></button>
+          <div class="faq-body">
+            <p>Gridwright is for artists who draw with the grid method. You import a reference photo, tell the app the size of your paper and of each square, and it lays out a grid that matches your sheet in real life, with true squares, an exact cell count and a note about any leftover strip. Cells are labelled A1, B2 and so on, you can zoom into a cell, mark cells as finished, and print the grid at true scale.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-btn" aria-expanded="false">What is free, and what does Gridwright Pro add?
+            <span class="faq-icon"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></span></button>
+          <div class="faq-body">
+            <p>Free: real-size setup, true squares and exact counts, cell labels, progress marks, cell zoom, the gray view, guide lines, one-page PDFs, project files, the cell list, Export all data and Delete all data. The free version shows ads, never on the grid canvas, in cell zoom, or during printing and export.</p>
+            <p>Gridwright Pro is a one-time purchase (not a subscription). It removes ads and adds tone studies, unlimited projects, full-resolution pictures, multi-page tiled printing, fine-detail printing and mural sheets. Your existing projects stay editable and exportable whether or not you buy.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-btn" aria-expanded="false">How do I restore my Gridwright Pro purchase?
+            <span class="faq-icon"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></span></button>
+          <div class="faq-body">
+            <p>Open <strong>Settings → Restore Purchases</strong>, or tap <strong>Restore Purchases</strong> on the Gridwright Pro screen. Sign in with the same Apple Account you used to buy it.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-btn" aria-expanded="false">How do I request a refund?
+            <span class="faq-icon"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></span></button>
+          <div class="faq-body">
+            <p>Refunds are handled by Apple. Visit <a href="https://reportaproblem.apple.com" target="_blank" rel="noopener">reportaproblem.apple.com</a> or contact Apple Support.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-btn" aria-expanded="false">Why doesn't my printed grid match my paper?
+            <span class="faq-icon"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></span></button>
+          <div class="faq-body">
+            <p>When you print or share the PDF, make sure the print dialog is set to <strong>Actual size</strong> or <strong>100%</strong>, not "Fit to page". Check the sheet size you chose in Gridwright matches the paper in your printer, then measure one printed cell with a ruler. If it is off, email us with the paper size and the printer model.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-btn" aria-expanded="false">How do I move my projects to another device?
+            <span class="faq-icon"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></span></button>
+          <div class="faq-body">
+            <p>Use <strong>Settings → Export all data</strong> to make one file with every project, its photo and its progress, or export a single project as a <code>.gridproject</code> file. Send it by AirDrop, Files or email and open it in Gridwright on the other device. Export is free and never locked.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-btn" aria-expanded="false">Where is my data stored, and how do I delete it?
+            <span class="faq-icon"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></span></button>
+          <div class="faq-body">
+            <p>Your projects, photos and marks are stored only on your device. There is no account and no server. To erase everything, use <strong>Settings → Delete all data</strong> (export first if you want a copy; it cannot be undone). Deleting the app also removes its data.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-btn" aria-expanded="false">How do I change my ad privacy choices?
+            <span class="faq-icon"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></span></button>
+          <div class="faq-body">
+            <p>In the free version, open <strong>Settings → Privacy choices</strong> (shown where a consent form applies, such as the EEA and UK). You can also turn off personalised ads in iOS <strong>Settings → Privacy &amp; Security → Tracking</strong>. Gridwright Pro removes ads completely.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="contact-card">
+        <h3>Still need help?</h3>
+        <p>We usually reply within 24–48 hours.</p>
+        <a href="mailto:pals_green.1m@icloud.com?subject=Gridwright%20Support" class="contact-btn">Email Support</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="privacy" style="background: var(--cream);">
+  <div class="content-wrap">
+    <div class="section">
+      <span class="section-tag">Legal</span>
+      <h2>Privacy Policy</h2>
+      <p class="section-lead">Gridwright keeps your work on your device. This policy explains what the app stores and what the ads in the free version collect.</p>
+      <span class="legal-date">Last updated: October 25, 2026</span>
+
+      <div class="legal-block">
+        <h3>Data stored on your device</h3>
+        <p>Your projects are stored only on your device: the reference photos you import, grid and sheet settings, cell progress and project names. We do not run servers that receive this data, and there is no account to create.</p>
+      </div>
+
+      <div class="legal-block">
+        <h3>Data we collect</h3>
+        <p>None of what you create. Gridwright has no analytics of its own and we cannot see your projects or photos.</p>
+      </div>
+
+      <div class="legal-block">
+        <h3>Photos</h3>
+        <p>You choose which photos to import using the system photo picker or the Files app, so Gridwright only sees the pictures you pick. Saving a picture to your library is only done when you ask for it.</p>
+      </div>
+
+      <div class="legal-block">
+        <h3>Ads in the free version</h3>
+        <p>The free version of Gridwright shows ads (banner, interstitial and app-open) from Google AdMob. AdMob may collect your device's advertising identifier, approximate location derived from your IP address, and information about ad views and taps to serve, measure and limit ads. Ads are personalised only if you allow tracking when the app asks, and you can change this at any time in iOS Settings → Privacy &amp; Security → Tracking. In the EEA and UK you are asked for consent through Google's consent form and can change it in the app under Settings → Privacy choices. Your photos, projects and progress are never shared with AdMob. Ads never appear on the grid canvas, in cell zoom, or during printing and export. Gridwright Pro removes all ads, and the ad SDK is not started for Pro users. See <a href="https://policies.google.com/technologies/partner-sites">how Google uses information from apps that use its services</a> and <a href="https://policies.google.com/privacy">Google's privacy policy</a>.</p>
+      </div>
+
+      <div class="legal-block">
+        <h3>Purchases</h3>
+        <p>The optional Gridwright Pro purchase is processed by Apple through the App Store. We never receive your payment details. The app checks your purchase status with Apple on your device using StoreKit.</p>
+      </div>
+
+      <div class="legal-block">
+        <h3>Exports and files</h3>
+        <p>PDFs, images and <code>.gridproject</code> files are created on your device. They only leave it if you choose to share or save them using the system share sheet or Files.</p>
+      </div>
+
+      <div class="legal-block">
+        <h3>Backups</h3>
+        <p>If you use iCloud Backup or an encrypted computer backup, your device backup may include Gridwright data. Apple handles those backups under its own privacy policy. Gridwright itself does not sync to any cloud service.</p>
+      </div>
+
+      <div class="legal-block">
+        <h3>Children's privacy</h3>
+        <p>Gridwright is not directed to children under 13 and does not knowingly collect personal information from them.</p>
+      </div>
+
+      <div class="legal-block">
+        <h3>Deleting your data</h3>
+        <p>You can delete everything at any time in Settings → Delete all data. Deleting the app also removes all of its data from your device.</p>
+      </div>
+
+      <div class="legal-block">
+        <h3>Changes to this policy</h3>
+        <p>If we make material changes, we will update this page and note the change in the App Store release notes.</p>
+      </div>
+
+      <div class="legal-block">
+        <h3>Contact</h3>
+        <p>Questions about privacy? Email <a href="mailto:pals_green.1m@icloud.com">pals_green.1m@icloud.com</a>.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="terms">
+  <div class="content-wrap">
+    <div class="section">
+      <span class="section-tag">Legal</span>
+      <h2>Terms of Use</h2>
+      <p class="section-lead">By using Gridwright you agree to these terms. If you don't agree, please don't use the app.</p>
+      <span class="legal-date">Last updated: October 25, 2026</span>
+
+      <div class="legal-block">
+        <h3>Gridwright Pro</h3>
+        <p>Gridwright Pro is an optional one-time, non-consumable in-app purchase (<code>com.gridwrightapp.app.pro</code>). It permanently removes ads and unlocks additional features on devices signed in with your Apple Account. It is not a subscription and there are no recurring charges. Payment is charged to your Apple Account when you confirm the purchase. Your local price is shown in the app and on the App Store. Family Sharing is not enabled for this purchase.</p>
+        <p>Refunds are handled by Apple under its policies. You can restore your purchase at any time from Settings → Restore Purchases.</p>
+      </div>
+
+      <div class="legal-block">
+        <h3>Your content and your data</h3>
+        <p>You are responsible for the photos you import and must have the right to use them. Your data is stored on your device, and you are responsible for keeping backups by using Export all data. We are not liable for data lost through device loss, deletion or failure.</p>
+      </div>
+
+      <div class="legal-block">
+        <h3>Print accuracy</h3>
+        <p>Printed sizes depend on your printer and its settings. Always check a printed cell with a ruler before relying on it for a large work.</p>
+      </div>
+
+      <div class="legal-block">
+        <h3>Acceptable use</h3>
+        <p>Use Gridwright only for lawful purposes and do not use it to infringe anyone else's copyright.</p>
+      </div>
+
+      <div class="legal-block">
+        <h3>Intellectual property</h3>
+        <p>The app and its design belong to the developer. You keep ownership of your photos and artwork. You may not copy, redistribute or create derivative works from the app without written permission.</p>
+      </div>
+
+      <div class="legal-block">
+        <h3>No warranty</h3>
+        <p>The app is provided "as is" without warranties of any kind. To the extent permitted by law, we are not liable for any indirect or consequential damages arising from use of the app.</p>
+      </div>
+
+      <div class="legal-block">
+        <h3>Apple's standard terms</h3>
+        <p>Your use of the app is also governed by Apple's <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/" target="_blank" rel="noopener">Licensed Application End User License Agreement (EULA)</a>. Apple is not responsible for the app or its content.</p>
+      </div>
+
+      <div class="legal-block">
+        <h3>Changes</h3>
+        <p>We may update these terms. Continued use after an update means you accept the new terms.</p>
+      </div>
+
+      <div class="legal-block">
+        <h3>Contact</h3>
+        <p>Questions? Email <a href="mailto:pals_green.1m@icloud.com">pals_green.1m@icloud.com</a>.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-nav">
+    <a href="#support">Support</a>
+    <a href="#privacy">Privacy Policy</a>
+    <a href="#terms">Terms of Use</a>
+    <a href="mailto:pals_green.1m@icloud.com">pals_green.1m@icloud.com</a>
+  </div>
+  <p class="footer-copy">© 2026 Gridwright. All rights reserved.</p>
+  <a href="../../" class="footer-back">← All apps</a>
+</footer>
+
+<script>
+  document.querySelectorAll('.faq-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const item = btn.closest('.faq-item');
+      const isOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item.open').forEach(i => {
+        i.classList.remove('open');
+        i.querySelector('.faq-btn').setAttribute('aria-expanded', 'false');
+      });
+      if (!isOpen) {
+        item.classList.add('open');
+        btn.setAttribute('aria-expanded', 'true');
+      }
+    });
+  });
+
+  const sections = document.querySelectorAll('section[id]');
+  const navLinks = document.querySelectorAll('.nav-links a');
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        navLinks.forEach(a => a.classList.remove('active'));
+        const active = document.querySelector(`.nav-links a[href="#${entry.target.id}"]`);
+        if (active) active.classList.add('active');
+      }
+    });
+  }, { rootMargin: '-40% 0px -55% 0px' });
+  sections.forEach(s => observer.observe(s));
+</script>
+</body>
+</html>
