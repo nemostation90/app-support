@@ -380,7 +380,7 @@
             <span class="faq-icon"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></span>
           </button>
           <div class="faq-body">
-            <p>An online match connects you and one other player directly (peer-to-peer, using WebRTC). A small signalling server only helps the two devices find each other. There is no chat and there are no player profiles, and nothing about the match is stored after it ends.</p>
+            <p>There are two kinds of online match. Ranked matches count for the online ladder: you start at a rating of 1,000, a win adds points and a loss takes them away. A friend match (played with a room code) is friendly, does not count for the ladder and stores nothing on our server. Both kinds connect the two devices directly (peer-to-peer, using WebRTC). A small signalling server only helps them find each other. There is no chat. In a Ranked match your opponent sees your display name, rating, record, last five results and your pal&rsquo;s Power. If nobody is in the queue, you play an AI rival, labelled &ldquo;AI rival&rdquo; on screen.</p>
             <p>You need an internet connection for online matches. Everything else in the game can be played on its own.</p>
           </div>
         </div>
@@ -412,7 +412,7 @@
             <span class="faq-icon"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></span>
           </button>
           <div class="faq-body">
-            <p>No. Game Center is optional. If you are signed in to Game Center, your best scores (Tour stars, longest rally, cup trophies and total Power) are sent to Apple&rsquo;s leaderboards. If you are not signed in, the game works the same way and nothing is sent.</p>
+            <p>No. Game Center is optional. It is only used for signing in and for the nickname shown in Ranked. The game has no Game Center leaderboards any more, and no scores are sent to Apple. If you are not signed in, Ranked uses a made-up name such as &ldquo;Pal 4821&rdquo;, and the game works the same way.</p>
           </div>
         </div>
 
@@ -458,7 +458,8 @@
           <ul>
             <li>There is no account and no sign-up. We do not ask for your name, email address or phone number.</li>
             <li>Your game progress is saved on your device.</li>
-            <li>Online matches connect two players directly. There is no chat and there are no profiles. Nothing about the match is stored after it ends.</li>
+            <li>Ranked keeps an anonymous player ID, a display name, and your rating and results on our server. Details are in section 2.</li>
+            <li>Online matches connect two players directly. There is no chat.</li>
             <li>The game shows ads through Google AdMob. AdMob may collect device and usage data to show and measure ads (details below).</li>
             <li>Purchases are handled by Apple. We never see your payment details.</li>
             <li>We do not sell your data.</li>
@@ -467,18 +468,20 @@
 
         <div>
           <h3>1. Data stored on your device</h3>
-          <p>ShuttlePals saves your progress and settings (for example Tour progress, unlocked pals and looks, purchases you have made, and options such as controls and camera) on your device. We do not receive a copy of this data. Deleting the game removes it.</p>
+          <p>ShuttlePals saves your progress and settings (for example Tour progress, unlocked pals and looks, purchases you have made, and options such as controls and camera) on your device. We do not receive a copy of this data, except the Ranked ladder data described in section 2. Deleting the game removes it, but not the Ranked record on our server: see section 2 for how to delete that.</p>
         </div>
 
         <div>
           <h3>2. Online matches</h3>
-          <p>In an online match, your device and your opponent&rsquo;s device connect to each other directly (peer-to-peer, using WebRTC). A small signalling server is used only to set up that connection. The game has no chat and no player profiles, and nothing about the match is stored after it ends.</p>
+          <p>In an online match, your device and your opponent&rsquo;s device connect to each other directly (peer-to-peer, using WebRTC). A small signalling server is used only to set up that connection. The game has no chat.</p>
           <p>Because the two devices connect directly, as with any peer-to-peer connection, each device can technically see the other&rsquo;s network address while the match is running.</p>
+          <p><strong>Ranked ladder.</strong> If you play Ranked, we keep these records on our server, which runs on Cloudflare: a random anonymous player ID made on your device; your display name (your Game Center nickname if you are signed in to Game Center, otherwise a made-up name such as &ldquo;Pal 4821&rdquo;); the pal you last used; your rating and best rating; your wins and losses; and your last five results. We do not store your email address, real name, device identifiers, location or any chat. An open match is kept only until it is settled, and for at most 30 minutes.</p>
+          <p>We keep this to run the ladder and the Top players list. The Top players list shows each player&rsquo;s display name, pal, rating and record. In a Ranked match your opponent sees your display name, rating, record, last five results and pal&rsquo;s Power. We do not sell this data and do not use it for ads. Cloudflare is our hosting provider. We keep the records until you delete them, and inactive records may be removed. To delete yours, open <strong>Settings &rarr; Delete my data</strong> in the game while your device is online (this also removes the server record), or email <a href="mailto:pals_green.1m@icloud.com">pals_green.1m@icloud.com</a> and we will delete it.</p>
         </div>
 
         <div>
           <h3>3. Game Center (optional, Apple)</h3>
-          <p>If you are signed in to Game Center, your best scores (Tour stars, longest rally, cup trophies and total Power) are sent to Apple&rsquo;s leaderboards. This is handled by Apple under <a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener">Apple&rsquo;s Privacy Policy</a>. If you are not signed in to Game Center, nothing is sent.</p>
+          <p>Game Center is optional. If you sign in to Game Center, the game reads your Game Center nickname to show it in Ranked. Sign-in is handled by Apple under <a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener">Apple&rsquo;s Privacy Policy</a>. No scores are sent to Apple&rsquo;s leaderboards, because the game no longer has Game Center leaderboards. If you are not signed in, Ranked uses a made-up name instead.</p>
         </div>
 
         <div>
@@ -503,7 +506,7 @@
           <ul>
             <li>We do not use an analytics SDK. The only third-party SDK that collects data is the ad SDK described above.</li>
             <li>We do not sell your data.</li>
-            <li>We do not run user accounts, so there is no account profile for us to hold.</li>
+            <li>We do not run user accounts. Ranked keeps only the anonymous record described in section 2, not an account profile.</li>
           </ul>
         </div>
 
@@ -511,8 +514,9 @@
           <h3>7. Retention and your choices</h3>
           <ul>
             <li><strong>On-device data:</strong> it stays until you delete the game.</li>
+            <li><strong>Ranked ladder data:</strong> it stays until you delete it, and inactive records may be removed. See section 2.</li>
             <li><strong>Ad data:</strong> it is held by Google under its own policy, linked above.</li>
-            <li><strong>Game Center:</strong> scores are held by Apple under its policy. You can manage them in your Game Center settings.</li>
+            <li><strong>Game Center:</strong> no scores are sent to Apple. The game only reads your nickname, as described in section 3.</li>
             <li><strong>Ad consent and tracking:</strong> change them in Settings &rarr; Privacy options, or in iOS Settings &rarr; Privacy &amp; Security &rarr; Tracking.</li>
             <li><strong>Questions or requests</strong> about your data (including under GDPR, UK GDPR or CCPA): email us at the address below.</li>
           </ul>
