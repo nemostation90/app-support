@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pantry Sleuth: Cozy Pet Logic — Support</title>
+  <meta name="description" content="Support, Privacy Policy, and Terms of Use for Pantry Sleuth: Cozy Pet Logic — a cozy logic-placement puzzle with pets and a miniature house.">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --n950: #0E2A22;
+      --n900: #1F5544;
+      --n700: #2E7460;
+      --n500: #7A4A2A;
+      --n300: #E9D8B4;
+      --n100: #DCD0B6;
+      --n50:  #F6F0E0;
+      --star: #C0392B;
+      --cream: #F3ECD9;
+      --white: #FFFFFF;
+      --gray100: #ECE4CF;
+      --gray400: #9CA3AF;
+      --gray600: #55594F;
+      --text: #1C2220;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", system-ui, sans-serif;
+      color: var(--text);
+      background: var(--white);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    nav {
+      position: sticky; top: 0; z-index: 100;
+      background: rgba(246,240,224,0.94);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--n100);
+    }
+    .nav-inner {
+      max-width: 860px; margin: 0 auto;
+      display: flex; align-items: center; justify-content: space-between;
+      height: 58px; padding: 0 24px; gap: 16px;
+    }
+    .nav-brand { display: flex; align-items: center; gap: 10px; text-decoration: none; color: var(--n900); }
+    .nav-brand img { width: 30px; height: 30px; border-radius: 8px; }
+    .nav-brand span { font-size: 15px; font-weight: 700; letter-spacing: -0.2px; }
+    .nav-links { display: flex; gap: 2px; list-style: none; }
+    .nav-links a {
+      display: block; padding: 6px 13px; border-radius: 20px;
+      font-size: 13.5px; font-weight: 500; color: var(--gray600);
+      text-decoration: none; transition: all 0.18s;
+    }
+    .nav-links a:hover, .nav-links a.active { color: var(--n900); background: var(--n100); }
+
+    .hero {
+      background: linear-gradient(160deg, var(--n950) 0%, var(--n900) 55%, #5C2E1C 140%);
+      padding: 72px 24px 80px; text-align: center;
+      position: relative; overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute; inset: 0;
+      background:
+        radial-gradient(ellipse at 15% 60%, rgba(192,57,43,0.22) 0%, transparent 55%),
+        radial-gradient(ellipse at 85% 20%, rgba(122,74,42,0.35) 0%, transparent 50%);
+      pointer-events: none;
+    }
+    .hero-inner { position: relative; z-index: 1; }
+    .app-icon {
+      width: 100px; height: 100px; border-radius: 24px;
+      display: block; margin: 0 auto 22px; object-fit: cover;
+      box-shadow: 0 24px 64px rgba(0,0,0,0.4), 0 0 0 3px rgba(255,255,255,0.14);
+    }
+    .hero h1 {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(30px, 5.5vw, 54px);
+      font-weight: 700; color: var(--white);
+      letter-spacing: -1.5px; line-height: 1.1; margin-bottom: 14px;
+    }
+    .hero-sub { font-size: 16px; color: var(--n300); max-width: 520px; margin: 0 auto 28px; line-height: 1.6; }
+    .store-pill {
+      display: inline-flex; align-items: center; gap: 7px;
+      background: rgba(255,255,255,0.1);
+      border: 1px solid rgba(255,255,255,0.2);
+      color: rgba(255,255,255,0.8);
+      padding: 9px 18px; border-radius: 24px;
+      font-size: 13px; font-weight: 500;
+    }
+
+    .features-strip { background: var(--n50); border-bottom: 1px solid var(--n100); padding: 28px 24px; }
+    .features-list { display: flex; gap: 10px; max-width: 860px; margin: 0 auto; flex-wrap: wrap; justify-content: center; }
+    .feature-chip {
+      display: inline-flex; align-items: center; gap: 6px;
+      background: var(--white); border: 1px solid #DCCBA6; border-radius: 20px;
+      padding: 7px 14px; font-size: 13px; font-weight: 500; color: var(--n700); white-space: nowrap;
+    }
+    .feature-chip::before { content: '✓'; color: var(--star); }
+
+    .content-wrap { max-width: 720px; margin: 0 auto; padding: 0 24px; }
+    .section { padding: 76px 0; border-bottom: 1px solid var(--n100); }
+    .section-tag {
+      display: inline-block; font-size: 10.5px; font-weight: 700;
+      letter-spacing: 2.2px; text-transform: uppercase;
+      color: var(--n500); background: var(--n50);
+      padding: 5px 12px; border-radius: 20px; margin-bottom: 14px;
+    }
+    .section h2 {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(26px, 4vw, 38px);
+      font-weight: 700; color: var(--n900);
+      letter-spacing: -0.8px; line-height: 1.2; margin-bottom: 8px;
+    }
+    .section-lead { font-size: 16px; color: var(--gray600); line-height: 1.7; margin-bottom: 40px; }
+
+    .faq { display: flex; flex-direction: column; }
+    .faq-item { border-bottom: 1px solid var(--n100); }
+    .faq-item:first-child { border-top: 1px solid var(--n100); }
+    .faq-btn {
+      width: 100%; text-align: left; background: none; border: none;
+      padding: 20px 0; cursor: pointer;
+      display: flex; justify-content: space-between; align-items: center; gap: 16px;
+      font-size: 15.5px; font-weight: 600; color: var(--n900); font-family: inherit;
+    }
+    .faq-btn:hover { color: var(--n700); }
+    .faq-icon { flex-shrink: 0; width: 22px; height: 22px; display: flex; align-items: center; justify-content: center; color: var(--n500); transition: transform 0.25s ease; }
+    .faq-item.open .faq-icon { transform: rotate(180deg); }
+    .faq-body { max-height: 0; overflow: hidden; transition: max-height 0.35s ease; }
+    .faq-item.open .faq-body { max-height: 700px; }
+    .faq-body p, .faq-body li { font-size: 14.5px; color: var(--gray600); line-height: 1.75; }
+    .faq-body p { padding-bottom: 14px; }
+    .faq-body ul { padding: 0 0 16px 20px; }
+    .faq-body a { color: var(--n700); }
+
+    .contact-card {
+      margin-top: 52px;
+      background: linear-gradient(140deg, var(--n900) 0%, var(--n700) 100%);
+      border-radius: 28px; padding: 44px 40px; text-align: center;
+    }
+    .contact-card h3 { font-family: Georgia, "Times New Roman", serif; font-size: 22px; font-weight: 700; color: var(--white); margin-bottom: 8px; }
+    .contact-card p { font-size: 15px; color: var(--n300); margin-bottom: 26px; }
+    .contact-btn {
+      display: inline-block; background: var(--white); color: var(--n900);
+      padding: 12px 30px; border-radius: 25px; font-size: 15px; font-weight: 600;
+      text-decoration: none; box-shadow: 0 6px 24px rgba(0,0,0,0.22);
+    }
+
+    .legal-date { display: inline-block; font-size: 12.5px; color: var(--gray400); background: var(--gray100); padding: 4px 12px; border-radius: 12px; margin-bottom: 36px; }
+    .legal-block { margin-bottom: 32px; }
+    .legal-block h3 { font-size: 16px; font-weight: 700; color: var(--n900); margin-bottom: 10px; }
+    .legal-block p, .legal-block li { font-size: 14.5px; color: var(--gray600); line-height: 1.8; }
+    .legal-block p + p { margin-top: 10px; }
+    .legal-block ul { padding-left: 20px; margin-top: 8px; }
+    .legal-block a { color: var(--n700); }
+
+    footer { background: var(--n950); padding: 44px 24px; text-align: center; }
+    .footer-nav { display: flex; justify-content: center; gap: 6px; margin-bottom: 18px; flex-wrap: wrap; }
+    .footer-nav a { font-size: 13px; color: var(--n300); opacity: 0.75; text-decoration: none; padding: 4px 10px; }
+    .footer-nav a:hover { opacity: 1; }
+    .footer-copy { font-size: 12.5px; color: rgba(255,255,255,0.3); }
+    .footer-back { display: inline-block; margin-top: 12px; font-size: 12.5px; color: var(--n300); opacity: 0.6; text-decoration: none; }
+
+    @media (max-width: 640px) {
+      .nav-links { display: none; }
+      .hero { padding: 56px 20px 64px; }
+      .section { padding: 56px 0; }
+      .contact-card { padding: 32px 24px; }
+      .features-list { justify-content: flex-start; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="#" class="nav-brand">
+      <img src="icon.png" alt="">
+      <span>Pantry Sleuth</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#support">Support</a></li>
+      <li><a href="#privacy">Privacy Policy</a></li>
+      <li><a href="#terms">Terms of Use</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="hero-inner">
+    <img class="app-icon" src="icon.png" alt="Pantry Sleuth app icon">
+    <h1>Pantry Sleuth: Cozy Pet Logic</h1>
+    <p class="hero-sub">A cozy logic-placement puzzle. You are the clerk at the office for household complaints: place the pets on a miniature house plan, read the typed clue slips, and work out which pet took the food.</p>
+    <span class="store-pill">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+      Coming soon to the App Store
+    </span>
+  </div>
+</header>
+
+<div class="features-strip">
+  <div class="features-list">
+    <span class="feature-chip">For iPhone and iPad</span>
+    <span class="feature-chip">A new daily case</span>
+    <span class="feature-chip">A book of cases</span>
+    <span class="feature-chip">Nine languages</span>
+    <span class="feature-chip">Free with adverts</span>
+    <span class="feature-chip">No account, no subscription</span>
+  </div>
+</div>
+
+<section id="support">
+  <div class="content-wrap">
+    <div class="section">
+      <span class="section-tag">Help &amp; Support</span>
+      <h2>Frequently Asked Questions</h2>
+      <p class="section-lead">Quick answers to common questions about Pantry Sleuth.</p>
+
+      <div class="faq">
+        <div class="faq-item">
+          <button class="faq-btn" aria-expanded="false">What is Pantry Sleuth?
+            <span class="faq-icon"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></span></button>
+          <div class="faq-body">
+            <p>Pantry Sleuth is a cozy logic-placement puzzle for iPhone and iPad. You are a clerk at an office for household complaints. Place the pets on a miniature house plan, read the typed clue slips, and work out which pet took the food. There is a daily case and a book of cases, and the game is available in nine languages.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-btn" aria-expanded="false">Is Pantry Sleuth free? What can I buy?
+            <span class="faq-icon"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></span></button>
+          <div class="faq-body">
+            <p>Pantry Sleuth is free to play and shows ads. There are three optional one-time purchases through Apple. None of them is a subscription:</p>
+            <ul>
+              <li><strong>Remove Adverts</strong>: turns off the adverts in the app.</li>
+              <li><strong>Case packs</strong>: additional packs of cases.</li>
+              <li><strong>Complete bundle</strong>: the Complete bundle purchase.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-btn" aria-expanded="false">How do I restore my purchases?
+            <span class="faq-icon"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></span></button>
+          <div class="faq-body">
+            <p>Purchases can be restored in the app's Settings. Sign in with the same Apple Account you used to buy them. If something is still missing, email us.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-btn" aria-expanded="false">How do I request a refund?
+            <span class="faq-icon"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></span></button>
+          <div class="faq-body">
+            <p>Refunds are handled by Apple. Visit <a href="https://reportaproblem.apple.com" target="_blank" rel="noopener">reportaproblem.apple.com</a> or contact Apple Support.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-btn" aria-expanded="false">Where is my progress stored? Do I need an account?
+            <span class="faq-icon"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></span></button>
+          <div class="faq-body">
+            <p>There is no account and no sign-in. Your progress and settings are stored only on your device, so deleting the app deletes them. Your purchases are tied to your Apple Account and can be restored at any time.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-btn" aria-expanded="false">How do I change my privacy choices?
+            <span class="faq-icon"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></span></button>
+          <div class="faq-body">
+            <ul>
+              <li><strong>Ad choices:</strong> open the app's <strong>Settings</strong> and review your choice under privacy choices. The consent form is shown where one applies, such as the EEA and UK.</li>
+              <li><strong>Tracking:</strong> you can allow or refuse tracking at any time in iOS <strong>Settings → Privacy &amp; Security → Tracking</strong>.</li>
+            </ul>
+            <p>Remove Adverts takes away the ads completely.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="contact-card">
+        <h3>Still need help?</h3>
+        <p>We usually reply within 24–48 hours.</p>
+        <a href="mailto:pals_green.1m@icloud.com?subject=Pantry%20Sleuth%20Support" class="contact-btn">Email Support</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="privacy" style="background: var(--cream);">
+  <div class="content-wrap">
+    <div class="section">
+      <span class="section-tag">Legal</span>
+      <h2>Privacy Policy</h2>
+      <p class="section-lead">Pantry Sleuth keeps your game progress on your device. This policy explains what the app stores, and what the ads in it collect.</p>
+      <span class="legal-date">Last updated: November 26, 2026</span>
+
+      <div class="legal-block">
+        <h3>Who we are</h3>
+        <p>Pantry Sleuth: Cozy Pet Logic (bundle identifier <code>com.pantrysleuth.app</code>) is made by an independent developer. Contact details are at the end of this policy.</p>
+      </div>
+
+      <div class="legal-block">
+        <h3>Data stored on your device</h3>
+        <p>Your progress and settings are stored only on your device. We do not run servers that receive this data. There are no accounts and no sign-in.</p>
+      </div>
+
+      <div class="legal-block">
+        <h3>Data we collect ourselves</h3>
+        <p>Pantry Sleuth's own code does not collect your name, email address, contacts, photos or precise location, and we cannot see your progress. The game has no analytics: it includes no analytics SDK and no Firebase. The only data that leaves your device is collected by the Google services described below, and by Apple when you make a purchase.</p>
+      </div>
+
+      <div class="legal-block">
+        <h3>Ads (Google AdMob)</h3>
+        <p>Pantry Sleuth is free and shows ads from Google AdMob: banners, interstitials, App Open ads and rewarded ads that you choose to watch. AdMob may collect your device's advertising identifier, approximate location derived from your IP address, information about ad views and taps, and diagnostic data, in order to serve, measure and limit ads.</p>
+        <p>Pantry Sleuth is not directed to children, and we do not treat it as a child-directed app for advertising. For owners of Remove Adverts, ads are turned off. See <a href="https://policies.google.com/technologies/partner-sites">how Google uses information from apps that use its services</a> and <a href="https://policies.google.com/privacy">Google's privacy policy</a>.</p>
+      </div>
+
+      <div class="legal-block">
+        <h3>Consent (Google User Messaging Platform)</h3>
+        <p>Where the law requires it, such as in the European Economic Area and the United Kingdom, Pantry Sleuth asks for your consent through Google's User Messaging Platform before ads are requested. Personalised ads are only shown with your consent. You can review your choice at any time in the app's Settings under privacy choices. If consent is not given where it is required, no ads are requested.</p>
+      </div>
+
+      <div class="legal-block">
+        <h3>App Tracking Transparency</h3>
+        <p>Pantry Sleuth shows Apple's App Tracking Transparency prompt. Only if you tap Allow can your device's advertising identifier (IDFA) be used for personalised ads and for tracking across other companies' apps and websites. If you choose Ask App Not to Track, you still see ads, but they are not personalised using your IDFA. You can change this at any time in iOS Settings → Privacy &amp; Security → Tracking.</p>
+      </div>
+
+      <div class="legal-block">
+        <h3>Purchases</h3>
+        <p>Pantry Sleuth offers one-time in-app purchases (Remove Adverts, case packs and the Complete bundle). There are no subscriptions. Purchases are processed by Apple through the App Store, and we never receive your payment details. You can restore your purchases in the app's Settings.</p>
+      </div>
+
+      <div class="legal-block">
+        <h3>Backups</h3>
+        <p>If you use iCloud Backup or an encrypted computer backup, your device backup may include Pantry Sleuth's data. Apple handles those backups under its own privacy policy.</p>
+      </div>
+
+      <div class="legal-block">
+        <h3>Children's privacy</h3>
+        <p>Pantry Sleuth is rated for a general audience and is not directed to children under 13 (or under the age of digital consent where you live). We do not knowingly collect personal information from children.</p>
+      </div>
+
+      <div class="legal-block">
+        <h3>Your rights</h3>
+        <p>Because your game data lives on your device, you control it: deleting the app deletes it. Depending on where you live (for example under the GDPR or the CCPA), you may have the right to access, correct or delete personal data, to object to or opt out of its use for advertising, and to withdraw consent. We do not sell personal information. For data held by Google, you can use the in-app and iOS choices described above, or exercise your rights with Google directly. You can also email us and we will help.</p>
+      </div>
+
+      <div class="legal-block">
+        <h3>Changes to this policy</h3>
+        <p>If we make material changes, we will update this page and note the change in the App Store release notes.</p>
+      </div>
+
+      <div class="legal-block">
+        <h3>Contact</h3>
+        <p>Questions about privacy? Email <a href="mailto:pals_green.1m@icloud.com">pals_green.1m@icloud.com</a>.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="terms">
+  <div class="content-wrap">
+    <div class="section">
+      <span class="section-tag">Legal</span>
+      <h2>Terms of Use</h2>
+      <p class="section-lead">By using Pantry Sleuth you agree to these terms. If you don't agree, please don't use the app.</p>
+      <span class="legal-date">Last updated: November 26, 2026</span>
+
+      <div class="legal-block">
+        <h3>The game and ads</h3>
+        <p>Pantry Sleuth is free to play and is supported by ads from Google AdMob. By using the free version you agree to see them. You can remove them with the Remove Adverts purchase.</p>
+      </div>
+
+      <div class="legal-block">
+        <h3>In-app purchases</h3>
+        <p>Pantry Sleuth offers three optional one-time in-app purchases:</p>
+        <ul>
+          <li>Remove Adverts</li>
+          <li>Case packs</li>
+          <li>Complete bundle</li>
+        </ul>
+        <p>None of them is a subscription and there are no recurring charges. Payment is charged to your Apple Account when you confirm the purchase, at the price shown in the app and on the App Store for your region. Refunds are handled by Apple under its policies. You can restore your purchases at any time from the app's Settings.</p>
+      </div>
+
+      <div class="legal-block">
+        <h3>Your data</h3>
+        <p>Your progress is stored on your device. We are not liable for progress lost through device loss, deletion or failure.</p>
+      </div>
+
+      <div class="legal-block">
+        <h3>Acceptable use</h3>
+        <p>Use Pantry Sleuth only for lawful, personal entertainment. Do not copy, reverse-engineer or redistribute the app or its content.</p>
+      </div>
+
+      <div class="legal-block">
+        <h3>Intellectual property</h3>
+        <p>The app, its stories, characters, artwork, sounds and design belong to the developer or its licensors. You receive a personal, non-exclusive, non-transferable licence to use the app on your Apple devices.</p>
+      </div>
+
+      <div class="legal-block">
+        <h3>Fiction</h3>
+        <p>Pantry Sleuth is a work of fiction. Its characters, places and events are invented, and any resemblance to real people or events is coincidental.</p>
+      </div>
+
+      <div class="legal-block">
+        <h3>No warranty</h3>
+        <p>The app is provided "as is" without warranties of any kind. To the extent permitted by law, we are not liable for any indirect or consequential damages arising from use of the app.</p>
+      </div>
+
+      <div class="legal-block">
+        <h3>Apple's standard terms</h3>
+        <p>Your use of the app is also governed by Apple's <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/" target="_blank" rel="noopener">Licensed Application End User License Agreement (EULA)</a>. Apple is not responsible for the app or its content.</p>
+      </div>
+
+      <div class="legal-block">
+        <h3>Changes</h3>
+        <p>We may update these terms. Continued use after an update means you accept the new terms.</p>
+      </div>
+
+      <div class="legal-block">
+        <h3>Contact</h3>
+        <p>Questions? Email <a href="mailto:pals_green.1m@icloud.com">pals_green.1m@icloud.com</a>.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-nav">
+    <a href="#support">Support</a>
+    <a href="#privacy">Privacy Policy</a>
+    <a href="#terms">Terms of Use</a>
+    <a href="mailto:pals_green.1m@icloud.com">pals_green.1m@icloud.com</a>
+  </div>
+  <p class="footer-copy">© 2026 Pantry Sleuth. All rights reserved.</p>
+  <a href="../../" class="footer-back">← All apps</a>
+</footer>
+
+<script>
+  document.querySelectorAll('.faq-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const item = btn.closest('.faq-item');
+      const isOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item.open').forEach(i => {
+        i.classList.remove('open');
+        i.querySelector('.faq-btn').setAttribute('aria-expanded', 'false');
+      });
+      if (!isOpen) {
+        item.classList.add('open');
+        btn.setAttribute('aria-expanded', 'true');
+      }
+    });
+  });
+
+  const sections = document.querySelectorAll('section[id]');
+  const navLinks = document.querySelectorAll('.nav-links a');
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        navLinks.forEach(a => a.classList.remove('active'));
+        const active = document.querySelector(`.nav-links a[href="#${entry.target.id}"]`);
+        if (active) active.classList.add('active');
+      }
+    });
+  }, { rootMargin: '-40% 0px -55% 0px' });
+  sections.forEach(s => observer.observe(s));
+</script>
+</body>
+</html>
